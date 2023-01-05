@@ -1,0 +1,29 @@
+ia.gaius.tests package
+======================
+
+Submodules
+----------
+
+ia.gaius.tests.classification module
+------------------------------------
+
+.. automodule:: ia.gaius.tests.classification
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ia.gaius.tests.utility module
+-----------------------------
+
+.. automodule:: ia.gaius.tests.utility
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: ia.gaius.tests
+   :members:
+   :undoc-members:
+   :show-inheritance:

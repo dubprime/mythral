@@ -1,0 +1,24 @@
+Introduction to GAIuS
+=====================
+
+Welcome to the Intelligent Artifacts Python SDK (IA-SDK).
+This area of the documentation will provide a brief introduction to GAIuS and the motivations 
+behind the design of the system
+
+Context
++++++++
+
+Old AI
+++++++
+
+New AI
+++++++
+
+A Better Foundation
++++++++++++++++++++
+
+Sequence of Symbols
++++++++++++++++++++
+
+Unified Inputs
+++++++++++++++

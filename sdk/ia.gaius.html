@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ia.gaius package &mdash; IA-SDK-Python 0.2.35 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ia.gaius.tests package" href="ia.gaius.tests.html" />
+    <link rel="prev" title="AgentClient" href="AgentClient.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> IA-SDK-Python
+            <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="GDF.html">GAIuS Data Format (GDF)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GDF.html#fields">Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#strings">strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#vectors">vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#emotives">emotives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#metadata">metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#path">path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ia.gaius package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.data_ops">ia.gaius.data_ops module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IA-SDK-Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>ia.gaius package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/ia.gaius.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ia-gaius-package">
+<h1>ia.gaius package<a class="headerlink" href="#ia-gaius-package" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="submodules">
+<h3>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h3>
+</section>
+<section id="module-ia.gaius.back_testing">
+<span id="ia-gaius-back-testing-module"></span><h3>ia.gaius.back_testing module<a class="headerlink" href="#module-ia.gaius.back_testing" title="Permalink to this heading"></a></h3>
+<p>Implements an interface for backtesting.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.BackTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">BackTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.BackTest" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides an interface for backtesting.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.BackTest.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.BackTest.run" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.classification_report">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">classification_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">back_tester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.gaius.back_testing.BackTest" title="ia.gaius.back_testing.BackTest"><span class="pre">BackTest</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.classification_report" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.fidelity_charts">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">fidelity_charts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">back_tester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.gaius.back_testing.BackTest" title="ia.gaius.back_testing.BackTest"><span class="pre">BackTest</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.fidelity_charts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.get_class_distribution">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">get_class_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">back_tester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.gaius.back_testing.BackTest" title="ia.gaius.back_testing.BackTest"><span class="pre">BackTest</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.back_testing.get_class_distribution" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.plot_class_distributions">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">plot_class_distributions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">back_tester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.gaius.back_testing.BackTest" title="ia.gaius.back_testing.BackTest"><span class="pre">BackTest</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.plot_class_distributions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.back_testing.predictor_operator_characteristic">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.back_testing.</span></span><span class="sig-name descname"><span class="pre">predictor_operator_characteristic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">back_tester</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#ia.gaius.back_testing.BackTest" title="ia.gaius.back_testing.BackTest"><span class="pre">BackTest</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.back_testing.predictor_operator_characteristic" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-ia.gaius.data_language">
+<span id="ia-gaius-data-language-module"></span><h3>ia.gaius.data_language module<a class="headerlink" href="#module-ia.gaius.data_language" title="Permalink to this heading"></a></h3>
+<p>Defines the structure for Genie API commands.</p>
+</section>
+<section id="module-ia.gaius.data_ops">
+<span id="ia-gaius-data-ops-module"></span><h3>ia.gaius.data_ops module<a class="headerlink" href="#module-ia.gaius.data_ops" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_directories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.Data.prep">
+<span class="sig-name descname"><span class="pre">prep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent_of_dataset_chosen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_reserved_for_training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data.prep" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.DataRecords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">DataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.DataRecords" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Splits data into random sets for training and testing.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.atoi">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">atoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.atoi" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.natural_keys">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">natural_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.natural_keys" title="Permalink to this definition"></a></dt>
+<dd><p>alist.sort(key=natural_keys) sorts in human order
+<a class="reference external" href="http://nedbatchelder.com/blog/200712/human_sorting.html">http://nedbatchelder.com/blog/200712/human_sorting.html</a>
+(See Toothy’s implementation in the comments)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.raw_in_count">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">raw_in_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.raw_in_count" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.validate_data">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.validate_data" title="Permalink to this definition"></a></dt>
+<dd><p>Validates if the data is in correct GAIuS digestible format.
+Returns True if data validates.  Returns False if data does not validate.</p>
+</dd></dl>
+
+</section>
+<section id="module-ia.gaius.prediction_models">
+<span id="ia-gaius-prediction-models-module"></span><h3>ia.gaius.prediction_models module<a class="headerlink" href="#module-ia.gaius.prediction_models" title="Permalink to this heading"></a></h3>
+<p>Implements a variety of prediction models.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.average_emotives">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">average_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.average_emotives" title="Permalink to this definition"></a></dt>
+<dd><p>Averages the emotives in a list (e.g. predictions ensemble or percepts).
+The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.bucket_predictions">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">bucket_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.bucket_predictions" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.hive_model_classification">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">hive_model_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensembles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.hive_model_classification" title="Permalink to this definition"></a></dt>
+<dd><p>Every node gets a vote.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.hive_model_emotives">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">hive_model_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensembles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.hive_model_emotives" title="Permalink to this definition"></a></dt>
+<dd><p>Average of final node predictions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.make_modeled_emotives">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">make_modeled_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.make_modeled_emotives" title="Permalink to this definition"></a></dt>
+<dd><p>The emotives in the ensemble are of type: ‘emotives’:[{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.model_per_emotive">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">model_per_emotive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_normalization_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.model_per_emotive" title="Permalink to this definition"></a></dt>
+<dd><p>Using a Weighted Moving Average, though the ‘moving’ part refers to the prediction index.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.prediction_ensemble_model_classification">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">prediction_ensemble_model_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.prediction_ensemble_model_classification" title="Permalink to this definition"></a></dt>
+<dd><p>For classifications, we don’t bother with marginal_probability because classifications are discrete symbols, not numeric values.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.principal_delta">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">principal_delta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">principal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">other</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.principal_delta" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="AgentClient.html" class="btn btn-neutral float-left" title="AgentClient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ia.gaius.tests.html" class="btn btn-neutral float-right" title="ia.gaius.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

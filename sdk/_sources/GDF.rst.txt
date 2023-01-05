@@ -1,0 +1,59 @@
+GAIuS Data Format (GDF)
+=======================
+
+The data entry format for use with the GAIuS Framework is called GAIuS Data Format (GDF).
+GDFs have several fields that correspond to different types of data:
+
+.. code-block:: python
+
+    gdf = \
+        {'strings' : [],
+         'vectors': [],
+         'emotives': [],
+         'metadata': {},
+         'path': []
+        }
+
+Fields
+++++++
+
+The following section briefly explain the different fields present in a GDF
+
+strings
+-------
+
+The strings field is used to observe data that is already symbolic (in string format) on a GAIuS Agent.
+
+Example:
+    .. code-block:: python
+        
+        gdf['strings'] = ['temperature|54', 'UV_INDEX|HIGH', 'weather|sunny', 'time|afternoon']
+
+vectors
+-------
+
+The vectors field is used to observe numeric data on a GAIuS Agent. For example, 
+this field may be used for flattened image data, mathmatical data, etc.
+
+Example:
+    .. code-block:: python
+
+        # image loaded previously into Python
+        flattened_image_data = image.flatten()
+        gdf['vectors'] = [flattened_image_data]
+
+emotives
+--------
+
+The emotives field is used to provide emotional data about an observation to the GAIuS agent.
+
+metadata
+--------
+
+The metadata field is used to pass through additional data about an observation that will not impact the predicting of a Cognitive Processor
+
+path
+----
+
+The path field is used internally to show the path taken by an observation as it travels through a GAIuS agent's topology
+

@@ -1,0 +1,63 @@
+ia.gaius package
+================
+
+Subpackages
++++++++++++
+
+.. toctree::
+   :maxdepth: 4
+
+   ia.gaius.tests
+
+
+Submodules
+----------
+
+.. ia.gaius.agent\_client module
+.. -----------------------------
+
+.. .. automodule:: ia.gaius.agent_client
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
+..    :special-members: __init__
+
+ia.gaius.back\_testing module
+-----------------------------
+
+.. automodule:: ia.gaius.back_testing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ia.gaius.data\_language module
+------------------------------
+
+.. automodule:: ia.gaius.data_language
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+ia.gaius.data\_ops module
+-------------------------
+
+.. automodule:: ia.gaius.data_ops
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. ia.gaius.genome\_info module
+.. ----------------------------
+
+.. .. automodule:: ia.gaius.genome_info
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
+
+ia.gaius.prediction\_models module
+----------------------------------
+
+.. automodule:: ia.gaius.prediction_models
+   :members:
+   :undoc-members:
+   :show-inheritance:

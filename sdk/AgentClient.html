@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgentClient &mdash; IA-SDK-Python 0.2.35 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ia.gaius package" href="ia.gaius.html" />
+    <link rel="prev" title="Genome" href="Genome.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> IA-SDK-Python
+            <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="GDF.html">GAIuS Data Format (GDF)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GDF.html#fields">Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#strings">strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#vectors">vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#emotives">emotives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#metadata">metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#path">path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">AgentClient</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_ops">ia.gaius.data_ops module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IA-SDK-Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>AgentClient</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/AgentClient.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agentclient">
+<h1>AgentClient<a class="headerlink" href="#agentclient" title="Permalink to this heading"></a></h1>
+<p>AgentClient is the main class utilized to interface with a GAIuS agent.
+It provides several helper functions and API calls to aid in data input,
+agent configuration, and debugging.</p>
+<p>Quickstart</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.agent_client.</span></span><span class="sig-name descname"><span class="pre">AgentClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Interface for interacting with agents.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Provide agent information in a dictionary.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
+
+<span class="n">agent_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;ABCD-1234&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;gaius-agent&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="s1">&#39;intelligent-artifacts.com&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;secure&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+
+<span class="n">agent</span><span class="o">.</span><span class="n">set_ingress_nodes</span><span class="p">([</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">set_query_nodes</span><span class="p">([</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.change_genes">
+<span class="sig-name descname"><span class="pre">change_genes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gene_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.change_genes" title="Permalink to this definition"></a></dt>
+<dd><p>Change the genes in <em>gene_data</em> to their associated values.</p>
+<p>This will do live updates to an existing agent, rather than stopping an agent and starting a new one, as
+per ‘injectGenome’.
+gene_data of form:</p>
+<blockquote>
+<div><p>{gene: value}</p>
+</div></blockquote>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">change_genes</span><span class="p">(</span><span class="n">gene_data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;recall_threshold&quot;</span> <span class="p">:</span> <span class="mf">0.15</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.clear_all_memory">
+<span class="sig-name descname"><span class="pre">clear_all_memory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.clear_all_memory" title="Permalink to this definition"></a></dt>
+<dd><p>Clear both the Working Memory and persisted memory.
+Equivalent to re-initializing the nodes specified</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.clear_target_class">
+<span class="sig-name descname"><span class="pre">clear_target_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.clear_target_class" title="Permalink to this definition"></a></dt>
+<dd><p>Clears target selection.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_target_class</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.clear_wm">
+<span class="sig-name descname"><span class="pre">clear_wm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.clear_wm" title="Permalink to this definition"></a></dt>
+<dd><p>Clear the Working Memory of the Agent.
+Will not delete any persisted memory from the KnowledgeBase</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">clear_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="go">&#39;wm-cleared&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.connect" title="Permalink to this definition"></a></dt>
+<dd><p>Establishes initial connection to GAIuS agent and grabs the agent’s genome for node definitions.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent_info</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.delete_model">
+<span class="sig-name descname"><span class="pre">delete_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.delete_model" title="Permalink to this definition"></a></dt>
+<dd><p>Deletes model with name <em>model_name</em>.</p>
+<p>Model name is unique, so it should not matter that we query all nodes,
+all its duplicates everywhere will be deleted.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_cognition_data">
+<span class="sig-name descname"><span class="pre">get_cognition_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_cognition_data" title="Permalink to this definition"></a></dt>
+<dd><p>Return cognition data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_gene">
+<span class="sig-name descname"><span class="pre">get_gene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gene</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_gene" title="Permalink to this definition"></a></dt>
+<dd><p>Return the value for the gene <em>gene</em> on <em>nodes</em>.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_gene</span><span class="p">(</span><span class="n">gene</span><span class="o">=</span><span class="s2">&quot;recall_threshold&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_kbs">
+<span class="sig-name descname"><span class="pre">get_kbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs" title="Permalink to this definition"></a></dt>
+<dd><p>Returns the KBs for the agent.
+This is a mongo-db and can be used to store or analyze locally.
+Choose the directory to save in with the directory keyword. Default is in ‘./’.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 12.0: </span>(Kehl)</p>
+</div>
+<p>Use <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_kbs_as_json" title="ia.gaius.agent_client.AgentClient.get_kbs_as_json"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_kbs_as_json()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_kbs_as_json">
+<span class="sig-name descname"><span class="pre">get_kbs_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs_as_json" title="Permalink to this definition"></a></dt>
+<dd><p>Returns KBs of specified nodes as JSON Objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> (<em>list</em><em>, </em><em>optional</em>) – Defaults to None.</p></li>
+<li><p><strong>directory</strong> (<em>str</em><em>, </em><em>optional</em>) – Defaults to ‘./’.</p></li>
+<li><p><strong>separated</strong> (<em>bool</em><em>, </em><em>optional</em>) – store each KB separately. Defaults to False</p></li>
+<li><p><strong>ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – use primitive_ids as keys for knowledgebase instead of node numbers. Defaults to True</p></li>
+<li><p><strong>obj</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a filepath or a python object</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of files where KB is stored if obj = False, or big dictionary where KB is to be stored if obj = True</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[List(str), Dict]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># save the KBs in a specified directory, without using node IDs</span>
+<span class="c1"># will use node names instead (e.g. P1, P2, P3)</span>
+<span class="n">kb_path</span> <span class="o">=</span> <span class="s2">&quot;../path/to/save/dir/&quot;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">get_kbs_from_json</span><span class="p">(</span><span class="n">directory</span><span class="o">=</span><span class="n">kb_path</span><span class="p">,</span> <span class="n">separated</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ids</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1">#save the KBs to the active directory, using node IDs (e.g. p46514fa2, etc.)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">get_kbs_from_json</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1">#save the KBs to a dictionary object, using node names</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">get_kbs_from_json</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">obj</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_model" title="Permalink to this definition"></a></dt>
+<dd><p>Returns model with name <em>model_name</em>.</p>
+<p>Model name is unique, so it should not matter that we query all nodes, only
+one model will be found.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;MODEL|d85f28ebda228064299035bf2dbf58f5c6484108&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_name">
+<span class="sig-name descname"><span class="pre">get_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_name" title="Permalink to this definition"></a></dt>
+<dd><p>Return name of <em>nodes</em>.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_name</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">,</span> <span class="s2">&quot;P2&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_percept_data">
+<span class="sig-name descname"><span class="pre">get_percept_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_percept_data" title="Permalink to this definition"></a></dt>
+<dd><p>Return percept data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_predictions">
+<span class="sig-name descname"><span class="pre">get_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">unique_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Return prediction result data.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_time">
+<span class="sig-name descname"><span class="pre">get_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_time" title="Permalink to this definition"></a></dt>
+<dd><p>Return time on <em>nodes</em>.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">get_time</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="go">&#39;1&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_vector">
+<span class="sig-name descname"><span class="pre">get_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_vector" title="Permalink to this definition"></a></dt>
+<dd><p>Return the vector with <em>vector_name</em> on <em>nodes</em> (it will be present on at most one).</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_vector</span><span class="p">(</span><span class="n">vector_name</span><span class="o">=</span><span class="s2">&quot;VECTOR|0b7f2aac43ae8a0d94c58be08a5b8b0ab28079de&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_wm">
+<span class="sig-name descname"><span class="pre">get_wm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_wm" title="Permalink to this definition"></a></dt>
+<dd><p>Return information about Working Memory.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strings&#39;</span><span class="p">:[</span><span class="s1">&#39;hello&#39;</span><span class="p">],</span> <span class="s1">&#39;vectors&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;emotives&#39;</span><span class="p">:{}}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">get_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="go">[[&#39;hello&#39;]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.increment_recall_threshold">
+<span class="sig-name descname"><span class="pre">increment_recall_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">increment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.increment_recall_threshold" title="Permalink to this definition"></a></dt>
+<dd><p>Increment recall threshold by <em>increment</em> on <em>nodes</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>increment</strong> (<em>float</em>) – value by which to increment the recall threshold by</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">increment_recall_threshold</span><span class="p">(</span><span class="n">increment</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This command with only update the recall threshold by a specified value.
+In order to set the recall threshold to a specific value,
+use <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.change_genes" title="ia.gaius.agent_client.AgentClient.change_genes"><code class="xref py py-func docutils literal notranslate"><span class="pre">change_genes()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.investigate_record">
+<span class="sig-name descname"><span class="pre">investigate_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate_record" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.learn">
+<span class="sig-name descname"><span class="pre">learn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.learn" title="Permalink to this definition"></a></dt>
+<dd><p>Return the learn results.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.load_kbs_from_json">
+<span class="sig-name descname"><span class="pre">load_kbs_from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json" title="Permalink to this definition"></a></dt>
+<dd><p>Load KBs from a JSON file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – path to JSON file where KBs are stored.</p></li>
+<li><p><strong>obj</strong> (<em>dict</em><em>, </em><em>optional</em>) – object to load KnowledgeBase from</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>‘success’ or ‘failed’</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kb_path</span> <span class="o">=</span> <span class="s2">&quot;../path/to/kb.json&quot;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">load_kbs_from_json</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">kb_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.observe">
+<span class="sig-name descname"><span class="pre">observe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.observe" title="Permalink to this definition"></a></dt>
+<dd><p>Exclusively uses the ‘observe’ call.
+Will observe on nodes specified by set_ingress_nodes() unless nodes explicitly provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – the GDF data to be observed</p></li>
+<li><p><strong>nodes</strong> (<em>list</em><em>, </em><em>optional</em>) – Nodes to observe data on, defaults to ingress nodes</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:{},</span> <span class="s2">&quot;metadata&quot;</span><span class="p">:{}}</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.observe_classification">
+<span class="sig-name descname"><span class="pre">observe_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.observe_classification" title="Permalink to this definition"></a></dt>
+<dd><p>Send a classification to all nodes as a singular symbol in the last event.</p>
+<p>Sending the classification as a single symbol in the last event is the canonical way to classify a sequence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.ping">
+<span class="sig-name descname"><span class="pre">ping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.ping" title="Permalink to this definition"></a></dt>
+<dd><p>Ping a node to ensure it’s up.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">ping</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.put_kbs">
+<span class="sig-name descname"><span class="pre">put_kbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">archive_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.put_kbs" title="Permalink to this definition"></a></dt>
+<dd><p>Uploads KBs from local archive_file file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="deprecated">
+<p><span class="versionmodified deprecated">Deprecated since version 12.0: </span>(Kehl)</p>
+</div>
+<p>Use <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json" title="ia.gaius.agent_client.AgentClient.load_kbs_from_json"><code class="xref py py-func docutils literal notranslate"><span class="pre">load_kbs_from_json()</span></code></a> instead.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.receive_unique_ids">
+<span class="sig-name descname"><span class="pre">receive_unique_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.receive_unique_ids" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.resolve_model">
+<span class="sig-name descname"><span class="pre">resolve_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.resolve_model" title="Permalink to this definition"></a></dt>
+<dd><p>Returns model with name <em>model_name</em>.</p>
+<p>Model name is unique, so it should not matter that we query all nodes, only
+one model will be found.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_ingress_nodes">
+<span class="sig-name descname"><span class="pre">set_ingress_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_ingress_nodes" title="Permalink to this definition"></a></dt>
+<dd><p>Use list of primitive names to define where data will be sent.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># when observing data, it will be sent to only P1 by default</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">set_ingress_nodes</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_query_nodes">
+<span class="sig-name descname"><span class="pre">set_query_nodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_query_nodes" title="Permalink to this definition"></a></dt>
+<dd><p>Use list of primitive names to define which nodes should return answers.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">set_query_nodes</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_summarize_for_single_node">
+<span class="sig-name descname"><span class="pre">set_summarize_for_single_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_summarize_for_single_node" title="Permalink to this definition"></a></dt>
+<dd><p>When True, queries against a single node return responses directly instead of in a dict key.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># set summarize_for_single_node to True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">agent</span><span class="o">.</span><span class="n">set_summarize_for_single_node</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strings&#39;</span><span class="p">:[</span><span class="s1">&#39;hello&#39;</span><span class="p">],</span> <span class="s1">&#39;vectors&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;emotives&#39;</span><span class="p">:{}}</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+<span class="s1">&#39;observed&#39;</span>
+
+<span class="c1"># set summarize_for_single_node to False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">agent</span><span class="o">.</span><span class="n">set_summarize_for_single_node</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+<span class="p">{</span><span class="s1">&#39;P1&#39;</span><span class="p">:</span> <span class="s1">&#39;observed&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_target_class">
+<span class="sig-name descname"><span class="pre">set_target_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_target_class" title="Permalink to this definition"></a></dt>
+<dd><p>Provide a target_class symbol for the searcher to look for.</p>
+<p>The searcher will ignore all other classes. This is a symbol that is in the last event of a classification
+sequence.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">set_target_class</span><span class="p">(</span><span class="n">target_class</span><span class="o">=</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This will result in the nodes specified only predicting on models that include the target class</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.show_status">
+<span class="sig-name descname"><span class="pre">show_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.show_status" title="Permalink to this definition"></a></dt>
+<dd><p>Return the current status of the agent.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="go">{&#39;PREDICT&#39;: True,</span>
+<span class="go">&#39;SLEEPING&#39;: False,</span>
+<span class="go">&#39;emotives&#39;: {},</span>
+<span class="go">&#39;last_learned_model_name&#39;: &#39;&#39;,</span>
+<span class="go">&#39;models_kb&#39;: &#39;{KB| objects: 0}&#39;,</span>
+<span class="go">&#39;name&#39;: &#39;P1&#39;,</span>
+<span class="go">&#39;size_WM&#39;: 0,</span>
+<span class="go">&#39;target&#39;: &#39;&#39;,</span>
+<span class="go">&#39;time&#39;: 0,</span>
+<span class="go">&#39;vectors_kb&#39;: &#39;{KB| objects: 0}&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.start_predicting">
+<span class="sig-name descname"><span class="pre">start_predicting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.start_predicting" title="Permalink to this definition"></a></dt>
+<dd><p>Tells <em>nodes</em> to start predicting.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will enable prediction generation on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">start_predicting</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.start_sleeping">
+<span class="sig-name descname"><span class="pre">start_sleeping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.start_sleeping" title="Permalink to this definition"></a></dt>
+<dd><p>Tells <em>nodes</em> to start sleeping.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will disable observing new data on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">start_sleeping</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.stop_predicting">
+<span class="sig-name descname"><span class="pre">stop_predicting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.stop_predicting" title="Permalink to this definition"></a></dt>
+<dd><p>Tells <em>nodes</em> to stop predicting.</p>
+<p>Useful for faster training, but abstracted nodes will not learn.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will disable prediction generation on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">stop_predicting</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.stop_sleeping">
+<span class="sig-name descname"><span class="pre">stop_sleeping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.stop_sleeping" title="Permalink to this definition"></a></dt>
+<dd><p>Wakes up sleeping <em>nodes</em>.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will enable observing new data on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">stop_sleeping</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_attach">
+<span class="sig-name descname"><span class="pre">tf_attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_attach" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.update_model">
+<span class="sig-name descname"><span class="pre">update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.update_model" title="Permalink to this definition"></a></dt>
+<dd><p>Update the model  <strong>model_name</strong> with the data in <strong>model</strong> on nodes <strong>nodes</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This function is only capable of updating the emotives corresponding to a model. In order to update the sequence corresponding to a model,
+delete this model and reobserve the updated sequence</p>
+</div>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrieve a model already learned on an agent</span>
+<span class="n">model_name</span> <span class="o">=</span> <span class="s1">&#39;MODEL|d85f28ebda228064299035bf2dbf58f5c6484108&#39;</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+
+<span class="c1"># update the emotives in the model</span>
+<span class="n">model</span><span class="p">[</span><span class="s2">&quot;emotives&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}]</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">update_model</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="n">model_name</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Genome.html" class="btn btn-neutral float-left" title="Genome" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ia.gaius.html" class="btn btn-neutral float-right" title="ia.gaius package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

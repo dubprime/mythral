@@ -1,0 +1,26 @@
+.. IA-SDK-Python documentation master file, created by
+   sphinx-quickstart on Sun Aug 21 15:18:46 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to the IA-SDK Python documentation!
+===========================================
+
+This project provides various helper classes and functions for interacting with GAIuS agents. For more information, see `Intelligent Artifacts' site <https://intelligent-artifacts.com/>`_
+
+.. toctree::
+   :caption: Contents:
+
+   .. Introduction
+   GDF
+   Genome
+   AgentClient
+
+   ia.gaius
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
