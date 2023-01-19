@@ -1,0 +1,18 @@
+API Reference
+=============
+
+All of the public APIs available in the IA-SDK. Of note is the Genome class and the AgentClient class, which are utilized
+frequently to interface with a GAIuS agent
+
+.. toctree::
+    :caption: Contents:
+    :maxdepth: 2
+
+    AgentClient
+    Genome
+    kb_ops
+    utils
+    data_ops
+    PVT
+    ia.gaius
+

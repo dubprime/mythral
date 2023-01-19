@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Genome &mdash; IA-SDK-Python 0.2.35 documentation</title>
+  <title>Tutorials &mdash; IA-SDK-Python 0.2.35 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="KnowledgeBase Operations" href="kb_ops.html" />
-    <link rel="prev" title="AgentClient" href="AgentClient.html" /> 
+    <link rel="next" title="Quick Start: Hello, World!" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html" />
+    <link rel="prev" title="GAIuS Data Format (GDF)" href="GDF.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,7 +56,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorials</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
 </ul>
@@ -84,9 +84,9 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="API.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
 <li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
@@ -134,10 +134,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="API.html">API Reference</a> &raquo;</li>
-      <li>Genome</li>
+      <li>Tutorials</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/Genome.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/Tutorials.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -169,102 +168,47 @@
     text-align: unset;
 }
 </style>
-<section id="genome">
-<h1>Genome<a class="headerlink" href="#genome" title="Permalink to this heading"></a></h1>
-<p>Genome is the a class that encapsulates a representation of a GAIuS agent topology.
-This class keeps track of primitive nodes, manipulative nodes, and provides a mechanism for visualizing a topology.
-Automatically created by AgentClient when connecting to a GAIuS agent.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.genome_info.</span></span><span class="sig-name descname"><span class="pre">Genome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topology</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.__init__" title="Permalink to this definition"></a></dt>
-<dd><p>Initialize a genome from a GAIuS agent topology (dict)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>topology</strong> (<em>dict</em><em>, </em><em>required</em>) – GAIuS agent topology</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.change_genes">
-<span class="sig-name descname"><span class="pre">change_genes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gene_data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.change_genes" title="Permalink to this definition"></a></dt>
-<dd><p>Change the genes of a primitive in the Genome’s cache</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>p_id</strong> (<em>str</em>) – primitive id of the node to edit</p></li>
-<li><p><strong>gene_data</strong> (<em>dict</em>) – dictionary of genes to update in the Genome’s cache</p></li>
+<section id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this heading"></a></h1>
+<p>This documentation presumes that the user already has access to GAIuS Agent creation, and the Intelligent Artifacts Lab.
+For more information about how to obtain access, please reach out to <a class="reference external" href="mailto:support&#37;&#52;&#48;intelligent-artifacts&#46;com">support<span>&#64;</span>intelligent-artifacts<span>&#46;</span>com</a> or visit <a class="reference external" href="https://intelligent-artifacts.com/">Intelligent Artifacts</a></p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.display">
-<span class="sig-name descname"><span class="pre">display</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.display" title="Permalink to this definition"></a></dt>
-<dd><p>Display the Genome topology in Cytoscape</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.get_actions">
-<span class="sig-name descname"><span class="pre">get_actions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.get_actions" title="Permalink to this definition"></a></dt>
-<dd><p>Return a list of ACTIONs in the topology</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 12.0: </span>(Kehl)</p>
-<p>ACTIONs are not actively used in GAIuS topology creation</p>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
 </div>
-</div>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.get_manipulative_map">
-<span class="sig-name descname"><span class="pre">get_manipulative_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.get_manipulative_map" title="Permalink to this definition"></a></dt>
-<dd><p>Get a map of the manipulatives connected to each primitive node in the GAIuS agent topology</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dictionary of manipulatives mappings in the topology</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.get_nodes">
-<span class="sig-name descname"><span class="pre">get_nodes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.get_nodes" title="Permalink to this definition"></a></dt>
-<dd><p>Return a tuple of <code class="samp docutils literal notranslate"><span class="pre">primitive</span> <span class="pre">node</span> <span class="pre">names</span></code>, <code class="samp docutils literal notranslate"><span class="pre">manipulative</span> <span class="pre">node</span> <span class="pre">names</span></code> from the topology</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.genome_info.Genome.get_primitive_map">
-<span class="sig-name descname"><span class="pre">get_primitive_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.genome_info.Genome.get_primitive_map" title="Permalink to this definition"></a></dt>
-<dd><p>Get a map of node names to primitive ids in the GAIuS agent topology</p>
-<p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">genome</span><span class="o">.</span><span class="n">get_primitive_map</span><span class="p">()</span>
-<span class="go">{&#39;P1&#39;: &#39;p46b6b076c&#39;}</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="AgentClient.html" class="btn btn-neutral float-left" title="AgentClient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="kb_ops.html" class="btn btn-neutral float-right" title="KnowledgeBase Operations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="GDF.html" class="btn btn-neutral float-left" title="GAIuS Data Format (GDF)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html" class="btn btn-neutral float-right" title="Quick Start: Hello, World!" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

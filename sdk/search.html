@@ -6,6 +6,7 @@
   <title>Search &mdash; IA-SDK-Python 0.2.35 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
     
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -16,6 +17,9 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <script src="_static/searchtools.js"></script>
     <script src="_static/language_data.js"></script>
@@ -52,22 +56,64 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_ops">ia.gaius.data_ops module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

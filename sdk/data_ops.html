@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Ops &mdash; IA-SDK-Python 0.2.35 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performance Validation Testing" href="PVT.html" />
+    <link rel="prev" title="Utilities" href="utils.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> IA-SDK-Python
+            <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="GDF.html">GAIuS Data Format (GDF)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GDF.html#fields">Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#strings">strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#vectors">vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#emotives">emotives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#metadata">metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#path">path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IA-SDK-Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="API.html">API Reference</a> &raquo;</li>
+      <li>Data Ops</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/data_ops.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="data-ops">
+<h1><a class="toc-backref" href="#id5" role="doc-backlink">Data Ops</a><a class="headerlink" href="#data-ops" title="Permalink to this heading"></a></h1>
+<p>Classes and functions to aid in random testing and training set generation</p>
+<nav class="contents" id="table-of-contents">
+<p class="topic-title">Table of Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#data-ops" id="id5">Data Ops</a></p>
+<ul>
+<li><p><a class="reference internal" href="#data" id="id6">Data</a></p></li>
+<li><p><a class="reference internal" href="#datarecords" id="id7">DataRecords</a></p></li>
+<li><p><a class="reference internal" href="#mongodata" id="id8">MongoData</a></p></li>
+<li><p><a class="reference internal" href="#mongodatarecords" id="id9">MongoDataRecords</a></p></li>
+<li><p><a class="reference internal" href="#mongoresults" id="id10">MongoResults</a></p></li>
+<li><p><a class="reference internal" href="#data-ops-module" id="id11">data_ops module</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="data">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Data</a><a class="headerlink" href="#data" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.Data">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_directories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.Data.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_directories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Supply either a list of data_directories, or a dataset.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.Data.prep">
+<span class="sig-name descname"><span class="pre">prep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent_of_dataset_chosen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_reserved_for_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data.prep" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="datarecords">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">DataRecords</a><a class="headerlink" href="#datarecords" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.DataRecords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">DataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.DataRecords" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Splits data into random sets for training and testing.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.DataRecords.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.DataRecords.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>original_dataset</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>required</em>) – location of dataset to use for training and testing sets</p></li>
+<li><p><strong>DR</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of total data to use for testing and training. 0 &lt; DR &lt; 100</p></li>
+<li><p><strong>DF</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of the DR to use for training.  The rest of the DR is used for testing. 0 &lt; DF &lt; 100</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>required</em>) – whether to shuffle the data when creating sets</p></li>
+<li><p><strong>folder</strong> (<em>bool</em><em>, </em><em>optional</em>) – set if the original dataset is a folder</p></li>
+</ul>
+</dd>
+</dl>
+<p>After creating the class, utilize the member variables <cite>train_sequences</cite> and <cite>test_sequences</cite> for the data sets</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>train_sequences</strong> – the files to use for training</p></li>
+<li><p><strong>test_sequences</strong> – the files to use for testing</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="mongodata">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">MongoData</a><a class="headerlink" href="#mongodata" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">MongoData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Analogous object to the Data class, but utilizes a MongoDB cursor instead of a directory to reference data records
+Start with a MongoDB document containing the name of all dataset files (located separately)</p>
+<p>Only retrieve actual data files when calling retrieveDataRecord. Overloaded iterator functions to allow treating of object
+as a list.</p>
+<p>Example:
+.. code-block:: python</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mongo</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://mongodb:27017/&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dataset_details</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;ABCD1&quot;</span><span class="p">,</span>
+<span class="go">                       &quot;dataset_id&quot;: &quot;iris_0_0_13&quot;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span> <span class="o">=</span> <span class="n">MongoData</span><span class="p">(</span><span class="n">mongo_dataset_details</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">,</span>
+<span class="go">                   mongo_db=mongo_db,</span>
+<span class="go">                   data_files_collection_name=&#39;dataset_files&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">prep</span><span class="p">(</span><span class="n">percent_of_dataset_chosen</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+<span class="go">            percent_reserved_for_training=50,</span>
+<span class="go">            shuffle=True)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">md</span><span class="o">.</span><span class="n">setIterMode</span><span class="p">(</span><span class="s1">&#39;testing&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">md</span><span class="p">:</span>
+<span class="go">    ...</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialized dataset object from MongoDB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mongo_dataset_details</strong> (<em>dict</em>) – _description_</p></li>
+<li><p><strong>data_files_collection_name</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – _description_</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – user_id field missing from mongo_dataset_details</p></li>
+<li><p><strong>Exception</strong> – dataset_id field missing from mongo_dataset_details</p></li>
+<li><p><strong>Exception</strong> – multiple datasets found pertaining to same user_id and dataset_id field</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.convertBinaryStringtoSequence">
+<span class="sig-name descname"><span class="pre">convertBinaryStringtoSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.convertBinaryStringtoSequence" title="Permalink to this definition"></a></dt>
+<dd><p>Convert Binary string of multiple GDFs (delimited by newline) into a sequence of JSON objects</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>str</em><em>, </em><em>required</em>) – binary string of GDFs to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of GDFs in json format</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.getSequence">
+<span class="sig-name descname"><span class="pre">getSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.getSequence" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.prep">
+<span class="sig-name descname"><span class="pre">prep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent_of_dataset_chosen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_reserved_for_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.prep" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.retrieveDataRecord">
+<span class="sig-name descname"><span class="pre">retrieveDataRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ObjectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.retrieveDataRecord" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve a data record from MongoDB, pertaining to the ObjectId specifed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>document_id</strong> (<em>ObjectId</em><em>, </em><em>required</em>) – data record to retrieve from mongo, located in the collection specified when calling <a class="reference internal" href="#ia.gaius.data_ops.MongoData.__init__" title="ia.gaius.data_ops.MongoData.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – Raised when MongoDB document is not found. Shows query performed that failed</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>binary string depicting data sequence stored in MongoDB Document</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoData.setIterMode">
+<span class="sig-name descname"><span class="pre">setIterMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoData.setIterMode" title="Permalink to this definition"></a></dt>
+<dd><p>Set mode to be used for iterating across dataset</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – set to “training” or “testing” depending on what set of sequences is to be iterated across</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – When no data is in train_sequences or test_sequences, and <a class="reference internal" href="#ia.gaius.data_ops.MongoData.prep" title="ia.gaius.data_ops.MongoData.prep"><code class="xref py py-func docutils literal notranslate"><span class="pre">prep()</span></code></a> should be called first</p></li>
+<li><p><strong>Exception</strong> – When invalid mode specified in mode argument</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="mongodatarecords">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">MongoDataRecords</a><a class="headerlink" href="#mongodatarecords" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoDataRecords">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">MongoDataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoDataRecords" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoDataRecords.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoDataRecords.__init__" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dataset_document_list</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>required</em>) – List of mongo ObjectIds to use as data records</p></li>
+<li><p><strong>DR</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of total data to use for testing and training. 0 &lt; DR &lt; 100</p></li>
+<li><p><strong>DF</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of the DR to use for training.  The rest of the DR is used for testing. 0 &lt; DF &lt; 100</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>required</em>) – whether to shuffle the data when creating sets</p></li>
+<li><p><strong>class</strong> (<em>After creating the</em>) – </p></li>
+<li><p><strong>sets</strong> (<em>utilize the member variables train_sequences and test_sequences for the data</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>train_sequences</strong> – the mongo documents to use for training</p></li>
+<li><p><strong>test_sequences</strong> – the mongo documents to use for testing</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="mongoresults">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">MongoResults</a><a class="headerlink" href="#mongoresults" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle saving and linking result data inside MongoDB. Provides functions to insert single log record during training/testing,
+save final result after test completion, and remediation/deletion function for test aborting, database cleanup</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize MongoResults object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – Database where the results are to be stored</p></li>
+<li><p><strong>result_collection_name</strong> (<em>str</em>) – collection name to save final test results</p></li>
+<li><p><strong>log_collection_name</strong> (<em>str</em>) – collection name to save testing log documents</p></li>
+<li><p><strong>test_id</strong> (<em>str</em>) – unique-id for the test being conducted</p></li>
+<li><p><strong>user_id</strong> (<em>str</em>) – unique-id for the user conducting the test</p></li>
+<li><p><strong>dataset_id</strong> (<em>str</em>) – unique-id for the dataset being used in the test</p></li>
+<li><p><strong>test_configuration</strong> (<em>dict</em>) – object showing all of the options used for configuring pvt</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults.addLogRecord">
+<span class="sig-name descname"><span class="pre">addLogRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults.addLogRecord" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults.deleteResults">
+<span class="sig-name descname"><span class="pre">deleteResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults.deleteResults" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults.reset" title="Permalink to this definition"></a></dt>
+<dd><p>Reset start time and testing/training logs in result_obj</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.MongoResults.saveResults">
+<span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.MongoResults.saveResults" title="Permalink to this definition"></a></dt>
+<dd><p>Save a document in MongoDB, linking the result doc to the logs documents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the results of the test, to be stored in the results object for future use</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string of the ObjectId saved in MongoDB</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uid</span> <span class="o">=</span> <span class="n">mongo_results</span><span class="o">.</span><span class="n">saveResults</span><span class="p">(</span><span class="n">final_state</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="data-ops-module">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">data_ops module</a><a class="headerlink" href="#data-ops-module" title="Permalink to this heading"></a></h2>
+<p>This module includes the classes above in addition to the following:</p>
+<span class="target" id="module-ia.gaius.data_ops"></span><dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class to handle saving and linking result data inside MongoDB. Provides functions to insert single log record during training/testing,
+save final result after test completion, and remediation/deletion function for test aborting, database cleanup</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<span class="sig-name descname"><span class="pre">addLogRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">deleteResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition"></a></dt>
+<dd><p>Reset start time and testing/training logs in result_obj</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition"></a></dt>
+<dd><p>Save a document in MongoDB, linking the result doc to the logs documents</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the results of the test, to be stored in the results object for future use</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string of the ObjectId saved in MongoDB</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">uid</span> <span class="o">=</span> <span class="n">mongo_results</span><span class="o">.</span><span class="n">saveResults</span><span class="p">(</span><span class="n">final_state</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.atoi">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">atoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.atoi" title="Permalink to this definition"></a></dt>
+<dd><p>Attempt to convert string to int</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.natural_keys">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">natural_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.natural_keys" title="Permalink to this definition"></a></dt>
+<dd><p>alist.sort(key=natural_keys) sorts in human order
+<a class="reference external" href="http://nedbatchelder.com/blog/200712/human_sorting.html">http://nedbatchelder.com/blog/200712/human_sorting.html</a>
+(See Toothy’s implementation in the comments)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.raw_in_count">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">raw_in_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.raw_in_count" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.data_ops.validate_data">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.validate_data" title="Permalink to this definition"></a></dt>
+<dd><p>Validates if the data is in correct GAIuS digestible format.
+Returns True if data validates.  Returns False if data does not validate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>dict</em><em>, </em><em>required</em>) – GDF to validate</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strings&#39;</span><span class="p">:[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s1">&#39;vectors&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;emotives&#39;</span><span class="p">:</span> <span class="p">{}</span> <span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validate_data</span><span class="p">(</span><span class="n">gdf</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bad_gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strings&#39;</span><span class="p">:</span> <span class="p">[]}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validate_data</span><span class="p">(</span><span class="n">bad_gdf</span><span class="p">)</span>
+<span class="go">Exception: Dictionary requires &quot;vectors&quot;, &quot;emotives&quot;, and &quot;strings&quot; as keys!</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bad_gdf_2</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;strings&#39;</span><span class="p">:[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s1">&#39;vectors&#39;</span><span class="p">:</span> <span class="p">[],</span> <span class="s1">&#39;emotives&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;utility|5&#39;</span><span class="p">]</span> <span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validate_data</span><span class="p">(</span><span class="n">bad_gdf_2</span><span class="p">)</span>
+<span class="go">Exception: &quot;emotives&quot; must be a dict of &lt;str, float&gt;. Dict not provided!</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="utils.html" class="btn btn-neutral float-left" title="Utilities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PVT.html" class="btn btn-neutral float-right" title="Performance Validation Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

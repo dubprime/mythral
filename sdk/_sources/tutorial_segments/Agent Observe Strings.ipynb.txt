@@ -1,0 +1,735 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f163ceee",
+   "metadata": {},
+   "source": [
+    "# Interact with your Agent using String Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6e336d22",
+   "metadata": {},
+   "source": [
+    "## Data Preparation\n",
+    "\n",
+    "All data provided to a GAIuS Agent is supplied as <i>sequences of events</i>. The way a sequence is delimited depends on the problem domain\n",
+    "\n",
+    "An <b>event</b> is a single occurrence of a process.\n",
+    "\n",
+    "A <b>sequence</b> is a particular order in which related events, movements, or things follow each other.\n",
+    "\n",
+    "<i>sequence  =  [event_1, event_2, ..., event_n]</i>\n",
+    "\n",
+    "Even problems that don't initially appear to be sequence problems can be cast into this form.  For example, customer profile data can be converted into a sequence of a single event.  It is common to call such single-evented sequences <b>profile data</b> to distinguish them from other sequences.\n",
+    "\n",
+    "<i>sequence = [event_1]</i>\n",
+    "\n",
+    "can be represented as\n",
+    "\n",
+    "<i>sequence = [profile_data]</i>\n",
+    "\n",
+    "Each <b>event</b> must be formatted into our <b>universal input format</b>, the <b>G</b>AIuS <b>D</b>ata <b>F</b>ormat (<b>GDF</b>) object.\n",
+    "\n",
+    "The GDF object is a JSON object that has three core fields: <b>strings</b>, <b>vectors</b>, and <b>emotives</b>. Each field's value is an array of relevant data. All three fields must be provided even if they are empty. GDFs are easily shared between systems because they are JSON objects.\n",
+    "\n",
+    "Here is an empty GDF:\n",
+    "\n",
+    "~~~\n",
+    "{\"strings\": [], \"vectors\": [], \"emotives\": {}}\n",
+    "~~~\n",
+    "\n",
+    "In general and simply put, the strings field is for text-based data, the vectors field is for arrays of numerical data, and the emotives field is for emotional data, a non-vector number, positive or negative. The GDF object is the key for using our AGI platform. Practically any data can be converted into this form.\n",
+    "\n",
+    "For now let's focus on <b>string</b> data:\n",
+    "\n",
+    "A <b>string</b> is simply any character, e.g. \"h\", or sequential characters, \"hello\". Strings must be properly delimited with double-quotes. This conforms with the JSON standard for strings.\n",
+    "\n",
+    "GDFs provide the ability to observe single events.  Multiple events build sequences. For example, the following is one sequence:\n",
+    "\n",
+    "~~~\n",
+    " [{\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}}, \n",
+    "  {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]\n",
+    "~~~\n",
+    "\n",
+    "This sequence consists of two events.  The first event consists of the symbol \"hello\" in the `\"strings\"` field.  The second event consists of the symbol \"world\" in the `\"strings\"` field.\n",
+    "\n",
+    "Here's another example of a sequence:\n",
+    "\n",
+    "~~~\n",
+    " [{\"strings\": [\"goodbye\"], \"vectors\": [], \"emotives\": {}},\n",
+    "  {\"strings\": [\"cruel\"], \"vectors\": [], \"emotives\": {}},\n",
+    "  {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]\n",
+    "~~~"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "996ab94c",
+   "metadata": {},
+   "source": [
+    "Having defined the ingress and query nodes earlier, let's use your AgentClient to send data and query the agent."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f469aca8",
+   "metadata": {},
+   "source": [
+    "## Observing data\n",
+    "\n",
+    "Sending data requires the `observe` API call.  The AgentClient provides this using a similarly named function."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10a76a09",
+   "metadata": {},
+   "source": [
+    "In order to acquire and process data you need to first make an observation. When the GAIuS Agent observes data it observes each event of a sequence one-by-one where the data is processed into the <b>working memory (WM)</b>. Data processed into the WM can later be used to make predictions or be learned where it will update its <b>knowlege base (KB)</b>. Data stored in the KB will be used to pattern match and make predictions. Analogously, you can think of WM as short term memory and KB as long term memory. It is good practice to clear the WM before the Agent observes new data to ensure that the state of the Agent is as expected.\n",
+    "\n",
+    "Let's follow this sequence of steps to observe and process new data:\n",
+    "\n",
+    "1. agent.clear_wm()       - clear wm to make sure nothing is in the wm\n",
+    "2. agent.observe(event)   - observe new data\n",
+    "3. agent.get_wm()         - to look at what's in the wm after an observation was made\n",
+    "4. agent.clear_all_memory - when we want a fresh start we would want to clear everything in the wm and the kb"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "af11d08a",
+   "metadata": {},
+   "source": [
+    "*If starting from here, lets initialize the agent*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "ab30e1f9",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[{'id': 'p46b6b076c', 'name': 'P1'}]"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "from ia.gaius.agent_client import AgentClient\n",
+    "agent_info = {'api_key': 'ABCD-1234',\n",
+    "              'name': '',\n",
+    "              'domain': 'gaius-api:80',\n",
+    "              'secure': False}\n",
+    "\n",
+    "agent = AgentClient(agent_info)\n",
+    "agent.connect()\n",
+    "agent\n",
+    "\n",
+    "# Let's use only one node\n",
+    "ingress_nodes = ['P1']\n",
+    "query_nodes   = ['P1']\n",
+    "\n",
+    "agent.set_ingress_nodes(ingress_nodes)\n",
+    "agent.set_query_nodes(query_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "88914b03",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "3d0a1e1e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'wm-cleared'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.clear_wm(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "41c2a947",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'observed'"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.observe(data={\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}},nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "e87e63bb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[['hello']]"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.get_wm(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "a37c3afb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'all-cleared'"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.clear_all_memory(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "da92e0c2",
+   "metadata": {},
+   "source": [
+    "The reason for the Gaius platform is for it to observe data, learn from it, and to provide predictions.  Let's go ahead and put this all together using what we've learned above.\n",
+    "\n",
+    "Let's train on the two sequences:\n",
+    "\n",
+    "     [{\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}}, \n",
+    "      {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]\n",
+    "\n",
+    "and\n",
+    "\n",
+    "     [{\"strings\": [\"goodbye\"], \"vectors\": [], \"emotives\": {}},\n",
+    "      {\"strings\": [\"cruel\"], \"vectors\": [], \"emotives\": {}},\n",
+    "      {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5e0556c2",
+   "metadata": {},
+   "source": [
+    "### Observe 1st Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "278d95fb",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "agent.clear_all_memory(nodes=ingress_nodes) ### Start with a clean slate.\n",
+    "\n",
+    "sequence_1 = [{\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}}, \n",
+    "              {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]\n",
+    "\n",
+    "for event in sequence_1:\n",
+    "    agent.observe(data=event,nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "eefe1b32",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[['hello'], ['world']]"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.get_wm(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96eff94b",
+   "metadata": {},
+   "source": [
+    "### Learn 1st Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "622dabf4",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'MODEL|7d0678ba6305341ce0d25133ab086208656a562f'"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# The first sequence is fully in working memory (WM) now.  Let's learn it!\n",
+    "agent.learn(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "88a1637f",
+   "metadata": {},
+   "source": [
+    "### Observe 2nd Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "00c146a3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "## Let's now observe and learn the next sequence.\n",
+    "\n",
+    "## Just in case, let's clear out the working memory (WM), though 'learn' does that for us already.  \n",
+    "## Don't clear out ALL the memory, otherwise it will forget the sequences it learned!\n",
+    "agent.clear_wm(nodes=ingress_nodes)\n",
+    "\n",
+    "sequence_2 = [{\"strings\": [\"goodbye\"], \"vectors\": [], \"emotives\": {}},\n",
+    "              {\"strings\": [\"cruel\"], \"vectors\": [], \"emotives\": {}},\n",
+    "              {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}]\n",
+    "\n",
+    "for event in sequence_2:\n",
+    "    agent.observe(data=event,nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d763cd3c",
+   "metadata": {},
+   "source": [
+    "### Learn 2nd Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "be5382ce",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'MODEL|3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21'"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "## The second sequence is fully in working memory (WM) now.  Let's learn it!\n",
+    "agent.learn(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "37dfe6a3",
+   "metadata": {},
+   "source": [
+    "At this point, we've taught the agent two sequences. Let us check how much sequences were learned in its kb.\n",
+    "Now let's now observe new data, and request some predictions back:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ab09e33c",
+   "metadata": {},
+   "source": [
+    "### Show Agent Status\n",
+    "\n",
+    "Sometimes it is helpful to view information about the agent's current state, especially how many sequences are in the KB.\n",
+    "You can do this using the API command agent.show_status()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "42a8983e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'PREDICT': True,\n",
+       " 'SLEEPING': False,\n",
+       " 'emotives': {},\n",
+       " 'last_learned_model_name': '3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21',\n",
+       " 'models_kb': '{KB| objects: 2}',\n",
+       " 'name': 'P1',\n",
+       " 'size_WM': 0,\n",
+       " 'target': '',\n",
+       " 'time': 5,\n",
+       " 'vectors_kb': '{KB| objects: 0}'}"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.show_status(nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "e65212af",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'{KB| objects: 2}'"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# look at how many sequences the agent has learned\n",
+    "agent.show_status(nodes=ingress_nodes)['models_kb']"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "61799009",
+   "metadata": {},
+   "source": [
+    "## Get Predictions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "75e509a8",
+   "metadata": {},
+   "source": [
+    "#### Observe 1st event in New Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "41439a26",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'observed'"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "## Again, we want to ensure there's nothing in the working memory (WM) before we send it new sequences:\n",
+    "agent.clear_wm(nodes=ingress_nodes)\n",
+    "data = {\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}}\n",
+    "agent.observe(data=data,nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "68175a29",
+   "metadata": {},
+   "source": [
+    "#### Get Predictions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "73eea397",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[{'confidence': 1,\n",
+       "  'confluence': 0.4,\n",
+       "  'emotives': {},\n",
+       "  'entropy': 0.464385629,\n",
+       "  'evidence': 0.5,\n",
+       "  'extras': [],\n",
+       "  'fragmentation': 0,\n",
+       "  'frequency': 1,\n",
+       "  'future': [['world']],\n",
+       "  'grand_hamiltonian': 0.232192814,\n",
+       "  'hamiltonian': 0,\n",
+       "  'itfdf_similarity': 1,\n",
+       "  'matches': ['hello'],\n",
+       "  'missing': [],\n",
+       "  'name': '7d0678ba6305341ce0d25133ab086208656a562f',\n",
+       "  'past': [],\n",
+       "  'potential': 3.5,\n",
+       "  'present': [['hello']],\n",
+       "  'similarity': 0.666666687,\n",
+       "  'snr': 1,\n",
+       "  'type': 'prototypical'}]"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.get_predictions(nodes=query_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a2b9cb93",
+   "metadata": {},
+   "source": [
+    "'P1' has provided an ensemble of predictions for us!  This ensemble, however, only has one prediction.  The prediction is the first sequence that we taught it.  It is represented as a <b>prediction object</b>.  This is our <b>universal output format</b>.  Let's look at some of the fields and values it provides:\n",
+    "\n",
+    "\n",
+    "It states that it has matched on the `'hello'` symbol:\n",
+    "\n",
+    "    'matches': ['hello']\n",
+    "\n",
+    "From this, it believes that the current present state of affairs is:\n",
+    "\n",
+    "    'present': [['hello']]\n",
+    "\n",
+    "That's one event with the `'hello'` symbol and nothing else.\n",
+    "\n",
+    "Having identified it's believed present state, it predicts that the future will consist of the following event states:\n",
+    "\n",
+    "    'future': [['world']]\n",
+    "\n",
+    "That's just one more event consisting of the `'world'` symbol.\n",
+    "\n",
+    "\n",
+    "Let's now complete this sequence for the agent:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5310c0e0",
+   "metadata": {},
+   "source": [
+    "#### Observe 2nd event in New Sequence"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "c5a73900",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'observed'"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "data = {\"strings\": [\"world\"], \"vectors\": [], \"emotives\": {}}\n",
+    "agent.observe(data=data,nodes=ingress_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e53580d5",
+   "metadata": {},
+   "source": [
+    "#### Get Predictions"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "1a20c125",
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[{'confidence': 1,\n",
+       "  'confluence': 0.46,\n",
+       "  'emotives': {},\n",
+       "  'entropy': 0.99315685,\n",
+       "  'evidence': 1,\n",
+       "  'extras': [],\n",
+       "  'fragmentation': 0,\n",
+       "  'frequency': 1,\n",
+       "  'future': [],\n",
+       "  'grand_hamiltonian': 0.496578425,\n",
+       "  'hamiltonian': 0.5,\n",
+       "  'itfdf_similarity': 1,\n",
+       "  'matches': ['hello', 'world'],\n",
+       "  'missing': [],\n",
+       "  'name': '7d0678ba6305341ce0d25133ab086208656a562f',\n",
+       "  'past': [],\n",
+       "  'potential': 4,\n",
+       "  'present': [['hello'], ['world']],\n",
+       "  'similarity': 1,\n",
+       "  'snr': 1,\n",
+       "  'type': 'prototypical'},\n",
+       " {'confidence': 1,\n",
+       "  'confluence': 0.3,\n",
+       "  'emotives': {},\n",
+       "  'entropy': 0.528771222,\n",
+       "  'evidence': 0.333333343,\n",
+       "  'extras': ['hello'],\n",
+       "  'fragmentation': 0,\n",
+       "  'frequency': 1,\n",
+       "  'future': [],\n",
+       "  'grand_hamiltonian': 0.264385611,\n",
+       "  'hamiltonian': 0,\n",
+       "  'itfdf_similarity': 0.94721359,\n",
+       "  'matches': ['world'],\n",
+       "  'missing': [],\n",
+       "  'name': '3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21',\n",
+       "  'past': [['goodbye'], ['cruel']],\n",
+       "  'potential': 2.39165807,\n",
+       "  'present': [['world']],\n",
+       "  'similarity': 0.4,\n",
+       "  'snr': 0.333333343,\n",
+       "  'type': 'prototypical'}]"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.get_predictions(nodes=query_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cebe0b6a",
+   "metadata": {},
+   "source": [
+    "This time around, 'P1' produced two predictions.  The first is still a prediction of \"hello world\", but now the prediction object's fields have changed.  It now believes the current present state to be:\n",
+    "\n",
+    "    'present': [['hello'], ['world']]\n",
+    "\n",
+    "based on its matches:\n",
+    "\n",
+    "    'matches': ['hello', 'world']\n",
+    "\n",
+    "It no longer expects to find anything in the future.\n",
+    "\n",
+    "    'future': []\n",
+    "    \n",
+    "However, it's second prediction object sees things a little differently.  It is based on the \"goodbye cruel world\" sequence.  Therefore, based on that sequence, it believes the present state to be:\n",
+    "\n",
+    "    'present': [['world']]\n",
+    "    \n",
+    "since it only matched on:\n",
+    "\n",
+    "    'matches': ['world']\n",
+    "    \n",
+    "Since this is its belief for the present state, it is surprised to find the symbol `'hello'` and shows this as an 'extra' item:\n",
+    "\n",
+    "    'extras': ['hello']\n",
+    "    \n",
+    "Additionally, based on its belief of the present state, it predicts backwards into the past and says that the events containing the symbols `'goodbye'` and `'cruel'` must have occurred although it did not get a chance to observe them."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

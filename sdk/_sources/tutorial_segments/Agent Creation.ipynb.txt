@@ -1,0 +1,375 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "e48368a8",
+   "metadata": {},
+   "source": [
+    "# Deploy an Agent"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a8efed40",
+   "metadata": {},
+   "source": [
+    "Once a Genome has been uploaded or created on lab, it is possible to deploy an agent. In the sidebar, select the Genome from the Perception Manifold area. Find the Genome named 'demo-all', next select an agent size, then select 'M' for 'medium'. This will deploy an agent using the Genome topology. On the dashboard page you can see the status of your agent as it is created.\n",
+    "\n",
+    "An agent is a computer in the cloud (server, virtual machine) or local machine preconfigured with the GAIuS operating system. On IA's cloud, this is done automatically through the Lab when spawning a new agent."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0230ee12",
+   "metadata": {},
+   "source": [
+    "After a few minutes, a new agent should appear in the 'Deployed Agents' area of the sidebar. Click on your agent. If following along, copy and paste the <b>agent name</b> and the <b>api key</b> into the agent_info below."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "06f81763",
+   "metadata": {},
+   "source": [
+    "# Connect to Your Agent\n",
+    "\n",
+    "You have options on how to connect to a running agent. You can use the provided SDK in your preferred language, or roll your own.\n",
+    "\n",
+    "### Use the SDK's AgentClient\n",
+    "\n",
+    "Install the Python version of the SDK via:\n",
+    "\n",
+    "`pip3 install ia-sdk`\n",
+    "\n",
+    "or, if using the Jupyter for Intelligent Artifacts container, open a terminal and update it with:\n",
+    "\n",
+    "`pip3 install --user -U ia-sdk`\n",
+    "\n",
+    "To check the current sdk version:\n",
+    "\n",
+    "`pip3 show ia-sdk`\n",
+    "\n",
+    "The AgentClient in the SDK requires only the URL and api key.  Once you connect, you can define the ingress and query nodes for the agent.  Each AgentClient can define its own ingress and query nodes.  This allows multiple inputs sources to connect to different ingress nodes of the agent, as well as allowing to query different Cognitive Processors for answers.\n",
+    "\n",
+    "For example, to connect to a cloud agent:\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "# update your agent information, and then connect to it\n",
+    "api_key = '<secret-api-key-here>'\n",
+    "name    = '<bottle-name-here>'\n",
+    "domain  = 'intelligent-artifacts.com'\n",
+    "secure  = True\n",
+    "\n",
+    "from ia.gaius.agent_client import AgentClient\n",
+    "\n",
+    "agent_info = {'api_key': api_key,\n",
+    "               'name':  name,\n",
+    "               'domain': domain,\n",
+    "               'secure': secure}\n",
+    "agent = AgentClient(agent_info)\n",
+    "agent.connect()\n",
+    "agent\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "To connect to a local agent:\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "from ia.gaius.agent_client import AgentClient\n",
+    "\n",
+    "agent_info = {'api_key': 'ABCD-1234',\n",
+    "               'name':  '',\n",
+    "               'domain': '<agent>:<port>',\n",
+    "               'secure': False}\n",
+    "agent = AgentClient(agent_info)\n",
+    "agent.connect()\n",
+    "agent\n",
+    "\n",
+    "~~~\n",
+    "For local agents it may be necessary to connect to the docker network, if connecting via another docker container"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "198fb6e7",
+   "metadata": {},
+   "source": [
+    "### Or, roll your own connections\n",
+    "To roll your own, you simply need the agent's host and domain names, the secret API key, and the IDs of each primitive you'd like to connect.  You can use a library like Python's `requests` to POST data and query the primitives.\n",
+    "\n",
+    "For example:\n",
+    "\n",
+    "Let's connect to either a local or a cloud agent\n",
+    "\n",
+    "~~~\n",
+    "import requests\n",
+    "\n",
+    "# Local Agent Info\n",
+    "name    = 'agent'\n",
+    "api_key = 'ABCD-1234'\n",
+    "\n",
+    "# connect to local agent with http \n",
+    "requests.get(f\"http://{name}/connect\", \n",
+    "             headers={'X-API-KEY': api_key}).json()\n",
+    "             \n",
+    "# Cloud Agent Info\n",
+    "name    = '<agent-name-here>'\n",
+    "domain  = 'intelligent-artifacts.com'\n",
+    "api_key = '<secret-api-key-here>'\n",
+    "\n",
+    "# connect to a cloud agent with https and domain\n",
+    "requests.get(f\"https://{name}.{domain}/connect\", \n",
+    "             headers={'X-API-KEY': api_key}).json()\n",
+    "~~~\n",
+    "\n",
+    "To observe data:\n",
+    "\n",
+    "In order to observe data you need to have the primitive ids of the Cognitive Processors. If you don't know the ids, you can retrieve them by connecting to the agent with request first.\n",
+    "\n",
+    "The following examples are for cloud bottles.\n",
+    "\n",
+    "~~~\n",
+    "# data as a GDF you want to observe\n",
+    "data = {\"strings\": [\"hello\",\"world\"], \"vectors\": [], \"emotives\": {}}\n",
+    "\n",
+    "agent_connection_info = requests.get(f\"https://{name}.{domain}/connect\", \n",
+    "             headers={'X-API-KEY': api_key}).json()\n",
+    "\n",
+    "# navigate into the bottle_connection_info dictionary to get primitive ids from genome data\n",
+    "primitive_id = agent_connection_info['genome']['elements']['nodes'][0]['data']['id']\n",
+    "\n",
+    "# observe data\n",
+    "requests.post(f\"https://{name}.{domain}/{primitive_id}/observe\", \n",
+    "              headers={'X-API-KEY': api_key}, \n",
+    "              json={'data': data}).json()\n",
+    "~~~\n",
+    "\n",
+    "To learn data:\n",
+    "\n",
+    "After you've observed a few events\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "requests.post(f\"https://{name}.{domain}/{primitive_id}/learn\", \n",
+    "              headers={'X-API-KEY': api_key}).json()\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "To query for answers:\n",
+    "\n",
+    "After you've observed additional data, one can try to get predictions\n",
+    "\n",
+    "~~~\n",
+    "\n",
+    "# data as a GDF you want to observe in order to get predictions\n",
+    "data = {\"strings\": [\"hello\"], \"vectors\": [], \"emotives\": {}}\n",
+    "\n",
+    "# observe data\n",
+    "requests.post(f\"https://{name}.{domain}/{primitive_id}/observe\", \n",
+    "              headers={'X-API-KEY': api_key}, \n",
+    "              json={'data': data}).json()\n",
+    "\n",
+    "requests.post(f\"https://{name}.{domain}/{primitive_id}/predictions\", \n",
+    "              headers={'X-API-KEY': api_key}).json()\n",
+    "~~~\n",
+    "\n",
+    "To get a fresh start, one can\n",
+    "\n",
+    "clear all memory of the Cognitive Processor:\n",
+    "\n",
+    "\n",
+    "\n",
+    "~~~\n",
+    "              \n",
+    "requests.post(f\"https://{name}.{domain}/{primitive_id}/clear-all-memory\", \n",
+    "              headers={'X-API-KEY': api_key}).json()              \n",
+    "~~~"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "8eb753a9",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Name: ia-sdk\r\n",
+      "Version: 0.3.2\r\n",
+      "Summary: SDK for Intelligent Artifact's GAIuS agents.\r\n",
+      "Home-page: https://intelligent-artifacts.com\r\n",
+      "Author: Intelligent Artifacts\r\n",
+      "Author-email: support@intelligent-artifacts.com\r\n",
+      "License: None\r\n",
+      "Location: /home/jupyter/.local/lib/python3.8/site-packages\r\n",
+      "Requires: plotly, requests, pymongo\r\n",
+      "Required-by: \r\n"
+     ]
+    }
+   ],
+   "source": [
+    "# The sdk version used in this tutorial\n",
+    "!pip3 show ia-sdk"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "920ecb20",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# update your agent information, and then connect to it\n",
+    "from ia.gaius.agent_client import AgentClient\n",
+    "\n",
+    "api_key = '<YOUR-API-KEY-HERE>'\n",
+    "name    = '<YOUR-AGENT-NAME-HERE>'\n",
+    "domain  = 'intelligent-artifacts.com'\n",
+    "secure  = True\n",
+    "\n",
+    "agent_info = {'api_key': api_key,\n",
+    "               'name':  name,\n",
+    "               'domain': domain,\n",
+    "               'secure': secure}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "bb91a561",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "agent_info = {'api_key': 'ABCD-1234',\n",
+    "              'name': '',\n",
+    "              'domain': 'gaius-api:80',\n",
+    "              'secure': False}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "74e36243",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<.gaius-api:80| secure: False, connected: True, gaius_agent: simple,                   ingress_nodes: 0, query_nodes: 0>"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent = AgentClient(agent_info)\n",
+    "agent.connect()\n",
+    "agent"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "fab51576",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[{'id': 'p46b6b076c', 'name': 'P1'}]"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Let's use only one node\n",
+    "ingress_nodes = ['P1']\n",
+    "query_nodes   = ['P1']\n",
+    "\n",
+    "agent.set_ingress_nodes(ingress_nodes)\n",
+    "agent.set_query_nodes(query_nodes)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1800f7a3",
+   "metadata": {},
+   "source": [
+    "You can visualize the Genome for the connected agent by calling `agent.genome.display()`\n",
+    "\n",
+    "This functionality helps visualize larger topologies"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "a0e6223a",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "application/vnd.jupyter.widget-view+json": {
+       "model_id": "bf1a7e5e43f74f37b475ea3990eb5a2d",
+       "version_major": 2,
+       "version_minor": 0
+      },
+      "text/plain": [
+       "Cytoscape(background='white', data={'agent': 'simple', 'boxSelectionEnabled': True, 'description': '', 'elemen…"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "agent.genome.display()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1745569b",
+   "metadata": {},
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e65a9e2e",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

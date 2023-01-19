@@ -38,13 +38,13 @@ ia.gaius.data\_language module
    :undoc-members:
    :show-inheritance:
 
-ia.gaius.data\_ops module
--------------------------
+.. ia.gaius.data\_ops module
+.. -------------------------
 
-.. automodule:: ia.gaius.data_ops
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: ia.gaius.data_ops
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:
 
 .. ia.gaius.genome\_info module
 .. ----------------------------

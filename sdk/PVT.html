@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performance Validation Testing &mdash; IA-SDK-Python 0.2.35 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ia.gaius package" href="ia.gaius.html" />
+    <link rel="prev" title="Data Ops" href="data_ops.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> IA-SDK-Python
+            <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="GDF.html">GAIuS Data Format (GDF)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="GDF.html#fields">Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#strings">strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#vectors">vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#emotives">emotives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#metadata">metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GDF.html#path">path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">IA-SDK-Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="API.html">API Reference</a> &raquo;</li>
+      <li>Performance Validation Testing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/PVT.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="performance-validation-testing">
+<h1>Performance Validation Testing<a class="headerlink" href="#performance-validation-testing" title="Permalink to this heading"></a></h1>
+<p>This class is utilized to perform thorough testing on GAIuS Agents. Performance Validation Testing (PVT) has three test types:</p>
+<ul class="simple">
+<li><p>Classification</p></li>
+<li><p>Emotive Value</p></li>
+<li><p>Emotive Polarity</p></li>
+</ul>
+<p>## Classification Tests</p>
+<p>## Emotive Value Tests</p>
+<p>## Emotive Polarity Tests</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.</span></span><span class="sig-name descname"><span class="pre">PerformanceValidationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Performance Validation Test (PVT) - Splits a GDF folder into training and testing sets.
+Based on the test type certain visualizations will be produced.</p>
+<p>Test types:</p>
+<ul class="simple">
+<li><p>Classification</p></li>
+<li><p>Emotive Value</p></li>
+<li><p>Emotives Polarity</p></li>
+</ul>
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize the PVT object with all required parameters for execution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – GAIuS Agent to use for trainings</p></li>
+<li><p><strong>ingress_nodes</strong> (<em>list</em>) – Ingress nodes for the GAIuS Agent (see <a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_query_nodes" title="ia.gaius.agent_client.AgentClient.set_query_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">ia.gaius.agent_client.AgentClient.set_query_nodes()</span></code></a>)</p></li>
+<li><p><strong>query_nodes</strong> (<em>list</em>) – Query nodes for the GAIuS Agent (see <a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_query_nodes" title="ia.gaius.agent_client.AgentClient.set_query_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">ia.gaius.agent_client.AgentClient.set_query_nodes()</span></code></a>)</p></li>
+<li><p><strong>num_of_tests</strong> (<em>int</em>) – Number of test iterations to complete</p></li>
+<li><p><strong>pct_of_ds</strong> (<em>float</em>) – Percent of the dataset to use for PVT (overall)</p></li>
+<li><p><strong>pct_res_4_train</strong> (<em>float</em>) – Percent of the dataset to be reserved for training</p></li>
+<li><p><strong>test_type</strong> (<em>str</em>) – classification, emotives_value, or emotives_polarity</p></li>
+<li><p><strong>dataset_location</strong> (<em>str</em>) – Location of dataset to utilise, “mongodb”, or “filepath”</p></li>
+<li><p><strong>results_filepath</strong> (<em>_type_</em>) – Where to store PVT results</p></li>
+<li><p><strong>ds_filepath</strong> (<em>str</em>) – Path to the directory containing training GDFs</p></li>
+<li><p><strong>test_prediction_strategy</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to “continuous”.</p></li>
+<li><p><strong>clear_all_memory_before_training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether the GAIuS agent’s memory should be cleared before each training. Defaults to True.</p></li>
+<li><p><strong>turn_prediction_off_during_training</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether predictions should be disabled during training to reduce computational load. Defaults to False.</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether dataset should be shuffled before each test iteration. Defaults to False.</p></li>
+<li><p><strong>sio</strong> (<em>_type_</em><em>, </em><em>optional</em>) – SocketIO object to emit information on. Defaults to None.</p></li>
+<li><p><strong>task</strong> (<em>_type_</em><em>, </em><em>optional</em>) – Celery details to emit information about. Defaults to None.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em><em>, </em><em>optional</em>) – user_id to emit information to on SocketIO. Defaults to ‘’.</p></li>
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em><em>, </em><em>optional</em>) – MongoDB where dataset should be retrieved from</p></li>
+<li><p><strong>dataset_info</strong> (<em>dict</em><em>, </em><em>optional</em>) – information about how to retrieve dataset, used for MongoDB query. If dataset_location is mongodb, this must have the user_id, dataset_id, results_collection, logs_collection, and data_files_collection_name keys</p></li>
+<li><p><strong>test_id</strong> (<em>str</em><em>, </em><em>optional</em>) – unique identifier to be sent with messages about this test. Also used for storing to mongodb</p></li>
+<li><p><strong>test_configuration</strong> (<em>dict</em><em>, </em><em>optional</em>) – dictionary storing additional metadata about test configuration, to be saved in mongodb with test results</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities">
+<span class="sig-name descname"><span class="pre">compute_incidental_probabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_step_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities" title="Permalink to this definition"></a></dt>
+<dd><p>Keep track of how well each node is doing during the testing phase. To be used for live visualizations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>test_step_info</strong> (<em>dict</em><em>, </em><em>required</em>) – Dictionary containing information about the current predicted, actual answers, and presently holds the prior running_accuracy.</p></li>
+<li><p><strong>return</strong> (<em>Will update with the new running accuracy and</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>updated test_step_info with the current running accuracy</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.conduct_pvt">
+<span class="sig-name descname"><span class="pre">conduct_pvt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.conduct_pvt" title="Permalink to this definition"></a></dt>
+<dd><p>Function called to execute the PVT session. Determines test to run based on ‘test_type’ attribute</p>
+<p>Results from PVT is stored in the ‘pvt_results’ attribute</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A complete example is shown in the <a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.__init__" title="ia.gaius.pvt.PerformanceValidationTest.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a> function above. Please see that documentation for further information about how to conduct a PVT test</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics">
+<span class="sig-name descname"><span class="pre">get_classification_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Builds classification data structures for each node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics">
+<span class="sig-name descname"><span class="pre">get_emotives_polarity_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Builds emotives polarity data structures for each node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.get_emotives_value_metrics">
+<span class="sig-name descname"><span class="pre">get_emotives_value_metrics</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.get_emotives_value_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Builds emotives value data structures for each node</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives">
+<span class="sig-name descname"><span class="pre">sum_sequence_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives" title="Permalink to this definition"></a></dt>
+<dd><p>Sums all emotive values</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.test_agent">
+<span class="sig-name descname"><span class="pre">test_agent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.test_agent" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a testing set of gdf files, then tries to predict what it observes,
+stores the predictions for later analysis/metrics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.train_agent">
+<span class="sig-name descname"><span class="pre">train_agent</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.train_agent" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a training set of gdf files, and then trains an agent on those records.
+The user can turn prediction off if the topology doesn’t have abstractions
+where prediction is needed to propagate data through the topology.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_classification_metrics">
+<span class="sig-name descname"><span class="pre">update_test_results_w_hive_classification_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvt_test_result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_classification_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Update pvt test result metrics with hive classifications metrics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics">
+<span class="sig-name descname"><span class="pre">update_test_results_w_hive_emotives_polarity_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvt_test_result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Update pvt test result metrics with hive classifications metrics</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics">
+<span class="sig-name descname"><span class="pre">update_test_results_w_hive_emotives_value_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvt_test_result</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Update pvt test result metrics with hive classifications metrics</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="data_ops.html" class="btn btn-neutral float-left" title="Data Ops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ia.gaius.html" class="btn btn-neutral float-right" title="ia.gaius package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

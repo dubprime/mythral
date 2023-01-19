@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interact with your Agent using String Data &mdash; IA-SDK-Python 0.2.35 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/clipboard.min.js"></script>
+        <script src="../_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="An Emotional Machine: Emotives and Mood" href="Agent%20Observe%20Emotives.html" />
+    <link rel="prev" title="Deploy an Agent" href="Agent%20Creation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> IA-SDK-Python
+            <img src="../_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../GDF.html">GAIuS Data Format (GDF)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../GDF.html#fields">Fields</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#strings">strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#vectors">vectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#emotives">emotives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#metadata">metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#path">path</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="../Tutorials.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../API.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data_ops.html">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_ops.html#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">IA-SDK-Python</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../Tutorials.html">Tutorials</a> &raquo;</li>
+      <li>Interact with your Agent using String Data</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tutorial_segments/Agent Observe Strings.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars and line breaks on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+    white-space: pre;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+.jp-RenderedHTMLCommon table,
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+.jp-RenderedHTMLCommon thead,
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+.jp-RenderedHTMLCommon tr,
+.jp-RenderedHTMLCommon th,
+.jp-RenderedHTMLCommon td,
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+.jp-RenderedHTMLCommon th,
+div.rendered_html th {
+  font-weight: bold;
+}
+.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+.jp-RenderedHTMLCommon tbody tr:hover,
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="Interact-with-your-Agent-using-String-Data">
+<h1>Interact with your Agent using String Data<a class="headerlink" href="#Interact-with-your-Agent-using-String-Data" title="Permalink to this heading"></a></h1>
+<section id="Data-Preparation">
+<h2>Data Preparation<a class="headerlink" href="#Data-Preparation" title="Permalink to this heading"></a></h2>
+<p>All data provided to a GAIuS Agent is supplied as sequences of events. The way a sequence is delimited depends on the problem domain</p>
+<p>An event is a single occurrence of a process.</p>
+<p>A sequence is a particular order in which related events, movements, or things follow each other.</p>
+<p>sequence = [event_1, event_2, …, event_n]</p>
+<p>Even problems that don’t initially appear to be sequence problems can be cast into this form. For example, customer profile data can be converted into a sequence of a single event. It is common to call such single-evented sequences profile data to distinguish them from other sequences.</p>
+<p>sequence = [event_1]</p>
+<p>can be represented as</p>
+<p>sequence = [profile_data]</p>
+<p>Each event must be formatted into our universal input format, the GAIuS Data Format (GDF) object.</p>
+<p>The GDF object is a JSON object that has three core fields: strings, vectors, and emotives. Each field’s value is an array of relevant data. All three fields must be provided even if they are empty. GDFs are easily shared between systems because they are JSON objects.</p>
+<p>Here is an empty GDF:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>{&quot;strings&quot;: [], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}
+</pre></div>
+</div>
+<p>In general and simply put, the strings field is for text-based data, the vectors field is for arrays of numerical data, and the emotives field is for emotional data, a non-vector number, positive or negative. The GDF object is the key for using our AGI platform. Practically any data can be converted into this form.</p>
+<p>For now let’s focus on string data:</p>
+<p>A string is simply any character, e.g. “h”, or sequential characters, “hello”. Strings must be properly delimited with double-quotes. This conforms with the JSON standard for strings.</p>
+<p>GDFs provide the ability to observe single events. Multiple events build sequences. For example, the following is one sequence:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[{&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+</pre></div>
+</div>
+<p>This sequence consists of two events. The first event consists of the symbol “hello” in the <code class="docutils literal notranslate"><span class="pre">&quot;strings&quot;</span></code> field. The second event consists of the symbol “world” in the <code class="docutils literal notranslate"><span class="pre">&quot;strings&quot;</span></code> field.</p>
+<p>Here’s another example of a sequence:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;cruel&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+</pre></div>
+</div>
+<p>Having defined the ingress and query nodes earlier, let’s use your AgentClient to send data and query the agent.</p>
+</section>
+<section id="Observing-data">
+<h2>Observing data<a class="headerlink" href="#Observing-data" title="Permalink to this heading"></a></h2>
+<p>Sending data requires the <code class="docutils literal notranslate"><span class="pre">observe</span></code> API call. The AgentClient provides this using a similarly named function.</p>
+<p>In order to acquire and process data you need to first make an observation. When the GAIuS Agent observes data it observes each event of a sequence one-by-one where the data is processed into the working memory (WM). Data processed into the WM can later be used to make predictions or be learned where it will update its knowlege base (KB). Data stored in the KB will be used to pattern match and make predictions. Analogously, you can think of WM as short term memory and KB as long term memory. It
+is good practice to clear the WM before the Agent observes new data to ensure that the state of the Agent is as expected.</p>
+<p>Let’s follow this sequence of steps to observe and process new data:</p>
+<ol class="arabic simple">
+<li><p>agent.clear_wm() - clear wm to make sure nothing is in the wm</p></li>
+<li><p>agent.observe(event) - observe new data</p></li>
+<li><p>agent.get_wm() - to look at what’s in the wm after an observation was made</p></li>
+<li><p>agent.clear_all_memory - when we want a fresh start we would want to clear everything in the wm and the kb</p></li>
+</ol>
+<p><em>If starting from here, lets initialize the agent</em></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
+<span class="n">agent_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;ABCD-1234&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="s1">&#39;gaius-api:80&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;secure&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">agent</span>
+
+<span class="c1"># Let&#39;s use only one node</span>
+<span class="n">ingress_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">]</span>
+<span class="n">query_nodes</span>   <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">]</span>
+
+<span class="n">agent</span><span class="o">.</span><span class="n">set_ingress_nodes</span><span class="p">(</span><span class="n">ingress_nodes</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">set_query_nodes</span><span class="p">(</span><span class="n">query_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;id&#39;: &#39;p46b6b076c&#39;, &#39;name&#39;: &#39;P1&#39;}]
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;wm-cleared&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;observed&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[&#39;hello&#39;]]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;all-cleared&#39;
+</pre></div></div>
+</div>
+<p>The reason for the Gaius platform is for it to observe data, learn from it, and to provide predictions. Let’s go ahead and put this all together using what we’ve learned above.</p>
+<p>Let’s train on the two sequences:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[{&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;cruel&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
+ {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+</pre></div>
+</div>
+<section id="Observe-1st-Sequence">
+<h3>Observe 1st Sequence<a class="headerlink" href="#Observe-1st-Sequence" title="Permalink to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span> <span class="c1">### Start with a clean slate.</span>
+
+<span class="n">sequence_1</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}]</span>
+
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">sequence_1</span><span class="p">:</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[&#39;hello&#39;], [&#39;world&#39;]]
+</pre></div></div>
+</div>
+</section>
+<section id="Learn-1st-Sequence">
+<h3>Learn 1st Sequence<a class="headerlink" href="#Learn-1st-Sequence" title="Permalink to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The first sequence is fully in working memory (WM) now.  Let&#39;s learn it!</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;MODEL|7d0678ba6305341ce0d25133ab086208656a562f&#39;
+</pre></div></div>
+</div>
+</section>
+<section id="Observe-2nd-Sequence">
+<h3>Observe 2nd Sequence<a class="headerlink" href="#Observe-2nd-Sequence" title="Permalink to this heading"></a></h3>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Let&#39;s now observe and learn the next sequence.</span>
+
+<span class="c1">## Just in case, let&#39;s clear out the working memory (WM), though &#39;learn&#39; does that for us already.</span>
+<span class="c1">## Don&#39;t clear out ALL the memory, otherwise it will forget the sequences it learned!</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">clear_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+
+<span class="n">sequence_2</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;goodbye&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;cruel&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}]</span>
+
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">sequence_2</span><span class="p">:</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Learn-2nd-Sequence">
+<h3>Learn 2nd Sequence<a class="headerlink" href="#Learn-2nd-Sequence" title="Permalink to this heading"></a></h3>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## The second sequence is fully in working memory (WM) now.  Let&#39;s learn it!</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;MODEL|3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21&#39;
+</pre></div></div>
+</div>
+<p>At this point, we’ve taught the agent two sequences. Let us check how much sequences were learned in its kb. Now let’s now observe new data, and request some predictions back:</p>
+</section>
+<section id="Show-Agent-Status">
+<h3>Show Agent Status<a class="headerlink" href="#Show-Agent-Status" title="Permalink to this heading"></a></h3>
+<p>Sometimes it is helpful to view information about the agent’s current state, especially how many sequences are in the KB. You can do this using the API command agent.show_status()</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;PREDICT&#39;: True,
+ &#39;SLEEPING&#39;: False,
+ &#39;emotives&#39;: {},
+ &#39;last_learned_model_name&#39;: &#39;3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21&#39;,
+ &#39;models_kb&#39;: &#39;{KB| objects: 2}&#39;,
+ &#39;name&#39;: &#39;P1&#39;,
+ &#39;size_WM&#39;: 0,
+ &#39;target&#39;: &#39;&#39;,
+ &#39;time&#39;: 5,
+ &#39;vectors_kb&#39;: &#39;{KB| objects: 0}&#39;}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at how many sequences the agent has learned</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)[</span><span class="s1">&#39;models_kb&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;{KB| objects: 2}&#39;
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Get-Predictions">
+<h2>Get Predictions<a class="headerlink" href="#Get-Predictions" title="Permalink to this heading"></a></h2>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Again, we want to ensure there&#39;s nothing in the working memory (WM) before we send it new sequences:</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">clear_wm</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;observed&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">query_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;confidence&#39;: 1,
+  &#39;confluence&#39;: 0.4,
+  &#39;emotives&#39;: {},
+  &#39;entropy&#39;: 0.464385629,
+  &#39;evidence&#39;: 0.5,
+  &#39;extras&#39;: [],
+  &#39;fragmentation&#39;: 0,
+  &#39;frequency&#39;: 1,
+  &#39;future&#39;: [[&#39;world&#39;]],
+  &#39;grand_hamiltonian&#39;: 0.232192814,
+  &#39;hamiltonian&#39;: 0,
+  &#39;itfdf_similarity&#39;: 1,
+  &#39;matches&#39;: [&#39;hello&#39;],
+  &#39;missing&#39;: [],
+  &#39;name&#39;: &#39;7d0678ba6305341ce0d25133ab086208656a562f&#39;,
+  &#39;past&#39;: [],
+  &#39;potential&#39;: 3.5,
+  &#39;present&#39;: [[&#39;hello&#39;]],
+  &#39;similarity&#39;: 0.666666687,
+  &#39;snr&#39;: 1,
+  &#39;type&#39;: &#39;prototypical&#39;}]
+</pre></div></div>
+</div>
+<p>‘P1’ has provided an ensemble of predictions for us! This ensemble, however, only has one prediction. The prediction is the first sequence that we taught it. It is represented as a prediction object. This is our universal output format. Let’s look at some of the fields and values it provides:</p>
+<p>It states that it has matched on the <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> symbol:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;matches&#39;: [&#39;hello&#39;]
+</pre></div>
+</div>
+<p>From this, it believes that the current present state of affairs is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;present&#39;: [[&#39;hello&#39;]]
+</pre></div>
+</div>
+<p>That’s one event with the <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> symbol and nothing else.</p>
+<p>Having identified it’s believed present state, it predicts that the future will consist of the following event states:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;future&#39;: [[&#39;world&#39;]]
+</pre></div>
+</div>
+<p>That’s just one more event consisting of the <code class="docutils literal notranslate"><span class="pre">'world'</span></code> symbol.</p>
+<p>Let’s now complete this sequence for the agent:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;observed&#39;
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">query_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[{&#39;confidence&#39;: 1,
+  &#39;confluence&#39;: 0.46,
+  &#39;emotives&#39;: {},
+  &#39;entropy&#39;: 0.99315685,
+  &#39;evidence&#39;: 1,
+  &#39;extras&#39;: [],
+  &#39;fragmentation&#39;: 0,
+  &#39;frequency&#39;: 1,
+  &#39;future&#39;: [],
+  &#39;grand_hamiltonian&#39;: 0.496578425,
+  &#39;hamiltonian&#39;: 0.5,
+  &#39;itfdf_similarity&#39;: 1,
+  &#39;matches&#39;: [&#39;hello&#39;, &#39;world&#39;],
+  &#39;missing&#39;: [],
+  &#39;name&#39;: &#39;7d0678ba6305341ce0d25133ab086208656a562f&#39;,
+  &#39;past&#39;: [],
+  &#39;potential&#39;: 4,
+  &#39;present&#39;: [[&#39;hello&#39;], [&#39;world&#39;]],
+  &#39;similarity&#39;: 1,
+  &#39;snr&#39;: 1,
+  &#39;type&#39;: &#39;prototypical&#39;},
+ {&#39;confidence&#39;: 1,
+  &#39;confluence&#39;: 0.3,
+  &#39;emotives&#39;: {},
+  &#39;entropy&#39;: 0.528771222,
+  &#39;evidence&#39;: 0.333333343,
+  &#39;extras&#39;: [&#39;hello&#39;],
+  &#39;fragmentation&#39;: 0,
+  &#39;frequency&#39;: 1,
+  &#39;future&#39;: [],
+  &#39;grand_hamiltonian&#39;: 0.264385611,
+  &#39;hamiltonian&#39;: 0,
+  &#39;itfdf_similarity&#39;: 0.94721359,
+  &#39;matches&#39;: [&#39;world&#39;],
+  &#39;missing&#39;: [],
+  &#39;name&#39;: &#39;3b5c9cdc4424988308922d2ec8c7bc06b7c6ac21&#39;,
+  &#39;past&#39;: [[&#39;goodbye&#39;], [&#39;cruel&#39;]],
+  &#39;potential&#39;: 2.39165807,
+  &#39;present&#39;: [[&#39;world&#39;]],
+  &#39;similarity&#39;: 0.4,
+  &#39;snr&#39;: 0.333333343,
+  &#39;type&#39;: &#39;prototypical&#39;}]
+</pre></div></div>
+</div>
+<p>This time around, ‘P1’ produced two predictions. The first is still a prediction of “hello world”, but now the prediction object’s fields have changed. It now believes the current present state to be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;present&#39;: [[&#39;hello&#39;], [&#39;world&#39;]]
+</pre></div>
+</div>
+<p>based on its matches:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;matches&#39;: [&#39;hello&#39;, &#39;world&#39;]
+</pre></div>
+</div>
+<p>It no longer expects to find anything in the future.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;future&#39;: []
+</pre></div>
+</div>
+<p>However, it’s second prediction object sees things a little differently. It is based on the “goodbye cruel world” sequence. Therefore, based on that sequence, it believes the present state to be:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;present&#39;: [[&#39;world&#39;]]
+</pre></div>
+</div>
+<p>since it only matched on:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;matches&#39;: [&#39;world&#39;]
+</pre></div>
+</div>
+<p>Since this is its belief for the present state, it is surprised to find the symbol <code class="docutils literal notranslate"><span class="pre">'hello'</span></code> and shows this as an ‘extra’ item:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;extras&#39;: [&#39;hello&#39;]
+</pre></div>
+</div>
+<p>Additionally, based on its belief of the present state, it predicts backwards into the past and says that the events containing the symbols <code class="docutils literal notranslate"><span class="pre">'goodbye'</span></code> and <code class="docutils literal notranslate"><span class="pre">'cruel'</span></code> must have occurred although it did not get a chance to observe them.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="Agent%20Creation.html" class="btn btn-neutral float-left" title="Deploy an Agent" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Agent%20Observe%20Emotives.html" class="btn btn-neutral float-right" title="An Emotional Machine: Emotives and Mood" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

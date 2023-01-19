@@ -1,0 +1,7 @@
+Utilities
+=========
+
+.. automodule:: ia.gaius.utils
+   :members:
+   :undoc-members:
+   :show-inheritance:

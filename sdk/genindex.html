@@ -6,6 +6,7 @@
   <title>Index &mdash; IA-SDK-Python 0.2.35 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -15,6 +16,9 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -49,22 +53,64 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_ops">ia.gaius.data_ops module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -117,6 +163,7 @@
  | <a href="#T"><strong>T</strong></a>
  | <a href="#U"><strong>U</strong></a>
  | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
  
 </div>
 <h2 id="_">_</h2>
@@ -125,7 +172,19 @@
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.__init__">__init__() (ia.gaius.agent_client.AgentClient method)</a>
 
       <ul>
+        <li><a href="data_ops.html#ia.gaius.data_ops.Data.__init__">(ia.gaius.data_ops.Data method)</a>
+</li>
+        <li><a href="data_ops.html#ia.gaius.data_ops.DataRecords.__init__">(ia.gaius.data_ops.DataRecords method)</a>
+</li>
+        <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.__init__">(ia.gaius.data_ops.MongoData method)</a>
+</li>
+        <li><a href="data_ops.html#ia.gaius.data_ops.MongoDataRecords.__init__">(ia.gaius.data_ops.MongoDataRecords method)</a>
+</li>
+        <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.__init__">(ia.gaius.data_ops.MongoResults method)</a>
+</li>
         <li><a href="Genome.html#ia.gaius.genome_info.Genome.__init__">(ia.gaius.genome_info.Genome method)</a>
+</li>
+        <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.__init__">(ia.gaius.pvt.PerformanceValidationTest method)</a>
 </li>
       </ul></li>
   </ul></td>
@@ -134,11 +193,15 @@
 <h2 id="A">A</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient">AgentClient (class in ia.gaius.agent_client)</a>
+      <li><a href="utils.html#ia.gaius.utils.abstract_names">abstract_names() (in module ia.gaius.utils)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.addLogRecord">addLogRecord() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id1">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.atoi">atoi() (in module ia.gaius.data_ops)</a>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient">AgentClient (class in ia.gaius.agent_client)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.atoi">atoi() (in module ia.gaius.data_ops)</a>
 </li>
       <li><a href="ia.gaius.html#ia.gaius.prediction_models.average_emotives">average_emotives() (in module ia.gaius.prediction_models)</a>
 </li>
@@ -168,15 +231,23 @@
       </ul></li>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.classification_report">classification_report() (in module ia.gaius.back_testing)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_all_memory">clear_all_memory() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_target_class">clear_target_class() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_wm">clear_wm() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities">compute_incidental_probabilities() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.conduct_pvt">conduct_pvt() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.connect">connect() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.convertBinaryStringtoSequence">convertBinaryStringtoSequence() (ia.gaius.data_ops.MongoData method)</a>
+</li>
+      <li><a href="utils.html#ia.gaius.utils.create_gdf">create_gdf() (in module ia.gaius.utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -184,13 +255,15 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.Data">Data (class in ia.gaius.data_ops)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.Data">Data (class in ia.gaius.data_ops)</a>
 </li>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.DataRecords">DataRecords (class in ia.gaius.data_ops)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.DataRecords">DataRecords (class in ia.gaius.data_ops)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.delete_model">delete_model() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.deleteResults">deleteResults() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id2">[1]</a>
 </li>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.display">display() (ia.gaius.genome_info.Genome method)</a>
 </li>
@@ -212,20 +285,30 @@
 </li>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.get_actions">get_actions() (ia.gaius.genome_info.Genome method)</a>
 </li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_all_genes">get_all_genes() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.get_class_distribution">get_class_distribution() (in module ia.gaius.back_testing)</a>
+</li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics">get_classification_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_cognition_data">get_cognition_data() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics">get_emotives_polarity_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_emotives_value_metrics">get_emotives_value_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_gene">get_gene() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="kb_ops.html#ia.gaius.kb_ops.get_kb_subset">get_kb_subset() (in module ia.gaius.kb_ops)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs">get_kbs() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs_as_json">get_kbs_as_json() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map">get_manipulative_map() (ia.gaius.genome_info.Genome method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_model">get_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_name">get_name() (ia.gaius.agent_client.AgentClient method)</a>
@@ -243,6 +326,8 @@
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_vector">get_vector() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_wm">get_wm() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.getSequence">getSequence() (ia.gaius.data_ops.MongoData method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -280,7 +365,14 @@
     ia.gaius.data_ops
 
       <ul>
-        <li><a href="ia.gaius.html#module-ia.gaius.data_ops">module</a>
+        <li><a href="data_ops.html#module-ia.gaius.data_ops">module</a>
+</li>
+      </ul></li>
+      <li>
+    ia.gaius.kb_ops
+
+      <ul>
+        <li><a href="kb_ops.html#module-ia.gaius.kb_ops">module</a>
 </li>
       </ul></li>
       <li>
@@ -313,7 +405,16 @@
         <li><a href="ia.gaius.tests.html#module-ia.gaius.tests.utility">module</a>
 </li>
       </ul></li>
+      <li>
+    ia.gaius.utils
+
+      <ul>
+        <li><a href="utils.html#module-ia.gaius.utils">module</a>
+</li>
+      </ul></li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.increment_recall_threshold">increment_recall_threshold() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.investigate">investigate() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.investigate_record">investigate_record() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -325,9 +426,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.learn">learn() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="kb_ops.html#ia.gaius.kb_ops.list_models">list_models() (in module ia.gaius.kb_ops)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="kb_ops.html#ia.gaius.kb_ops.list_symbols">list_symbols() (in module ia.gaius.kb_ops)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.load_kbs_from_json">load_kbs_from_json() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="utils.html#ia.gaius.utils.log_progress">log_progress() (in module ia.gaius.utils)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -347,7 +454,9 @@
 </li>
         <li><a href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language</a>
 </li>
-        <li><a href="ia.gaius.html#module-ia.gaius.data_ops">ia.gaius.data_ops</a>
+        <li><a href="data_ops.html#module-ia.gaius.data_ops">ia.gaius.data_ops</a>
+</li>
+        <li><a href="kb_ops.html#module-ia.gaius.kb_ops">ia.gaius.kb_ops</a>
 </li>
         <li><a href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models</a>
 </li>
@@ -357,14 +466,24 @@
 </li>
         <li><a href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility</a>
 </li>
+        <li><a href="utils.html#module-ia.gaius.utils">ia.gaius.utils</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoData">MongoData (class in ia.gaius.data_ops)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoDataRecords">MongoDataRecords (class in ia.gaius.data_ops)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults">MongoResults (class in ia.gaius.data_ops)</a>, <a href="data_ops.html#id0">[1]</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.natural_keys">natural_keys() (in module ia.gaius.data_ops)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.natural_keys">natural_keys() (in module ia.gaius.data_ops)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -392,6 +511,8 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest">PerformanceValidationTest (class in ia.gaius.pvt)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.ping">ping() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.plot_class_distributions">plot_class_distributions() (in module ia.gaius.back_testing)</a>
@@ -402,8 +523,12 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.predictor_operator_characteristic">predictor_operator_characteristic() (in module ia.gaius.back_testing)</a>
 </li>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.Data.prep">prep() (ia.gaius.data_ops.Data method)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.Data.prep">prep() (ia.gaius.data_ops.Data method)</a>
+
+      <ul>
+        <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.prep">(ia.gaius.data_ops.MongoData method)</a>
 </li>
+      </ul></li>
       <li><a href="ia.gaius.html#ia.gaius.prediction_models.principal_delta">principal_delta() (in module ia.gaius.prediction_models)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.put_kbs">put_kbs() (ia.gaius.agent_client.AgentClient method)</a>
@@ -414,13 +539,17 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.raw_in_count">raw_in_count() (in module ia.gaius.data_ops)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.raw_in_count">raw_in_count() (in module ia.gaius.data_ops)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.receive_unique_ids">receive_unique_ids() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.reset">reset() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id3">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.resolve_model">resolve_model() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.retrieveDataRecord">retrieveDataRecord() (ia.gaius.data_ops.MongoData method)</a>
 </li>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.BackTest.run">run() (ia.gaius.back_testing.BackTest method)</a>
 </li>
@@ -430,6 +559,8 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.saveResults">saveResults() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id4">[1]</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_ingress_nodes">set_ingress_nodes() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_query_nodes">set_query_nodes() (ia.gaius.agent_client.AgentClient method)</a>
@@ -437,6 +568,8 @@
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_summarize_for_single_node">set_summarize_for_single_node() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_target_class">set_target_class() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.setIterMode">setIterMode() (ia.gaius.data_ops.MongoData method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -450,6 +583,8 @@
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_sleeping">stop_sleeping() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives">sum_sequence_emotives() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -462,6 +597,8 @@
         <li><a href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.test">(ia.gaius.tests.utility.Tester method)</a>
 </li>
       </ul></li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.test_agent">test_agent() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
       <li><a href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester">Tester (class in ia.gaius.tests.classification)</a>
 
       <ul>
@@ -478,6 +615,8 @@
         <li><a href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.train">(ia.gaius.tests.utility.Tester method)</a>
 </li>
       </ul></li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.train_agent">train_agent() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -486,13 +625,29 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.update_model">update_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_classification_metrics">update_test_results_w_hive_classification_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics">update_test_results_w_hive_emotives_polarity_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
+      <li><a href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics">update_test_results_w_hive_emotives_value_metrics() (ia.gaius.pvt.PerformanceValidationTest method)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.data_ops.validate_data">validate_data() (in module ia.gaius.data_ops)</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.validate_data">validate_data() (in module ia.gaius.data_ops)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="utils.html#ia.gaius.utils.write_gdf_to_file">write_gdf_to_file() (in module ia.gaius.utils)</a>
 </li>
   </ul></td>
 </tr></table>

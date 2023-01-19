@@ -1,7 +1,0 @@
-ia.gaius
-========
-
-.. toctree::
-   :maxdepth: 4
-
-   ia.gaius

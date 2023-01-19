@@ -7,6 +7,7 @@
   <title>ia.gaius package &mdash; IA-SDK-Python 0.2.35 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -16,11 +17,14 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/clipboard.min.js"></script>
+        <script src="_static/copybutton.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ia.gaius.tests package" href="ia.gaius.tests.html" />
-    <link rel="prev" title="AgentClient" href="AgentClient.html" /> 
+    <link rel="prev" title="Performance Validation Testing" href="PVT.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,22 +56,64 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l1"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">ia.gaius package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html">Quick Start: Hello, World!</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Quick%20Start%20-%20Hello%2C%20World%21.html#Four-API-Calls">Four API Calls</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.data_ops">ia.gaius.data_ops module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html">Interact with your Agent using String Data</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Data-Preparation">Data Preparation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observing-data">Observing data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-Sequence">Observe 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-1st-Sequence">Learn 1st Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-Sequence">Observe 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Learn-2nd-Sequence">Learn 2nd Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodata">MongoData</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongodatarecords">MongoDataRecords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#mongoresults">MongoResults</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -88,6 +134,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="API.html">API Reference</a> &raquo;</li>
       <li>ia.gaius package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/ia.gaius.rst.txt" rel="nofollow"> View page source</a>
@@ -98,7 +145,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ia-gaius-package">
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast.container,
+.nboutput.nblast.container {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast.container + .nbinput.container {
+    margin-top: -19px;
+}
+
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+
+/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
+.math {
+    text-align: unset;
+}
+</style>
+<section id="ia-gaius-package">
 <h1>ia.gaius package<a class="headerlink" href="#ia-gaius-package" title="Permalink to this heading"></a></h1>
 <section id="subpackages">
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
@@ -161,52 +232,6 @@
 <span id="ia-gaius-data-language-module"></span><h3>ia.gaius.data_language module<a class="headerlink" href="#module-ia.gaius.data_language" title="Permalink to this heading"></a></h3>
 <p>Defines the structure for Genie API commands.</p>
 </section>
-<section id="module-ia.gaius.data_ops">
-<span id="ia-gaius-data-ops-module"></span><h3>ia.gaius.data_ops module<a class="headerlink" href="#module-ia.gaius.data_ops" title="Permalink to this heading"></a></h3>
-<dl class="py class">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.Data">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">Data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_directories</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.Data.prep">
-<span class="sig-name descname"><span class="pre">prep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent_of_dataset_chosen</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_reserved_for_training</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.Data.prep" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.DataRecords">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">DataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">original_dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.DataRecords" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Splits data into random sets for training and testing.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.atoi">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">atoi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.atoi" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.natural_keys">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">natural_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.natural_keys" title="Permalink to this definition"></a></dt>
-<dd><p>alist.sort(key=natural_keys) sorts in human order
-<a class="reference external" href="http://nedbatchelder.com/blog/200712/human_sorting.html">http://nedbatchelder.com/blog/200712/human_sorting.html</a>
-(See Toothy’s implementation in the comments)</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.raw_in_count">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">raw_in_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.raw_in_count" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ia.gaius.data_ops.validate_data">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.data_ops.</span></span><span class="sig-name descname"><span class="pre">validate_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.data_ops.validate_data" title="Permalink to this definition"></a></dt>
-<dd><p>Validates if the data is in correct GAIuS digestible format.
-Returns True if data validates.  Returns False if data does not validate.</p>
-</dd></dl>
-
-</section>
 <section id="module-ia.gaius.prediction_models">
 <span id="ia-gaius-prediction-models-module"></span><h3>ia.gaius.prediction_models module<a class="headerlink" href="#module-ia.gaius.prediction_models" title="Permalink to this heading"></a></h3>
 <p>Implements a variety of prediction models.</p>
@@ -265,7 +290,7 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="AgentClient.html" class="btn btn-neutral float-left" title="AgentClient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PVT.html" class="btn btn-neutral float-left" title="Performance Validation Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ia.gaius.tests.html" class="btn btn-neutral float-right" title="ia.gaius.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

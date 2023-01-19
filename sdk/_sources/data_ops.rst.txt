@@ -1,0 +1,63 @@
+Data Ops
+========
+
+Classes and functions to aid in random testing and training set generation
+
+.. contents:: Table of Contents
+
+
+Data
+----
+.. autoclass:: ia.gaius.data_ops.Data
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+DataRecords
+-----------
+
+.. autoclass:: ia.gaius.data_ops.DataRecords
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+MongoData
+---------
+
+.. autoclass:: ia.gaius.data_ops.MongoData
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+MongoDataRecords
+----------------
+
+.. autoclass:: ia.gaius.data_ops.MongoDataRecords
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+
+MongoResults
+----------------
+
+.. autoclass:: ia.gaius.data_ops.MongoResults
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+data_ops module
+---------------
+
+This module includes the classes above in addition to the following:
+
+.. automodule:: ia.gaius.data_ops
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :exclude-members: DataRecords, Data, MongoData, MongoDataRecords

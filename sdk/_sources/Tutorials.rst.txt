@@ -1,0 +1,12 @@
+Tutorials
+=========
+
+This documentation presumes that the user already has access to GAIuS Agent creation, and the Intelligent Artifacts Lab.
+For more information about how to obtain access, please reach out to support@intelligent-artifacts.com or visit `Intelligent Artifacts <https://intelligent-artifacts.com/>`_
+
+.. toctree::
+        tutorial_segments/Quick Start - Hello, World!
+        tutorial_segments/Genome Introduction
+        tutorial_segments/Agent Creation
+        tutorial_segments/Agent Observe Strings
+        tutorial_segments/Agent Observe Emotives

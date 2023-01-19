@@ -1,0 +1,7 @@
+KnowledgeBase Operations
+========================
+
+.. automodule:: ia.gaius.kb_ops
+   :members:
+   :undoc-members:
+   :show-inheritance:

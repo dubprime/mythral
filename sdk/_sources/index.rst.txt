@@ -6,17 +6,16 @@
 Welcome to the IA-SDK Python documentation!
 ===========================================
 
-This project provides various helper classes and functions for interacting with GAIuS agents. For more information, see `Intelligent Artifacts' site <https://intelligent-artifacts.com/>`_
+This project provides various helper classes and functions for interacting with GAIuS™ agents. For more information, see `Intelligent Artifacts' site <https://intelligent-artifacts.com/>`_
 
 .. toctree::
    :caption: Contents:
+   :maxdepth: 2
 
-   .. Introduction
    GDF
-   Genome
-   AgentClient
-
-   ia.gaius
+   Tutorials
+   API
+   
 
 Indices and tables
 ==================

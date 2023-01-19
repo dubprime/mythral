@@ -1,0 +1,19 @@
+Performance Validation Testing
+==============================
+
+This class is utilized to perform thorough testing on GAIuS Agents. Performance Validation Testing (PVT) has three test types:
+
+- Classification
+- Emotive Value
+- Emotive Polarity
+
+## Classification Tests
+
+## Emotive Value Tests
+
+## Emotive Polarity Tests
+
+.. autoclass:: ia.gaius.pvt.PerformanceValidationTest
+      :members:
+      :show-inheritance:
+      :special-members: __init__
