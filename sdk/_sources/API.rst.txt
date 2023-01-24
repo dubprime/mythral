@@ -11,8 +11,8 @@ frequently to interface with a GAIuS agent
     AgentClient
     Genome
     kb_ops
-    utils
     data_ops
+    utils
     PVT
     ia.gaius
 

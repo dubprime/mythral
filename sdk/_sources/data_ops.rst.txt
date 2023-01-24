@@ -60,4 +60,4 @@ This module includes the classes above in addition to the following:
    :members:
    :undoc-members:
    :show-inheritance:
-   :exclude-members: DataRecords, Data, MongoData, MongoDataRecords
+   :exclude-members: DataRecords, Data, MongoData, MongoDataRecords, MongoResults

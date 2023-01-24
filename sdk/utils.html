@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utilities &mdash; IA-SDK-Python 0.2.35 documentation</title>
+  <title>Utilities &mdash; IA-SDK-Python 0.3.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -23,8 +23,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Ops" href="data_ops.html" />
-    <link rel="prev" title="KnowledgeBase Operations" href="kb_ops.html" /> 
+    <link rel="next" title="Performance Validation Testing" href="PVT.html" />
+    <link rel="prev" title="Data Ops" href="data_ops.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,6 +35,9 @@
             <a href="index.html" class="icon icon-home"> IA-SDK-Python
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
+              <div class="version">
+                v0.3.8
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -87,8 +90,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
@@ -98,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
 </ul>
 </li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
@@ -174,8 +177,31 @@
 <p>Utility functions for interacting with GAIuS</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.utils.abstract_names">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">abstract_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.utils.abstract_names" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">abstract_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#ia.gaius.utils.abstract_names" title="Permalink to this definition"></a></dt>
+<dd><p>Get a set of model names from a prediction ensemble</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ensemble</strong> (<em>list</em>) – a prediction ensemble</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of models from predictions in the prediction ensemble</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
+<span class="kn">from</span> <span class="nn">ia.gaius.utils</span> <span class="kn">import</span> <span class="n">abstract_names</span>
+<span class="o">...</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="n">ensemble</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="n">models</span> <span class="o">=</span> <span class="n">abstract_names</span><span class="p">(</span><span class="n">ensemble</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.utils.create_gdf">
@@ -217,7 +243,7 @@ be made with the improper format</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.utils.write_gdf_to_file">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">write_gdf_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.utils.write_gdf_to_file" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">write_gdf_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#ia.gaius.utils.write_gdf_to_file" title="Permalink to this definition"></a></dt>
 <dd><p>Write a GDF sequence to a file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -230,13 +256,16 @@ be made with the improper format</p>
 </dl>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.utils</span> <span class="kn">import</span> <span class="n">write_gdf_to_file</span><span class="p">,</span> <span class="n">create_gdf</span>
-
 <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">create_gdf</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]),</span> <span class="n">create_gdf</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">])]</span>
 <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;hello_world&#39;</span>
 <span class="n">directory_name</span> <span class="o">=</span> <span class="s1">&#39;/example/dir&#39;</span>
-
 <span class="n">write_gdf_to_file</span><span class="p">(</span><span class="n">directory_name</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">sequence</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Will overwrite the file at <code class="docutils literal notranslate"><span class="pre">&lt;directory_name&gt;/&lt;filename&gt;</span></code>. Please ensure it is acceptable to do so.
+No safety checks are performed in this function</p>
 </div>
 </dd></dl>
 
@@ -246,14 +275,14 @@ be made with the improper format</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="kb_ops.html" class="btn btn-neutral float-left" title="KnowledgeBase Operations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="data_ops.html" class="btn btn-neutral float-right" title="Data Ops" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data_ops.html" class="btn btn-neutral float-left" title="Data Ops" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PVT.html" class="btn btn-neutral float-right" title="Performance Validation Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+    <p>&#169; Copyright 2023, Intelligent Artifacts Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

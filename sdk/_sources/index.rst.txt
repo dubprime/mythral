@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the IA-SDK Python documentation!
-===========================================
+IA-SDK Python documentation!
+============================
 
 This project provides various helper classes and functions for interacting with GAIuS™ agents. For more information, see `Intelligent Artifacts' site <https://intelligent-artifacts.com/>`_
 

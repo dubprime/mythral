@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; IA-SDK-Python 0.2.35 documentation</title>
+  <title>Index &mdash; IA-SDK-Python 0.3.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -32,6 +32,9 @@
             <a href="index.html" class="icon icon-home"> IA-SDK-Python
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
+              <div class="version">
+                v0.3.8
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -84,8 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="API.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
@@ -95,6 +97,7 @@
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
@@ -195,7 +198,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utils.html#ia.gaius.utils.abstract_names">abstract_names() (in module ia.gaius.utils)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.addLogRecord">addLogRecord() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id1">[1]</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.addLogRecord">addLogRecord() (ia.gaius.data_ops.MongoResults method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -263,7 +266,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.delete_model">delete_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.deleteResults">deleteResults() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id2">[1]</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.deleteResults">deleteResults() (ia.gaius.data_ops.MongoResults method)</a>
 </li>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.display">display() (ia.gaius.genome_info.Genome method)</a>
 </li>
@@ -303,13 +306,17 @@
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs">get_kbs() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs_as_json">get_kbs_as_json() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map">get_manipulative_map() (ia.gaius.genome_info.Genome method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_model">get_model() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol">get_models_containing_symbol() (in module ia.gaius.kb_ops)</a>
+</li>
+      <li><a href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol_strict">get_models_containing_symbol_strict() (in module ia.gaius.kb_ops)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_name">get_name() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -475,7 +482,7 @@
 </li>
       <li><a href="data_ops.html#ia.gaius.data_ops.MongoDataRecords">MongoDataRecords (class in ia.gaius.data_ops)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults">MongoResults (class in ia.gaius.data_ops)</a>, <a href="data_ops.html#id0">[1]</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults">MongoResults (class in ia.gaius.data_ops)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -543,7 +550,7 @@
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.receive_unique_ids">receive_unique_ids() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.reset">reset() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id3">[1]</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.reset">reset() (ia.gaius.data_ops.MongoResults method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -559,7 +566,7 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.saveResults">saveResults() (ia.gaius.data_ops.MongoResults method)</a>, <a href="data_ops.html#id4">[1]</a>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.saveResults">saveResults() (ia.gaius.data_ops.MongoResults method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_ingress_nodes">set_ingress_nodes() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -661,7 +668,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+    <p>&#169; Copyright 2023, Intelligent Artifacts Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

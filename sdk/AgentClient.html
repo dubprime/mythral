@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentClient &mdash; IA-SDK-Python 0.2.35 documentation</title>
+  <title>AgentClient &mdash; IA-SDK-Python 0.3.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -35,6 +35,9 @@
             <a href="index.html" class="icon icon-home"> IA-SDK-Python
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
+              <div class="version">
+                v0.3.8
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -87,8 +90,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">AgentClient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
@@ -98,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
@@ -231,7 +234,8 @@ gene_data of form:</p>
 <dd><p>Clear both the Working Memory and persisted memory.
 Equivalent to re-initializing the nodes specified</p>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<span class="go">&#39;all-cleared&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -458,20 +462,56 @@ use <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.chang
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.investigate">
-<span class="sig-name descname"><span class="pre">investigate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">investigate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate" title="Permalink to this definition"></a></dt>
+<dd><p>Higher level implementation of <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.investigate_record" title="ia.gaius.agent_client.AgentClient.investigate_record"><code class="xref py py-func docutils literal notranslate"><span class="pre">investigate_record()</span></code></a> that does not require a node to be entered.
+Operates on abstracted symbols, models, etc. Useful when applying in a programatic manner, where the node
+a symbol comes from is unknown. May throw exception if unable to identify a starting point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>str</em>) – the symbol to look for</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>recursive structure containing a complete representation of the abstracted model</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">record</span> <span class="o">=</span> <span class="s1">&#39;PRIMITIVE|p124b23f9|004da01b0ef40d7c3e0965a6b4fd0f413672fbff|matches|KEY|VALUE&#39;</span>
+<span class="n">traceback</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">investigate</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.investigate_record">
-<span class="sig-name descname"><span class="pre">investigate_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate_record" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">investigate_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate_record" title="Permalink to this definition"></a></dt>
+<dd><p>Function for drilling down on a model recursively in a multi-node agent. Will retrieve all data “under”
+the abstracted model, giving a complete representation of the abstracted model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node</strong> (<em>list</em><em> or </em><em>str</em>) – the node to start at/containing the model provided in <cite>record</cite>: e.g. [‘P4’] or ‘P4’</p></li>
+<li><p><strong>record</strong> (<em>str</em>) – the model to search for</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>recursive structure containing a complete representation of the abstracted model</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.learn">
 <span class="sig-name descname"><span class="pre">learn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.learn" title="Permalink to this definition"></a></dt>
 <dd><p>Return the learn results.</p>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model_name</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<span class="go">&#39;MODEL|004da01b0ef40d7c3e0965a6b4fd0f413672fbff&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -515,8 +555,10 @@ Will observe on nodes specified by set_ingress_nodes() unless nodes explicitly p
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:{},</span> <span class="s2">&quot;metadata&quot;</span><span class="p">:{}}</span>
-<span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.utils</span> <span class="kn">import</span> <span class="n">create_gdf</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">gdf</span> <span class="o">=</span> <span class="n">create_gdf</span><span class="p">(</span><span class="n">strings</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">gdf</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+<span class="s1">&#39;observed&#39;</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -727,7 +769,7 @@ delete this model and reobserve the updated sequence</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+    <p>&#169; Copyright 2023, Intelligent Artifacts Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

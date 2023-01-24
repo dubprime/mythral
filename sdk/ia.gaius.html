@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ia.gaius package &mdash; IA-SDK-Python 0.2.35 documentation</title>
+  <title>ia.gaius package &mdash; IA-SDK-Python 0.3.8 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -35,6 +35,9 @@
             <a href="index.html" class="icon icon-home"> IA-SDK-Python
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
+              <div class="version">
+                v0.3.8
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -87,8 +90,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KnowledgeBase Operations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
@@ -98,6 +100,7 @@
 <li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -269,6 +272,21 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
 <dt class="sig sig-object py" id="ia.gaius.prediction_models.model_per_emotive">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">model_per_emotive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_normalization_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.model_per_emotive" title="Permalink to this definition"></a></dt>
 <dd><p>Using a Weighted Moving Average, though the ‘moving’ part refers to the prediction index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ensemble</strong> (<em>list</em><em>, </em><em>required</em>) – The prediction ensemble to use in computations</p></li>
+<li><p><strong>emotive</strong> (<em>_type_</em>) – The emotive to compute a moving average of</p></li>
+<li><p><strong>potential_normalization_factor</strong> (<em>_type_</em>) – Divisor to normailize the potential value of each prediction</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -297,7 +315,7 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Intelligent Artifacts.</p>
+    <p>&#169; Copyright 2023, Intelligent Artifacts Inc.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
