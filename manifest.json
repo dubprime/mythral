@@ -1,0 +1,25 @@
+{
+  "background_color": "#ffffff",
+  "description": "Offline version of the IA-SDK Documentation",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "IA-SDK Python Documentation",
+  "orientation": "any",
+  "scope": "https://intelligent-artifacts.bitbucket.io",
+  "short_name": "IA-SDK",
+  "start_url": "/sdk/",
+  "theme_color": "#12e0b8",
+  "categories": [
+    "education",
+    "productivity"
+  ],
+  "screenshots": [],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon"
+    }
+  ],
+  "shortcuts": [],
+  "lang": "en"
+}
