@@ -1,0 +1,7 @@
+Prediction Models
+=================
+
+.. automodule:: ia.gaius.prediction_models
+   :members:
+   :undoc-members:
+   :show-inheritance:
