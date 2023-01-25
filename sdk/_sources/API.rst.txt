@@ -14,5 +14,6 @@ frequently to interface with a GAIuS agent
     data_ops
     utils
     PVT
+    prediction_models
     ia.gaius
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ia.gaius package &mdash; IA-SDK-Python 0.3.8 documentation</title>
+  <title>ia.gaius package &mdash; IA-SDK-Python 0.3.10 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ia.gaius.tests package" href="ia.gaius.tests.html" />
-    <link rel="prev" title="Performance Validation Testing" href="PVT.html" /> 
+    <link rel="prev" title="Prediction Models" href="prediction_models.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -36,7 +36,7 @@
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.8
+                v0.3.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -102,6 +102,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prediction_models.html">Prediction Models</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
@@ -243,6 +244,23 @@
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">average_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.average_emotives" title="Permalink to this definition"></a></dt>
 <dd><p>Averages the emotives in a list (e.g. predictions ensemble or percepts).
 The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>record</strong> (<em>list</em>) – List of emotive dictionaries to average emotives of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of Averaged Emotives</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.prediction_models</span> <span class="kn">import</span> <span class="n">average_emotives</span>
+<span class="n">record</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;e1&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;e2&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;e2&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;e1&#39;</span><span class="p">:</span> <span class="mi">5</span> <span class="s1">&#39;e3&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">4</span><span class="p">}]</span>
+<span class="n">averages</span> <span class="o">=</span> <span class="n">average_emotives</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
@@ -253,19 +271,55 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.prediction_models.hive_model_classification">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">hive_model_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensembles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.hive_model_classification" title="Permalink to this definition"></a></dt>
-<dd><p>Every node gets a vote.</p>
+<dd><p>Compute the “hive predicted model classification” based on the ensembles provided from each node</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ensembles</strong> (<em>dict</em>) – should be dictionary of { node_name: prediction_ensemble }</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>hive predicted classification</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.prediction_models.hive_model_emotives">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">hive_model_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensembles</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.hive_model_emotives" title="Permalink to this definition"></a></dt>
-<dd><p>Average of final node predictions.</p>
+<dd><p>Compute average of emotives in model by calling <a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.average_emotives" title="ia.gaius.prediction_models.average_emotives"><code class="xref py py-func docutils literal notranslate"><span class="pre">average_emotives()</span></code></a> on <cite>ensembles</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ensembles</strong> (<em>list</em>) – Prediction ensemble to compute average emotives of</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>_description_</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>_type_</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.prediction_models.make_modeled_emotives">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">make_modeled_emotives</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.make_modeled_emotives" title="Permalink to this definition"></a></dt>
-<dd><p>The emotives in the ensemble are of type: ‘emotives’:[{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]</p>
+<dd><p>The emotives in the ensemble are of type: ‘emotives’:[{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]
+First calls <a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.average_emotives" title="ia.gaius.prediction_models.average_emotives"><code class="xref py py-func docutils literal notranslate"><span class="pre">average_emotives()</span></code></a> on each prediction in the ensemble, then calls <a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions" title="ia.gaius.prediction_models.bucket_predictions"><code class="xref py py-func docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a> on the ensemble.
+After bucketing predictions, the function <code class="xref py py-func docutils literal notranslate"><span class="pre">model_per_emotives()</span></code> is called for each emotive present in the ensemble.
+Dict returned contains { emotive: model_per_emotive } for each emotive in the ensemble</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ensemble</strong> (<em>list</em>) – Prediction ensemble containing emotives to model</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of modelled emotive values</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -273,17 +327,17 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">model_per_emotive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_normalization_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.prediction_models.model_per_emotive" title="Permalink to this definition"></a></dt>
 <dd><p>Using a Weighted Moving Average, though the ‘moving’ part refers to the prediction index.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ensemble</strong> (<em>list</em><em>, </em><em>required</em>) – The prediction ensemble to use in computations</p></li>
 <li><p><strong>emotive</strong> (<em>_type_</em>) – The emotive to compute a moving average of</p></li>
 <li><p><strong>potential_normalization_factor</strong> (<em>_type_</em>) – Divisor to normailize the potential value of each prediction</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>_description_</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>_type_</p>
 </dd>
 </dl>
@@ -308,7 +362,7 @@ The emotives in the record are of type: [{‘e1’: 4, ‘e2’: 5}, {‘e2’: 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="PVT.html" class="btn btn-neutral float-left" title="Performance Validation Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prediction_models.html" class="btn btn-neutral float-left" title="Prediction Models" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ia.gaius.tests.html" class="btn btn-neutral float-right" title="ia.gaius.tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

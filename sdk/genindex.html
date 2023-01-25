@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; IA-SDK-Python 0.3.8 documentation</title>
+  <title>Index &mdash; IA-SDK-Python 0.3.10 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -33,7 +33,7 @@
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.8
+                v0.3.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -99,6 +99,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prediction_models.html">Prediction Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
@@ -198,15 +199,19 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="utils.html#ia.gaius.utils.abstract_names">abstract_names() (in module ia.gaius.utils)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.addLogRecord">addLogRecord() (ia.gaius.data_ops.MongoResults method)</a>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.add_blacklisted_symbols">add_blacklisted_symbols() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.add_model">add_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.addLogRecord">addLogRecord() (ia.gaius.data_ops.MongoResults method)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient">AgentClient (class in ia.gaius.agent_client)</a>
 </li>
       <li><a href="data_ops.html#ia.gaius.data_ops.atoi">atoi() (in module ia.gaius.data_ops)</a>
 </li>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.average_emotives">average_emotives() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.average_emotives">average_emotives() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.average_emotives">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -218,7 +223,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.bucket_predictions">bucket_predictions() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.bucket_predictions">bucket_predictions() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -308,15 +313,19 @@
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs_as_json">get_kbs_as_json() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map">get_manipulative_map() (ia.gaius.genome_info.Genome method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_model">get_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol">get_models_containing_symbol() (in module ia.gaius.kb_ops)</a>
 </li>
       <li><a href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol_strict">get_models_containing_symbol_strict() (in module ia.gaius.kb_ops)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_models_with_patterns">get_models_with_patterns() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_models_with_symbols">get_models_with_symbols() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_name">get_name() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -342,11 +351,11 @@
 <h2 id="H">H</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.hive_model_classification">hive_model_classification() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.hive_model_classification">hive_model_classification() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.hive_model_classification">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.hive_model_emotives">hive_model_emotives() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.hive_model_emotives">hive_model_emotives() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.hive_model_emotives">[1]</a>
 </li>
   </ul></td>
 </tr></table>
@@ -386,7 +395,7 @@
     ia.gaius.prediction_models
 
       <ul>
-        <li><a href="ia.gaius.html#module-ia.gaius.prediction_models">module</a>
+        <li><a href="ia.gaius.html#module-ia.gaius.prediction_models">module</a>, <a href="prediction_models.html#module-ia.gaius.prediction_models">[1]</a>
 </li>
       </ul></li>
   </ul></td>
@@ -433,6 +442,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.learn">learn() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols">list_blacklisted_symbols() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
       <li><a href="kb_ops.html#ia.gaius.kb_ops.list_models">list_models() (in module ia.gaius.kb_ops)</a>
 </li>
   </ul></td>
@@ -449,9 +460,9 @@
 <h2 id="M">M</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.make_modeled_emotives">make_modeled_emotives() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.make_modeled_emotives">make_modeled_emotives() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.make_modeled_emotives">[1]</a>
 </li>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.model_per_emotive">model_per_emotive() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.model_per_emotive">model_per_emotive() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.model_per_emotive">[1]</a>
 </li>
       <li>
     module
@@ -465,7 +476,7 @@
 </li>
         <li><a href="kb_ops.html#module-ia.gaius.kb_ops">ia.gaius.kb_ops</a>
 </li>
-        <li><a href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models</a>
+        <li><a href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models</a>, <a href="prediction_models.html#module-ia.gaius.prediction_models">[1]</a>
 </li>
         <li><a href="ia.gaius.tests.html#module-ia.gaius.tests">ia.gaius.tests</a>
 </li>
@@ -524,7 +535,7 @@
 </li>
       <li><a href="ia.gaius.html#ia.gaius.back_testing.plot_class_distributions">plot_class_distributions() (in module ia.gaius.back_testing)</a>
 </li>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.prediction_ensemble_model_classification">prediction_ensemble_model_classification() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.prediction_ensemble_model_classification">prediction_ensemble_model_classification() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_model_classification">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -536,7 +547,7 @@
         <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.prep">(ia.gaius.data_ops.MongoData method)</a>
 </li>
       </ul></li>
-      <li><a href="ia.gaius.html#ia.gaius.prediction_models.principal_delta">principal_delta() (in module ia.gaius.prediction_models)</a>
+      <li><a href="ia.gaius.html#ia.gaius.prediction_models.principal_delta">principal_delta() (in module ia.gaius.prediction_models)</a>, <a href="prediction_models.html#ia.gaius.prediction_models.principal_delta">[1]</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.put_kbs">put_kbs() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -550,10 +561,16 @@
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.receive_unique_ids">receive_unique_ids() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
-      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.reset">reset() (ia.gaius.data_ops.MongoResults method)</a>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols">remove_blacklisted_symbols() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_patterns_from_system">remove_patterns_from_system() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_symbols_from_system">remove_symbols_from_system() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="data_ops.html#ia.gaius.data_ops.MongoResults.reset">reset() (ia.gaius.data_ops.MongoResults method)</a>
+</li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.resolve_model">resolve_model() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.retrieveDataRecord">retrieveDataRecord() (ia.gaius.data_ops.MongoData method)</a>
@@ -578,13 +595,17 @@
 </li>
       <li><a href="data_ops.html#ia.gaius.data_ops.MongoData.setIterMode">setIterMode() (ia.gaius.data_ops.MongoData method)</a>
 </li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.show_status">show_status() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.show_status">show_status() (ia.gaius.agent_client.AgentClient method)</a>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_autolearning">start_autolearning() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_predicting">start_predicting() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_sleeping">start_sleeping() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_autolearning">stop_autolearning() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_predicting">stop_predicting() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
@@ -615,6 +636,10 @@
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_attach">tf_attach() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_list">tf_list() (ia.gaius.agent_client.AgentClient method)</a>
+</li>
+      <li><a href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_remove">tf_remove() (ia.gaius.agent_client.AgentClient method)</a>
 </li>
       <li><a href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.train">train() (ia.gaius.tests.classification.Tester method)</a>
 

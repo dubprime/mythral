@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentClient &mdash; IA-SDK-Python 0.3.8 documentation</title>
+  <title>AgentClient &mdash; IA-SDK-Python 0.3.10 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.8
+                v0.3.10
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -102,6 +102,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="PVT.html">Performance Validation Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prediction_models.html">Prediction Models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
@@ -188,7 +189,7 @@ agent configuration, and debugging.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Provide agent information in a dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bottle_info</strong> (<em>dict</em><em>, </em><em>required</em>) – the info used to connect and authenticate with a GAIuS agent</p></li>
 <li><p><strong>verify</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to enable SSL Verification on api commands to an agent</p></li>
@@ -210,6 +211,38 @@ agent configuration, and debugging.</p>
 <span class="n">agent</span><span class="o">.</span><span class="n">set_query_nodes</span><span class="p">([</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.add_blacklisted_symbols">
+<span class="sig-name descname"><span class="pre">add_blacklisted_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.add_blacklisted_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Add a symbol to the blacklist manually.
+List all symbols currently in the blacklist using <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols" title="ia.gaius.agent_client.AgentClient.list_blacklisted_symbols"><code class="xref py py-func docutils literal notranslate"><span class="pre">list_blacklisted_symbols()</span></code></a>.
+Symbols may be removed from this list by using <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols" title="ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_blacklisted_symbols()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbols_list</strong> (<em>List</em>) – list of symbols to add to the</p></li>
+<li><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to add blacklisted symbols on. Defaults to None (all nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AgentQueryError</strong> – Error in Cognitive Processor handling</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Depicting result of adding blacklisted symbols to each CP in nodes</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict or str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.add_model">
+<span class="sig-name descname"><span class="pre">add_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.add_model" title="Permalink to this definition"></a></dt>
+<dd><p>Function to explicitely add a model with the given sequence of symbols, frequency, and emotives.
+Returns the hash of the generated function</p>
 </dd></dl>
 
 <dl class="py method">
@@ -332,7 +365,7 @@ Choose the directory to save in with the directory keyword. Default is in ‘./�
 <span class="sig-name descname"><span class="pre">get_kbs_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs_as_json" title="Permalink to this definition"></a></dt>
 <dd><p>Returns KBs of specified nodes as JSON Objects</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nodes</strong> (<em>list</em><em>, </em><em>optional</em>) – Defaults to None.</p></li>
 <li><p><strong>directory</strong> (<em>str</em><em>, </em><em>optional</em>) – Defaults to ‘./’.</p></li>
@@ -341,10 +374,10 @@ Choose the directory to save in with the directory keyword. Default is in ‘./�
 <li><p><strong>obj</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a filepath or a python object returned from the function</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>List of files where KB is stored if obj = False, or big dictionary where KB is to be stored if obj = True</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>Union[List(str), Dict]</p>
 </dd>
 </dl>
@@ -373,6 +406,20 @@ one model will be found.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_model</span><span class="p">(</span><span class="s2">&quot;MODEL|d85f28ebda228064299035bf2dbf58f5c6484108&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_models_with_patterns">
+<span class="sig-name descname"><span class="pre">get_models_with_patterns</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_models_with_patterns" title="Permalink to this definition"></a></dt>
+<dd><p>Function which search the kbs on the nodes for models with certain regex patterns.
+All regex patterns must be present in model.sequence, or the model will not be returned</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_models_with_symbols">
+<span class="sig-name descname"><span class="pre">get_models_with_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_models_with_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Function which search the kbs on the nodes for models with certain symbols.
+All symbols must be present in model.sequence, or the model will not be returned</p>
 </dd></dl>
 
 <dl class="py method">
@@ -444,7 +491,7 @@ one model will be found.</p>
 <span class="sig-name descname"><span class="pre">increment_recall_threshold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">increment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.increment_recall_threshold" title="Permalink to this definition"></a></dt>
 <dd><p>Increment recall threshold by <em>increment</em> on <em>nodes</em>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>increment</strong> (<em>float</em>) – value by which to increment the recall threshold by</p>
 </dd>
 </dl>
@@ -467,13 +514,13 @@ use <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.chang
 Operates on abstracted symbols, models, etc. Useful when applying in a programatic manner, where the node
 a symbol comes from is unknown. May throw exception if unable to identify a starting point.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>record</strong> (<em>str</em>) – the symbol to look for</p>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>recursive structure containing a complete representation of the abstracted model</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -490,16 +537,16 @@ a symbol comes from is unknown. May throw exception if unable to identify a star
 <dd><p>Function for drilling down on a model recursively in a multi-node agent. Will retrieve all data “under”
 the abstracted model, giving a complete representation of the abstracted model</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>node</strong> (<em>list</em><em> or </em><em>str</em>) – the node to start at/containing the model provided in <cite>record</cite>: e.g. [‘P4’] or ‘P4’</p></li>
 <li><p><strong>record</strong> (<em>str</em>) – the model to search for</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>recursive structure containing a complete representation of the abstracted model</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -517,20 +564,46 @@ the abstracted model, giving a complete representation of the abstracted model</
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.list_blacklisted_symbols">
+<span class="sig-name descname"><span class="pre">list_blacklisted_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Display a list of all symbols currently ‘blacklisted’ on each node in <em>nodes</em>.
+Symbols enter this list by being removed from a Cognitive Processor via <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.remove_symbols_from_system" title="ia.gaius.agent_client.AgentClient.remove_symbols_from_system"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_symbols_from_system()</span></code></a> or <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.remove_patterns_from_system" title="ia.gaius.agent_client.AgentClient.remove_patterns_from_system"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_patterns_from_system()</span></code></a>.
+Symbols may be removed from this list by using <a class="reference internal" href="#ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols" title="ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols"><code class="xref py py-func docutils literal notranslate"><span class="pre">remove_blacklisted_symbols()</span></code></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to show blacklisted symbols on. Defaults to None (all nodes).</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.kb_ops</span> <span class="kn">import</span> <span class="n">list_symbols</span><span class="p">,</span> <span class="n">get_models_containing_symbol</span>
+
+<span class="n">symbols_before</span> <span class="o">=</span> <span class="n">list_symbols</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+<span class="n">blacklisted_symbols</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">list_blacklisted_symbols</span><span class="p">()</span>
+<span class="c1"># ensure all blacklisted symbols do not appear in the system</span>
+<span class="k">assert</span> <span class="nb">all</span><span class="p">([</span><span class="n">sym</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">symbols_before</span> <span class="k">for</span> <span class="n">sym</span> <span class="ow">in</span> <span class="n">blacklisted_symbols</span><span class="p">])</span>
+
+<span class="c1"># ensure no models contain the blacklisted symbols</span>
+<span class="n">models_containing_symbol</span> <span class="o">=</span> <span class="n">get_models_containing_symbol</span><span class="p">(</span><span class="n">agent</span><span class="p">,</span> <span class="n">symbol_set</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">blacklisted_symbols</span><span class="p">))</span>
+<span class="k">assert</span> <span class="nb">all</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">models_containing_symbol</span><span class="o">.</span><span class="n">values</span><span class="p">()])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.load_kbs_from_json">
 <span class="sig-name descname"><span class="pre">load_kbs_from_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json" title="Permalink to this definition"></a></dt>
 <dd><p>Load KBs from a JSON file</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – path to JSON file where KBs are stored.</p></li>
 <li><p><strong>obj</strong> (<em>dict</em><em>, </em><em>optional</em>) – object to load KnowledgeBase from</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dt class="field-even">Returns</dt>
 <dd class="field-even"><p>‘success’ or ‘failed’</p>
 </dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -547,7 +620,7 @@ the abstracted model, giving a complete representation of the abstracted model</
 <dd><p>Exclusively uses the ‘observe’ call.
 Will observe on nodes specified by set_ingress_nodes() unless nodes explicitly provided</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>dict</em>) – the GDF data to be observed</p></li>
 <li><p><strong>nodes</strong> (<em>list</em><em>, </em><em>optional</em>) – Nodes to observe data on, defaults to ingress nodes</p></li>
@@ -597,6 +670,86 @@ Will observe on nodes specified by set_ingress_nodes() unless nodes explicitly p
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.receive_unique_ids">
 <span class="sig-name descname"><span class="pre">receive_unique_ids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">should_set</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.receive_unique_ids" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols">
+<span class="sig-name descname"><span class="pre">remove_blacklisted_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_to_remove</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Remove symbols from blacklist on each Cognitive Processor in <em>nodes</em></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbols_to_remove</strong> (<em>List</em>) – list of symbols to remove from blacklisted symbols</p></li>
+<li><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to remove blacklisted symbols on. Defaults to None (all nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AgentQueryError</strong> – Error in Cognitive Processor handling</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>_description_</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>_type_</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.remove_patterns_from_system">
+<span class="sig-name descname"><span class="pre">remove_patterns_from_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.remove_patterns_from_system" title="Permalink to this definition"></a></dt>
+<dd><p>Function which search the kbs on the nodes for models with certain regex patterns.
+Removed symbols that matches patterns, but does not blacklist them.
+So patterns may show up in the future.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbols_list</strong> (<em>List</em>) – list of regex symbol patterns to remove.</p></li>
+<li><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to remove symbols on. Defaults to None (all nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AgentQueryError</strong> – Error in Cognitive Processor handling</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict showing old model hash -&gt; new model hash (or ‘deleted’) pairs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Union[dict, Any]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.kb_ops</span> <span class="kn">import</span> <span class="n">list_symbols</span>
+
+<span class="n">symbols_before</span> <span class="o">=</span> <span class="n">list_symbols</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">remove_patterns_from_system</span><span class="p">([</span><span class="s1">&#39;VECTOR|.+&#39;</span><span class="p">])</span>
+<span class="n">symbols_after</span> <span class="o">=</span> <span class="n">list_symbols</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.remove_symbols_from_system">
+<span class="sig-name descname"><span class="pre">remove_symbols_from_system</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbols_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.remove_symbols_from_system" title="Permalink to this definition"></a></dt>
+<dd><p>Function which search the kbs on the nodes for models with certain symbols.
+Symbols are removed, and the symbols are blacklisted, thus making it impossible fo them to be in the working memory in the future.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbols_list</strong> (<em>List</em>) – list of symbols to remove. Defaults to None.</p></li>
+<li><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to remove symbols from. Defaults to None (all nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>AgentQueryError</strong> – Error in Cognitive Processor handling</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict showing old model hash -&gt; new model hash (or ‘deleted’) pairs</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>Union[dict, Any]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.resolve_model">
@@ -684,6 +837,17 @@ sequence.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.start_autolearning">
+<span class="sig-name descname"><span class="pre">start_autolearning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.start_autolearning" title="Permalink to this definition"></a></dt>
+<dd><p>Tells <em>nodes</em> to start predicting.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will enable prediction generation on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">start_predicting</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.start_predicting">
 <span class="sig-name descname"><span class="pre">start_predicting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.start_predicting" title="Permalink to this definition"></a></dt>
 <dd><p>Tells <em>nodes</em> to start predicting.</p>
@@ -701,6 +865,18 @@ sequence.</p>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will disable observing new data on node P1</span>
 <span class="n">agent</span><span class="o">.</span><span class="n">start_sleeping</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.stop_autolearning">
+<span class="sig-name descname"><span class="pre">stop_autolearning</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.stop_autolearning" title="Permalink to this definition"></a></dt>
+<dd><p>Tells <em>nodes</em> to stop predicting.</p>
+<p>Useful for faster training, but abstracted nodes will not learn.</p>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># will disable prediction generation on node P1</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">stop_predicting</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -731,6 +907,16 @@ sequence.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_attach">
 <span class="sig-name descname"><span class="pre">tf_attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_attach" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_list">
+<span class="sig-name descname"><span class="pre">tf_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_list" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_remove">
+<span class="sig-name descname"><span class="pre">tf_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_remove" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
