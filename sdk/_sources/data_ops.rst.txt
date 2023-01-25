@@ -23,34 +23,6 @@ DataRecords
       :show-inheritance:
       :special-members: __init__
 
-MongoData
----------
-
-.. autoclass:: ia.gaius.data_ops.MongoData
-      :members:
-      :undoc-members:
-      :show-inheritance:
-      :special-members: __init__
-
-MongoDataRecords
-----------------
-
-.. autoclass:: ia.gaius.data_ops.MongoDataRecords
-      :members:
-      :undoc-members:
-      :show-inheritance:
-      :special-members: __init__
-
-
-MongoResults
-----------------
-
-.. autoclass:: ia.gaius.data_ops.MongoResults
-      :members:
-      :undoc-members:
-      :show-inheritance:
-      :special-members: __init__
-
 data_ops module
 ---------------
 
