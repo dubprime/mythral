@@ -54,10 +54,10 @@ ia.gaius.data\_language module
 ..    :undoc-members:
 ..    :show-inheritance:
 
-ia.gaius.prediction\_models module
-----------------------------------
+.. ia.gaius.prediction\_models module
+.. ----------------------------------
 
-.. automodule:: ia.gaius.prediction_models
-   :members:
-   :undoc-members:
-   :show-inheritance:
+.. .. automodule:: ia.gaius.prediction_models
+..    :members:
+..    :undoc-members:
+..    :show-inheritance:

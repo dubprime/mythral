@@ -15,6 +15,7 @@ This project provides various helper classes and functions for interacting with 
    GDF
    Tutorials
    API
+   examples/UsageExamples
    
 
 Indices and tables

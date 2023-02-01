@@ -1,0 +1,169 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "78c11474",
+   "metadata": {},
+   "source": [
+    "# Agent Setup"
+   ]
+  },
+  {
+   "cell_type": "raw",
+   "id": "a61b83b0",
+   "metadata": {
+    "raw_mimetype": "text/restructuredtext"
+   },
+   "source": [
+    " Import :class:`~ia.gaius.agent_client.AgentClient` from module :py:mod:`ia.gaius.agent_client`"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "acd8507d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from ia.gaius.agent_client import AgentClient"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "a75f1486",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "agent_info = {'name': '',\n",
+    "              'domain': 'gaius-api',\n",
+    "              'secure': False,\n",
+    "              'api_key': 'ABCD-1234'}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "683e8206",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "agent = AgentClient(agent_info)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "1bc8e6c7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'connection': 'okay', 'agent': 'simple'}"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.connect()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "babcad06",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'AUTOLEARN': False,\n",
+       " 'PREDICT': True,\n",
+       " 'SLEEPING': False,\n",
+       " 'emotives': {},\n",
+       " 'last_learned_model_name': '',\n",
+       " 'models_kb': '{KB| objects: 0}',\n",
+       " 'name': 'P1',\n",
+       " 'size_WM': 0,\n",
+       " 'target': '',\n",
+       " 'time': 0,\n",
+       " 'vectors_kb': '{KB| objects: 0}'}"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.show_status()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "2ff3b921",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'genes': {'always_update_frequencies': False,\n",
+       "  'auto_learn_algorithm': 'basic',\n",
+       "  'auto_learn_metric': 'WM_size',\n",
+       "  'classifier': 'CVC',\n",
+       "  'max_predictions': 100,\n",
+       "  'near_vector_count': 3,\n",
+       "  'persistence': 5,\n",
+       "  'predict_on_nth_event': 1,\n",
+       "  'quiescence': 3,\n",
+       "  'recall_threshold': 0.1,\n",
+       "  'smoothness': 3,\n",
+       "  'sort_metric': 'potential'}}"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "agent.get_all_genes(nodes=['P1'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "11d1716b",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Raw Cell Format",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

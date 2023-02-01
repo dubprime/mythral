@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utilities &mdash; IA-SDK-Python 0.3.11 documentation</title>
+  <title>Utilities &mdash; IA-SDK-Python 0.3.13 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -36,7 +36,7 @@
             <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.11
+                v0.3.13
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -81,7 +81,13 @@
 <li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Show-Agent-Status">Show Agent Status</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Get-Predictions">Get Predictions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-1st-event-in-New-Sequence">Observe 1st event in New Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#id1">Get Predictions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#Observe-2nd-event-in-New-Sequence">Observe 2nd event in New Sequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Strings.html#id2">Get Predictions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
@@ -119,11 +125,20 @@
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.prediction_models">ia.gaius.prediction_models module</a></li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/UsageExamples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/Agent%20Setup.html">Agent Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/Changing%20Genes.html">Changing Genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/Training%201.html">Basic PVT Setup and Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="examples/Training%201.html#Iris-Dataset-Training">Iris Dataset Training</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="examples/UsageExamples.html#mnist-testing">MNIST Testing</a></li>
 </ul>
 </li>
 </ul>
@@ -244,6 +259,33 @@ be made with the improper format</p>
 <dt class="sig sig-object py" id="ia.gaius.utils.log_progress">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">log_progress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">every</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Items'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.utils.log_progress" title="Permalink to this definition"></a></dt>
 <dd><p>A nice little Jupyter progress bar widget from: <a class="reference external" href="https://github.com/alexanderkuk/log-progress">https://github.com/alexanderkuk/log-progress</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.utils.retrieve_bottom_level_records">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.utils.</span></span><span class="sig-name descname"><span class="pre">retrieve_bottom_level_records</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">traceback</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.utils.retrieve_bottom_level_records" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve all records from a traceback (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.investigate_record" title="ia.gaius.agent_client.AgentClient.investigate_record"><code class="xref py py-func docutils literal notranslate"><span class="pre">ia.gaius.agent_client.AgentClient.investigate_record()</span></code></a>) call that have bottomLevel=True</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>traceback</strong> (<em>dict</em>) – the dictionary pertaining to the output of an investigate call</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of records from the traceback</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
+<span class="kn">from</span> <span class="nn">ia.gaius.utils</span> <span class="kn">import</span> <span class="n">retrieve_bottom_level_records</span>
+<span class="o">...</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">traceback_output</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">investigate_record</span><span class="p">(</span><span class="n">record</span><span class="o">=</span><span class="n">record</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
+<span class="n">bottom_level_records</span> <span class="o">=</span> <span class="n">retrieve_bottom_level_records</span><span class="p">(</span><span class="n">traceback_output</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
