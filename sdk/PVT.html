@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Performance Validation Testing &mdash; IA-SDK-Python 0.3.21 documentation</title>
+  <title>Performance Validation Testing &mdash; IA-SDK-Python 0.3.22 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -12,11 +12,10 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -32,15 +31,19 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> IA-SDK-Python
-            <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            IA-SDK-Python
+              <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.21
+                v0.3.22
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -94,36 +97,222 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="API.html">API Reference</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient"><code class="docutils literal notranslate"><span class="pre">AgentClient</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.__init__"><code class="docutils literal notranslate"><span class="pre">AgentClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.add_blacklisted_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.add_blacklisted_symbols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.add_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.add_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.change_genes"><code class="docutils literal notranslate"><span class="pre">AgentClient.change_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_all_memory"><code class="docutils literal notranslate"><span class="pre">AgentClient.clear_all_memory()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_target_class"><code class="docutils literal notranslate"><span class="pre">AgentClient.clear_target_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.clear_wm"><code class="docutils literal notranslate"><span class="pre">AgentClient.clear_wm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.connect"><code class="docutils literal notranslate"><span class="pre">AgentClient.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.delete_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.delete_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_all_genes"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_all_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_cognition_data"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_cognition_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_gene"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_gene()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_kbs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_kbs_as_json"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_kbs_as_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_models_with_patterns"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_models_with_patterns()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_models_with_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_models_with_symbols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_name"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_name()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_percept_data"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_percept_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_predictions"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_predictions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_time"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_vector"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_vector()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.get_wm"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_wm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.increment_recall_threshold"><code class="docutils literal notranslate"><span class="pre">AgentClient.increment_recall_threshold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.investigate"><code class="docutils literal notranslate"><span class="pre">AgentClient.investigate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.investigate_record"><code class="docutils literal notranslate"><span class="pre">AgentClient.investigate_record()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.learn"><code class="docutils literal notranslate"><span class="pre">AgentClient.learn()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.list_blacklisted_symbols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.load_kbs_from_json"><code class="docutils literal notranslate"><span class="pre">AgentClient.load_kbs_from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.observe"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.observe_classification"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe_classification()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.ping"><code class="docutils literal notranslate"><span class="pre">AgentClient.ping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.put_kbs"><code class="docutils literal notranslate"><span class="pre">AgentClient.put_kbs()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.receive_unique_ids"><code class="docutils literal notranslate"><span class="pre">AgentClient.receive_unique_ids()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_blacklisted_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.remove_blacklisted_symbols()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_patterns_from_system"><code class="docutils literal notranslate"><span class="pre">AgentClient.remove_patterns_from_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.remove_symbols_from_system"><code class="docutils literal notranslate"><span class="pre">AgentClient.remove_symbols_from_system()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.resolve_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.resolve_model()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_ingress_nodes"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_ingress_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_query_nodes"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_query_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_summarize_for_single_node"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_summarize_for_single_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_target_class"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_target_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.show_status"><code class="docutils literal notranslate"><span class="pre">AgentClient.show_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.start_autolearning()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.start_predicting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.start_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.start_sleeping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_autolearning()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_predicting()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_sleeping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_attach"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_attach()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_list"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_remove"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_remove()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.update_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.update_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Genome.html">Genome</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome"><code class="docutils literal notranslate"><span class="pre">Genome</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.__init__"><code class="docutils literal notranslate"><span class="pre">Genome.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.change_genes"><code class="docutils literal notranslate"><span class="pre">Genome.change_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.display"><code class="docutils literal notranslate"><span class="pre">Genome.display()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_actions"><code class="docutils literal notranslate"><span class="pre">Genome.get_actions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_manipulative_map()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_nodes"><code class="docutils literal notranslate"><span class="pre">Genome.get_nodes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_primitive_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_primitive_map()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="kb_ops.html">KB Ops</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_kb_subset"><code class="docutils literal notranslate"><span class="pre">get_kb_subset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol_strict"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol_strict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
-<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data">Data</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.Data"><code class="docutils literal notranslate"><span class="pre">Data</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.Data.__init__"><code class="docutils literal notranslate"><span class="pre">Data.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.Data.prep"><code class="docutils literal notranslate"><span class="pre">Data.prep()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.DataRecords"><code class="docutils literal notranslate"><span class="pre">DataRecords</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.DataRecords.__init__"><code class="docutils literal notranslate"><span class="pre">DataRecords.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.atoi"><code class="docutils literal notranslate"><span class="pre">atoi()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.natural_keys"><code class="docutils literal notranslate"><span class="pre">natural_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.raw_in_count"><code class="docutils literal notranslate"><span class="pre">raw_in_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="data_ops.html#ia.gaius.data_ops.validate_data"><code class="docutils literal notranslate"><span class="pre">validate_data()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.retrieve_bottom_level_records"><code class="docutils literal notranslate"><span class="pre">retrieve_bottom_level_records()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.write_gdf_to_file"><code class="docutils literal notranslate"><span class="pre">write_gdf_to_file()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Performance Validation Testing</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#performance-validation-test">Performance Validation Test</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mongodata">MongoData</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mongodatarecords">MongoDataRecords</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mongoresults">MongoResults</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.pvt.pvt_utils">PVT Utils</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#performance-validation-test">Performance Validation Test</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.__init__"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.compute_incidental_probabilities()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.conduct_pvt"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.conduct_pvt()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_classification_metrics()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_emotives_polarity_metrics()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.get_emotives_value_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_emotives_value_metrics()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.sum_sequence_emotives()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.test_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.test_agent()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.train_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.train_agent()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_classification_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_classification_metrics()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html">Prediction Models</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mongodata">MongoData</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData"><code class="docutils literal notranslate"><span class="pre">MongoData</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.__init__"><code class="docutils literal notranslate"><span class="pre">MongoData.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.convertBinaryStringtoSequence"><code class="docutils literal notranslate"><span class="pre">MongoData.convertBinaryStringtoSequence()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.delete_dataset"><code class="docutils literal notranslate"><span class="pre">MongoData.delete_dataset()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.getSequence"><code class="docutils literal notranslate"><span class="pre">MongoData.getSequence()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.prep"><code class="docutils literal notranslate"><span class="pre">MongoData.prep()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord"><code class="docutils literal notranslate"><span class="pre">MongoData.retrieveDataRecord()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.setIterMode"><code class="docutils literal notranslate"><span class="pre">MongoData.setIterMode()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.upload_dataset"><code class="docutils literal notranslate"><span class="pre">MongoData.upload_dataset()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mongodatarecords">MongoDataRecords</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords"><code class="docutils literal notranslate"><span class="pre">MongoDataRecords</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__"><code class="docutils literal notranslate"><span class="pre">MongoDataRecords.__init__()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mongoresults">MongoResults</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults"><code class="docutils literal notranslate"><span class="pre">MongoResults</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.__init__"><code class="docutils literal notranslate"><span class="pre">MongoResults.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord"><code class="docutils literal notranslate"><span class="pre">MongoResults.addLogRecord()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.deleteResults()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.reset"><code class="docutils literal notranslate"><span class="pre">MongoResults.reset()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.saveResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.saveResults()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-ia.gaius.pvt.pvt_utils">PVT Utils</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.classification_metrics_builder"><code class="docutils literal notranslate"><span class="pre">classification_metrics_builder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_polarity_metrics_builder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_value_metrics_builder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.init_emotive_on_node"><code class="docutils literal notranslate"><span class="pre">init_emotive_on_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.make_modeled_emotives_"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.model_per_emotive_"><code class="docutils literal notranslate"><span class="pre">model_per_emotive_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.pvt_utils.retrieve_emotive_val"><code class="docutils literal notranslate"><span class="pre">retrieve_emotive_val()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="prediction_models.html">Prediction Models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.average_emotives"><code class="docutils literal notranslate"><span class="pre">average_emotives()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions"><code class="docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_classification"><code class="docutils literal notranslate"><span class="pre">hive_model_classification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_emotives"><code class="docutils literal notranslate"><span class="pre">hive_model_emotives()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.make_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.model_per_emotive"><code class="docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_model_classification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
-<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#ia-gaius-back-testing-module">ia.gaius.back_testing module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
 </ul>
 </li>
@@ -156,9 +345,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="API.html">API Reference</a> &raquo;</li>
-      <li>Performance Validation Testing</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="API.html">API Reference</a></li>
+      <li class="breadcrumb-item active">Performance Validation Testing</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/PVT.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -193,14 +382,14 @@
 }
 </style>
 <section id="performance-validation-testing">
-<h1><a class="toc-backref" href="#id1">Performance Validation Testing</a><a class="headerlink" href="#performance-validation-testing" title="Permalink to this heading"></a></h1>
+<h1><a class="toc-backref" href="#id1" role="doc-backlink">Performance Validation Testing</a><a class="headerlink" href="#performance-validation-testing" title="Permalink to this heading"></a></h1>
 <p>This class is utilized to perform thorough testing on GAIuS Agents. Performance Validation Testing (PVT) has three test types:</p>
 <ul class="simple">
 <li><p>Classification</p></li>
 <li><p>Emotive Value</p></li>
 <li><p>Emotive Polarity</p></li>
 </ul>
-<div class="contents topic" id="table-of-contents">
+<nav class="contents" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#performance-validation-testing" id="id1">Performance Validation Testing</a></p>
@@ -213,12 +402,12 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="performance-validation-test">
-<h2><a class="toc-backref" href="#id2">Performance Validation Test</a><a class="headerlink" href="#performance-validation-test" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Performance Validation Test</a><a class="headerlink" href="#performance-validation-test" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.</span></span><span class="sig-name descname"><span class="pre">PerformanceValidationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">socket_channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pvt_status'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.</span></span><span class="sig-name descname"><span class="pre">PerformanceValidationTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">socket_channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pvt_status'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Performance Validation Test (PVT) - Splits a GDF folder into training and testing sets.
 Based on the test type certain visualizations will be produced.</p>
@@ -230,10 +419,10 @@ Based on the test type certain visualizations will be produced.</p>
 </ul>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">socket_channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pvt_status'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ingress_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_of_tests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_of_ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pct_res_4_train</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_location</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'filepath'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">results_filepath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ds_filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_prediction_strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'continuous'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clear_all_memory_before_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">turn_prediction_off_during_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">task</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">socket_channel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'pvt_status'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize the PVT object with all required parameters for execution</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – GAIuS Agent to use for trainings</p></li>
 <li><p><strong>ingress_nodes</strong> (<em>list</em>) – Ingress nodes for the GAIuS Agent (see <a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.set_query_nodes" title="ia.gaius.agent_client.AgentClient.set_query_nodes"><code class="xref py py-func docutils literal notranslate"><span class="pre">ia.gaius.agent_client.AgentClient.set_query_nodes()</span></code></a>)</p></li>
@@ -267,13 +456,13 @@ Based on the test type certain visualizations will be produced.</p>
 <span class="sig-name descname"><span class="pre">compute_incidental_probabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_step_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities" title="Permalink to this definition"></a></dt>
 <dd><p>Keep track of how well each node is doing during the testing phase. To be used for live visualizations</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>test_step_info</strong> (<em>dict</em><em>, </em><em>required</em>) – Dictionary containing information about the current predicted, actual answers, and other related metrics (e.g. precision, unknowns, residuals, response rate, etc.)</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>updated test_step_info with the current running accuracy</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -351,7 +540,7 @@ where prediction is needed to propagate data through the topology.</p>
 
 </section>
 <section id="mongodata">
-<h2><a class="toc-backref" href="#id3">MongoData</a><a class="headerlink" href="#mongodata" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">MongoData</a><a class="headerlink" href="#mongodata" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData" title="Permalink to this definition"></a></dt>
@@ -381,7 +570,7 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialized dataset object from MongoDB</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mongo_dataset_details</strong> (<em>dict</em>) – contains info about the user_id and dataset_id of the dataset. Used to query MongoDB</p></li>
 <li><p><strong>data_files_collection_name</strong> (<em>str</em>) – Collection in MongoDB where individual data records are stored</p></li>
@@ -389,7 +578,7 @@ as a list.</p>
 <li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB client object to use for dataset lookups</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>Exception</strong> – user_id field missing from mongo_dataset_details</p></li>
 <li><p><strong>Exception</strong> – dataset_id field missing from mongo_dataset_details</p></li>
@@ -404,16 +593,37 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">convertBinaryStringtoSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.convertBinaryStringtoSequence" title="Permalink to this definition"></a></dt>
 <dd><p>Convert Binary string of multiple GDFs (delimited by newline) into a sequence of JSON objects</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>record</strong> (<em>str</em><em>, </em><em>required</em>) – binary string of GDFs to convert</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>list of GDFs in json format</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.delete_dataset">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">delete_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.delete_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Upload a dataset to MongoDB from a local filepath</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB database object</p></li>
+<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about dataset (e.g. name, user_id, dataset_id, collection names, etc.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>String depicting action that was taken</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
 </dd></dl>
 
 <dl class="py method">
@@ -421,13 +631,13 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">getSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.getSequence" title="Permalink to this definition"></a></dt>
 <dd><p>Wrapper function to retrieve a record from MongoDB and convert it into a sequence</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>record</strong> (<em>ObjectId</em>) – The MongoDB ObjectId of the data record to retrieve</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>GDF sequence retrieved from MongoDB</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list</p>
 </dd>
 </dl>
@@ -438,7 +648,7 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">prep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">percent_of_dataset_chosen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percent_reserved_for_training</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.prep" title="Permalink to this definition"></a></dt>
 <dd><p>Prepare the dataset</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>percent_of_dataset_chosen</strong> (<em>float</em>) – The percent of the dataset to utilize</p></li>
 <li><p><strong>percent_reserved_for_training</strong> (<em>float</em>) – The training/testing split for the dataset (e.g. set to 80 for 80/20 trianing/testing split)</p></li>
@@ -453,16 +663,16 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">retrieveDataRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ObjectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord" title="Permalink to this definition"></a></dt>
 <dd><p>Retrieve a data record from MongoDB, pertaining to the ObjectId specifed</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>document_id</strong> (<em>ObjectId</em><em>, </em><em>required</em>) – data record to retrieve from mongo, located in the collection specified when calling <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.__init__" title="ia.gaius.pvt.mongo_interface.MongoData.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a></p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>Exception</strong> – Raised when MongoDB document is not found. Shows query performed that failed</p>
 </dd>
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>binary string depicting data sequence stored in MongoDB Document</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
 </dl>
@@ -473,10 +683,10 @@ as a list.</p>
 <span class="sig-name descname"><span class="pre">setIterMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.setIterMode" title="Permalink to this definition"></a></dt>
 <dd><p>Set mode to be used for iterating across dataset</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – set to “training” or “testing” depending on what set of sequences is to be iterated across</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>Exception</strong> – When no data is in train_sequences or test_sequences, and <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.prep" title="ia.gaius.pvt.mongo_interface.MongoData.prep"><code class="xref py py-func docutils literal notranslate"><span class="pre">prep()</span></code></a> should be called first</p></li>
 <li><p><strong>Exception</strong> – When invalid mode specified in mode argument</p></li>
@@ -487,31 +697,41 @@ as a list.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.upload_dataset">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upload_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.upload_dataset" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">upload_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.upload_dataset" title="Permalink to this definition"></a></dt>
 <dd><p>Upload a dataset to MongoDB from a local filepath</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mongo_db</strong> (<em>_type_</em>) – _description_</p></li>
-<li><p><strong>mongo_dataset_details</strong> (<em>dict</em>) – _description_</p></li>
-<li><p><strong>data_files_collection_name</strong> (<em>str</em>) – _description_</p></li>
-<li><p><strong>dataset_collection_name</strong> (<em>_type_</em>) – _description_</p></li>
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB Database object</p></li>
+<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about dataset (e.g. name, user_id, dataset_id, collection names, etc.)</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath of zip folder containing dataset (GDF records)</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>_description_</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>_type_</p>
 </dd>
 </dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.pvt.mongo_interface</span> <span class="kn">import</span> <span class="n">MongoData</span>
+<span class="o">...</span>
+<span class="n">dataset_details</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-1234&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MNIST&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;dataset_id&quot;</span><span class="p">:</span> <span class="s2">&quot;abba12&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;data_files_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset_files&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;dataset_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;datasets&quot;</span><span class="p">}</span>
+<span class="n">MongoData</span><span class="o">.</span><span class="n">upload_dataset</span><span class="p">(</span><span class="n">mongo_db</span><span class="o">=</span><span class="n">mongo_db</span><span class="p">,</span> <span class="n">dataset_details</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </dd></dl>
 
 </section>
 <section id="mongodatarecords">
-<h2><a class="toc-backref" href="#id4">MongoDataRecords</a><a class="headerlink" href="#mongodatarecords" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">MongoDataRecords</a><a class="headerlink" href="#mongodatarecords" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoDataRecords">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoDataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords" title="Permalink to this definition"></a></dt>
@@ -520,7 +740,7 @@ as a list.</p>
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>dataset_document_list</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>required</em>) – List of mongo ObjectIds to use as data records</p></li>
 <li><p><strong>DR</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of total data to use for testing and training. 0 &lt; DR &lt; 100</p></li>
@@ -530,7 +750,7 @@ as a list.</p>
 <li><p><strong>sets</strong> (<em>utilize the member variables train_sequences and test_sequences for the data</em>) – </p></li>
 </ul>
 </dd>
-<dt class="field-even">Variables</dt>
+<dt class="field-even">Variables<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>train_sequences</strong> – the mongo documents to use for training</p></li>
 <li><p><strong>test_sequences</strong> – the mongo documents to use for testing</p></li>
@@ -543,19 +763,19 @@ as a list.</p>
 
 </section>
 <section id="mongoresults">
-<h2><a class="toc-backref" href="#id5">MongoResults</a><a class="headerlink" href="#mongoresults" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">MongoResults</a><a class="headerlink" href="#mongoresults" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class to handle saving and linking result data inside MongoDB. Provides functions to insert single log record during training/testing,
 save final result after test completion, and remediation/deletion function for test aborting, database cleanup</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize MongoResults object</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – Database where the results are to be stored</p></li>
 <li><p><strong>result_collection_name</strong> (<em>str</em>) – collection name to save final test results</p></li>
@@ -574,13 +794,13 @@ save final result after test completion, and remediation/deletion function for t
 <span class="sig-name descname"><span class="pre">addLogRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord" title="Permalink to this definition"></a></dt>
 <dd><p>Called during the testing loop to insert a pvt status record into MongoDB</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>str</em>) – Whether the record should be appended to the training or testing logs</p></li>
 <li><p><strong>record</strong> (<em>dict</em>) – the record to insert</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><strong>Exception</strong> – Thrown if the type provided is not supported</p>
 </dd>
 </dl>
@@ -591,10 +811,10 @@ save final result after test completion, and remediation/deletion function for t
 <span class="sig-name descname"><span class="pre">deleteResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults" title="Permalink to this definition"></a></dt>
 <dd><p>Function used to remediate database in the event of a failed/aborted test</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict showing the deleted result record, if any</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -611,13 +831,13 @@ save final result after test completion, and remediation/deletion function for t
 <span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.saveResults" title="Permalink to this definition"></a></dt>
 <dd><p>Save a document in MongoDB, linking the result doc to the logs documents</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the results of the test, to be stored in the results object for future use</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>string of the ObjectId saved in MongoDB</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -631,7 +851,7 @@ save final result after test completion, and remediation/deletion function for t
 
 </section>
 <section id="module-ia.gaius.pvt.pvt_utils">
-<span id="pvt-utils"></span><h2><a class="toc-backref" href="#id6">PVT Utils</a><a class="headerlink" href="#module-ia.gaius.pvt.pvt_utils" title="Permalink to this heading"></a></h2>
+<span id="pvt-utils"></span><h2><a class="toc-backref" href="#id6" role="doc-backlink">PVT Utils</a><a class="headerlink" href="#module-ia.gaius.pvt.pvt_utils" title="Permalink to this heading"></a></h2>
 <p>Utilities for PVT computations</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.classification_metrics_builder">
@@ -652,6 +872,22 @@ save final result after test completion, and remediation/deletion function for t
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.init_emotive_on_node">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">init_emotive_on_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emotive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_step_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.init_emotive_on_node" title="Permalink to this definition"></a></dt>
+<dd><p>Helper function to initialize emotive information for live socket messages.
+Used if new emotive is encountered during testing (emotive only seen in specific records, not consistently across all)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>emotive</strong> (<em>str</em>) – emotive name</p></li>
+<li><p><strong>node</strong> (<em>str</em>) – node to initialize emotive on</p></li>
+<li><p><strong>test_step_info</strong> (<em>dict</em>) – dictionary of live information, which should be initialized with new emotive</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.make_modeled_emotives_">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">make_modeled_emotives_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.make_modeled_emotives_" title="Permalink to this definition"></a></dt>
 <dd><p>The emotives in the ensemble are of type: ‘emotives’:[{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]</p>
@@ -667,6 +903,26 @@ save final result after test completion, and remediation/deletion function for t
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.plot_confusion_matrix">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">plot_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_metrics_data_structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.plot_confusion_matrix" title="Permalink to this definition"></a></dt>
 <dd><p>Takes a node classification test to create a confusion matrix. This version includes the i_dont_know or unknown label.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.retrieve_emotive_val">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">retrieve_emotive_val</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emotive_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.retrieve_emotive_val" title="Permalink to this definition"></a></dt>
+<dd><p>Function to parse out emotive value from “actual” response. If emotive not present, return NaN</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>emotive_name</strong> (<em>str</em>) – name of emotive to retrieve</p></li>
+<li><p><strong>actual</strong> (<em>dict</em>) – dictionary of actual emotive values from test record</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>value of the specified emotive, or NaN if not present</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
