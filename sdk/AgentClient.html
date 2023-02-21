@@ -148,9 +148,6 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.stop_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_autolearning()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.stop_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_predicting()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.stop_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_sleeping()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.tf_attach"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_attach()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.tf_list"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_list()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.tf_remove"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_remove()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.update_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.update_model()</span></code></a></li>
 </ul>
 </li>
@@ -580,7 +577,8 @@ all its duplicates everywhere will be deleted.</p>
 <span class="sig-name descname"><span class="pre">get_kbs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the KBs for the agent.
 This is a mongo-db and can be used to store or analyze locally.
-Choose the directory to save in with the directory keyword. Default is in ‘./’.</p>
+Choose the directory to save in with the directory keyword.
+Default is in ‘./’.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <div class="deprecated">
@@ -599,13 +597,21 @@ Choose the directory to save in with the directory keyword. Default is in ‘./�
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nodes</strong> (<em>list</em><em>, </em><em>optional</em>) – Defaults to None.</p></li>
 <li><p><strong>directory</strong> (<em>str</em><em>, </em><em>optional</em>) – Defaults to ‘./’.</p></li>
-<li><p><strong>separated</strong> (<em>bool</em><em>, </em><em>optional</em>) – store each KB separately. Defaults to False</p></li>
-<li><p><strong>ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – use primitive_ids as keys for knowledgebase instead of node numbers. Defaults to True</p></li>
-<li><p><strong>obj</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a filepath or a python object returned from the function</p></li>
+<li><p><strong>separated</strong> (<em>bool</em><em>, </em><em>optional</em>) – store each KB separately.
+Defaults to False</p></li>
+<li><p><strong>ids</strong> (<em>bool</em><em>, </em><em>optional</em>) – use primitive_ids as keys for knowledgebase
+instead of node numbers. Defaults to True</p></li>
+<li><p><strong>obj</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a filepath
+or a python object returned from the function</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>List of files where KB is stored if obj = False, or big dictionary where KB is to be stored if obj = True</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>List of files where KB is stored</dt><dd><p>if obj = False, or dictionary where KB is to be
+stored if obj = True</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[List(str), Dict]</p>
@@ -777,17 +783,23 @@ May throw exception if unable to identify a starting point.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.investigate_record">
 <span class="sig-name descname"><span class="pre">investigate_record</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.investigate_record" title="Permalink to this definition"></a></dt>
-<dd><p>Function for drilling down on a model recursively in a multi-node agent. Will retrieve all data “under”
-the abstracted model, giving a complete representation of the abstracted model</p>
+<dd><p>Function for drilling down on a model recursively in a multi-node
+agent. Will retrieve all data “under” the abstracted model,
+giving a complete representation of the abstracted model</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>node</strong> (<em>list</em><em> or </em><em>str</em>) – the node to start at/containing the model provided in <cite>record</cite>: e.g. [‘P4’] or ‘P4’</p></li>
+<li><p><strong>node</strong> (<em>list</em><em> or </em><em>str</em>) – the node to start at/containing
+the model provided in <cite>record</cite>: e.g. [‘P4’] or ‘P4’</p></li>
 <li><p><strong>record</strong> (<em>str</em>) – the model to search for</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>recursive structure containing a complete representation of the abstracted model</p>
+<dd class="field-even"><p><dl class="simple">
+<dt>recursive structure containing a complete representation</dt><dd><p>of the abstracted model</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
@@ -1087,15 +1099,16 @@ only one model will be found.</p>
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_target_class">
 <span class="sig-name descname"><span class="pre">set_target_class</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_class</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_target_class" title="Permalink to this definition"></a></dt>
 <dd><p>Provide a target_class symbol for the searcher to look for.</p>
-<p>The searcher will ignore all other classes. This is a symbol that is in the last event of a classification
-sequence.</p>
+<p>The searcher will ignore all other classes. This is a symbol that
+is in the last event of a classification sequence.</p>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">set_target_class</span><span class="p">(</span><span class="n">target_class</span><span class="o">=</span><span class="s2">&quot;apple&quot;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This will result in the nodes specified only predicting on models that include the target class</p>
+<p>This will result in the nodes specified only predicting on models
+that include the target class</p>
 </div>
 </dd></dl>
 
@@ -1186,21 +1199,6 @@ sequence.</p>
 </pre></div>
 </div>
 </dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_attach">
-<span class="sig-name descname"><span class="pre">tf_attach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_attach" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_list">
-<span class="sig-name descname"><span class="pre">tf_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_list" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.tf_remove">
-<span class="sig-name descname"><span class="pre">tf_remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.tf_remove" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.update_model">
