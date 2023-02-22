@@ -543,15 +543,13 @@ where prediction is needed to propagate data through the topology.</p>
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="simple">
-<dt>Analogous object to the Data class, but utilizes a MongoDB cursor</dt><dd><p>instead of a directory to reference data records</p>
-</dd>
-<dt>Start with a MongoDB document containing the name of all dataset</dt><dd><p>files (located separately)</p>
-</dd>
-<dt>Only retrieve actual data files when calling retrieveDataRecord.</dt><dd><p>Overloaded iterator functions to allow treating of object
+<p>Analogous object to the Data class, but utilizes a MongoDB cursor
+instead of a directory to reference data records</p>
+<p>Start with a MongoDB document containing the name of all dataset
+files (located separately)</p>
+<p>Only retrieve actual data files when calling retrieveDataRecord.
+Overloaded iterator functions to allow treating of object
 as a list.</p>
-</dd>
-</dl>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mongo</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://mongodb:27017/&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mongo_db</span> <span class="o">=</span> <span class="n">mongo</span><span class="o">.</span><span class="n">db</span><span class="p">[</span><span class="s1">&#39;main_database&#39;</span><span class="p">]</span>
@@ -649,10 +647,8 @@ dataset (e.g. name, user_id, dataset_id, collection names)</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.getSequence">
 <span class="sig-name descname"><span class="pre">getSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.getSequence" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Wrapper function to retrieve a record from MongoDB</dt><dd><p>and convert it into a sequence</p>
-</dd>
-</dl>
+<dd><p>Wrapper function to retrieve a record from MongoDB
+and convert it into a sequence</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>record</strong> (<em>ObjectId</em>) – The MongoDB ObjectId of the data
@@ -689,10 +685,8 @@ Defaults to False.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord">
 <span class="sig-name descname"><span class="pre">retrieveDataRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ObjectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Retrieve a data record from MongoDB,</dt><dd><p>pertaining to the ObjectId specifed</p>
-</dd>
-</dl>
+<dd><p>Retrieve a data record from MongoDB,
+pertaining to the ObjectId specifed</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>document_id</strong> (<em>ObjectId</em><em>, </em><em>required</em>) – data record to retrieve
@@ -704,11 +698,8 @@ calling <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoD
     Shows query performed that failed</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><dl class="simple">
-<dt>binary string depicting data sequence</dt><dd><p>stored in MongoDB Document</p>
-</dd>
-</dl>
-</p>
+<dd class="field-odd"><p>binary string depicting data sequence
+stored in MongoDB Document</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
@@ -816,11 +807,9 @@ data when creating sets</p></li>
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Class to handle saving and linking result data inside MongoDB.</p>
-<dl class="simple">
-<dt>Provides functions to insert single log record during training/testing,</dt><dd><p>save final result after test completion, and remediation/deletion
+<p>Provides functions to insert single log record during training/testing,
+save final result after test completion, and remediation/deletion
 function for test aborting, database cleanup</p>
-</dd>
-</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.__init__" title="Permalink to this definition"></a></dt>
@@ -848,10 +837,8 @@ used for configuring pvt</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord">
 <span class="sig-name descname"><span class="pre">addLogRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Called during the testing loop to insert a pvt status</dt><dd><p>record into MongoDB</p>
-</dd>
-</dl>
+<dd><p>Called during the testing loop to insert a pvt status
+record into MongoDB</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -869,10 +856,8 @@ training or testing logs</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.deleteResults">
 <span class="sig-name descname"><span class="pre">deleteResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Function used to remediate database in the event of a</dt><dd><p>failed/aborted test</p>
-</dd>
-</dl>
+<dd><p>Function used to remediate database in the event of a
+failed/aborted test</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict showing the deleted result record, if any</p>
@@ -892,15 +877,26 @@ training or testing logs</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults">
 <span class="sig-name descname"><span class="pre">retrieveResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Retreive test results from MongoDB based on user_id, dataset_id,
+and test_id</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Exception</strong> – If dataset master record is not found in database</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Entire test result object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.saveResults">
 <span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.saveResults" title="Permalink to this definition"></a></dt>
-<dd><dl class="simple">
-<dt>Save a document in MongoDB, linking the result doc to</dt><dd><p>the logs documents</p>
-</dd>
-</dl>
+<dd><p>Save a document in MongoDB, linking the result doc to
+the logs documents</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the
