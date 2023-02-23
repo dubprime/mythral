@@ -148,6 +148,9 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_autolearning()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_predicting()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_sleeping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_attach"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_attach()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_list"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_remove"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_remove()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.update_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.update_model()</span></code></a></li>
 </ul>
 </li>
@@ -173,6 +176,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
@@ -254,7 +258,6 @@
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord"><code class="docutils literal notranslate"><span class="pre">MongoResults.addLogRecord()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.deleteResults()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.mongo_interface.MongoResults.reset"><code class="docutils literal notranslate"><span class="pre">MongoResults.reset()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.retrieveResults()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.mongo_interface.MongoResults.saveResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.saveResults()</span></code></a></li>
 </ul>
 </li>
@@ -537,14 +540,30 @@ Store as a dict of {node_name : list}</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.kb_ops.recursive_delete_model">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">recursive_delete_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.kb_ops.recursive_delete_model" title="Permalink to this definition"></a></dt>
-<dd><p>Recursively remove a model from an Agent.</p>
+<dd><p>_summary_</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – GAIuS Agent</p></li>
-<li><p><strong>model_name</strong> (<em>str</em>) – name of model to delete</p></li>
-<li><p><strong>nodes</strong> (<em>_type_</em><em>, </em><em>optional</em>) – Nodes to recursively delete model on</p></li>
-<li><p><strong>log_to_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to log output to a file. Defaults to False.</p></li>
+<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – _description_</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>nodes</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>log_to_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.kb_ops.recursive_update_model">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">recursive_update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.kb_ops.recursive_update_model" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – _description_</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>nodes</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>log_to_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to False.</p></li>
 </ul>
 </dd>
 </dl>

@@ -148,6 +148,9 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_autolearning()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_predicting()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.stop_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_sleeping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_attach"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_attach()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_list"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.tf_remove"><code class="docutils literal notranslate"><span class="pre">AgentClient.tf_remove()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.update_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.update_model()</span></code></a></li>
 </ul>
 </li>
@@ -173,6 +176,7 @@
 <li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
@@ -254,7 +258,6 @@
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord"><code class="docutils literal notranslate"><span class="pre">MongoResults.addLogRecord()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.deleteResults()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.reset"><code class="docutils literal notranslate"><span class="pre">MongoResults.reset()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.retrieveResults()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoResults.saveResults"><code class="docutils literal notranslate"><span class="pre">MongoResults.saveResults()</span></code></a></li>
 </ul>
 </li>
@@ -543,12 +546,9 @@ where prediction is needed to propagate data through the topology.</p>
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_dataset_details</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_files_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">MongoClient</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'datasets'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Analogous object to the Data class, but utilizes a MongoDB cursor
-instead of a directory to reference data records</p>
-<p>Start with a MongoDB document containing the name of all dataset
-files (located separately)</p>
-<p>Only retrieve actual data files when calling retrieveDataRecord.
-Overloaded iterator functions to allow treating of object
+<p>Analogous object to the Data class, but utilizes a MongoDB cursor instead of a directory to reference data records
+Start with a MongoDB document containing the name of all dataset files (located separately)</p>
+<p>Only retrieve actual data files when calling retrieveDataRecord. Overloaded iterator functions to allow treating of object
 as a list.</p>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mongo</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s1">&#39;mongodb://mongodb:27017/&#39;</span><span class="p">)</span>
@@ -573,22 +573,17 @@ as a list.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mongo_dataset_details</strong> (<em>dict</em>) – contains info about the user_id
-and dataset_id of the dataset. Used to query MongoDB</p></li>
-<li><p><strong>data_files_collection_name</strong> (<em>str</em>) – Collection in MongoDB where
-individual data records are stored</p></li>
-<li><p><strong>dataset_collection_name</strong> (<em>str</em>) – Collection in MongoDB where master
-dataset info record is stored</p></li>
-<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB client object to use
-for dataset lookups</p></li>
+<li><p><strong>mongo_dataset_details</strong> (<em>dict</em>) – contains info about the user_id and dataset_id of the dataset. Used to query MongoDB</p></li>
+<li><p><strong>data_files_collection_name</strong> (<em>str</em>) – Collection in MongoDB where individual data records are stored</p></li>
+<li><p><strong>dataset_collection_name</strong> (<em>str</em>) – Collection in MongoDB where master dataset info record is stored</p></li>
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB client object to use for dataset lookups</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><strong>Exception</strong> – user_id field missing from mongo_dataset_details</p></li>
 <li><p><strong>Exception</strong> – dataset_id field missing from mongo_dataset_details</p></li>
-<li><p><strong>Exception</strong> – multiple datasets found pertaining to same user_id
-    and dataset_id field</p></li>
+<li><p><strong>Exception</strong> – multiple datasets found pertaining to same user_id and dataset_id field</p></li>
 </ul>
 </dd>
 </dl>
@@ -619,8 +614,7 @@ for dataset lookups</p></li>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB database object</p></li>
-<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about
-dataset (e.g. name, user_id, dataset_id, collection names)</p></li>
+<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about dataset (e.g. name, user_id, dataset_id, collection names, etc.)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -631,28 +625,15 @@ dataset (e.g. name, user_id, dataset_id, collection names)</p></li>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.pvt.mongo_interface</span> <span class="kn">import</span> <span class="n">MongoData</span>
-<span class="o">...</span>
-<span class="n">dataset_details</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-1234&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MNIST&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;dataset_id&quot;</span><span class="p">:</span> <span class="s2">&quot;abba12&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;data_files_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset_files&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;dataset_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;datasets&quot;</span><span class="p">}</span>
-<span class="n">MongoData</span><span class="o">.</span><span class="n">delete_dataset</span><span class="p">(</span><span class="n">mongo_db</span><span class="o">=</span><span class="n">mongo_db</span><span class="p">,</span>
-                         <span class="n">dataset_details</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">)</span>
-</pre></div>
-</div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.getSequence">
 <span class="sig-name descname"><span class="pre">getSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.getSequence" title="Permalink to this definition"></a></dt>
-<dd><p>Wrapper function to retrieve a record from MongoDB
-and convert it into a sequence</p>
+<dd><p>Wrapper function to retrieve a record from MongoDB and convert it into a sequence</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>record</strong> (<em>ObjectId</em>) – The MongoDB ObjectId of the data
-record to retrieve</p>
+<dd class="field-odd"><p><strong>record</strong> (<em>ObjectId</em>) – The MongoDB ObjectId of the data record to retrieve</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>GDF sequence retrieved from MongoDB</p>
@@ -670,13 +651,9 @@ record to retrieve</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>percent_of_dataset_chosen</strong> (<em>float</em>) – The percent of the dataset
-to utilize</p></li>
-<li><p><strong>percent_reserved_for_training</strong> (<em>float</em>) – The training/testing
-split for the dataset (e.g.
-set to 80 for 80/20 training/testing split)</p></li>
-<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to shuffle the data.
-Defaults to False.</p></li>
+<li><p><strong>percent_of_dataset_chosen</strong> (<em>float</em>) – The percent of the dataset to utilize</p></li>
+<li><p><strong>percent_reserved_for_training</strong> (<em>float</em>) – The training/testing split for the dataset (e.g. set to 80 for 80/20 trianing/testing split)</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to shuffle the data. Defaults to False.</p></li>
 </ul>
 </dd>
 </dl>
@@ -685,21 +662,16 @@ Defaults to False.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord">
 <span class="sig-name descname"><span class="pre">retrieveDataRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">document_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ObjectId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.retrieveDataRecord" title="Permalink to this definition"></a></dt>
-<dd><p>Retrieve a data record from MongoDB,
-pertaining to the ObjectId specifed</p>
+<dd><p>Retrieve a data record from MongoDB, pertaining to the ObjectId specifed</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>document_id</strong> (<em>ObjectId</em><em>, </em><em>required</em>) – data record to retrieve
-from mongo, located in the collection specified when
-calling <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.__init__" title="ia.gaius.pvt.mongo_interface.MongoData.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a></p>
+<dd class="field-odd"><p><strong>document_id</strong> (<em>ObjectId</em><em>, </em><em>required</em>) – data record to retrieve from mongo, located in the collection specified when calling <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.__init__" title="ia.gaius.pvt.mongo_interface.MongoData.__init__"><code class="xref py py-func docutils literal notranslate"><span class="pre">__init__()</span></code></a></p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
-<dd class="field-even"><p><strong>Exception</strong> – Raised when MongoDB document is not found.
-    Shows query performed that failed</p>
+<dd class="field-even"><p><strong>Exception</strong> – Raised when MongoDB document is not found. Shows query performed that failed</p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>binary string depicting data sequence
-stored in MongoDB Document</p>
+<dd class="field-odd"><p>binary string depicting data sequence stored in MongoDB Document</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
@@ -709,17 +681,15 @@ stored in MongoDB Document</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoData.setIterMode">
-<span class="sig-name descname"><span class="pre">setIterMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.setIterMode" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">setIterMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoData.setIterMode" title="Permalink to this definition"></a></dt>
 <dd><p>Set mode to be used for iterating across dataset</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – set to “training” or “testing” depending
-on what set of sequences is to be iterated across</p>
+<dd class="field-odd"><p><strong>mode</strong> (<em>str</em>) – set to “training” or “testing” depending on what set of sequences is to be iterated across</p>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>Exception</strong> – When no data is in train_sequences or
-    test_sequences, and <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.prep" title="ia.gaius.pvt.mongo_interface.MongoData.prep"><code class="xref py py-func docutils literal notranslate"><span class="pre">prep()</span></code></a> should be called first</p></li>
+<li><p><strong>Exception</strong> – When no data is in train_sequences or test_sequences, and <a class="reference internal" href="#ia.gaius.pvt.mongo_interface.MongoData.prep" title="ia.gaius.pvt.mongo_interface.MongoData.prep"><code class="xref py py-func docutils literal notranslate"><span class="pre">prep()</span></code></a> should be called first</p></li>
 <li><p><strong>Exception</strong> – When invalid mode specified in mode argument</p></li>
 </ul>
 </dd>
@@ -734,10 +704,8 @@ on what set of sequences is to be iterated across</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – MongoDB Database object</p></li>
-<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about</p></li>
-<li><p><strong>dataset</strong> (<em>e.g. name</em><em>, </em><em>user_id</em><em>, </em><em>dataset_id</em><em>, </em><em>collection names</em><em>, </em><em>etc.</em>) – </p></li>
-<li><p><strong>filepath</strong> (<em>str</em>) – filepath of zip folder
-containing dataset (GDF records)</p></li>
+<li><p><strong>dataset_details</strong> (<em>dict</em>) – Dictionary containing details about dataset (e.g. name, user_id, dataset_id, collection names, etc.)</p></li>
+<li><p><strong>filepath</strong> (<em>str</em>) – filepath of zip folder containing dataset (GDF records)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -752,11 +720,10 @@ containing dataset (GDF records)</p></li>
 <span class="o">...</span>
 <span class="n">dataset_details</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;user_id&quot;</span><span class="p">:</span> <span class="s2">&quot;user-1234&quot;</span><span class="p">,</span>
                    <span class="s2">&quot;dataset_name&quot;</span><span class="p">:</span> <span class="s2">&quot;MNIST&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;dataset_id&quot;</span><span class="p">:</span> <span class="s2">&quot;abba12&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;data_files_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset_files&quot;</span><span class="p">,</span>
-                   <span class="s2">&quot;dataset_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;datasets&quot;</span><span class="p">}</span>
-<span class="n">MongoData</span><span class="o">.</span><span class="n">upload_dataset</span><span class="p">(</span><span class="n">mongo_db</span><span class="o">=</span><span class="n">mongo_db</span><span class="p">,</span>
-                         <span class="n">dataset_details</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">)</span>
+                    <span class="s2">&quot;dataset_id&quot;</span><span class="p">:</span> <span class="s2">&quot;abba12&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;data_files_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;dataset_files&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;dataset_collection_name&quot;</span><span class="p">:</span> <span class="s2">&quot;datasets&quot;</span><span class="p">}</span>
+<span class="n">MongoData</span><span class="o">.</span><span class="n">upload_dataset</span><span class="p">(</span><span class="n">mongo_db</span><span class="o">=</span><span class="n">mongo_db</span><span class="p">,</span> <span class="n">dataset_details</span><span class="o">=</span><span class="n">dataset_details</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -768,24 +735,20 @@ containing dataset (GDF records)</p></li>
 <h2><a class="toc-backref" href="#id4" role="doc-backlink">MongoDataRecords</a><a class="headerlink" href="#mongodatarecords" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoDataRecords">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoDataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_records</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoDataRecords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_records</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset_document_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">DF</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoDataRecords.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataset_records</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>required</em>) – List of mongo
-ObjectIds to use as data records</p></li>
-<li><p><strong>DR</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of total data to use for
-testing and training. 0 &lt; DR &lt; 100</p></li>
-<li><p><strong>DF</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of the DR to use for training.
-The rest of the DR is used for testing. 0 &lt; DF &lt; 100</p></li>
-<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>required</em>) – whether to shuffle the
-data when creating sets</p></li>
-<li><p><strong>class</strong> (<em>After creating the</em>) – <cite>train_sequences</cite> and <cite>test_sequences</cite> for the data sets</p></li>
-<li><p><strong>variables</strong> (<em>utilize the member</em>) – <cite>train_sequences</cite> and <cite>test_sequences</cite> for the data sets</p></li>
+<li><p><strong>dataset_document_list</strong> (<em>str</em><em> or </em><em>list</em><em>, </em><em>required</em>) – List of mongo ObjectIds to use as data records</p></li>
+<li><p><strong>DR</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of total data to use for testing and training. 0 &lt; DR &lt; 100</p></li>
+<li><p><strong>DF</strong> (<em>float</em><em>, </em><em>required</em>) – fraction of the DR to use for training.  The rest of the DR is used for testing. 0 &lt; DF &lt; 100</p></li>
+<li><p><strong>shuffle</strong> (<em>bool</em><em>, </em><em>required</em>) – whether to shuffle the data when creating sets</p></li>
+<li><p><strong>class</strong> (<em>After creating the</em>) – </p></li>
+<li><p><strong>sets</strong> (<em>utilize the member variables train_sequences and test_sequences for the data</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Variables<span class="colon">:</span></dt>
@@ -806,10 +769,8 @@ data when creating sets</p></li>
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.mongo_interface.</span></span><span class="sig-name descname"><span class="pre">MongoResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Class to handle saving and linking result data inside MongoDB.</p>
-<p>Provides functions to insert single log record during training/testing,
-save final result after test completion, and remediation/deletion
-function for test aborting, database cleanup</p>
+<p>Class to handle saving and linking result data inside MongoDB. Provides functions to insert single log record during training/testing,
+save final result after test completion, and remediation/deletion function for test aborting, database cleanup</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mongo_db</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">result_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_collection_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataset_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_configuration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.__init__" title="Permalink to this definition"></a></dt>
@@ -817,18 +778,13 @@ function for test aborting, database cleanup</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – Database where the results
-are to be stored</p></li>
-<li><p><strong>result_collection_name</strong> (<em>str</em>) – collection name to save final
-test results</p></li>
-<li><p><strong>log_collection_name</strong> (<em>str</em>) – collection name to save testing
-log documents</p></li>
+<li><p><strong>mongo_db</strong> (<em>pymongo.MongoClient</em>) – Database where the results are to be stored</p></li>
+<li><p><strong>result_collection_name</strong> (<em>str</em>) – collection name to save final test results</p></li>
+<li><p><strong>log_collection_name</strong> (<em>str</em>) – collection name to save testing log documents</p></li>
 <li><p><strong>test_id</strong> (<em>str</em>) – unique-id for the test being conducted</p></li>
 <li><p><strong>user_id</strong> (<em>str</em>) – unique-id for the user conducting the test</p></li>
-<li><p><strong>dataset_id</strong> (<em>str</em>) – unique-id for the dataset being used
-in the test</p></li>
-<li><p><strong>test_configuration</strong> (<em>dict</em>) – object showing all of the options
-used for configuring pvt</p></li>
+<li><p><strong>dataset_id</strong> (<em>str</em>) – unique-id for the dataset being used in the test</p></li>
+<li><p><strong>test_configuration</strong> (<em>dict</em>) – object showing all of the options used for configuring pvt</p></li>
 </ul>
 </dd>
 </dl>
@@ -837,13 +793,11 @@ used for configuring pvt</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord">
 <span class="sig-name descname"><span class="pre">addLogRecord</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.addLogRecord" title="Permalink to this definition"></a></dt>
-<dd><p>Called during the testing loop to insert a pvt status
-record into MongoDB</p>
+<dd><p>Called during the testing loop to insert a pvt status record into MongoDB</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>type</strong> (<em>str</em>) – Whether the record should be appended to the
-training or testing logs</p></li>
+<li><p><strong>type</strong> (<em>str</em>) – Whether the record should be appended to the training or testing logs</p></li>
 <li><p><strong>record</strong> (<em>dict</em>) – the record to insert</p></li>
 </ul>
 </dd>
@@ -856,8 +810,7 @@ training or testing logs</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.deleteResults">
 <span class="sig-name descname"><span class="pre">deleteResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.deleteResults" title="Permalink to this definition"></a></dt>
-<dd><p>Function used to remediate database in the event of a
-failed/aborted test</p>
+<dd><p>Function used to remediate database in the event of a failed/aborted test</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict showing the deleted result record, if any</p>
@@ -875,33 +828,12 @@ failed/aborted test</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults">
-<span class="sig-name descname"><span class="pre">retrieveResults</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.retrieveResults" title="Permalink to this definition"></a></dt>
-<dd><p>Retreive test results from MongoDB based on user_id, dataset_id,
-and test_id</p>
-<dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>Exception</strong> – If dataset master record is not found in database</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Entire test result object</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.pvt.mongo_interface.MongoResults.saveResults">
 <span class="sig-name descname"><span class="pre">saveResults</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">final_results</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.mongo_interface.MongoResults.saveResults" title="Permalink to this definition"></a></dt>
-<dd><p>Save a document in MongoDB, linking the result doc to
-the logs documents</p>
+<dd><p>Save a document in MongoDB, linking the result doc to the logs documents</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the
-results of the test, to be stored in the results
-object for future use</p>
+<dd class="field-odd"><p><strong>final_results</strong> (<em>dict</em>) – Information pertaining to the results of the test, to be stored in the results object for future use</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>string of the ObjectId saved in MongoDB</p>
@@ -924,58 +856,33 @@ object for future use</p>
 <p>Utilities for PVT computations</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.classification_metrics_builder">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">classification_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_labels</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.classification_metrics_builder" title="Permalink to this definition"></a></dt>
-<dd><p>Create Metrics Data Structure for a classification problem
-where labels are tracked and used.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>lst_of_labels</strong> (<em>list</em>) – list of class labels</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Classification data structure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">classification_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_labels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.classification_metrics_builder" title="Permalink to this definition"></a></dt>
+<dd><p>Create Metrics Data Structure for a classification problem where labels are tracked and used.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">emotives_polarity_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_emotives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">emotives_polarity_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_emotives</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder" title="Permalink to this definition"></a></dt>
 <dd><p>Create Metrics Data Structure for each emotive in testset</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">emotives_value_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_emotives</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">emotives_value_metrics_builder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst_of_emotives</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder" title="Permalink to this definition"></a></dt>
 <dd><p>Create Metrics Data Structure for each emotive in testset</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>lst_of_emotives</strong> (<em>list</em>) – emotives list to populate data structure</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>emotive metrics data structure</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.init_emotive_on_node">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">init_emotive_on_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emotive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_step_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.init_emotive_on_node" title="Permalink to this definition"></a></dt>
-<dd><p>Helper function to initialize emotive information for live messages.
-Used if new emotive is encountered during testing
-(emotive only seen in specific records, not consistently across all)</p>
+<dd><p>Helper function to initialize emotive information for live socket messages.
+Used if new emotive is encountered during testing (emotive only seen in specific records, not consistently across all)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>emotive</strong> (<em>str</em>) – emotive name</p></li>
 <li><p><strong>node</strong> (<em>str</em>) – node to initialize emotive on</p></li>
-<li><p><strong>test_step_info</strong> (<em>dict</em>) – dictionary of live information, which should
-be initialized with new emotive</p></li>
+<li><p><strong>test_step_info</strong> (<em>dict</em>) – dictionary of live information, which should be initialized with new emotive</p></li>
 </ul>
 </dd>
 </dl>
@@ -989,38 +896,20 @@ be initialized with new emotive</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.model_per_emotive_">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">model_per_emotive_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotive</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_normalization_factor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.model_per_emotive_" title="Permalink to this definition"></a></dt>
-<dd><p>Using a Weighted Moving Average, though the ‘moving’ part
-refers to the prediction index.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ensemble</strong> (<em>dict</em>) – prediction ensemble used to model</p></li>
-<li><p><strong>emotive</strong> (<em>str</em>) – emotive name to to model</p></li>
-<li><p><strong>potential_normalization_factor</strong> (<em>float</em>) – normalization factor</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>final emotive modelled value</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">model_per_emotive_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emotive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">potential_normalization_factor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.model_per_emotive_" title="Permalink to this definition"></a></dt>
+<dd><p>Using a Weighted Moving Average, though the ‘moving’ part refers to the prediction index.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.plot_confusion_matrix">
-<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">plot_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_metrics_data_structures</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.plot_confusion_matrix" title="Permalink to this definition"></a></dt>
-<dd><p>Takes a node classification test to create a confusion matrix.
-This version includes the i_dont_know or unknown label.</p>
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">plot_confusion_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_metrics_data_structures</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.plot_confusion_matrix" title="Permalink to this definition"></a></dt>
+<dd><p>Takes a node classification test to create a confusion matrix. This version includes the i_dont_know or unknown label.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.pvt.pvt_utils.retrieve_emotive_val">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.pvt.pvt_utils.</span></span><span class="sig-name descname"><span class="pre">retrieve_emotive_val</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">emotive_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actual</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.pvt_utils.retrieve_emotive_val" title="Permalink to this definition"></a></dt>
-<dd><p>Function to parse out emotive value from “actual” response.
-If emotive not present, return NaN</p>
+<dd><p>Function to parse out emotive value from “actual” response. If emotive not present, return NaN</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
