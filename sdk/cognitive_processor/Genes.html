@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changing Genes &mdash; IA-SDK-Python 0.3.27 documentation</title>
+  <title>Cognitive Processor Genes &mdash; IA-SDK-Python 0.3.27 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -21,13 +21,11 @@
         <script src="../_static/copybutton.js"></script>
         <script src="../_static/sphinxcontrib-httpexample.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Basic PVT Setup and Example" href="Training%201.html" />
-    <link rel="prev" title="Agent Setup" href="Agent%20Setup.html" /> 
+    <link rel="next" title="GAIuS RESTful API" href="../REST.html" />
+    <link rel="prev" title="Basic PVT Setup and Example" href="../examples/Training%201.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -335,32 +333,32 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="reference internal" href="UsageExamples.html">Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Agent%20Setup.html">Agent Setup</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Changing Genes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Training%201.html">Basic PVT Setup and Example</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="Training%201.html#Iris-Dataset-Training">Iris Dataset Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/UsageExamples.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../examples/Agent%20Setup.html">Agent Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/Changing%20Genes.html">Changing Genes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/Training%201.html">Basic PVT Setup and Example</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../examples/Training%201.html#Iris-Dataset-Training">Iris Dataset Training</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="UsageExamples.html#mnist-testing">MNIST Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/UsageExamples.html#mnist-testing">MNIST Testing</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../cognitive_processor/Genes.html">Cognitive Processor Genes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#recall-threshold">recall_threshold</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#max-predictions">max_predictions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#sort">SORT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#auto-learn-algorithm">auto_learn_algorithm</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#auto-learn-metric">auto_learn_metric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#classifier">classifier</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#max-sequence-length">max_sequence_length</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#near-vector-count">near_vector_count</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#persistence">persistence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#predict-on-nth-event">predict_on_nth_event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-sort-metric">prediction_sort_metric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold">prediction_threshold</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold-direction">prediction_threshold_direction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold-metric">prediction_threshold_metric</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#wm-resolution">wm_resolution</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cognitive Processor Genes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#recall-threshold">recall_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#max-predictions">max_predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sort">SORT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-learn-algorithm">auto_learn_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#auto-learn-metric">auto_learn_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#classifier">classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#max-sequence-length">max_sequence_length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#near-vector-count">near_vector_count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#persistence">persistence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#predict-on-nth-event">predict_on_nth_event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-sort-metric">prediction_sort_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-threshold">prediction_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-threshold-direction">prediction_threshold_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-threshold-metric">prediction_threshold_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wm-resolution">wm_resolution</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../REST.html">GAIuS RESTful API</a><ul>
@@ -385,10 +383,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="UsageExamples.html">Examples</a></li>
-      <li class="breadcrumb-item active">Changing Genes</li>
+      <li class="breadcrumb-item active">Cognitive Processor Genes</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/examples/Changing Genes.ipynb.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/cognitive_processor/Genes.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -398,261 +395,6 @@
              
   
 <style>
-/* CSS for nbsphinx extension */
-
-/* remove conflicting styling from Sphinx themes */
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt *,
-div.nbinput.container div.input_area pre,
-div.nboutput.container div.output_area pre,
-div.nbinput.container div.input_area .highlight,
-div.nboutput.container div.output_area .highlight {
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
-
-div.nbinput.container > div[class*=highlight],
-div.nboutput.container > div[class*=highlight] {
-    margin: 0;
-}
-
-div.nbinput.container div.prompt *,
-div.nboutput.container div.prompt * {
-    background: none;
-}
-
-div.nboutput.container div.output_area .highlight,
-div.nboutput.container div.output_area pre {
-    background: unset;
-}
-
-div.nboutput.container div.output_area div.highlight {
-    color: unset;  /* override Pygments text color */
-}
-
-/* avoid gaps between output lines */
-div.nboutput.container div[class*=highlight] pre {
-    line-height: normal;
-}
-
-/* input/output containers */
-div.nbinput.container,
-div.nboutput.container {
-    display: -webkit-flex;
-    display: flex;
-    align-items: flex-start;
-    margin: 0;
-    width: 100%;
-}
-@media (max-width: 540px) {
-    div.nbinput.container,
-    div.nboutput.container {
-        flex-direction: column;
-    }
-}
-
-/* input container */
-div.nbinput.container {
-    padding-top: 5px;
-}
-
-/* last container */
-div.nblast.container {
-    padding-bottom: 5px;
-}
-
-/* input prompt */
-div.nbinput.container div.prompt pre {
-    color: #307FC1;
-}
-
-/* output prompt */
-div.nboutput.container div.prompt pre {
-    color: #BF5B3D;
-}
-
-/* all prompts */
-div.nbinput.container div.prompt,
-div.nboutput.container div.prompt {
-    width: 4.5ex;
-    padding-top: 5px;
-    position: relative;
-    user-select: none;
-}
-
-div.nbinput.container div.prompt > div,
-div.nboutput.container div.prompt > div {
-    position: absolute;
-    right: 0;
-    margin-right: 0.3ex;
-}
-
-@media (max-width: 540px) {
-    div.nbinput.container div.prompt,
-    div.nboutput.container div.prompt {
-        width: unset;
-        text-align: left;
-        padding: 0.4em;
-    }
-    div.nboutput.container div.prompt.empty {
-        padding: 0;
-    }
-
-    div.nbinput.container div.prompt > div,
-    div.nboutput.container div.prompt > div {
-        position: unset;
-    }
-}
-
-/* disable scrollbars and line breaks on prompts */
-div.nbinput.container div.prompt pre,
-div.nboutput.container div.prompt pre {
-    overflow: hidden;
-    white-space: pre;
-}
-
-/* input/output area */
-div.nbinput.container div.input_area,
-div.nboutput.container div.output_area {
-    -webkit-flex: 1;
-    flex: 1;
-    overflow: auto;
-}
-@media (max-width: 540px) {
-    div.nbinput.container div.input_area,
-    div.nboutput.container div.output_area {
-        width: 100%;
-    }
-}
-
-/* input area */
-div.nbinput.container div.input_area {
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    /*background: #f5f5f5;*/
-}
-
-/* override MathJax center alignment in output cells */
-div.nboutput.container div[class*=MathJax] {
-    text-align: left !important;
-}
-
-/* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput.container div.math p {
-    text-align: left;
-}
-
-/* standard error */
-div.nboutput.container div.output_area.stderr {
-    background: #fdd;
-}
-
-/* ANSI colors */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-default-inverse-fg { color: #FFFFFF; }
-.ansi-default-inverse-bg { background-color: #000000; }
-
-.ansi-bold { font-weight: bold; }
-.ansi-underline { text-decoration: underline; }
-
-
-div.nbinput.container div.input_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight] > pre,
-div.nboutput.container div.output_area div[class*=highlight].math,
-div.nboutput.container div.output_area.rendered_html,
-div.nboutput.container div.output_area > div.output_javascript,
-div.nboutput.container div.output_area:not(.rendered_html) > img{
-    padding: 5px;
-    margin: 0;
-}
-
-/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
-div.nbinput.container div.input_area > div[class^='highlight'],
-div.nboutput.container div.output_area > div[class^='highlight']{
-    overflow-y: hidden;
-}
-
-/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
-.prompt .copybtn {
-    display: none;
-}
-
-/* Some additional styling taken form the Jupyter notebook CSS */
-.jp-RenderedHTMLCommon table,
-div.rendered_html table {
-  border: none;
-  border-collapse: collapse;
-  border-spacing: 0;
-  color: black;
-  font-size: 12px;
-  table-layout: fixed;
-}
-.jp-RenderedHTMLCommon thead,
-div.rendered_html thead {
-  border-bottom: 1px solid black;
-  vertical-align: bottom;
-}
-.jp-RenderedHTMLCommon tr,
-.jp-RenderedHTMLCommon th,
-.jp-RenderedHTMLCommon td,
-div.rendered_html tr,
-div.rendered_html th,
-div.rendered_html td {
-  text-align: right;
-  vertical-align: middle;
-  padding: 0.5em 0.5em;
-  line-height: normal;
-  white-space: normal;
-  max-width: none;
-  border: none;
-}
-.jp-RenderedHTMLCommon th,
-div.rendered_html th {
-  font-weight: bold;
-}
-.jp-RenderedHTMLCommon tbody tr:nth-child(odd),
-div.rendered_html tbody tr:nth-child(odd) {
-  background: #f5f5f5;
-}
-.jp-RenderedHTMLCommon tbody tr:hover,
-div.rendered_html tbody tr:hover {
-  background: rgba(66, 165, 245, 0.2);
-}
-
 /* CSS overrides for sphinx_rtd_theme */
 
 /* 24px margin */
@@ -675,172 +417,218 @@ div.rendered_html tbody tr:hover {
     text-align: unset;
 }
 </style>
-<section id="Changing-Genes">
-<h1>Changing Genes<a class="headerlink" href="#Changing-Genes" title="Permalink to this heading"></a></h1>
-<blockquote>
-<div><p>Import <a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">AgentClient</span></code></a> from module <code class="xref py py-mod docutils literal notranslate"><span class="pre">ia.gaius.agent_client</span></code></p>
-</div></blockquote>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
+<section id="cognitive-processor-genes">
+<h1>Cognitive Processor Genes<a class="headerlink" href="#cognitive-processor-genes" title="Permalink to this heading"></a></h1>
+<p>Genes, also known as Genetically Configurable Prarameters (GCPs), are parameters
+on a Cognitive Processor that are user-configurable. These parameters impact
+how the Cognitive Processor predicts, what state the Processor is in, and how it
+learns new information.</p>
+<p>The current values of all genes can be found by utilzing the AgentClient
+function <a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_all_genes" title="ia.gaius.agent_client.AgentClient.get_all_genes"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_all_genes()</span></code></a>.
+Genes can be updated using the AgentClient function
+<a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.change_genes" title="ia.gaius.agent_client.AgentClient.change_genes"><code class="xref py py-func docutils literal notranslate"><span class="pre">change_genes()</span></code></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default values of Genes for each Cognitive Processor is set in the
+Genome for the GAIuS Agent. These values can be edited by selecting the
+corresponding processor in IA’s Connectome Creator, or by editing the
+Genome file manually.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
-</pre></div>
+<section id="recall-threshold">
+<h2>recall_threshold<a class="headerlink" href="#recall-threshold" title="Permalink to this heading"></a></h2>
+<p>The recall threshold controls the percentage of a sequence that must match in
+in order for a prediction to be created. This value is a float that ranges
+from 0.0 to 1.0. In addition to <a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.change_genes" title="ia.gaius.agent_client.AgentClient.change_genes"><code class="xref py py-func docutils literal notranslate"><span class="pre">change_genes()</span></code></a>,
+this value can be altered using <a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.increment_recall_threshold" title="ia.gaius.agent_client.AgentClient.increment_recall_threshold"><code class="xref py py-func docutils literal notranslate"><span class="pre">increment_recall_threshold()</span></code></a>.
+In general, for tighter sequence matching use a higher recall_threshold value.
+For looser sequence matching, use a lower recall_threshold (typically ~ 0.1).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for recall_threshold is 0.1.</p>
 </div>
+</section>
+<section id="max-predictions">
+<h2>max_predictions<a class="headerlink" href="#max-predictions" title="Permalink to this heading"></a></h2>
+<p>This gene controls the number of predictions returned by the Cognitive Processor.
+When the user wants only a single “best” prediction to be returned, this gene should be reduced to 1</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for max_predictions is 100 predcitions.</p>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
-</pre></div>
+</section>
+<section id="sort">
+<h2>SORT<a class="headerlink" href="#sort" title="Permalink to this heading"></a></h2>
+<p>This gene controls whether the sequence is sorted by the Cognitive Processor during processing.
+When the user wishes to retain the original ordering of symbols
+then should set SORT to False.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value is True.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="s1">&#39;gaius-api&#39;</span><span class="p">,</span>
-              <span class="s1">&#39;secure&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-              <span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;ABCD-1234&#39;</span><span class="p">}</span>
-</pre></div>
+</section>
+<section id="auto-learn-algorithm">
+<h2>auto_learn_algorithm<a class="headerlink" href="#auto-learn-algorithm" title="Permalink to this heading"></a></h2>
+<p>This gene controls how the WM is processed, and modified when the <a class="reference internal" href="#auto-learn-metric">auto_learn_metric</a> reaches its relevant threshold.
+Currently possible values are:</p>
+<ul class="simple">
+<li><p>basic</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value is ‘basic’.</p>
 </div>
+</section>
+<section id="auto-learn-metric">
+<h2>auto_learn_metric<a class="headerlink" href="#auto-learn-metric" title="Permalink to this heading"></a></h2>
+<p>This gene controls which metric is checked when determining if the CongitiveProcessor should learn its current
+WM using the set <a class="reference internal" href="#auto-learn-algorithm">auto_learn_algorithm</a> before the next observation. Threshold value is different for different
+for different metrics.
+Currently possible values are:</p>
+<ul class="simple">
+<li><p>wm_size thresholded by <a class="reference internal" href="#max-sequence-length">max_sequence_length</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value is ‘wm_size’.
+Meaning that when the WM reaches the length defined in <a class="reference internal" href="#max-sequence-length">max_sequence_length</a>.</p>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
+</section>
+<section id="classifier">
+<h2>classifier<a class="headerlink" href="#classifier" title="Permalink to this heading"></a></h2>
+<p>The vector classifier to be utilized by the Cognitive Processor.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for classifier is “CVC”.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
-</pre></div>
+</section>
+<section id="max-sequence-length">
+<h2>max_sequence_length<a class="headerlink" href="#max-sequence-length" title="Permalink to this heading"></a></h2>
+<p>Controls the max number of items permitted in the working memory at a time.
+This gene should be used in conjunction with wm_resultion to delimit the
+number of elements allowed in the Working Memory. When data observed surpasses
+this value, entire events are dropped from the Working Memory until the threshold
+is met.</p>
+<p>If AUTOLEARN is enabled, then the entire sequence is learned once the max
+sequence length is attained. In this case, only the final event is retained
+in the working memory after learning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for max_sequence_length defaults to 0, meaning there is no max sequence length
+enforced (unlimited sequence length allowed)</p>
 </div>
+</section>
+<section id="near-vector-count">
+<h2>near_vector_count<a class="headerlink" href="#near-vector-count" title="Permalink to this heading"></a></h2>
+<p>This gene controls the number of nearest neighbors “pulled in” when observing
+vector data. For example, if near_vector_count is set to 2, then the 2 nearest
+neighbors will also be added to the working memory in the same event.</p>
+<p>When not utilizing vector data in the GDFs, this gene has no effect.</p>
+</section>
+<section id="persistence">
+<h2>persistence<a class="headerlink" href="#persistence" title="Permalink to this heading"></a></h2>
+<p>This gene controls the number of historical values which are maintained for a single emotive inside a Model.
+When the same model is learned by the CongitiveProcessor the new emotive value will push the older values out
+when the persistence threshold is reached. It can be any integer value greater than 0.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for persistence is 7.</p>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
+</section>
+<section id="predict-on-nth-event">
+<h2>predict_on_nth_event<a class="headerlink" href="#predict-on-nth-event" title="Permalink to this heading"></a></h2>
+<p>This gene controls when predictions should be generated from observations.
+Meaning that if <em>predict_on_nth_event</em> was set to 4; then 4 events would need to be observed before predictions
+would be made.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for predict_on_nth_event is 1. Meaning that predictions are generated on each observe.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
-</pre></div>
+</section>
+<section id="prediction-sort-metric">
+<h2>prediction_sort_metric<a class="headerlink" href="#prediction-sort-metric" title="Permalink to this heading"></a></h2>
+<p>This gene controls which metric determines how predictions are ranked.
+The possible values are:</p>
+<ul class="simple">
+<li><p>similarity</p></li>
+<li><p>number_of_blocks</p></li>
+<li><p>potential</p></li>
+<li><p>evidence</p></li>
+<li><p>fragmentation</p></li>
+<li><p>snr</p></li>
+<li><p>entropy</p></li>
+<li><p>hamiltonian</p></li>
+<li><p>grand_hamiltonian</p></li>
+<li><p>confluence</p></li>
+<li><p>confidence</p></li>
+<li><p>itfdf_similarity</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for prediction_sort_metric “Potential”, but all numeric metrics
+from the prediction object are supported.</p>
 </div>
+</section>
+<section id="prediction-threshold">
+<h2>prediction_threshold<a class="headerlink" href="#prediction-threshold" title="Permalink to this heading"></a></h2>
+<p>This gene controls the threshold value for Predictions according to the metric defined in <a class="reference internal" href="#prediction-threshold-metric">prediction_threshold_metric</a>.
+The range of values are double values greater than 0.0. <strong>WARNING: Too high of a value will prevent any Predictions
+from being returned.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for prediction_threshold is 0.0 meaning no Predictons are dropped when they are created.</p>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
-</pre></div>
+</section>
+<section id="prediction-threshold-direction">
+<h2>prediction_threshold_direction<a class="headerlink" href="#prediction-threshold-direction" title="Permalink to this heading"></a></h2>
+<p>This gene controls the direction of the thresholding either ‘greater than’ or ‘less than’.
+The range of values is boolean either false(less than) or true(greater than).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for prediction_threshold_direction is the typical false(less than).</p>
 </div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&#39;connection&#39;: &#39;okay&#39;, &#39;agent&#39;: &#39;simple&#39;}
-</pre></div></div>
+</section>
+<section id="prediction-threshold-metric">
+<h2>prediction_threshold_metric<a class="headerlink" href="#prediction-threshold-metric" title="Permalink to this heading"></a></h2>
+<p>This gene controls which metric is used to threshold Predictions and remove them from results.
+The possible values are:</p>
+<ul class="simple">
+<li><p>similarity</p></li>
+<li><p>number_of_blocks</p></li>
+<li><p>potential</p></li>
+<li><p>evidence</p></li>
+<li><p>fragmentation</p></li>
+<li><p>snr</p></li>
+<li><p>entropy</p></li>
+<li><p>hamiltonian</p></li>
+<li><p>grand_hamiltonian</p></li>
+<li><p>confluence</p></li>
+<li><p>confidence</p></li>
+<li><p>itfdf_similarity</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for prediction_threshold_metric is “Potential”</p>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
+</section>
+<section id="wm-resolution">
+<h2>wm_resolution<a class="headerlink" href="#wm-resolution" title="Permalink to this heading"></a></h2>
+<p>The resolution at which the <a class="reference internal" href="#max-sequence-length">max_sequence_length</a> is computed. This gene
+can either be “symbol” or “event”. When symbol, all symbols in an event
+count towards the max sequence length. When event is selected, the max
+sequence length is computed as the number of events.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default value for wm_resolution is “symbol”.</p>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&#39;AUTOLEARN&#39;: False,
- &#39;PREDICT&#39;: True,
- &#39;SLEEPING&#39;: False,
- &#39;emotives&#39;: {},
- &#39;last_learned_model_name&#39;: &#39;&#39;,
- &#39;models_kb&#39;: &#39;{KB| objects: 0}&#39;,
- &#39;name&#39;: &#39;P1&#39;,
- &#39;size_WM&#39;: 0,
- &#39;target&#39;: &#39;&#39;,
- &#39;time&#39;: 0,
- &#39;vectors_kb&#39;: &#39;{KB| objects: 0}&#39;}
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_all_genes</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&#39;genes&#39;: {&#39;always_update_frequencies&#39;: False,
-  &#39;auto_learn_algorithm&#39;: &#39;basic&#39;,
-  &#39;auto_learn_metric&#39;: &#39;WM_size&#39;,
-  &#39;classifier&#39;: &#39;CVC&#39;,
-  &#39;max_predictions&#39;: 100,
-  &#39;near_vector_count&#39;: 3,
-  &#39;persistence&#39;: 5,
-  &#39;predict_on_nth_event&#39;: 1,
-  &#39;quiescence&#39;: 3,
-  &#39;recall_threshold&#39;: 0.1,
-  &#39;smoothness&#39;: 3,
-  &#39;sort_metric&#39;: &#39;potential&#39;}}
-</pre></div></div>
-</div>
-<p>We can change genes using the <a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.change_genes" title="ia.gaius.agent_client.AgentClient.change_genes"><code class="xref py py-func docutils literal notranslate"><span class="pre">change_genes()</span></code></a> api call</p>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">change_genes</span><span class="p">({</span><span class="s1">&#39;recall_threshold&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span> <span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-&#39;updated-genes&#39;
-</pre></div></div>
-</div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_all_genes</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-{&#39;genes&#39;: {&#39;always_update_frequencies&#39;: False,
-  &#39;auto_learn_algorithm&#39;: &#39;basic&#39;,
-  &#39;auto_learn_metric&#39;: &#39;WM_size&#39;,
-  &#39;classifier&#39;: &#39;CVC&#39;,
-  &#39;max_predictions&#39;: 100,
-  &#39;near_vector_count&#39;: 3,
-  &#39;persistence&#39;: 5,
-  &#39;predict_on_nth_event&#39;: 1,
-  &#39;quiescence&#39;: 3,
-  &#39;recall_threshold&#39;: 0.2,
-  &#39;smoothness&#39;: 3,
-  &#39;sort_metric&#39;: &#39;potential&#39;}}
-</pre></div></div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="Agent%20Setup.html" class="btn btn-neutral float-left" title="Agent Setup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="Training%201.html" class="btn btn-neutral float-right" title="Basic PVT Setup and Example" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../examples/Training%201.html" class="btn btn-neutral float-left" title="Basic PVT Setup and Example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../REST.html" class="btn btn-neutral float-right" title="GAIuS RESTful API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

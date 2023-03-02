@@ -16,6 +16,8 @@ This project provides various helper classes and functions for interacting with 
    Tutorials
    API
    examples/UsageExamples
+   cognitive_processor/Genes
+   REST
    
 
 Indices and tables

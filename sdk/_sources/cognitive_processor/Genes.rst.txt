@@ -1,0 +1,217 @@
+Cognitive Processor Genes
+=========================
+
+Genes, also known as Genetically Configurable Prarameters (GCPs), are parameters
+on a Cognitive Processor that are user-configurable. These parameters impact
+how the Cognitive Processor predicts, what state the Processor is in, and how it
+learns new information.
+
+The current values of all genes can be found by utilzing the AgentClient 
+function :func:`get_all_genes() <ia.gaius.agent_client.AgentClient.get_all_genes>`. 
+Genes can be updated using the AgentClient function 
+:func:`change_genes() <ia.gaius.agent_client.AgentClient.change_genes>`
+
+.. note:: 
+    
+    The default values of Genes for each Cognitive Processor is set in the 
+    Genome for the GAIuS Agent. These values can be edited by selecting the
+    corresponding processor in IA's Connectome Creator, or by editing the 
+    Genome file manually.
+
+recall_threshold
+----------------
+
+The recall threshold controls the percentage of a sequence that must match in
+in order for a prediction to be created. This value is a float that ranges
+from 0.0 to 1.0. In addition to :func:`change_genes() <ia.gaius.agent_client.AgentClient.change_genes>`,
+this value can be altered using :func:`increment_recall_threshold() <ia.gaius.agent_client.AgentClient.increment_recall_threshold>`.
+In general, for tighter sequence matching use a higher recall_threshold value.
+For looser sequence matching, use a lower recall_threshold (typically ~ 0.1).
+
+.. note::
+    The default value for recall_threshold is 0.1.
+
+max_predictions
+---------------
+
+This gene controls the number of predictions returned by the Cognitive Processor.
+When the user wants only a single "best" prediction to be returned, this gene should be reduced to 1
+
+.. note::
+    The default value for max_predictions is 100 predcitions.
+
+SORT
+----
+
+This gene controls whether the sequence is sorted by the Cognitive Processor during processing.
+When the user wishes to retain the original ordering of symbols
+then should set SORT to False.
+
+.. note::
+    The default value is True.
+
+.. always_update_frequencies
+.. -------------------------
+
+
+auto_learn_algorithm
+--------------------
+
+This gene controls how the WM is processed, and modified when the `auto_learn_metric`_ reaches its relevant threshold. 
+Currently possible values are: 
+
+* basic
+
+.. note::
+    The default value is 'basic'.
+
+
+auto_learn_metric
+-----------------
+
+This gene controls which metric is checked when determining if the CongitiveProcessor should learn its current
+WM using the set `auto_learn_algorithm`_ before the next observation. Threshold value is different for different
+for different metrics.
+Currently possible values are: 
+
+* wm_size thresholded by `max_sequence_length`_
+
+.. note::
+    The default value is 'wm_size'. 
+    Meaning that when the WM reaches the length defined in `max_sequence_length`_.
+
+classifier
+----------
+
+The vector classifier to be utilized by the Cognitive Processor.
+
+.. note::
+    The default value for classifier is "CVC".
+
+max_sequence_length
+-------------------
+
+Controls the max number of items permitted in the working memory at a time.
+This gene should be used in conjunction with wm_resultion to delimit the
+number of elements allowed in the Working Memory. When data observed surpasses
+this value, entire events are dropped from the Working Memory until the threshold
+is met. 
+
+If AUTOLEARN is enabled, then the entire sequence is learned once the max
+sequence length is attained. In this case, only the final event is retained
+in the working memory after learning.
+
+.. note::
+    The default value for max_sequence_length defaults to 0, meaning there is no max sequence length 
+    enforced (unlimited sequence length allowed)
+
+near_vector_count
+-----------------
+
+This gene controls the number of nearest neighbors "pulled in" when observing
+vector data. For example, if near_vector_count is set to 2, then the 2 nearest
+neighbors will also be added to the working memory in the same event.
+
+When not utilizing vector data in the GDFs, this gene has no effect.
+
+persistence
+-----------
+
+This gene controls the number of historical values which are maintained for a single emotive inside a Model.
+When the same model is learned by the CongitiveProcessor the new emotive value will push the older values out
+when the persistence threshold is reached. It can be any integer value greater than 0.
+
+.. note::
+    The default value for persistence is 7.
+
+predict_on_nth_event
+--------------------
+
+This gene controls when predictions should be generated from observations. 
+Meaning that if *predict_on_nth_event* was set to 4; then 4 events would need to be observed before predictions
+would be made.
+
+.. note::
+    The default value for predict_on_nth_event is 1. Meaning that predictions are generated on each observe.
+
+prediction_sort_metric
+----------------------
+
+This gene controls which metric determines how predictions are ranked.
+The possible values are:
+
+* similarity
+* number_of_blocks
+* potential
+* evidence
+* fragmentation
+* snr
+* entropy
+* hamiltonian
+* grand_hamiltonian
+* confluence
+* confidence
+* itfdf_similarity
+
+.. note::
+    The default value for prediction_sort_metric "Potential", but all numeric metrics
+    from the prediction object are supported.
+
+prediction_threshold
+--------------------
+
+This gene controls the threshold value for Predictions according to the metric defined in `prediction_threshold_metric`_.
+The range of values are double values greater than 0.0. **WARNING: Too high of a value will prevent any Predictions
+from being returned.**
+
+.. note::
+    The default value for prediction_threshold is 0.0 meaning no Predictons are dropped when they are created.
+
+prediction_threshold_direction
+------------------------------
+
+This gene controls the direction of the thresholding either 'greater than' or 'less than'. 
+The range of values is boolean either false(less than) or true(greater than).
+
+.. note::
+    The default value for prediction_threshold_direction is the typical false(less than).
+
+prediction_threshold_metric
+---------------------------
+
+This gene controls which metric is used to threshold Predictions and remove them from results.
+The possible values are:
+
+* similarity
+* number_of_blocks
+* potential
+* evidence
+* fragmentation
+* snr
+* entropy
+* hamiltonian
+* grand_hamiltonian
+* confluence
+* confidence
+* itfdf_similarity
+
+.. note::
+    The default value for prediction_threshold_metric is "Potential"
+
+
+.. quiescence
+.. ----------
+
+.. smoothness
+.. ----------
+
+wm_resolution
+-------------
+
+The resolution at which the `max_sequence_length`_ is computed. This gene
+can either be "symbol" or "event". When symbol, all symbols in an event
+count towards the max sequence length. When event is selected, the max
+sequence length is computed as the number of events.
+
+.. note::
+    The default value for wm_resolution is "symbol".

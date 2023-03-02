@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Reference &mdash; IA-SDK-Python 0.3.27 documentation</title>
+  <title>HTTP Routing Table &mdash; IA-SDK-Python 0.3.27 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -24,8 +23,13 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="AgentClient" href="AgentClient.html" />
-    <link rel="prev" title="An Emotional Machine: Emotives and Mood" href="tutorial_segments/Agent%20Observe%20Emotives.html" /> 
+ 
+
+    <script>
+      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
+    </script>
+
+
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,7 +56,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="GDF.html">GAIuS Data Format (GDF)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="GDF.html#fields">Fields</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="GDF.html#strings">strings</a></li>
@@ -98,7 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Observe%20Emotives.html">An Emotional Machine: Emotives and Mood</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="AgentClient.html">AgentClient</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient"><code class="docutils literal notranslate"><span class="pre">AgentClient</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.__init__"><code class="docutils literal notranslate"><span class="pre">AgentClient.__init__()</span></code></a></li>
@@ -383,9 +387,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">API Reference</li>
+      <li class="breadcrumb-item active">HTTP Routing Table</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/API.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -393,104 +396,227 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
 
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
+   <h1>HTTP Routing Table</h1>
 
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
+   <div class="modindex-jumpbox">
+   <a href="#cap-/(str:primitive_id)"><strong>/(str:primitive_id)</strong></a> | 
+   <a href="#cap-/connect"><strong>/connect</strong></a>
+   </div>
 
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
-<p>All of the public APIs available in the IA-SDK. Of note is the Genome class and the AgentClient class, which are utilized
-frequently to interface with a GAIuS agent</p>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="AgentClient.html">AgentClient</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient"><code class="docutils literal notranslate"><span class="pre">AgentClient</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="Genome.html">Genome</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome"><code class="docutils literal notranslate"><span class="pre">Genome</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="kb_ops.html">KB Ops</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_kb_subset"><code class="docutils literal notranslate"><span class="pre">get_kb_subset()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.get_models_containing_symbol_strict"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol_strict()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="kb_ops.html#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_ops.html#data">Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_ops.html#datarecords">DataRecords</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_ops.html#data-ops-module">data_ops module</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">Utilities</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.merge_gdfs"><code class="docutils literal notranslate"><span class="pre">merge_gdfs()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.retrieve_bottom_level_records"><code class="docutils literal notranslate"><span class="pre">retrieve_bottom_level_records()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="utils.html#ia.gaius.utils.write_gdf_to_file"><code class="docutils literal notranslate"><span class="pre">write_gdf_to_file()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="PVT.html">Performance Validation Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="PVT.html#performance-validation-test">Performance Validation Test</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PVT.html#mongodata">MongoData</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PVT.html#mongodatarecords">MongoDataRecords</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PVT.html#mongoresults">MongoResults</a></li>
-<li class="toctree-l2"><a class="reference internal" href="PVT.html#module-ia.gaius.pvt.pvt_utils">PVT Utils</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="prediction_models.html">Prediction Models</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.average_emotives"><code class="docutils literal notranslate"><span class="pre">average_emotives()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions"><code class="docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_classification"><code class="docutils literal notranslate"><span class="pre">hive_model_classification()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_emotives"><code class="docutils literal notranslate"><span class="pre">hive_model_emotives()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.make_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.model_per_emotive"><code class="docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_model_classification()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
+   <table class="indextable modindextable">
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/(str:primitive_id)"><td></td><td>
+       <strong>/(str:primitive_id)</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-all-genes"><code class="xref">GET /(str:primitive_id)/all-genes</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-cognition-data"><code class="xref">GET /(str:primitive_id)/cognition-data</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-gene-(str-gene)"><code class="xref">GET /(str:primitive_id)/gene/(str:gene)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-get_kb"><code class="xref">GET /(str:primitive_id)/get_kb</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-info"><code class="xref">GET /(str:primitive_id)/info</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-list-blacklisted-symbols"><code class="xref">GET /(str:primitive_id)/list-blacklisted-symbols</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-model-(str-model)"><code class="xref">GET /(str:primitive_id)/model/(str:model)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-name"><code class="xref">GET /(str:primitive_id)/name</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-percept-data"><code class="xref">GET /(str:primitive_id)/percept-data</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-ping"><code class="xref">GET /(str:primitive_id)/ping</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-status"><code class="xref">GET /(str:primitive_id)/status</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-time"><code class="xref">GET /(str:primitive_id)/time</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-vector"><code class="xref">GET /(str:primitive_id)/vector</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--(str-primitive_id)-working-memory"><code class="xref">GET /(str:primitive_id)/working-memory</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-autolearning-start"><code class="xref">POST /(str:primitive_id)/autolearning/start</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-autolearning-stop"><code class="xref">POST /(str:primitive_id)/autolearning/stop</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-blacklisted-symbols-add"><code class="xref">POST /(str:primitive_id)/blacklisted-symbols/add</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-clear-all-memory"><code class="xref">POST /(str:primitive_id)/clear-all-memory</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-clear-target-class"><code class="xref">POST /(str:primitive_id)/clear-target-class</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-gene-increment-recall-threshold"><code class="xref">POST /(str:primitive_id)/gene/increment-recall-threshold</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-genes-change"><code class="xref">POST /(str:primitive_id)/genes/change</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-get-models-with-patterns"><code class="xref">POST /(str:primitive_id)/get-models-with-patterns</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-get-models-with-symbols"><code class="xref">POST /(str:primitive_id)/get-models-with-symbols</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-learn"><code class="xref">POST /(str:primitive_id)/learn</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-load_kb"><code class="xref">POST /(str:primitive_id)/load_kb</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-observe"><code class="xref">POST /(str:primitive_id)/observe</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-predicting-start"><code class="xref">POST /(str:primitive_id)/predicting/start</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-predicting-stop"><code class="xref">POST /(str:primitive_id)/predicting/stop</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-predictions"><code class="xref">POST /(str:primitive_id)/predictions</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-set-target-class"><code class="xref">POST /(str:primitive_id)/set-target-class</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-sleeping-start"><code class="xref">POST /(str:primitive_id)/sleeping/start</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-sleeping-stop"><code class="xref">POST /(str:primitive_id)/sleeping/stop</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#post--(str-primitive_id)-working-memory-clear"><code class="xref">POST /(str:primitive_id)/working-memory/clear</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#put--(str-primitive_id)-add-model"><code class="xref">PUT /(str:primitive_id)/add-model</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#put--(str-primitive_id)-model-(str-model)"><code class="xref">PUT /(str:primitive_id)/model/(str:model)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#delete--(str-primitive_id)-blacklisted-symbols-remove"><code class="xref">DELETE /(str:primitive_id)/blacklisted-symbols/remove</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#delete--(str-primitive_id)-model-(str-model)"><code class="xref">DELETE /(str:primitive_id)/model/(str:model)</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#delete--(str-primitive_id)-patterns-remove"><code class="xref">DELETE /(str:primitive_id)/patterns/remove</code></a></td><td>
+       <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#delete--(str-primitive_id)-symbols-remove"><code class="xref">DELETE /(str:primitive_id)/symbols/remove</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-/connect"><td></td><td>
+       <strong>/connect</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="REST.html#get--connect"><code class="xref">GET /connect</code></a></td><td>
+       <em></em></td></tr>
+   </table>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="tutorial_segments/Agent%20Observe%20Emotives.html" class="btn btn-neutral float-left" title="An Emotional Machine: Emotives and Mood" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="AgentClient.html" class="btn btn-neutral float-right" title="AgentClient" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

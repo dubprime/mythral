@@ -4,10 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>An Emotional Machine: Emotives and Mood &mdash; IA-SDK-Python 0.3.24 documentation</title>
+  <title>An Emotional Machine: Emotives and Mood &mdash; IA-SDK-Python 0.3.27 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -18,6 +19,7 @@
         <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
+        <script src="../_static/sphinxcontrib-httpexample.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
         <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -41,7 +43,7 @@
               <img src="../_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.24
+                v0.3.27
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -175,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../kb_ops.html#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kb_ops.html#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../kb_ops.html#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../kb_ops.html#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../data_ops.html">Data Ops</a><ul>
@@ -206,6 +209,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.merge_gdfs"><code class="docutils literal notranslate"><span class="pre">merge_gdfs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.retrieve_bottom_level_records"><code class="docutils literal notranslate"><span class="pre">retrieve_bottom_level_records()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.write_gdf_to_file"><code class="docutils literal notranslate"><span class="pre">write_gdf_to_file()</span></code></a></li>
 </ul>
@@ -312,7 +316,18 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#ia-gaius-back-testing-module">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.BackTest"><code class="docutils literal notranslate"><span class="pre">BackTest</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.BackTest.run"><code class="docutils literal notranslate"><span class="pre">BackTest.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.classification_report"><code class="docutils literal notranslate"><span class="pre">classification_report()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.fidelity_charts"><code class="docutils literal notranslate"><span class="pre">fidelity_charts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.get_class_distribution"><code class="docutils literal notranslate"><span class="pre">get_class_distribution()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.plot_class_distributions"><code class="docutils literal notranslate"><span class="pre">plot_class_distributions()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../ia.gaius.html#ia.gaius.back_testing.predictor_operator_characteristic"><code class="docutils literal notranslate"><span class="pre">predictor_operator_characteristic()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
 </ul>
 </li>
@@ -328,6 +343,30 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/UsageExamples.html#mnist-testing">MNIST Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../cognitive_processor/Genes.html">Cognitive Processor Genes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#recall-threshold">recall_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#max-predictions">max_predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#sort">SORT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#auto-learn-algorithm">auto_learn_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#auto-learn-metric">auto_learn_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#classifier">classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#max-sequence-length">max_sequence_length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#near-vector-count">near_vector_count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#persistence">persistence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#predict-on-nth-event">predict_on_nth_event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-sort-metric">prediction_sort_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold">prediction_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold-direction">prediction_threshold_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#prediction-threshold-metric">prediction_threshold_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cognitive_processor/Genes.html#wm-resolution">wm_resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../REST.html">GAIuS RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../REST.html#four-core-api-calls">Four Core API Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../REST.html#helper-functionality">Helper Functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../REST.html#miscellaneous-endpoints">Miscellaneous Endpoints</a></li>
 </ul>
 </li>
 </ul>
@@ -645,22 +684,22 @@ div.rendered_html tbody tr:hover {
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from ia.gaius.agent_client import AgentClient
-agent_info = {&#39;api_key&#39;: &#39;ABCD-1234&#39;,
-              &#39;name&#39;: &#39;&#39;,
-              &#39;domain&#39;: &#39;gaius-api:80&#39;,
-              &#39;secure&#39;: False}
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.agent_client</span> <span class="kn">import</span> <span class="n">AgentClient</span>
+<span class="n">agent_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;api_key&#39;</span><span class="p">:</span> <span class="s1">&#39;ABCD-1234&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;domain&#39;</span><span class="p">:</span> <span class="s1">&#39;gaius-api:80&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;secure&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
 
-agent = AgentClient(agent_info)
-agent.connect()
-agent
+<span class="n">agent</span> <span class="o">=</span> <span class="n">AgentClient</span><span class="p">(</span><span class="n">agent_info</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<span class="n">agent</span>
 
-# Let&#39;s use only one node
-ingress_nodes = [&#39;P1&#39;]
-query_nodes   = [&#39;P1&#39;]
+<span class="c1"># Let&#39;s use only one node</span>
+<span class="n">ingress_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">]</span>
+<span class="n">query_nodes</span>   <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">]</span>
 
-agent.set_ingress_nodes(ingress_nodes)
-agent.set_query_nodes(query_nodes)
+<span class="n">agent</span><span class="o">.</span><span class="n">set_ingress_nodes</span><span class="p">(</span><span class="n">ingress_nodes</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">set_query_nodes</span><span class="p">(</span><span class="n">query_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +724,7 @@ agent.set_query_nodes(query_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>agent.clear_all_memory(nodes=ingress_nodes)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">clear_all_memory</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -702,12 +741,12 @@ agent.set_query_nodes(query_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sequence_1 = [{&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: 10}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_1</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}]</span>
 
-sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: -10}},
-              {&quot;strings&quot;: [&quot;cruel&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: -40}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}}]
+<span class="n">sequence_2</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;goodbye&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">10</span><span class="p">}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;cruel&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">40</span><span class="p">}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}}]</span>
 </pre></div>
 </div>
 </div>
@@ -718,23 +757,23 @@ sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sequence_1 = [{&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: 10}}]
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sequence_1</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}}]</span>
 
-sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;cruel&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: -50}}]
+<span class="n">sequence_2</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;goodbye&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;cruel&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">}}]</span>
 
-# or
+<span class="c1"># or</span>
 
-sequence_1 = [{&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: 10}}]
+<span class="n">sequence_1</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}}]</span>
 
-sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;cruel&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [&quot;world&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}},
-              {&quot;strings&quot;: [], &quot;vectors&quot;: [], &quot;emotives&quot;: {&#39;utility&#39;: -50}}]
+<span class="n">sequence_2</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;goodbye&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;cruel&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;world&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}},</span>
+              <span class="p">{</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;utility&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">50</span><span class="p">}}]</span>
 </pre></div>
 </div>
 </div>
@@ -742,7 +781,7 @@ sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>agent.show_status(nodes=ingress_nodes)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -768,11 +807,11 @@ sequence_2 = [{&quot;strings&quot;: [&quot;goodbye&quot;], &quot;vectors&quot;: 
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Learn the 1st sequence
-for event in sequence_1:
-    agent.observe(data=event,nodes=ingress_nodes)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Learn the 1st sequence</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">sequence_1</span><span class="p">:</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 
-agent.learn(nodes=ingress_nodes)
+<span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -789,11 +828,11 @@ agent.learn(nodes=ingress_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Learn the 2nd sequence
-for event in sequence_2:
-    agent.observe(data=event,nodes=ingress_nodes)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Learn the 2nd sequence</span>
+<span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">sequence_2</span><span class="p">:</span>
+    <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 
-agent.learn(nodes=ingress_nodes)
+<span class="n">agent</span><span class="o">.</span><span class="n">learn</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">ingress_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -810,7 +849,7 @@ agent.learn(nodes=ingress_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Let&#39;s observe the single event with &quot;hello&quot; in the strings section to get a prediction
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s observe the single event with &quot;hello&quot; in the strings section to get a prediction</span>
 </pre></div>
 </div>
 </div>
@@ -818,7 +857,7 @@ agent.learn(nodes=ingress_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>agent.observe({&quot;strings&quot;: [&quot;hello&quot;], &quot;vectors&quot;: [], &quot;emotives&quot;: {}})
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">({</span><span class="s2">&quot;strings&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">],</span> <span class="s2">&quot;vectors&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;emotives&quot;</span><span class="p">:</span> <span class="p">{}})</span>
 </pre></div>
 </div>
 </div>
@@ -835,7 +874,7 @@ agent.learn(nodes=ingress_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>agent.get_predictions(nodes=query_nodes)
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">query_nodes</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -873,7 +912,7 @@ agent.learn(nodes=ingress_nodes)
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>agent.get_predictions(nodes=query_nodes)[0][&#39;emotives&#39;]
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">query_nodes</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;emotives&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>

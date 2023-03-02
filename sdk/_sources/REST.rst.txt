@@ -1,0 +1,1189 @@
+GAIuS RESTful API
+=================
+
+This document outlines the REST API used to interact with GAIuS Agents via
+the GAIuS API Docker container. The GAIuS API docker container then 
+interfaces with Cognitive Processors and Manipulatives via gRPC to execute 
+the specified commands. These commands correlate similarly with commands 
+in the :doc:`AgentClient <AgentClient>` class.
+
+.. contents:: Table of Contents
+
+
+View Entire Routing Table: 
+:ref:`routingtable`
+
+.. note:: 
+
+    The examples in this documentation assume that a GAIuS Agent is started on your local machine,
+    using HTTP at port 8000. These examples must be updated accordingly with your usecase
+
+Four Core API Calls
+-------------------
+
+.. http:post:: /(str:primitive_id)/observe
+    
+    Observes a :doc:`GDF <GDF>` on a Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID to observe on
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/observe HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        Content-Type: application/json
+        X-API-KEY: ABCD-1234
+
+        {"data":{"strings":["hello"]}}
+
+    :<json jsonobj jsonarr string strings: GDF Strings field
+    :<json jsonobj jsonarr jsonarr float vectors: GDF Vectors field
+    :<json jsonobj emotives: GDF Emotives field
+    :<json jsonobj metadata: GDF Metadata field
+    :<json jsonobj string command: Depricated field
+    :<json jsonobj string unique_id: Depricated field
+
+
+    **Example response**:
+
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 230
+        content-type: application/json; charset=utf-8
+
+    :>json string id: Unique ID of Cognitive Processor
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json jsonobj message: Details about the result of the observe event
+    :>json string status: Depicts the status of the observe event. Either "okay" or "failed"
+
+    .. {"id":"p46b6b076c","interval":1,
+    .. "message":{"auto_learned_model":"","status":"observed","unique_id":"9ce35259-b85a-11ed-9259-0242c0a80003"},
+    .. "status":"okay",
+    .. "time_stamp":1677693483,
+    .. "unique_id":"9ce35259-b85a-11ed-9259-0242c0a80003"}
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+.. http:post:: /(str:primitive_id)/learn
+
+    Learn sequence from the working memory on specified Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/learn HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        content-length: 131
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":6,
+        "message":"MODEL|7d0678ba6305341ce0d25133ab086208656a562f",
+        "status":"okay",
+        "time_stamp":1677701062}
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+.. http:post:: /(str:primitive_id)/working-memory/clear
+
+    Clear working memory on specified Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/working-memory/clear HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 95
+        content-type: application/json; charset=utf-8
+        
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"wm-cleared",
+        "status":"okay",
+        "time_stamp":1677706509}
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+.. http:post:: /(str:primitive_id)/predictions
+
+    Get list of prediction objects from specified Cognitive Processor based on current working memory
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/predictions HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        Content-Type: text/javascript
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/predictions HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+Helper Functionality
+--------------------
+
+.. http:get:: /connect
+
+    Connect to GAIuS API and retrieve Genome of connected 
+    Cognitive Processors & Manipulatives
+
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /p46b6b076c/connect HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        Content-Type: text/javascript
+
+    :>json string connection: Depicts the status of the observe event. Either "okay" or "failed"
+    :>json string genie: Name of the agent, based on Genome
+    :>json jsonobj genome: JSON object holding the entire Genome of the connected agent.
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+    .. {"connection":"okay",
+    ..  "genie":"simple",
+    ..  "genome":{"agent":"simple","boxSelectionEnabled":true,"description":"","elements":{"nodes":[{"classes":"","data":{"always_update_frequencies":false,"auto_act_method":"none","auto_act_threshold":0.80000000000000004,"auto_learn_method":"none","classifier":"CVC","datastore":"mongodb","dynamic_sequence_length":true,"faveColor":"#6FB1FC","faveShape":"hexagon","height":25,"id":"p46b6b076c","manipulatives":[],"max_predictions":100,"max_sequence_length":0,"name":"P1","persistence":5,"process_predictions":true,"quiescence":3,"recall_threshold":0.10000000000000001,"search_depth":10,"smoothness":3,"sort":true,"sources":["observables"],"type":"primitive","width":30},"grabbable":true,"group":"nodes","locked":false,"position":{"x":-3.7743817307428458,"y":99.19445681909194},"removed":false,"selectable":true,"selected":false}]},"maxZoom":3,"minZoom":0.10000000000000001,"pan":{"x":450.32314519222854,"y":2.4166295427241948},"panningEnabled":true,"renderer":{"name":"canvas"},"style":[{"sele* Connection #0 to host localhost left intact
+    ..     ctor":"node","style":{"background-color":"data(faveColor)","border-color":"#000","border-opacity":"0.5","border-width":"1px","color":"#fff","font-size":"7px","height":"data(height)","label":"data(name)","shape":"data(faveShape)","text-outline-color":"data(faveColor)","text-outline-width":"2px","text-valign":"center","width":"data(width)"}},{"selector":"edge","style":{"border-color":"#000","border-opacity":"0.5","border-width":"1px","target-arrow-shape":"triangle"}},{"selector":".drawing","style":{"border-color":"#FA58F4","border-opacity":"0.5","border-width":"2px"}},{"selector":".target","style":{"border-color":"#2EFE9A","border-opacity":"0.5","border-width":"2px"}}],"userPanningEnabled":true,"userZoomingEnabled":true,"wheelSensitivity":0.10000000000000001,"zoom":3,"zoomingEnabled":true},"status":"okay"}
+
+.. http:get:: /(str:primitive_id)/ping
+
+    Ping Cognitive Processor or GAIuS API
+
+    :param primitive_id: Cognitive Processor Unique ID or "agent" to ping GAIuS API
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /agent/ping HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        content-length: 17
+        Content-Type: text/javascript
+
+        {"status":"okay"}
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+    .. http:example:: curl wget python-requests
+
+        GET /agent/ping HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/clear-all-memory
+
+    Reset Cognitive Processor's memory to an initial state. Genes/GCPs are not
+    reset as a result of this command
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/clear-all-memory HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"all-cleared",
+        "status":"okay",
+        "time_stamp":1677696465}
+
+
+    :>json string id: Cognitive Processor Unique ID
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json string message: Message depicting action taken
+    :>json string status: Depicts the status of the clear all memory event. Either "okay" or "failed"
+    :>json string time_stamp: time_stamp at which the clear all memory event occurred
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/clear-all-memory HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:get:: /(str:primitive_id)/status
+
+    Show current status of the Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+    
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /p46b6b076c/status HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":{"AUTOLEARN":false,"PREDICT":true,"SLEEPING":false,"emotives":{},"last_learned_model_name":"","models_kb":"{KB| objects: 0}","name":"P1","num_observe_call":0,"size_WM":0,"target":"","time":0,"vectors_kb":"{KB| objects: 0}"},
+        "status":"okay",
+        "time_stamp":1677696703}
+    
+    :>json string id: Cognitive Processor Unique ID
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json string message: Message depicting status of Cognitive Processor, including values of internal parameters, etc.
+    :>json string status: Depicts the status of the clear all memory event. Either "okay" or "failed"
+    :>json string time_stamp: time_stamp at which the clear all memory event occurred
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/status HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/gene/increment-recall-threshold
+
+    Increment recall threshold by specified amount
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/gene/increment-recall-threshold HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        Content-Type: application/json
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 93
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"0.200000",
+        "status":"okay",
+        "time_stamp":1677703231}
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/gene/increment-recall-threshold HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        Content-Type: application/json
+        X-API-KEY: ABCD-1234
+
+        {"increment": 0.10}
+
+.. http:post:: /(str:primitive_id)/predicting/stop
+
+    Disable predicting
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/predicting/stop HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 108
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"deactivated-predictions",
+        "status":"okay",
+        "time_stamp":1677703360}
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/predicting/stop HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/predicting/start
+
+    Enable predicting
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/predicting/start HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 106
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c","interval":0,"message":"activated-predictions","status":"okay","time_stamp":1677703468}
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/predicting/start HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/autolearning/stop
+
+    Disable automatic learning
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/autolearning/stop HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 106
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"deactivated-autolearn",
+        "status":"okay",
+        "time_stamp":1677703571}
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/autolearning/stop HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/autolearning/start
+
+    Enable automatic learning
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        POST /p46b6b076c/autolearning/start HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+    
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 106
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"activated-autolearn",
+        "status":"okay",
+        "time_stamp":1677703638}
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/autolearning/start HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:get:: /(str:primitive_id)/gene/(str:gene)
+
+    Retrieve value of gene from Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. sourcecode:: http
+
+        GET /p46b6b076c/gene/recall_threshold HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+        
+        HTTP/1.1 200 OK
+        content-length: 93
+        content-type: application/json; charset=utf-8
+        
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"0.200000",
+        "status":"okay",
+        "time_stamp":1677703721}
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/gene/recall_threshold HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/genes/change
+
+    Update value of genes provided in request body
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/genes/change HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        content-type: application/json
+        X-API-KEY: ABCD-1234
+
+        {"data": {"recall_threshold": 0.10}}
+
+    **Example response**:
+
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 98
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"updated-genes",
+        "status":"okay",
+        "time_stamp":1677704450}
+
+.. http:post:: /(str:primitive_id)/sleeping/stop
+
+    Stop sleeping
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/sleeping/stop HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 90
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"awake",
+        "status":"okay",
+        "time_stamp":1677704626}
+
+.. http:post:: /(str:primitive_id)/sleeping/start
+
+    Start sleeping (ignore all observation data)
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/sleeping/start HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 91
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"asleep",
+        "status":"okay",
+        "time_stamp":1677704710}
+
+.. http:get:: /(str:primitive_id)/percept-data
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/percept-data HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 85
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":{},
+        "status":"okay",
+        "time_stamp":1677704911}
+
+.. http:get:: /(str:primitive_id)/cognition-data
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/cognition-data HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 226
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":{"command":"","emotives":{},"metadata":{},"path":[],"predictions":[],"strings":[],"symbols":[],"unique_id":"","vectors":[],"working_memory":[]},
+        "status":"okay",
+        "time_stamp":1677704951}
+
+.. http:post:: /(str:primitive_id)/set-target-class
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/set-target-class HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 101
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"set-target-class",
+        "status":"okay",
+        "time_stamp":1677705095}
+
+.. http:post:: /(str:primitive_id)/clear-target-class
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/clear-target-class HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 105
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"cleared-target-class",
+        "status":"okay",
+        "time_stamp":1677705194}
+
+.. http:get:: /(str:primitive_id)/get_kb
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/get_kb HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/load_kb
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/load_kb HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+        {"symbols_kb":{}, "vectors_kb": {}, "models_kb": {}, "metadata": {}}
+
+.. http:get:: /(str:primitive_id)/model/(str:model)
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key    .. sourcecode:: http
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/model/MODEL|7d0678ba6305341ce0d25133ab086208656a562f HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    .. content-length: 231
+    .. {"id":"p46b6b076c","interval":6,"message":{"emotives":{},"frequency":1,"length":2,"metadata":[{},{},{},{}],"name":"7d0678ba6305341ce0d25133ab086208656a562f","sequence":[["hello"],["world"]]},"status":"okay","time_stamp":1677701151}
+
+.. http:delete:: /(str:primitive_id)/model/(str:model)
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        DELETE /p46b6b076c/model/MODEL|7d0678ba6305341ce0d25133ab086208656a562f HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+        
+    .. content-length: 92
+    .. {"id":"p46b6b076c","interval":6,"message":"deleted","status":"okay","time_stamp":1677701198}
+
+.. http:put:: /(str:primitive_id)/model/(str:model)
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        PUT /p46b6b076c/model/MODEL|7d0678ba6305341ce0d25133ab086208656a562f HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:get:: /(str:primitive_id)/working-memory
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/working-memory HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:get:: /(str:primitive_id)/vector
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/vector HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        Content-Type: application/json
+        X-API-KEY: ABCD-1234
+
+        {"data": "VECTOR|ABCD1234"}
+
+    .. note::
+
+        Upon failure, the `time_stamp` field of the response will be set to -1, and the `message` field
+        of the response will contain a descriptive message depicting the error encountered
+
+.. http:get:: /(str:primitive_id)/all-genes
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/all-genes HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        content-length: 564
+        content-type: application/json; charset=utf-8
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":{"genes":{"SORT":"sorting","always_update_frequencies":false,"auto_learn_algorithm":"basic","auto_learn_metric":"wm_size","classifier":"CVC","max_predictions":100,"max_sequence_length":0,"near_vector_count":3,"persistence":5,"predict_on_nth_event":1,"prediction_sort_metric":"potential","prediction_threshold":0,"prediction_threshold_direction":"greater than","prediction_threshold_metric":"potential","quiescence":3,"recall_threshold":0.1,"smoothness":3,"wm_resolution":"symbol"}},
+        "status":"okay",
+        "time_stamp":1677705501}
+
+    .. {"id":"p46b6b076c","interval":6,"message":{"genes":{"SORT":"sorting","always_update_frequencies":false,"auto_learn_algorithm":"basic","auto_learn_metric":"wm_size","classifier":"CVC","max_predictions":100,"max_sequence_length":0,"near_vector_count":3,"persistence":5,"predict_on_nth_event":1,"prediction_sort_metric":"potential","prediction_threshold":0,"prediction_threshold_direction":"greater than","prediction_threshold_metric":"potential","quiescence":3,"recall_threshold":0.1,"smoothness":3,"wm_resolution":"symbol"}},"status":"okay","time_stamp":1677701286}
+
+.. http:post:: /(str:primitive_id)/get-models-with-symbols
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/get-models-with-symbols HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/get-models-with-patterns
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/get-models-with-patterns HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:put:: /(str:primitive_id)/add-model
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        PUT /p46b6b076c/add-model HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:delete:: /(str:primitive_id)/symbols/remove
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/symbols/remove HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:delete:: /(str:primitive_id)/patterns/remove
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        DELETE /p46b6b076c/patterns/remove HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:post:: /(str:primitive_id)/blacklisted-symbols/add
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        POST /p46b6b076c/blacklisted-symbols/add HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:get:: /(str:primitive_id)/list-blacklisted-symbols
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/list-blacklisted-symbols HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+.. http:delete:: /(str:primitive_id)/blacklisted-symbols/remove
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        DELETE /p46b6b076c/blacklisted-symbols/remove HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+Miscellaneous Endpoints
+-----------------------
+
+.. http:get:: /(str:primitive_id)/name
+
+    Get the friendly name of the Cognitive Processor (e.g. P1, P2, ...)
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+    
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/name HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        content-length: 87
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"P1",
+        "status":"okay",
+        "time_stamp":1677697253}
+    
+    :>json string id: Cognitive Processor Unique ID
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json string message: Friendly name of the Cognitive Processor
+    :>json string status: Depicts the status of the clear all memory event. Either "okay" or "failed"
+    :>json string time_stamp: time_stamp at which the clear all memory event occurred
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+.. http:get:: /(str:primitive_id)/info
+
+    Get debug information from the Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+    
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/info HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        content-length: 219
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":{"build_date":"12-07-2022","build_number":"1002","classifier":"CVC","id":"p46b6b076c","name":"P1","time":0,"version":"GAIuS Kehl (v12)"},
+        "status":"okay",
+        "time_stamp":1677697491}
+    
+    :>json string id: Cognitive Processor Unique ID
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json jsonobj message: Debugging information
+    :>json string status: Depicts the status of the clear all memory event. Either "okay" or "failed"
+    :>json string time_stamp: time_stamp at which the clear all memory event occurred
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error
+
+.. http:get:: /(str:primitive_id)/time
+
+    Get time from the Cognitive Processor
+
+    :param primitive_id: Cognitive Processor Unique ID
+    :type primitive_id: string
+    :reqheader X-API-KEY: Secret API Key
+    
+    **Example request**:
+
+    .. http:example:: curl wget python-requests
+
+        GET /p46b6b076c/time HTTP/1.1
+        Host: localhost:8000
+        Accept: application/json, text/javascript
+        X-API-KEY: ABCD-1234
+
+    **Example response**:
+
+    .. sourcecode:: http
+
+        HTTP/1.1 200 OK
+        Vary: Accept
+        content-length: 86
+        Content-Type: text/javascript
+
+        {"id":"p46b6b076c",
+        "interval":0,
+        "message":"0",
+        "status":"okay",
+        "time_stamp":1677697572}
+    
+    :>json string id: Cognitive Processor Unique ID
+    :>json int interval: Discrete time interval for events, tracked on Cognitive Processor
+    :>json string message: Discrete timestep of the Cognitive Processor (as a string)
+    :>json string status: Depicts the status of the clear all memory event. Either "okay" or "failed"
+    :>json string time_stamp: time_stamp at which the clear all memory event occurred
+
+    :statuscode 200: no error
+    :statuscode 500: Failed API Key Check, or internal error

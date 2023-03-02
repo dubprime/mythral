@@ -4,10 +4,11 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KB Ops &mdash; IA-SDK-Python 0.3.24 documentation</title>
+  <title>KB Ops &mdash; IA-SDK-Python 0.3.27 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+      <link rel="stylesheet" href="_static/sphinxcontrib-httpexample.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -18,6 +19,7 @@
         <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
+        <script src="_static/sphinxcontrib-httpexample.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -39,7 +41,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.24
+                v0.3.27
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -173,6 +175,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
@@ -204,6 +207,7 @@
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.merge_gdfs"><code class="docutils literal notranslate"><span class="pre">merge_gdfs()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.retrieve_bottom_level_records"><code class="docutils literal notranslate"><span class="pre">retrieve_bottom_level_records()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.write_gdf_to_file"><code class="docutils literal notranslate"><span class="pre">write_gdf_to_file()</span></code></a></li>
 </ul>
@@ -310,7 +314,18 @@
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#ia-gaius-back-testing-module">ia.gaius.back_testing module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.back_testing">ia.gaius.back_testing module</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.BackTest"><code class="docutils literal notranslate"><span class="pre">BackTest</span></code></a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.BackTest.run"><code class="docutils literal notranslate"><span class="pre">BackTest.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.classification_report"><code class="docutils literal notranslate"><span class="pre">classification_report()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.fidelity_charts"><code class="docutils literal notranslate"><span class="pre">fidelity_charts()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.get_class_distribution"><code class="docutils literal notranslate"><span class="pre">get_class_distribution()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.plot_class_distributions"><code class="docutils literal notranslate"><span class="pre">plot_class_distributions()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.html#ia.gaius.back_testing.predictor_operator_characteristic"><code class="docutils literal notranslate"><span class="pre">predictor_operator_characteristic()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#module-ia.gaius.data_language">ia.gaius.data_language module</a></li>
 </ul>
 </li>
@@ -326,6 +341,30 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="examples/UsageExamples.html#mnist-testing">MNIST Testing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cognitive_processor/Genes.html">Cognitive Processor Genes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#recall-threshold">recall_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#max-predictions">max_predictions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#sort">SORT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#auto-learn-algorithm">auto_learn_algorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#auto-learn-metric">auto_learn_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#classifier">classifier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#max-sequence-length">max_sequence_length</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#near-vector-count">near_vector_count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#persistence">persistence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#predict-on-nth-event">predict_on_nth_event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#prediction-sort-metric">prediction_sort_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#prediction-threshold">prediction_threshold</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#prediction-threshold-direction">prediction_threshold_direction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#prediction-threshold-metric">prediction_threshold_metric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cognitive_processor/Genes.html#wm-resolution">wm_resolution</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="REST.html">GAIuS RESTful API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="REST.html#four-core-api-calls">Four Core API Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="REST.html#helper-functionality">Helper Functionality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="REST.html#miscellaneous-endpoints">Miscellaneous Endpoints</a></li>
 </ul>
 </li>
 </ul>
@@ -541,13 +580,27 @@ Store as a dict of {node_name : list}</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – GAIuS Agent</p></li>
-<li><p><strong>model_name</strong> (<em>str</em>) – name of model to delete</p></li>
-<li><p><strong>nodes</strong> (<em>_type_</em><em>, </em><em>optional</em>) – Nodes to recursively delete model on</p></li>
-<li><p><strong>log_to_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to log output to a file. Defaults to False.</p></li>
+<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – _description_</p></li>
+<li><p><strong>model_name</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>nodes</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>log_to_file</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to False.</p></li>
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.kb_ops.recursive_update_model">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">recursive_update_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">model_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_to_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.kb_ops.recursive_update_model" title="Permalink to this definition"></a></dt>
+<dd><p>_summary_
+:param agent: _description_
+:type agent: AgentClient
+:param model_name: _description_
+:type model_name: str
+:param nodes: _description_. Defaults to None.
+:type nodes: _type_, optional
+:param log_to_file: _description_. Defaults to False.
+:type log_to_file: bool, optional</p>
 </dd></dl>
 
 </section>
