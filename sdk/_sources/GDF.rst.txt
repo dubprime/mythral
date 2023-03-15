@@ -57,3 +57,60 @@ path
 
 The path field is used internally to show the path taken by an observation as it travels through a GAIuS agent's topology
 
+Example Conversions
++++++++++++++++++++
+
+To illustrate the process of converting data into GDF format, here are some specific examples 
+corresponding to potential use-cases.
+
+CSV to GDF
+----------
+
+CSV Data can be rapidly converted into GDF format by utilizing the strings field of the GDF. 
+Each row corresponds to a single data record, from which an individual GDF will be created.
+The headers, and the individual data elements from each row can be concatenated to make feature
+strings for each entry. For example, if a header value is "name", and a specific data value is "Steve",
+a feature string for the GDF would be "name|Steve".
+
+Here is a more comprehensive example:
+
+.. list-table:: Example HR CSV
+    :header-rows: 1
+
+    *   - Name
+        - Age
+        - Sex
+        - Salary
+    *   - Steve
+        - 34
+        - male
+        - 50000
+    *   - Josh
+        - 25
+        - male
+        - 65000
+    *   - Gregory
+        - 52
+        - male
+        - 43000
+
+.. list-table:: Corresponding GDF Conversions
+    :widths: 60 20 20
+    :header-rows: 1
+
+    *   - Strings
+        - Vectors
+        - Emotives
+    *   - :code:`"Name|Steve", "Age|34", "Sex|male", "Salary|50000"`
+        - 
+        - 
+    *   - :code:`"Name|Josh", "Age|25", "Sex|male", "Salary|65000"`
+        - 
+        - 
+    *   - :code:`"Name|Gregory", "Age|52", "Sex|male", "Salary|43000"`
+        - 
+        - 
+
+
+Image to GDF
+------------

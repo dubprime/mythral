@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Examples &mdash; IA-SDK-Python 0.3.27 documentation</title>
+  <title>Examples &mdash; IA-SDK-Python 0.3.28 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -13,7 +13,6 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
@@ -41,7 +40,7 @@
               <img src="../_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.27
+                v0.3.28
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -62,6 +61,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../GDF.html#path">path</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../GDF.html#example-conversions">Example Conversions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#csv-to-gdf">CSV to GDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../GDF.html#image-to-gdf">Image to GDF</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Tutorials.html">Tutorials</a><ul>
@@ -72,7 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tutorial_segments/Agent%20Creation.html#Use-the-SDK's-AgentClient">Use the SDK’s AgentClient</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
 </ul>
 </li>
@@ -393,31 +397,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="examples">
+  <section id="examples">
 <h1>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>

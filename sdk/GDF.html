@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GAIuS Data Format (GDF) &mdash; IA-SDK-Python 0.3.27 documentation</title>
+  <title>GAIuS Data Format (GDF) &mdash; IA-SDK-Python 0.3.28 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -13,7 +13,6 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/sphinx_highlight.js"></script>
@@ -41,7 +40,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.27
+                v0.3.28
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -62,6 +61,11 @@
 <li class="toctree-l3"><a class="reference internal" href="#path">path</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#example-conversions">Example Conversions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#csv-to-gdf">CSV to GDF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-to-gdf">Image to GDF</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="Tutorials.html">Tutorials</a><ul>
@@ -72,7 +76,7 @@
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Genome%20Introduction.html">Create a Genome Topology for your Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html">Deploy an Agent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Connect-to-Your-Agent">Connect to Your Agent</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK’s-AgentClient">Use the SDK’s AgentClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Use-the-SDK's-AgentClient">Use the SDK’s AgentClient</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorial_segments/Agent%20Creation.html#Or,-roll-your-own-connections">Or, roll your own connections</a></li>
 </ul>
 </li>
@@ -393,31 +397,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  
-<style>
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
-</style>
-<section id="gaius-data-format-gdf">
+  <section id="gaius-data-format-gdf">
 <h1>GAIuS Data Format (GDF)<a class="headerlink" href="#gaius-data-format-gdf" title="Permalink to this heading"></a></h1>
 <p>The data entry format for use with the GAIuS Framework is called GAIuS Data Format (GDF).
 GDFs have several fields that correspond to different types of data:</p>
@@ -467,6 +447,78 @@ this field may be used for flattened image data, mathmatical data, etc.</p>
 <section id="path">
 <h3>path<a class="headerlink" href="#path" title="Permalink to this heading"></a></h3>
 <p>The path field is used internally to show the path taken by an observation as it travels through a GAIuS agent’s topology</p>
+</section>
+</section>
+<section id="example-conversions">
+<h2>Example Conversions<a class="headerlink" href="#example-conversions" title="Permalink to this heading"></a></h2>
+<p>To illustrate the process of converting data into GDF format, here are some specific examples
+corresponding to potential use-cases.</p>
+<section id="csv-to-gdf">
+<h3>CSV to GDF<a class="headerlink" href="#csv-to-gdf" title="Permalink to this heading"></a></h3>
+<p>CSV Data can be rapidly converted into GDF format by utilizing the strings field of the GDF.
+Each row corresponds to a single data record, from which an individual GDF will be created.
+The headers, and the individual data elements from each row can be concatenated to make feature
+strings for each entry. For example, if a header value is “name”, and a specific data value is “Steve”,
+a feature string for the GDF would be “name|Steve”.</p>
+<p>Here is a more comprehensive example:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Example HR CSV</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Age</p></th>
+<th class="head"><p>Sex</p></th>
+<th class="head"><p>Salary</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Steve</p></td>
+<td><p>34</p></td>
+<td><p>male</p></td>
+<td><p>50000</p></td>
+</tr>
+<tr class="row-odd"><td><p>Josh</p></td>
+<td><p>25</p></td>
+<td><p>male</p></td>
+<td><p>65000</p></td>
+</tr>
+<tr class="row-even"><td><p>Gregory</p></td>
+<td><p>52</p></td>
+<td><p>male</p></td>
+<td><p>43000</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Corresponding GDF Conversions</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 60%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Strings</p></th>
+<th class="head"><p>Vectors</p></th>
+<th class="head"><p>Emotives</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">&quot;Name|Steve&quot;,</span> <span class="pre">&quot;Age|34&quot;,</span> <span class="pre">&quot;Sex|male&quot;,</span> <span class="pre">&quot;Salary|50000&quot;</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><code class="code docutils literal notranslate"><span class="pre">&quot;Name|Josh&quot;,</span> <span class="pre">&quot;Age|25&quot;,</span> <span class="pre">&quot;Sex|male&quot;,</span> <span class="pre">&quot;Salary|65000&quot;</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><code class="code docutils literal notranslate"><span class="pre">&quot;Name|Gregory&quot;,</span> <span class="pre">&quot;Age|52&quot;,</span> <span class="pre">&quot;Sex|male&quot;,</span> <span class="pre">&quot;Salary|43000&quot;</span></code></p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="image-to-gdf">
+<h3>Image to GDF<a class="headerlink" href="#image-to-gdf" title="Permalink to this heading"></a></h3>
 </section>
 </section>
 </section>
