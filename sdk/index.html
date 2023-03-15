@@ -402,8 +402,16 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   if (typeof navigator.serviceWorker !== 'undefined')
   {
-  navigator.serviceWorker.register('/sw.js');
-  $('head').append('<div><link rel="manifest" href="/manifest.json"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></div>')
+  navigator.serviceWorker.register('/sw.js').then(function(registration)
+  {
+    var manifest = document.createElement('link');
+    manifest.rel = 'manifest';
+    manifest.href = '/manifest.json';
+    document.head.appendChild(manifest);
+});
+  $('head').append('<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">')
+  $('head').append('<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">')
+  $('head').append('<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"></div>')
   }
 });
 </script><section id="ia-sdk-python-documentation">
