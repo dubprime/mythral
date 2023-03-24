@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentClient &mdash; IA-SDK-Python 0.3.28 documentation</title>
+  <title>AgentClient &mdash; IA-SDK-Python 0.3.34 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.28
+                v0.3.34
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -127,6 +127,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_name"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_name()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_percept_data"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_percept_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_predictions"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_predictions()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_symbol"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_symbol()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_time"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_time()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_vector"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_vector()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.get_wm"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_wm()</span></code></a></li>
@@ -275,6 +276,7 @@
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_polarity_metrics_builder()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_value_metrics_builder()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.init_emotive_on_node"><code class="docutils literal notranslate"><span class="pre">init_emotive_on_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.is_notebook"><code class="docutils literal notranslate"><span class="pre">is_notebook()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.make_modeled_emotives_"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives_()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.model_per_emotive_"><code class="docutils literal notranslate"><span class="pre">model_per_emotive_()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code></a></li>
@@ -721,6 +723,31 @@ model will not be returned</p>
 <dd><p>Return prediction result data.</p>
 <p class="rubric">Example</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predictions</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_predictions</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;P1&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_symbol">
+<span class="sig-name descname"><span class="pre">get_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Any</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_symbol" title="Permalink to this definition"></a></dt>
+<dd><p>Returns symbol with name <em>symbol_name</em>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>symbol_name</strong> (<em>str</em>) – Name of symbol to retrieve</p></li>
+<li><p><strong>nodes</strong> (<em>List</em><em>, </em><em>optional</em>) – list of nodes to retrieve symbol information from.
+Defaults to None (all nodes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of {node_name : symbol} pairs</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, Any]</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_symbol</span><span class="p">(</span><span class="s2">&quot;WEATHER|CLOUDY&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
