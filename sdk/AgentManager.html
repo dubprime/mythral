@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ia.gaius.tests package &mdash; IA-SDK-Python 0.3.34 documentation</title>
+  <title>AgentManager &mdash; IA-SDK-Python 0.3.34 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -25,8 +25,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Examples" href="examples/UsageExamples.html" />
-    <link rel="prev" title="ia.gaius package" href="ia.gaius.html" /> 
+    <link rel="next" title="Prediction Models" href="prediction_models.html" />
+    <link rel="prev" title="Performance Validation Testing" href="PVT.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -285,18 +285,18 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="AgentManager.html">AgentManager</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.__init__"><code class="docutils literal notranslate"><span class="pre">AgentManager.__init__()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_genome()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.get_all_agent_status"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_all_agent_status()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.get_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_genome()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.kill_all_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.kill_all_agents()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.list_genomes"><code class="docutils literal notranslate"><span class="pre">AgentManager.list_genomes()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.remediate_dead_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.remediate_dead_agents()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_agent()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.update_current_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.update_current_agents()</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AgentManager</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.manager.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.__init__"><code class="docutils literal notranslate"><span class="pre">AgentManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.delete_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_genome()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.get_all_agent_status"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_all_agent_status()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.get_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_genome()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.kill_all_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.kill_all_agents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.list_genomes"><code class="docutils literal notranslate"><span class="pre">AgentManager.list_genomes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.remediate_dead_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.remediate_dead_agents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.start_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.manager.AgentManager.update_current_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.update_current_agents()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -312,29 +312,29 @@
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">ia.gaius.tests package</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#ia.gaius.tests.classification.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.classification.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.classification.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.classification.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="ia.gaius.html">ia.gaius package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ia.gaius.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ia.gaius.tests.html">ia.gaius.tests package</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#submodules">Submodules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.classification">ia.gaius.tests.classification module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.classification.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#ia.gaius.tests.utility.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.utility.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.utility.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
-<li class="toctree-l7"><a class="reference internal" href="#ia.gaius.tests.utility.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests.utility">ia.gaius.tests.utility module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester"><code class="docutils literal notranslate"><span class="pre">Tester</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.next_test_prep"><code class="docutils literal notranslate"><span class="pre">Tester.next_test_prep()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.test"><code class="docutils literal notranslate"><span class="pre">Tester.test()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="ia.gaius.tests.html#ia.gaius.tests.utility.Tester.train"><code class="docutils literal notranslate"><span class="pre">Tester.train()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="#module-ia.gaius.tests">Module contents</a></li>
+<li class="toctree-l5"><a class="reference internal" href="ia.gaius.tests.html#module-ia.gaius.tests">Module contents</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="ia.gaius.html#submodules">Submodules</a></li>
@@ -408,10 +408,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="API.html">API Reference</a></li>
-          <li class="breadcrumb-item"><a href="ia.gaius.html">ia.gaius package</a></li>
-      <li class="breadcrumb-item active">ia.gaius.tests package</li>
+      <li class="breadcrumb-item active">AgentManager</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/ia.gaius.tests.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/AgentManager.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -419,72 +418,178 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="ia-gaius-tests-package">
-<h1>ia.gaius.tests package<a class="headerlink" href="#ia-gaius-tests-package" title="Permalink to this heading"></a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
-</section>
-<section id="module-ia.gaius.tests.classification">
-<span id="ia-gaius-tests-classification-module"></span><h2>ia.gaius.tests.classification module<a class="headerlink" href="#module-ia.gaius.tests.classification" title="Permalink to this heading"></a></h2>
+  <section id="agentmanager">
+<h1>AgentManager<a class="headerlink" href="#agentmanager" title="Permalink to this heading"></a></h1>
+<p>AgentManager is a utility to assist in spawning agents
+and keeping genome files in a centralized location.</p>
+<p>This class also persists agent configuration information
+between instantiations, so that previously used genomes
+can be referenced from the genome store. Will automatically provide
+an AgentClient object when agent is spawned using manager.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Requires access to the Docker Daemon running on the user’s computer, and
+access to Intelligent Artifact’s GAIuS Docker images.</p>
+</div>
+<p><strong>Quickstart</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.manager</span> <span class="kn">import</span> <span class="n">AgentManager</span>
+
+<span class="n">am</span> <span class="o">=</span> <span class="n">AgentManager</span><span class="p">()</span>
+<span class="n">am</span><span class="o">.</span><span class="n">kill_all_agents</span><span class="p">()</span>
+<span class="n">agent</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">start_agent</span><span class="p">(</span><span class="n">genome_file</span><span class="o">=</span><span class="s1">&#39;simple.genome&#39;</span><span class="p">,</span> <span class="n">agent_id</span><span class="o">=</span><span class="s1">&#39;pvt&#39;</span><span class="p">,</span> <span class="n">connect_jia</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s1">&#39;SECRET1234&#39;</span><span class="p">)</span>
+<span class="n">agent_client</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_agent_client</span><span class="p">()</span>
+</pre></div>
+</div>
 <dl class="py class">
-<dt class="sig sig-object py" id="ia.gaius.tests.classification.Tester">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.tests.classification.</span></span><span class="sig-name descname"><span class="pre">Tester</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.classification.Tester" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.manager.</span></span><span class="sig-name descname"><span class="pre">AgentManager</span></span><a class="headerlink" href="#ia.gaius.manager.AgentManager" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.classification.Tester.next_test_prep">
-<span class="sig-name descname"><span class="pre">next_test_prep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.classification.Tester.next_test_prep" title="Permalink to this definition"></a></dt>
-<dd><p>Anything to reset in between multiple test runs.</p>
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Initialize AgentManager object (setup dirs, etc.)</p>
+<p>This object can be used to spawn Agents using the start_agent() method.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.classification.Tester.test">
-<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.classification.Tester.test" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.classification.Tester.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.classification.Tester.train" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-ia.gaius.tests.utility">
-<span id="ia-gaius-tests-utility-module"></span><h2>ia.gaius.tests.utility module<a class="headerlink" href="#module-ia.gaius.tests.utility" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="ia.gaius.tests.utility.Tester">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.tests.utility.</span></span><span class="sig-name descname"><span class="pre">Tester</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.utility.Tester" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.utility.Tester.next_test_prep">
-<span class="sig-name descname"><span class="pre">next_test_prep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.utility.Tester.next_test_prep" title="Permalink to this definition"></a></dt>
-<dd><p>Anything to reset in between multiple test runs.</p>
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.delete_agent">
+<span class="sig-name descname"><span class="pre">delete_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.delete_agent" title="Permalink to this definition"></a></dt>
+<dd><p>Stop/Delete agent &amp; remove config file from agents_dir</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>agent_name</strong> (<em>str</em>) – name of agent to stop</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string depicting deletion status</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.utility.Tester.test">
-<span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.utility.Tester.test" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.delete_genome">
+<span class="sig-name descname"><span class="pre">delete_genome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">genome_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.delete_genome" title="Permalink to this definition"></a></dt>
+<dd><p>Delete genome from centralized genome_dir</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>genome_name</strong> (<em>str</em>) – genome name to delete</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.tests.utility.Tester.train">
-<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.tests.utility.Tester.train" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.get_all_agent_status">
+<span class="sig-name descname"><span class="pre">get_all_agent_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.get_all_agent_status" title="Permalink to this definition"></a></dt>
+<dd><p>Get the status of all agents in current_agents dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>{ agent_name : alive? }</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.get_genome">
+<span class="sig-name descname"><span class="pre">get_genome</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">genome_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.get_genome" title="Permalink to this definition"></a></dt>
+<dd><p>Get genome by name, return as dict</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>genome_name</strong> (<em>str</em>) – filename for genome in genome_dir</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – When genome not found</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>contents of genome file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.kill_all_agents">
+<span class="sig-name descname"><span class="pre">kill_all_agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.kill_all_agents" title="Permalink to this definition"></a></dt>
+<dd><p>Kill all agents known to AgentManager</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.list_genomes">
+<span class="sig-name descname"><span class="pre">list_genomes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.list_genomes" title="Permalink to this definition"></a></dt>
+<dd><p>List the genomes present in the localized genome store</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of genome files</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.remediate_dead_agents">
+<span class="sig-name descname"><span class="pre">remediate_dead_agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.remediate_dead_agents" title="Permalink to this definition"></a></dt>
+<dd><p>Remove all agents that cannot be pinged.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.start_agent">
+<span class="sig-name descname"><span class="pre">start_agent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">genome_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jia'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect_jia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ABCD-1234'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.start_agent" title="Permalink to this definition"></a></dt>
+<dd><p>Spawn an agent and save its information in the localized agents dir</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you wish to use a genome that has not been used by the AgentManager before,
+pass it in the genome_file field. This will retrieve the genome from the specified path,
+and save it in the localized genome dir for future use.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>genome_file</strong> (<em>str</em><em>, </em><em>optional</em>) – Path to outside genome file. Defaults to None.</p></li>
+<li><p><strong>genome_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of genome in the localized genome dir. Defaults to None.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em><em>, </em><em>optional</em>) – user id for naming docker containers. Defaults to ‘jia’.</p></li>
+<li><p><strong>agent_id</strong> (<em>str</em><em>, </em><em>optional</em>) – agent id for naming docker containers. Defaults to ‘1’.</p></li>
+<li><p><strong>agent_name</strong> (<em>_type_</em><em>, </em><em>optional</em>) – descriptive name “alias” for agent. Defaults to None.</p></li>
+<li><p><strong>connect_jia</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to attempt to connect agent to Jia docker container. Defaults to True.</p></li>
+<li><p><strong>api_key</strong> (<em>str</em><em>, </em><em>optional</em>) – Control the api key used to access agent. Defaults to ‘ABCD-1234’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If there is a conflicting agent with user_id and agent_id already present/alive</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>AgentInfo object corresponding to started agent. can be used to retrieve
+AgentClient object using AgentInfo.get_agent_client()</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>AgentInfo</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.update_current_agents">
+<span class="sig-name descname"><span class="pre">update_current_agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.update_current_agents" title="Permalink to this definition"></a></dt>
+<dd><p>Update the current_agents_dict</p>
+</dd></dl>
 
 </dd></dl>
 
-</section>
-<section id="module-ia.gaius.tests">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-ia.gaius.tests" title="Permalink to this heading"></a></h2>
-</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ia.gaius.html" class="btn btn-neutral float-left" title="ia.gaius package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="examples/UsageExamples.html" class="btn btn-neutral float-right" title="Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="PVT.html" class="btn btn-neutral float-left" title="Performance Validation Testing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="prediction_models.html" class="btn btn-neutral float-right" title="Prediction Models" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

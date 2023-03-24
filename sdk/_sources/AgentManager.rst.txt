@@ -1,0 +1,33 @@
+AgentManager
+============
+
+AgentManager is a utility to assist in spawning agents 
+and keeping genome files in a centralized location. 
+
+This class also persists agent configuration information 
+between instantiations, so that previously used genomes 
+can be referenced from the genome store. Will automatically provide
+an AgentClient object when agent is spawned using manager.
+
+.. note::
+
+    Requires access to the Docker Daemon running on the user's computer, and
+    access to Intelligent Artifact's GAIuS Docker images.
+
+
+**Quickstart**
+
+.. code-block:: python
+
+    from ia.gaius.manager import AgentManager
+
+    am = AgentManager()
+    am.kill_all_agents()
+    agent = am.start_agent(genome_file='simple.genome', agent_id='pvt', connect_jia=True, api_key='SECRET1234')
+    agent_client = agent.get_agent_client()
+
+.. autoclass:: ia.gaius.manager.AgentManager
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
