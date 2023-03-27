@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentClient &mdash; IA-SDK-Python 0.3.34 documentation</title>
+  <title>AgentClient &mdash; IA-SDK-Python 0.3.36 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.34
+                v0.3.36
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -150,6 +150,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.set_query_nodes"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_query_nodes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.set_summarize_for_single_node"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_summarize_for_single_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.set_target_class"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_target_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.set_timeout"><code class="docutils literal notranslate"><span class="pre">AgentClient.set_timeout()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.show_status"><code class="docutils literal notranslate"><span class="pre">AgentClient.show_status()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.start_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.start_autolearning()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.start_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.start_predicting()</span></code></a></li>
@@ -426,12 +427,12 @@ agent configuration, and debugging.</p>
 <p>Quickstart</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.agent_client.</span></span><span class="sig-name descname"><span class="pre">AgentClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ia.gaius.agent_client.</span></span><span class="sig-name descname"><span class="pre">AgentClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Interface for interacting with agents.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bottle_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Provide agent information in a dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1161,6 +1162,17 @@ is in the last event of a classification sequence.</p>
 <p>This will result in the nodes specified only predicting on models
 that include the target class</p>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.set_timeout">
+<span class="sig-name descname"><span class="pre">set_timeout</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.set_timeout" title="Permalink to this definition"></a></dt>
+<dd><p>Redefine timeout for AgentClient API Calls. Requires re-instantiating requests.Session object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>timeout</strong> (<em>float</em>) – The requested timeout (in seconds)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
