@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KB Ops &mdash; IA-SDK-Python 0.3.36 documentation</title>
+  <title>KB Ops &mdash; IA-SDK-Python 0.3.38 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.36
+                v0.3.38
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -180,10 +180,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.get_kb_subset"><code class="docutils literal notranslate"><span class="pre">get_kb_subset()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.get_models_containing_symbol"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.get_models_containing_symbol_strict"><code class="docutils literal notranslate"><span class="pre">get_models_containing_symbol_strict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.is_abstracted_symbol"><code class="docutils literal notranslate"><span class="pre">is_abstracted_symbol()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.list_symbols"><code class="docutils literal notranslate"><span class="pre">list_symbols()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_delete_model"><code class="docutils literal notranslate"><span class="pre">recursive_delete_model()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.recursive_update_model"><code class="docutils literal notranslate"><span class="pre">recursive_update_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.kb_ops.remove_abstracted_symbols"><code class="docutils literal notranslate"><span class="pre">remove_abstracted_symbols()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="data_ops.html">Data Ops</a><ul>
@@ -515,6 +517,23 @@ Store as a dict of {node_name : list}</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.kb_ops.is_abstracted_symbol">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">is_abstracted_symbol</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#ia.gaius.kb_ops.is_abstracted_symbol" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the symbol provided is an abstracted symbol</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>symbol</strong> (<em>str</em>) – symbol</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True or False</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.kb_ops.list_models">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">list_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.kb_ops.list_models" title="Permalink to this definition"></a></dt>
 <dd><p>Return a dict of {node_name: model_list} found on specified nodes</p>
@@ -602,6 +621,22 @@ Store as a dict of {node_name : list}</p>
 :type nodes: _type_, optional
 :param log_to_file: _description_. Defaults to False.
 :type log_to_file: bool, optional</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.kb_ops.remove_abstracted_symbols">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.kb_ops.</span></span><span class="sig-name descname"><span class="pre">remove_abstracted_symbols</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><span class="pre">AgentClient</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">symbols</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.kb_ops.remove_abstracted_symbols" title="Permalink to this definition"></a></dt>
+<dd><p>Take an abstracted symbol, split it into corresponding parts, and call remove symbol
+on the symbol that has been abstracted up.</p>
+<p>Symbol format: PRIMITIVE|&lt;NODE_ID&gt;|&lt;MODEL HASH&gt;|&lt;ABSTRACTED FIELD&gt;|&lt;ABSTRACTED VALUE&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agent</strong> (<a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient" title="ia.gaius.agent_client.AgentClient"><em>AgentClient</em></a>) – Agent to perform removal on</p></li>
+<li><p><strong>symbols</strong> (<em>list</em>) – Abstracted symbols to be removed.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </section>
