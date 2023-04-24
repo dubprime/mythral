@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentClient &mdash; IA-SDK-Python 0.3.38 documentation</title>
+  <title>AgentClient &mdash; IA-SDK-Python 0.3.39 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.38
+                v0.3.39
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -137,6 +137,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.learn"><code class="docutils literal notranslate"><span class="pre">AgentClient.learn()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.list_blacklisted_symbols()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json"><code class="docutils literal notranslate"><span class="pre">AgentClient.load_kbs_from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json_iter"><code class="docutils literal notranslate"><span class="pre">AgentClient.load_kbs_from_json_iter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.observe"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.observe_classification"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe_classification()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.agent_client.AgentClient.ping"><code class="docutils literal notranslate"><span class="pre">AgentClient.ping()</span></code></a></li>
@@ -168,7 +169,6 @@
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.__init__"><code class="docutils literal notranslate"><span class="pre">Genome.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.change_genes"><code class="docutils literal notranslate"><span class="pre">Genome.change_genes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.display"><code class="docutils literal notranslate"><span class="pre">Genome.display()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_actions"><code class="docutils literal notranslate"><span class="pre">Genome.get_actions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_manipulative_map()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_nodes"><code class="docutils literal notranslate"><span class="pre">Genome.get_nodes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_primitive_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_primitive_map()</span></code></a></li>
@@ -214,6 +214,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.GDFFormatError"><code class="docutils literal notranslate"><span class="pre">GDFFormatError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
@@ -309,9 +310,9 @@
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions"><code class="docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_classification"><code class="docutils literal notranslate"><span class="pre">hive_model_classification()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_emotives"><code class="docutils literal notranslate"><span class="pre">hive_model_emotives()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.make_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.model_per_emotive"><code class="docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_model_classification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_modeled_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
 </ul>
 </li>
@@ -633,7 +634,7 @@ Default is in ‘./’.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.get_kbs_as_json">
-<span class="sig-name descname"><span class="pre">get_kbs_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs_as_json" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_kbs_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'./'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separated</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compressed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span></span></span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.get_kbs_as_json" title="Permalink to this definition"></a></dt>
 <dd><p>Returns KBs of specified nodes as JSON Objects</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -646,6 +647,8 @@ Defaults to False</p></li>
 instead of node numbers. Defaults to True</p></li>
 <li><p><strong>obj</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a filepath
 or a python object returned from the function</p></li>
+<li><p><strong>compressed</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to save the kbs to a zip file. Not compatible with
+“separated” or “obj” arguments</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -930,6 +933,28 @@ on. Defaults to None (all nodes).</p>
 <li><p><strong>path</strong> (<em>str</em><em>, </em><em>optional</em>) – path to JSON file where KBs are stored.</p></li>
 <li><p><strong>obj</strong> (<em>dict</em><em>, </em><em>optional</em>) – object to load KnowledgeBase from</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>‘success’ or ‘failed’</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">kb_path</span> <span class="o">=</span> <span class="s2">&quot;../path/to/kb.json&quot;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">load_kbs_from_json</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="n">kb_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.agent_client.AgentClient.load_kbs_from_json_iter">
+<span class="sig-name descname"><span class="pre">load_kbs_from_json_iter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.agent_client.AgentClient.load_kbs_from_json_iter" title="Permalink to this definition"></a></dt>
+<dd><p>Uses ijson library to load KBs more efficiently</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – path to JSON file where KBs are stored.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>‘success’ or ‘failed’</p>

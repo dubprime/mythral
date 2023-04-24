@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; IA-SDK-Python 0.3.38 documentation</title>
+  <title>Search &mdash; IA-SDK-Python 0.3.39 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.38
+                v0.3.39
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="#" method="get">
@@ -137,6 +137,7 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.learn"><code class="docutils literal notranslate"><span class="pre">AgentClient.learn()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.list_blacklisted_symbols"><code class="docutils literal notranslate"><span class="pre">AgentClient.list_blacklisted_symbols()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.load_kbs_from_json"><code class="docutils literal notranslate"><span class="pre">AgentClient.load_kbs_from_json()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.load_kbs_from_json_iter"><code class="docutils literal notranslate"><span class="pre">AgentClient.load_kbs_from_json_iter()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.observe"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.observe_classification"><code class="docutils literal notranslate"><span class="pre">AgentClient.observe_classification()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentClient.html#ia.gaius.agent_client.AgentClient.ping"><code class="docutils literal notranslate"><span class="pre">AgentClient.ping()</span></code></a></li>
@@ -168,7 +169,6 @@
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.__init__"><code class="docutils literal notranslate"><span class="pre">Genome.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.change_genes"><code class="docutils literal notranslate"><span class="pre">Genome.change_genes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.display"><code class="docutils literal notranslate"><span class="pre">Genome.display()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_actions"><code class="docutils literal notranslate"><span class="pre">Genome.get_actions()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_manipulative_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_manipulative_map()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_nodes"><code class="docutils literal notranslate"><span class="pre">Genome.get_nodes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="Genome.html#ia.gaius.genome_info.Genome.get_primitive_map"><code class="docutils literal notranslate"><span class="pre">Genome.get_primitive_map()</span></code></a></li>
@@ -214,6 +214,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="utils.html">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.GDFFormatError"><code class="docutils literal notranslate"><span class="pre">GDFFormatError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
@@ -309,9 +310,9 @@
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.bucket_predictions"><code class="docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_classification"><code class="docutils literal notranslate"><span class="pre">hive_model_classification()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.hive_model_emotives"><code class="docutils literal notranslate"><span class="pre">hive_model_emotives()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.make_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.model_per_emotive"><code class="docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_model_classification()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.prediction_ensemble_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_modeled_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="prediction_models.html#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
 </ul>
 </li>
