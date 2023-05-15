@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prediction Models &mdash; IA-SDK-Python 0.3.39 documentation</title>
+  <title>Prediction Models &mdash; IA-SDK-Python 0.3.42 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.39
+                v0.3.42
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -235,9 +235,6 @@
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.sum_sequence_emotives()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.test_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.test_agent()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.train_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.train_agent()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_classification_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_classification_metrics()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_emotives_polarity_metrics()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_test_results_w_hive_emotives_value_metrics()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -276,15 +273,19 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="PVT.html#module-ia.gaius.pvt.pvt_utils">PVT Utils</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.classification_metrics_builder"><code class="docutils literal notranslate"><span class="pre">classification_metrics_builder()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.emotives_polarity_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_polarity_metrics_builder()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.emotives_value_metrics_builder"><code class="docutils literal notranslate"><span class="pre">emotives_value_metrics_builder()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.compute_abs_residual"><code class="docutils literal notranslate"><span class="pre">compute_abs_residual()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.compute_residual"><code class="docutils literal notranslate"><span class="pre">compute_residual()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.compute_squared_residual"><code class="docutils literal notranslate"><span class="pre">compute_squared_residual()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.f1_score"><code class="docutils literal notranslate"><span class="pre">f1_score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_discovery_rate"><code class="docutils literal notranslate"><span class="pre">false_discovery_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_positive_rate"><code class="docutils literal notranslate"><span class="pre">false_positive_rate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.init_emotive_on_node"><code class="docutils literal notranslate"><span class="pre">init_emotive_on_node()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.is_notebook"><code class="docutils literal notranslate"><span class="pre">is_notebook()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.make_modeled_emotives_"><code class="docutils literal notranslate"><span class="pre">make_modeled_emotives_()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.model_per_emotive_"><code class="docutils literal notranslate"><span class="pre">model_per_emotive_()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.retrieve_emotive_val"><code class="docutils literal notranslate"><span class="pre">retrieve_emotive_val()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.smape"><code class="docutils literal notranslate"><span class="pre">smape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.update_accuracy"><code class="docutils literal notranslate"><span class="pre">update_accuracy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.update_precision"><code class="docutils literal notranslate"><span class="pre">update_precision()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -292,6 +293,7 @@
 <li class="toctree-l2"><a class="reference internal" href="AgentManager.html">AgentManager</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.__init__"><code class="docutils literal notranslate"><span class="pre">AgentManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.agent_context"><code class="docutils literal notranslate"><span class="pre">AgentManager.agent_context()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_genome()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.get_all_agent_status"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_all_agent_status()</span></code></a></li>
@@ -300,6 +302,8 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.list_genomes"><code class="docutils literal notranslate"><span class="pre">AgentManager.list_genomes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.remediate_dead_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.remediate_dead_agents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_hoster()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.stop_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.stop_hoster()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.update_current_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.update_current_agents()</span></code></a></li>
 </ul>
 </li>
@@ -311,6 +315,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.hive_model_classification"><code class="docutils literal notranslate"><span class="pre">hive_model_classification()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.hive_model_emotives"><code class="docutils literal notranslate"><span class="pre">hive_model_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.model_per_emotive"><code class="docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.most_common_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">most_common_ensemble_model_classification()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.prediction_ensemble_model_classification"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_model_classification()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.prediction_ensemble_modeled_emotives"><code class="docutils literal notranslate"><span class="pre">prediction_ensemble_modeled_emotives()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.prediction_models.principal_delta"><code class="docutils literal notranslate"><span class="pre">principal_delta()</span></code></a></li>
@@ -538,6 +543,11 @@ in the prediction ensemble.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="ia.gaius.prediction_models.most_common_ensemble_model_classification">
+<span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">most_common_ensemble_model_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.prediction_models.most_common_ensemble_model_classification" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="ia.gaius.prediction_models.prediction_ensemble_model_classification">
 <span class="sig-prename descclassname"><span class="pre">ia.gaius.prediction_models.</span></span><span class="sig-name descname"><span class="pre">prediction_ensemble_model_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ensemble</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Counter</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.prediction_models.prediction_ensemble_model_classification" title="Permalink to this definition"></a></dt>
 <dd><p>Compute classification rankings based on the symbols present in a prediction ensemble</p>
@@ -560,7 +570,7 @@ in the prediction ensemble.</p>
 <dd><p>The emotives in the ensemble are of type: ‘emotives’:[{‘e1’: 4, ‘e2’: 5}, {‘e2’: 6}, {‘e1’: 5 ‘e3’: -4}]
 First calls <a class="reference internal" href="#ia.gaius.prediction_models.average_emotives" title="ia.gaius.prediction_models.average_emotives"><code class="xref py py-func docutils literal notranslate"><span class="pre">average_emotives()</span></code></a> on each prediction in the ensemble, then calls <a class="reference internal" href="#ia.gaius.prediction_models.bucket_predictions" title="ia.gaius.prediction_models.bucket_predictions"><code class="xref py py-func docutils literal notranslate"><span class="pre">bucket_predictions()</span></code></a> on the ensemble.
 After bucketing predictions, the function <code class="xref py py-func docutils literal notranslate"><span class="pre">model_per_emotives()</span></code> is called for each emotive present in the ensemble.
-Dict returned contains { emotive: :func:<a href="#id1"><span class="problematic" id="id2">`</span></a>model_per_emotive`() } for each emotive in the ensemble</p>
+Dict returned contains { emotive: <a class="reference internal" href="#ia.gaius.prediction_models.model_per_emotive" title="ia.gaius.prediction_models.model_per_emotive"><code class="xref py py-func docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a> } for each emotive in the ensemble</p>
 <p>The potential_normalization_factor is taken after bucketing predictions to ensure that all predictions with identical potential values
 are flattened into a single list (avoids collisions with principal_values in <a class="reference internal" href="#ia.gaius.prediction_models.model_per_emotive" title="ia.gaius.prediction_models.model_per_emotive"><code class="xref py py-func docutils literal notranslate"><span class="pre">model_per_emotive()</span></code></a>)
 :param ensemble: Prediction ensemble containing emotives to model
