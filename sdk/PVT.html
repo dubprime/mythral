@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Performance Validation Testing &mdash; IA-SDK-Python 0.3.43 documentation</title>
+  <title>Performance Validation Testing &mdash; IA-SDK-Python 0.3.44 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.43
+                v0.3.44
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -227,7 +227,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#performance-validation-test">Performance Validation Test</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.__init__"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.__init__()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.compute_incidental_probabilities()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.conduct_pvt"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.conduct_pvt()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_classification_metrics()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="#ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_emotives_polarity_metrics()</span></code></a></li>
@@ -494,23 +493,6 @@ Based on the test type certain visualizations will be produced.</p>
 <li><p><strong>socket_channel</strong> (<em>str</em><em>, </em><em>optional</em>) – SocketIO channel to broadcast results on. Defaults to ‘pvt_status’</p></li>
 <li><p><strong>QUIET</strong> (<em>bool</em><em>, </em><em>optional</em>) – flag used to disable log output during PVT. Defaults to False</p></li>
 </ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities">
-<span class="sig-name descname"><span class="pre">compute_incidental_probabilities</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">test_step_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.pvt.PerformanceValidationTest.compute_incidental_probabilities" title="Permalink to this definition"></a></dt>
-<dd><p>Keep track of how well each node is doing during the testing phase. To be used for live visualizations</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>test_step_info</strong> (<em>dict</em><em>, </em><em>required</em>) – Dictionary containing information about the current predicted, actual answers, and other related metrics (e.g. precision, unknowns, residuals, response rate, etc.)</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>updated test_step_info with the statistics for the current timestep</p>
-</dd>
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
