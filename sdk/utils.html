@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Utilities &mdash; IA-SDK-Python 0.3.44 documentation</title>
+  <title>Utilities &mdash; IA-SDK-Python 0.3.50 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.44
+                v0.3.50
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -228,9 +228,6 @@
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.__init__"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.__init__()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.conduct_pvt"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.conduct_pvt()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_classification_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_classification_metrics()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_emotives_polarity_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_emotives_polarity_metrics()</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.get_emotives_value_metrics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.get_emotives_value_metrics()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.sum_sequence_emotives()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.test_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.test_agent()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="PVT.html#ia.gaius.pvt.PerformanceValidationTest.train_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.train_agent()</span></code></a></li>
@@ -277,12 +274,22 @@
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.compute_squared_residual"><code class="docutils literal notranslate"><span class="pre">compute_squared_residual()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.f1_score"><code class="docutils literal notranslate"><span class="pre">f1_score()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_discovery_rate"><code class="docutils literal notranslate"><span class="pre">false_discovery_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_negative_rate"><code class="docutils literal notranslate"><span class="pre">false_negative_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_omission_rate"><code class="docutils literal notranslate"><span class="pre">false_omission_rate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.false_positive_rate"><code class="docutils literal notranslate"><span class="pre">false_positive_rate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.init_emotive_on_node"><code class="docutils literal notranslate"><span class="pre">init_emotive_on_node()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.init_emotive_polarity_results"><code class="docutils literal notranslate"><span class="pre">init_emotive_polarity_results()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.is_notebook"><code class="docutils literal notranslate"><span class="pre">is_notebook()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.negative_likelihood_ratio"><code class="docutils literal notranslate"><span class="pre">negative_likelihood_ratio()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.negative_predictive_value"><code class="docutils literal notranslate"><span class="pre">negative_predictive_value()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.positive_likelihood_ratio"><code class="docutils literal notranslate"><span class="pre">positive_likelihood_ratio()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.prevalence_threshold"><code class="docutils literal notranslate"><span class="pre">prevalence_threshold()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.smape"><code class="docutils literal notranslate"><span class="pre">smape()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.threat_score"><code class="docutils literal notranslate"><span class="pre">threat_score()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.true_negative_rate"><code class="docutils literal notranslate"><span class="pre">true_negative_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.true_positive_rate"><code class="docutils literal notranslate"><span class="pre">true_positive_rate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.update_accuracy"><code class="docutils literal notranslate"><span class="pre">update_accuracy()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="PVT.html#ia.gaius.pvt.pvt_utils.update_precision"><code class="docutils literal notranslate"><span class="pre">update_precision()</span></code></a></li>
 </ul>
@@ -295,6 +302,7 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.agent_context"><code class="docutils literal notranslate"><span class="pre">AgentManager.agent_context()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_genome()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.delete_tf"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_tf()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.get_all_agent_status"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_all_agent_status()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.get_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_genome()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.kill_all_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.kill_all_agents()</span></code></a></li>
@@ -302,6 +310,7 @@
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.remediate_dead_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.remediate_dead_agents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_hoster()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.start_tf"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_tf()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.stop_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.stop_hoster()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="AgentManager.html#ia.gaius.manager.AgentManager.update_current_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.update_current_agents()</span></code></a></li>
 </ul>
