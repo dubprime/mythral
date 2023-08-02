@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic PVT Setup and Example &mdash; IA-SDK-Python 0.3.58 documentation</title>
+  <title>Basic PVT Setup and Example &mdash; IA-SDK-Python 0.4.1 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
@@ -45,7 +45,7 @@
               <img src="../_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.3.58
+                v0.4.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -209,6 +209,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../data_ops.html#data-ops-module">data_ops module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.PreparedData"><code class="docutils literal notranslate"><span class="pre">PreparedData</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.atoi"><code class="docutils literal notranslate"><span class="pre">atoi()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.natural_keys"><code class="docutils literal notranslate"><span class="pre">natural_keys()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.raw_in_count"><code class="docutils literal notranslate"><span class="pre">raw_in_count()</span></code></a></li>
@@ -235,6 +236,7 @@
 <li class="toctree-l5"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.PerformanceValidationTest.sum_sequence_emotives"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.sum_sequence_emotives()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.PerformanceValidationTest.test_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.test_agent()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.PerformanceValidationTest.train_agent"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.train_agent()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.PerformanceValidationTest.update_predicted_class_statistics"><code class="docutils literal notranslate"><span class="pre">PerformanceValidationTest.update_predicted_class_statistics()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -289,6 +291,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.negative_predictive_value"><code class="docutils literal notranslate"><span class="pre">negative_predictive_value()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.on_error_learn"><code class="docutils literal notranslate"><span class="pre">on_error_learn()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.plot_confusion_matrix"><code class="docutils literal notranslate"><span class="pre">plot_confusion_matrix()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.plot_emotives_value_charts"><code class="docutils literal notranslate"><span class="pre">plot_emotives_value_charts()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.positive_likelihood_ratio"><code class="docutils literal notranslate"><span class="pre">positive_likelihood_ratio()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.prevalence_threshold"><code class="docutils literal notranslate"><span class="pre">prevalence_threshold()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../PVT.html#ia.gaius.pvt.pvt_utils.rmse"><code class="docutils literal notranslate"><span class="pre">rmse()</span></code></a></li>
@@ -307,6 +310,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.__init__"><code class="docutils literal notranslate"><span class="pre">AgentManager.__init__()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.agent_context"><code class="docutils literal notranslate"><span class="pre">AgentManager.agent_context()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_comcom"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_genome()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_tf"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_tf()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.get_all_agent_status"><code class="docutils literal notranslate"><span class="pre">AgentManager.get_all_agent_status()</span></code></a></li>
@@ -315,6 +319,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.list_genomes"><code class="docutils literal notranslate"><span class="pre">AgentManager.list_genomes()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.remediate_dead_agents"><code class="docutils literal notranslate"><span class="pre">AgentManager.remediate_dead_agents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.start_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_agent()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.start_comcom"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.start_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_hoster()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.start_tf"><code class="docutils literal notranslate"><span class="pre">AgentManager.start_tf()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.stop_hoster"><code class="docutils literal notranslate"><span class="pre">AgentManager.stop_hoster()</span></code></a></li>
@@ -446,16 +451,45 @@
 <blockquote>
 <div><p>Import <a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager" title="ia.gaius.manager.AgentManager"><code class="xref py py-class docutils literal notranslate"><span class="pre">AgentManager</span></code></a> from module <code class="xref py py-mod docutils literal notranslate"><span class="pre">ia.gaius.manager</span></code></p>
 </div></blockquote>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.manager</span> <span class="kn">import</span> <span class="n">AgentManager</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">ia.gaius.manager</span> <span class="kn">import</span> <span class="n">AgentManager</span>
+<span class="kn">from</span> <span class="nn">ia.gaius.pvt</span> <span class="kn">import</span> <span class="n">PerformanceValidationTest</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area stderr docutils container">
+<div class="highlight"><pre>
+/usr/lib/python3/dist-packages/paramiko/transport.py:219: CryptographyDeprecationWarning: Blowfish has been deprecated
+  &#34;class&#34;: algorithms.Blowfish,
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ia</span>
+<span class="n">ia</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;0.4.0&#39;
+</pre></div></div>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">am</span> <span class="o">=</span> <span class="n">AgentManager</span><span class="p">()</span>
@@ -463,24 +497,27 @@
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">start_agent</span><span class="p">(</span><span class="n">genome_name</span><span class="o">=</span><span class="s1">&#39;simple.genome&#39;</span><span class="p">,</span> <span class="n">agent_id</span><span class="o">=</span><span class="s1">&#39;pvt&#39;</span><span class="p">,</span>
-                       <span class="n">user_id</span><span class="o">=</span><span class="s1">&#39;tutorial&#39;</span><span class="p">,</span> <span class="n">agent_name</span><span class="o">=</span><span class="s1">&#39;tutorial-pvt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_agent_client</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">am</span><span class="o">.</span><span class="n">start_agent</span><span class="p">(</span><span class="n">genome_name</span><span class="o">=</span><span class="s1">&#39;simple.genome&#39;</span><span class="p">,</span>
+                       <span class="n">agent_id</span><span class="o">=</span><span class="s1">&#39;pvt&#39;</span><span class="p">,</span>
+                       <span class="n">user_id</span><span class="o">=</span><span class="s1">&#39;tutorial&#39;</span><span class="p">,</span>
+                       <span class="n">agent_name</span><span class="o">=</span><span class="s1">&#39;tutorial-pvt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">get_agent_client</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">connect</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -489,7 +526,7 @@
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">show_status</span><span class="p">()</span>
@@ -497,7 +534,7 @@
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -505,6 +542,7 @@
 {&#39;AUTOLEARN&#39;: False,
  &#39;PREDICT&#39;: True,
  &#39;SLEEPING&#39;: False,
+ &#39;SNAPSHOT&#39;: False,
  &#39;emotives&#39;: {},
  &#39;last_learned_model_name&#39;: &#39;&#39;,
  &#39;models_kb&#39;: &#39;{KB| objects: 0}&#39;,
@@ -513,11 +551,12 @@
  &#39;size_WM&#39;: 0,
  &#39;target&#39;: &#39;&#39;,
  &#39;time&#39;: 0,
+ &#39;vector_dimensionality&#39;: -1,
  &#39;vectors_kb&#39;: &#39;{KB| objects: 0}&#39;}
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">get_all_genes</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">])</span>
@@ -525,7 +564,7 @@
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -535,6 +574,8 @@
   &#39;auto_learn_algorithm&#39;: &#39;basic&#39;,
   &#39;auto_learn_metric&#39;: &#39;wm_size&#39;,
   &#39;classifier&#39;: &#39;CVC&#39;,
+  &#39;enable_genome_snapshots&#39;: &#39;genome snapshots enabled&#39;,
+  &#39;enable_snapshots&#39;: &#39;WM snapshots disabled&#39;,
   &#39;max_predictions&#39;: 100,
   &#39;max_sequence_length&#39;: 0,
   &#39;near_vector_count&#39;: 3,
@@ -548,20 +589,14 @@
   &#39;recall_threshold&#39;: 0.1,
   &#39;search_depth&#39;: 10,
   &#39;smoothness&#39;: 3,
+  &#39;snapshot_gen_predictions&#39;: &#39;prediction generation on snapshot load disabled&#39;,
+  &#39;snapshot_sync_keys&#39;: &#39;[]&#39;,
   &#39;wm_resolution&#39;: &#39;symbol&#39;}}
 </pre></div></div>
 </div>
 <section id="Iris-Dataset-Training">
 <h2>Iris Dataset Training<a class="headerlink" href="#Iris-Dataset-Training" title="Permalink to this heading"></a></h2>
 <p>Train and test on <a class="reference external" href="https://www.kaggle.com/datasets/arshid/iris-flower-dataset">iris-flowers</a> dataset using the <a class="reference internal" href="../PVT.html#ia.gaius.pvt.PerformanceValidationTest" title="ia.gaius.pvt.PerformanceValidationTest"><code class="xref py py-class docutils literal notranslate"><span class="pre">PerformanceValidationTest</span></code></a> class from <code class="xref py py-mod docutils literal notranslate"><span class="pre">ia.gaius.pvt</span></code>. This dataset is stored locally in GDF format.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ia.gaius.pvt</span> <span class="kn">import</span> <span class="n">PerformanceValidationTest</span>
-</pre></div>
-</div>
-</div>
 <dl class="simple">
 <dt>Configure the test to:</dt><dd><ul class="simple">
 <li><p>Conduct a classification test</p></li>
@@ -573,31 +608,28 @@
 </ul>
 </dd>
 </dl>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvt</span> <span class="o">=</span> <span class="n">PerformanceValidationTest</span><span class="p">(</span><span class="n">agent</span><span class="o">=</span><span class="n">agent</span><span class="p">,</span> <span class="n">ingress_nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">],</span> <span class="n">query_nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">],</span> <span class="n">num_of_tests</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pct_of_ds</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pct_res_4_train</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
-                                <span class="n">test_type</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span> <span class="n">dataset_location</span><span class="o">=</span><span class="s1">&#39;filepath&#39;</span><span class="p">,</span> <span class="n">results_filepath</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                                <span class="n">ds_filepath</span><span class="o">=</span><span class="s1">&#39;../../../tests/datasets/shuffled_iris_flowers&#39;</span><span class="p">,</span> <span class="n">test_prediction_strategy</span><span class="o">=</span><span class="s1">&#39;noncontinuous&#39;</span><span class="p">,</span>
-                                <span class="n">clear_all_memory_before_training</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">turn_prediction_off_during_training</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvt</span> <span class="o">=</span> <span class="n">PerformanceValidationTest</span><span class="p">(</span><span class="n">agent</span><span class="o">=</span><span class="n">agent</span><span class="p">,</span>
+                                <span class="n">ingress_nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">],</span>
+                                <span class="n">query_nodes</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;P1&#39;</span><span class="p">],</span>
+                                <span class="n">test_count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                                <span class="n">dataset_percentage</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+                                <span class="n">training_percentage</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span>
+                                <span class="n">test_type</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span>
+                                <span class="n">dataset</span><span class="o">=</span><span class="s1">&#39;../../../tests/datasets/shuffled_iris_flowers&#39;</span><span class="p">,</span>
+                                <span class="n">test_prediction_strategy</span><span class="o">=</span><span class="s1">&#39;noncontinuous&#39;</span><span class="p">,</span>
+                                <span class="n">clear_all_memory_before_training</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                <span class="n">turn_prediction_off_during_training</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                <span class="n">PLOT</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-num_of_tests      = 1
-ds_filepath       = ../../../tests/datasets/shuffled_iris_flowers
-pct_of_ds         = 100
-pct_res_4_train   = 80
-summarize_for_single_node status   = False
-</pre></div></div>
-</div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvt</span><span class="o">.</span><span class="n">conduct_pvt</span><span class="p">()</span>
@@ -608,63 +640,30 @@ summarize_for_single_node status   = False
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-Conducting Classification PVT...
-
-Conducting Test # 0
-
----------------------
-Length of Training Set = 120
-Length of Testing Set  = 30
-Clearing memory of selected ingress nodes...
-Preparing to train agent...
-</pre></div></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "211966442aa84b419523059539a9a225", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "7570e68d48234ab6af98521a9ae2d79d", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "0b763b1a3f5040dfbc7ee93f4233ab60", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nboutput docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-Finished training agent!
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "4575a1504b244c6196e934675589af7c", "version_major": 2, "version_minor": 0}</script></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-Getting Classification Metrics...
-Plotting Results...
-</pre></div></div>
-</div>
-<div class="nboutput docutils container">
-<div class="prompt empty docutils container">
-</div>
-<div class="output_area docutils container">
-<img alt="../_images/examples_Training_1_13_5.png" src="../_images/examples_Training_1_13_5.png" />
+<img alt="../_images/examples_Training_1_13_2.png" src="../_images/examples_Training_1_13_2.png" />
 </div>
 </div>
 <div class="nboutput nblast docutils container">
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../_images/examples_Training_1_13_6.png" src="../_images/examples_Training_1_13_6.png" />
+<img alt="../_images/examples_Training_1_13_3.png" src="../_images/examples_Training_1_13_3.png" />
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pvt</span><span class="o">.</span><span class="n">pvt_results</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;P1&#39;</span><span class="p">][</span><span class="s1">&#39;metrics&#39;</span><span class="p">]</span>
@@ -672,29 +671,56 @@ Plotting Results...
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-{&#39;response_counts&#39;: 30.0,
+{&#39;training_counter&#39;: {&#39;virginica&#39;: 46, &#39;setosa&#39;: 37, &#39;versicolor&#39;: 37},
+ &#39;testing_counter&#39;: {&#39;versicolor&#39;: 13, &#39;setosa&#39;: 13, &#39;virginica&#39;: 4},
+ &#39;counter&#39;: {&#39;virginica&#39;: 50, &#39;setosa&#39;: 50, &#39;versicolor&#39;: 50},
+ &#39;predicted_class_statistics&#39;: {&#39;versicolor&#39;: 13,
+  &#39;setosa&#39;: 13,
+  &#39;virginica&#39;: 4},
+ &#39;response_counts&#39;: 30.0,
  &#39;true_positive&#39;: 28.0,
  &#39;false_positive&#39;: 2.0,
- &#39;false_discovery_rate&#39;: 0.06666666666666667,
- &#39;f1&#39;: 0.9655172413793104,
  &#39;precision&#39;: 93.33333333333333,
+ &#39;f1&#39;: 0.9655172413793104,
  &#39;accuracy&#39;: 93.33333333333333,
  &#39;response_percentage&#39;: 100.0,
- &#39;unknown_percentage&#39;: 0.0}
+ &#39;unknown_percentage&#39;: 0.0,
+ &#39;true_negative&#39;: 0.0,
+ &#39;false_negative&#39;: 0.0,
+ &#39;FPR&#39;: 100.0,
+ &#39;FDR&#39;: 6.666666666666667,
+ &#39;TNR&#39;: 0.0,
+ &#39;TPR&#39;: 100.0,
+ &#39;NPV&#39;: 0.0,
+ &#39;FNR&#39;: 0.0,
+ &#39;FOR&#39;: 0.0,
+ &#39;LR+&#39;: 1.0,
+ &#39;LR-&#39;: 0.0,
+ &#39;PT&#39;: 0.5,
+ &#39;TS&#39;: 93.33333333333333}
 </pre></div></div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">am</span><span class="o">.</span><span class="n">delete_agent</span><span class="p">(</span><span class="s1">&#39;tutorial-pvt&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+&#39;deleted /home/alexlukens/.local/share/IA_SDK_AgentManager/agents/tutorial-pvt&#39;
+</pre></div></div>
 </div>
 </section>
 </section>

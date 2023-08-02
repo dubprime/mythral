@@ -1,6 +1,8 @@
 Examples
 =========
 
+.. _training reference:
+
 .. toctree::
     Agent Setup
 
