@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgentManager &mdash; IA-SDK-Python 0.4.1 documentation</title>
+  <title>AgentManager &mdash; IA-SDK-Python 0.4.2 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -42,7 +42,7 @@
               <img src="_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.4.1
+                v0.4.2
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -478,8 +478,25 @@ access to Intelligent Artifact’s GAIuS Docker images.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.agent_context">
-<span class="sig-name descname"><span class="pre">agent_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">genome_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jia'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect_jia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ABCD-1234'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.agent_context" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">agent_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">genome_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">genome_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'jia'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connect_jia</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ABCD-1234'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.agent_context" title="Permalink to this definition"></a></dt>
+<dd><p>Provide ability to use Agent as a context manager. Internally calls start_agent and stop_agent.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>genome_file</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>genome_name</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to ‘jia’.</p></li>
+<li><p><strong>agent_id</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to ‘1’.</p></li>
+<li><p><strong>agent_name</strong> (<em>_type_</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>connect_jia</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to True.</p></li>
+<li><p><strong>api_key</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to ‘ABCD-1234’.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>_type_</em> – _description_</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.delete_agent">
@@ -516,8 +533,17 @@ access to Intelligent Artifact’s GAIuS Docker images.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.delete_tf">
-<span class="sig-name descname"><span class="pre">delete_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tf_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.delete_tf" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">delete_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tf_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.delete_tf" title="Permalink to this definition"></a></dt>
+<dd><p>Kill a Thinkflux container using it’s tf_name attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>tf_name</strong> (<em>str</em>) – attribute passed when spawning Thinkflux</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – When config not found</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.get_all_agent_status">
@@ -557,6 +583,11 @@ access to Intelligent Artifact’s GAIuS Docker images.</p>
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.kill_all_agents">
 <span class="sig-name descname"><span class="pre">kill_all_agents</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.kill_all_agents" title="Permalink to this definition"></a></dt>
 <dd><p>Kill all agents known to AgentManager</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>update</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to update AgentManager information before killing containers. Defaults to True.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -622,36 +653,42 @@ AgentClient object using AgentInfo.get_agent_client()</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.start_hoster">
 <span class="sig-name descname"><span class="pre">start_hoster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.start_hoster" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Start <a class="reference external" href="https://github.com/dvddarias/docker-hoster">dvdarias/docker-hoster</a> docker container to resolve
+container hostnames into IP addresses. More friendly for AgentManager usage</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.start_tf">
 <span class="sig-name descname"><span class="pre">start_tf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tf_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">docker_image</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">8090</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'tf'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tf_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">environment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">privileged</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volumes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">agents_to_connect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">TFInfo</span></span></span><a class="headerlink" href="#ia.gaius.manager.AgentManager.start_tf" title="Permalink to this definition"></a></dt>
 <dd><p>Spawn a Thinkflux container using provided config. Store config in AgentManager</p>
+<dl class="simple">
+<dt>Container name is defined as:</dt><dd><p>“tf-{user_id}-{tf_id}”</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>tf_name</strong> (<em>str</em>) – _description_</p></li>
-<li><p><strong>api_key</strong> (<em>str</em>) – _description_</p></li>
-<li><p><strong>docker_image</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>tf_name</strong> (<em>str</em>) – descriptive name “alias” for Thinkflux</p></li>
+<li><p><strong>api_key</strong> (<em>str</em>) – Passed as API_KEY env variable to container</p></li>
+<li><p><strong>docker_image</strong> (<em>str</em>) – Container image to spawn. E.g. “registry.digitalocean.com/intelligent-artifacts/thinkflux:develop”</p></li>
 <li><p><strong>port</strong> (<em>int</em><em>, </em><em>optional</em>) – _description_. Defaults to 8090.</p></li>
-<li><p><strong>user_id</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to ‘tf’.</p></li>
-<li><p><strong>tf_id</strong> (<em>str</em><em>, </em><em>optional</em>) – _description_. Defaults to ‘1’.</p></li>
-<li><p><strong>environment</strong> (<em>dict</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
-<li><p><strong>privileged</strong> (<em>bool</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
-<li><p><strong>volumes</strong> (<em>dict</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
-<li><p><strong>agents_to_connect</strong> (<em>list</em><em>, </em><em>optional</em>) – _description_. Defaults to None.</p></li>
+<li><p><strong>user_id</strong> (<em>str</em><em>, </em><em>optional</em>) – user_id portion of container extension. Defaults to ‘tf’.</p></li>
+<li><p><strong>tf_id</strong> (<em>str</em><em>, </em><em>optional</em>) – tf_id portion of container extension. Defaults to ‘1’.</p></li>
+<li><p><strong>environment</strong> (<em>dict</em><em>, </em><em>optional</em>) – additional environment variables to provide to container, as key-value pairs. Defaults to None.</p></li>
+<li><p><strong>privileged</strong> (<em>bool</em><em>, </em><em>optional</em>) – run container in privileged mode. Defaults to None.</p></li>
+<li><p><strong>volumes</strong> (<em>dict</em><em>, </em><em>optional</em>) – volumes to mount in container as key-value pairs. Defaults to None.</p></li>
+<li><p><strong>agents_to_connect</strong> (<em>list</em><em>, </em><em>optional</em>) – list of agents to connect to Thinkflux. Defaults to None.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
-<li><p><strong>Exception</strong> – _description_</p></li>
-<li><p><strong>Exception</strong> – _description_</p></li>
-<li><p><strong>Exception</strong> – _description_</p></li>
+<li><p><strong>Exception</strong> – If invalid agents passed in agents_to_connect</p></li>
+<li><p><strong>Exception</strong> – If tf_name already exists in AgentManager</p></li>
+<li><p><strong>Exception</strong> – If a thinkflux with user_id and tf_id already exists in AgentManager</p></li>
 </ul>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>_description_</p>
+<dd class="field-odd"><p>Object corresponding to spawned Thinkflux</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>TFInfo</p>
@@ -662,12 +699,13 @@ AgentClient object using AgentInfo.get_agent_client()</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.stop_hoster">
 <span class="sig-name descname"><span class="pre">stop_hoster</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.stop_hoster" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Stop <a class="reference external" href="https://github.com/dvddarias/docker-hoster">dvdarias/docker-hoster</a> docker container</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.manager.AgentManager.update_current_agents">
 <span class="sig-name descname"><span class="pre">update_current_agents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.manager.AgentManager.update_current_agents" title="Permalink to this definition"></a></dt>
-<dd><p>Update the current_agents_dict</p>
+<dd><p>Update AgentManager’s list of configured agents, thinkflux, comcom, genomes</p>
 </dd></dl>
 
 </dd></dl>
