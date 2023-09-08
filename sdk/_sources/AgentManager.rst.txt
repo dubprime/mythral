@@ -14,7 +14,6 @@ an AgentClient object when agent is spawned using manager.
     Requires access to the Docker Daemon running on the user's computer, and
     access to Intelligent Artifact's GAIuS Docker images.
 
-
 **Quickstart**
 
 .. code-block:: python
@@ -26,7 +25,25 @@ an AgentClient object when agent is spawned using manager.
     agent = am.start_agent(genome_file='simple.genome', agent_id='pvt', connect_jia=True, api_key='SECRET1234')
     agent_client = agent.get_agent_client()
 
+AgentManager
+------------
 .. autoclass:: ia.gaius.manager.AgentManager
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+AgentInfo
+------------
+.. autoclass:: ia.gaius.manager.AgentInfo
+      :members:
+      :undoc-members:
+      :show-inheritance:
+      :special-members: __init__
+
+TFInfo
+------------
+.. autoclass:: ia.gaius.manager.TFInfo
       :members:
       :undoc-members:
       :show-inheritance:
