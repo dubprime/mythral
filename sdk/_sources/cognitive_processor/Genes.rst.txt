@@ -19,7 +19,7 @@ Genes can be updated using the AgentClient function
     Genome file manually.
 
 always_update_frequencies
-=========================
+-------------------------
 
 .. warning::
     Placeholder gene that will either get implemented or be removed in a
@@ -27,7 +27,7 @@ always_update_frequencies
 
 
 auto_learn_algorithm
-====================
+--------------------
 
 This gene controls how the WM is processed, and modified when the `auto_learn_metric`_ reaches its relevant threshold. 
 Possible values are: 
@@ -39,7 +39,7 @@ Possible values are:
 
 
 auto_learn_metric
-=================
+-----------------
 
 This gene controls which metric is checked when determining if the CongitiveProcessor should learn its current
 WM using the set `auto_learn_algorithm`_ before the next observation. Threshold value is different for different
@@ -55,7 +55,7 @@ Possible values are:
     removed until its length is less than `max_sequence_length`_.
 
 classifier
-==========
+----------
 
 The vector classifier to be utilized by the Cognitive Processor.
 Possible values are:
@@ -67,7 +67,7 @@ Possible values are:
     The default value for classifier is "CVC".
 
 enable_genome_snapshots
-=======================
+-----------------------
 
 This gene controls whether genes are kept track of over snapshot windows of the observed states are captured and
 synced based on the metdata passed along with observed data. 
@@ -80,7 +80,7 @@ Possible values are:
     Only occurs if `enable_genome_snapshots`_ is True.
 
 enable_predictions_kb
-=====================
+---------------------
 
 This gene controls whether a prediction_kb is kept on the CongitiveProcessor to reduce the computation
 cost of creating predictions for already observed/learned sequences.
@@ -92,7 +92,7 @@ Possible values are:
     The default value for enable_predictions_kb is False.
 
 enable_snapshots
-================
+----------------
 
 This gene controls whether a snapshot window of the observed states are captured and
 synced based on the metdata passed along with observed data. 
@@ -106,7 +106,7 @@ Possible values are:
 
 
 max_predictions
-===============
+---------------
 
 This gene controls the number of predictions returned by the Cognitive Processor.
 When the user wants only a single "best" prediction to be returned, this gene should be reduced to 1
@@ -116,7 +116,7 @@ When the user wants only a single "best" prediction to be returned, this gene sh
     Max value is 10000.
 
 max_sequence_length
-===================
+-------------------
 
 Controls the max number of items permitted in the working memory at a time.
 This gene should be used in conjunction with wm_resultion to delimit the
@@ -133,7 +133,7 @@ in the working memory after learning.
     enforced (unlimited sequence length allowed)
 
 near_vector_count
-=================
+-----------------
 
 This gene controls the number of nearest neighbors "pulled in" when observing
 vector data. For example, if near_vector_count is set to 2, then the 2 nearest
@@ -142,7 +142,7 @@ neighbors will also be added to the working memory in the same event.
 When not utilizing vector data in the GDFs, this gene has no effect.
 
 persistence
-===========
+-----------
 
 This gene controls the number of historical values which are maintained for a single emotive inside a Model.
 When the same model is learned by the CongitiveProcessor the new emotive value will push the older values out
@@ -152,7 +152,7 @@ when the persistence threshold is reached. It can be any integer value greater t
     The default value for persistence is 7.
 
 predict_on_nth_event
-====================
+--------------------
 
 This gene controls when predictions should be generated from observations. 
 Meaning that if *predict_on_nth_event* was set to 4; then 4 events would need to be observed before predictions
@@ -162,7 +162,7 @@ would be made.
     The default value for predict_on_nth_event is 1. Meaning that predictions are generated on each observe.
 
 prediction_sort_metric
-======================
+----------------------
 
 This gene controls which metric determines how predictions are ranked.
 The possible values are:
@@ -185,7 +185,7 @@ The possible values are:
     from the prediction object are supported.
 
 prediction_threshold
-====================
+--------------------
 
 This gene controls the threshold value for Predictions according to the metric defined in `prediction_threshold_metric`_.
 The range of values are double values greater than 0.0. **WARNING: Too high of a value will prevent any Predictions
@@ -195,7 +195,7 @@ from being returned.**
     The default value for prediction_threshold is 0.0 meaning no Predictons are dropped when they are created.
 
 prediction_threshold_direction
-==============================
+------------------------------
 
 This gene controls the direction of the thresholding either 'greater than' or 'less than'. 
 The range of values is boolean either false(less than) or true(greater than).
@@ -204,7 +204,7 @@ The range of values is boolean either false(less than) or true(greater than).
     The default value for prediction_threshold_direction is the typical false(less than).
 
 prediction_threshold_metric
-===========================
+---------------------------
 
 This gene controls which metric is used to threshold Predictions and remove them from results.
 The possible values are:
@@ -226,7 +226,7 @@ The possible values are:
     The default value for prediction_threshold_metric is "Potential"
 
 recall_threshold
-================
+----------------
 
 
 The recall threshold controls the percentage of a sequence that must match in
@@ -243,7 +243,7 @@ For looser sequence matching, use a lower recall_threshold (typically ~ 0.1).
 .. ----------
 
 search_depth
-============
+------------
 This gene controls the max depth to search in the learned vector space utilizing the "DVC" vector classifier
 algorithm. Only used when `classifier`_ == "DVC".
 
@@ -252,7 +252,7 @@ algorithm. Only used when `classifier`_ == "DVC".
     
 
 SORT
-====
+----
 
 This gene controls whether the sequence is sorted by the Cognitive Processor during processing.
 When the user wishes to retain the original ordering of symbols
@@ -263,7 +263,7 @@ then should set SORT to False.
 
 
 smoothness
-==========
+----------
 
 This gene controls the max allowed entropy in the Prediction Ensemble before an
 auto-learn is triggered. 
@@ -272,7 +272,7 @@ auto-learn is triggered.
     The default value for smoothness is 3.0.
 
 snapshot_gen_predictions
-========================
+------------------------
 
 This gene controls whether predictions are generated on loading of snapshots. This is useful when only
 appending emotives data on top of previously observed symbolic data.
@@ -284,7 +284,7 @@ Possible values:
     The default value for snapshot_gen_predictions is False.
 
 wm_resolution
-=============
+-------------
 
 The resolution at which the `max_sequence_length`_ is computed. This gene
 can either be "symbol" or "event". When symbol, all symbols in an event
