@@ -1,0 +1,100 @@
+ComCom InputSlot
+=========================
+
+InputSlots; are in short, ways to stream data into ComCom. When creating an InputSlot there are required fields 
+and then there are extra fields that are needed based on the type of data stream that you wish the InputSlot to
+work with. The ComCom InputSlot is a base class which then employs a specialized listener class which runs infinitely
+in a process to continually poll for new data.
+
+
+Relevant InputSlot Functions
+++++++++++++++++++++++++++++
+
+The interact with a ComCom its best to utilize the COMCOMClient  which is a part of the IA-SDK.
+It includes a collection of functions which interfact with ComCom to perform any necessary operation
+such as creating, deleting, and modifying InputSlots.
+
+The most relevant functions when it comes to InputSlots are in the table below:
+
+
+
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| Function Name                                                                                                    | Function Description                                                      |
++==================================================================================================================+===========================================================================+
+| :func:`connect_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot>`               | Function call which takes in config data                                  |
+|                                                                                                                  | to create a new input slot in COMCOM.                                     |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`disconnect_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.disconnect_input_slot>`         | Function call which takes in an InputSlot name                            |
+|                                                                                                                  | and deletes it from ComCom.                                               |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`modify_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.modify_input_slot>`                 | Complex function call which can modify                                    |
+|                                                                                                                  | the input_slot according to the modification type.                        |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`toggle_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.toggle_input_slot>`                 | Function which negates the active status of the                           |
+|                                                                                                                  | input_slot with passed name.                                              |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`query_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.query_input_slot>`                   | Function to have an input_slot retrieve a singular piece of data.         |
+|                                                                                                                  | Currently only a `COMCOMDarkAgent` can perform this action.               |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`clear_input_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.clear_input_slots>`                 | Function call that tells COMCOM to clear all input slots from its system. |
+|                                                                                                                  | input slots from its system.                                              |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`list_input_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.list_input_slots>`                   | Function call to list all input_slots in COMCOM.                          |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`get_input_slot_data() <ia.gaius.experimental.comcom_client.COMCOMClient.get_input_slot_data>`             | Function call to get detailed information about input_slot                |
+|                                                                                                                  | with passed input_name.                                                   |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`synchronize_input_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.synchronize_input_slots>`     | Function call to synchronize two or more input_slots.                     |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`desynchronize_input_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.desynchronize_input_slots>` | Function call to desynchronize two or more input_slots.                   |
++------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+
+Types of InputSlots
++++++++++++++++++++
+
+COMCOMDDSListener
+-----------------
+An InputSlot can be made with a COMCOMDDSListener by setting the ``input_type`` parameter in :func:`connect_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot>` to 
+``stream``. This will create a DDS listener which listens to a topic of the same name as 
+what was assigned to the InputSlot. The config option ``input_message_type`` controls which DDS message 
+dataclass to expect. To get a list of the available DDS dataclasses that are supported in COMCOM, you can call the 
+:func:`get_dds_message_types() <ia.gaius.experimental.comcom_client.COMCOMClient.get_dds_message_types>` from COMCOMClient, which will output
+the DDS dataclasses with their supported names, and their structures.
+
+.. note::
+    It is crucial that the ``input_name`` and ``input_message_type`` match to what the DDS 
+    streaming process is utilizing. Otherwise data reading will fail, and no data will be read.
+
+
+COMCOMFileHandler
+-----------------
+An InputSlot can be made with a COMCOMFileHandler by setting the ``input_type`` parameter in :func:`connect_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot>` to 
+``file``. This will create a "listener" which iterates through lines in a file and passes data line by line into connected pipelines.
+Currently COMCOMFileHandler has two different modes which is chosen based on the passed ``input_message_type``.
+
++------------------------+-------------------------------------------------------------------------+
+| input_message_type     | Description                                                             |
++========================+=========================================================================+
+| ``basic``              | Used when the file exists in the COMCOM filesystem, and can be read.    |
++------------------------+-------------------------------------------------------------------------+
+| ``ftp``                | Will attempt to connect to a ftp session, and download the file         |
+|                        | requires ``ftp_url``, ``ftp_username``, and ``ftp_username`` be         |
+|                        | passed with config                                                      |
++------------------------+-------------------------------------------------------------------------+
+
+.. note::
+    Once a file has been fully read. The COMCOMFileHandler will stop processing and only go through the file
+    again if the stream is explicitly reset to read from line one again.
+
+
+COMCOMWebListener
+-----------------
+An InputSlot can be made with a COMCOMWebListener by setting the ``input_type`` parameter in :func:`connect_input_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot>` to 
+``socket``. This will create a server socket which will accept connections from other sockets, and read in null terminated data.
+Currentl COMCOMWebListener always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.
+
+.. note::
+    When configuring a COMCOMWebListener, a ``web_address`` and  ``web_port`` must be passed in; which then
+    gets bound to that COMCOMWebListener. Afterwards the COMCOMWebListener will continually listen for connections
+    and read in bytes data until the '\0' character is encountered.

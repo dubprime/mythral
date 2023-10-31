@@ -9,6 +9,8 @@ frequently to interface with a GAIuS agent
     :maxdepth: 2
 
     AgentClient
+    ThinkfluxClient
+    comcom/COMCOMClient
     Genome
     kb_ops
     data_ops

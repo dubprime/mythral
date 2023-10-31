@@ -1,0 +1,103 @@
+ComCom OutputSlot
+=================
+
+OutputSlots; are in short, ways to stream data out of a COMCOM to some other location. This can range from a GAIuS Agent to a file.
+All OutputSlots employ a queue since they can take in data from multiple pipelines. When creating an OutputSlot there are required fields 
+and then there are extra fields that are needed based on the type of destination you wish to send fully processed data to.
+The ComCom OutputSlot is a base class which then employs a specialized streamer/publisher class which runs infinitely
+in a process to continually send out any data in its queue.
+
+Relevant OutputSlot Functions
++++++++++++++++++++++++++++++
+
+The interact with a ComCom its best to utilize the COMCOMClient  which is a part of the IA-SDK.
+It includes a collection of functions which interfact with ComCom to perform any necessary operation
+such as creating, deleting, and modifying OutputSlots.
+
+The most relevant functions when it comes to OutputSlots are in the table below:
+
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| Function Name                                                                                                              | Function Description                                                      |
++============================================================================================================================+===========================================================================+
+| :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>`                       | Function call which takes in config data                                  |
+|                                                                                                                            | to create a new input slot in COMCOM.                                     |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`disconnect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.disconnect_output_slot>`                 | Function call which takes in an OutputSlot name                           |
+|                                                                                                                            | and deletes it from ComCom.                                               |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`modify_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.modify_output_slot>`                         | Complex function call which can modify                                    |
+|                                                                                                                            | the output_slot according to the modification type.                       |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`toggle_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.toggle_output_slot>`                         | Function which negates the active status of the                           |
+|                                                                                                                            | output_slot with passed name.                                             |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`clear_outputslot_command_queue() <ia.gaius.experimental.comcom_client.COMCOMClient.clear_outputslot_command_queue>` | Function call that tells COMCOM to clear any queued output data           |
+|                                                                                                                            | pending in the output-slot.                                               |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`list_output_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.list_output_slots>`                           | Function call to list all output_slots in COMCOM.                         |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+| :func:`get_output_slot_data() <ia.gaius.experimental.comcom_client.COMCOMClient.get_output_slot_data>`                     | Function call to get detailed information about output_slot               |
+|                                                                                                                            | with passed output_name.                                                  |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+
+Types of OutputSlots
+++++++++++++++++++++
+
+COMCOMAgentStreamer
+-------------------
+An OutputSlot can be made with a COMCOMAgentStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+``agent``. The COMCOMAgentStreamer will then gather a collection of already connected agents from COMCOM, and then send data to those agents.
+To determine in what manner to send the data to agents the COMCOMAgentStreamer will read in the ``action`` field from the processed data and then perform a 
+corresponding action.
+
+**Current Supported Actions:**
+
+* **observe** : converts to GDF(if needed) and then calls observe on Agent. Will also write a ``PredictionEnsemble`` DDS message under the topic <``output_name``>_ensemble.
+* **learn** : attempts to observe GDF data if available, and then learns the current WM on the agent.
+* **sequence_observe** : attempts to observe a list of GDF data onto all agents.
+* **sequence_learn** : attempts to observe a list of GDF data onto all agents, and then learn.
+
+COMCOMDDSStreamer
+-----------------
+An OutputSlot can be made with a COMCOMDDSStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+``stream``. This will create a DDS Writer which listens to a topic of the same name as 
+what was assigned to the OutputSlot. The config option ``output_message_type`` controls which DDS message 
+dataclass to expect. To get a list of the available DDS dataclasses that are supported in COMCOM, you can call the 
+:func:`get_dds_message_types() <ia.gaius.experimental.comcom_client.COMCOMClient.get_dds_message_types>` from COMCOMClient, which will output
+the DDS dataclasses with their supported names, and their structures.
+
+.. note::
+    It is crucial that the ``output_name`` and ``output_message_type`` match to what the DDS 
+    listening process is utilizing. Otherwise data reading will fail, and no data will be read.
+
+
+.. COMCOMFileHandler
+.. -----------------
+.. An OutputSlot can be made with a COMCOMFileHandler by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+.. ``file``. This will create a "listener" which iterates through lines in a file and passes data line by line into connected pipelines.
+.. Currently COMCOMFileHandler has two different modes which is chosen based on the passed ``output_message_type``.
+
+.. +------------------------+-------------------------------------------------------------------------+
+.. | output_message_type     | Description                                                            |
+.. +========================+=========================================================================+
+.. | ``basic``              | Used when the file exists in the COMCOM filesystem, and can be read.    |
+.. +------------------------+-------------------------------------------------------------------------+
+.. | ``ftp``                | Will attempt to connect to a ftp session, and download the file         |
+.. |                        | requires ``ftp_url``, ``ftp_username``, and ``ftp_username`` be         |
+.. |                        | passed with config                                                      |
+.. +------------------------+-------------------------------------------------------------------------+
+
+.. .. note::
+..     Once a file has been fully read. The COMCOMFileHandler will stop processing and only go through the file
+..     again if the stream is explicitly reset to read from line one again.
+
+COMCOMTCPSocketStreamer
+-----------------------
+An OutputSlot can be made with a COMCOMTCPSocketStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+``socket``. This will create a server socket which will accept connections from other sockets, and read in null terminated data.
+Currentl COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.
+
+.. note::
+    When configuring a COMCOMTCPSocketStreamer, a ``sockets`` must be defined; which contains a list of the **address** and **port**  must be passed in; 
+    which then creates a series of socket connections to try to connect to and send bytes data to.

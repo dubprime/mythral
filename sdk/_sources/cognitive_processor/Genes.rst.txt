@@ -18,6 +18,9 @@ Genes can be updated using the AgentClient function
     corresponding processor in IA's Connectome Creator, or by editing the 
     Genome file manually.
 
+
+Gene Information
+================
 always_update_frequencies
 -------------------------
 
@@ -72,6 +75,7 @@ enable_genome_snapshots
 This gene controls whether genes are kept track of over snapshot windows of the observed states are captured and
 synced based on the metdata passed along with observed data. 
 Possible values are:
+
 * True
 * False
 
@@ -85,6 +89,7 @@ enable_predictions_kb
 This gene controls whether a prediction_kb is kept on the CongitiveProcessor to reduce the computation
 cost of creating predictions for already observed/learned sequences.
 Possible values are:
+
 * True
 * False
 
@@ -98,6 +103,7 @@ This gene controls whether a snapshot window of the observed states are captured
 synced based on the metdata passed along with observed data. 
 
 Possible values are:
+
 * True
 * False
 
@@ -277,6 +283,7 @@ snapshot_gen_predictions
 This gene controls whether predictions are generated on loading of snapshots. This is useful when only
 appending emotives data on top of previously observed symbolic data.
 Possible values:
+
 * True
 * False
 

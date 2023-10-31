@@ -38,6 +38,7 @@ This project provides various helper classes and functions for interacting with 
    API
    examples/UsageExamples
    cognitive_processor/Genes
+   comcom/COMCOMHead
    REST
    
 
