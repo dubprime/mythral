@@ -10,6 +10,4 @@ Examples
 
     Training 1
 
-
-MNIST Testing
--------------
+    pvt_agent_manager_mnist10k

@@ -138,6 +138,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_vector"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_vector()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_wm"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_wm()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.increment_recall_threshold"><code class="docutils literal notranslate"><span class="pre">AgentClient.increment_recall_threshold()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.inject_genome"><code class="docutils literal notranslate"><span class="pre">AgentClient.inject_genome()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.investigate"><code class="docutils literal notranslate"><span class="pre">AgentClient.investigate()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.investigate_record"><code class="docutils literal notranslate"><span class="pre">AgentClient.investigate_record()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.learn"><code class="docutils literal notranslate"><span class="pre">AgentClient.learn()</span></code></a></li>
@@ -208,16 +209,19 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">COMCOMClient</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient"><code class="docutils literal notranslate"><span class="pre">COMCOMClient</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.__init__"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.add_function_to_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.add_function_to_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.call_agent_command"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.call_agent_command()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_agents"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_agents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_outputslot_command_queue"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_outputslot_command_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.comcom_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.comcom_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_output_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_to_agent"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_to_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.create_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.create_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.delete_function_from_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.delete_function_from_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.delete_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.delete_pipeline()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.desynchronize_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.desynchronize_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.disconnect_agent"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.disconnect_agent()</span></code></a></li>
@@ -231,6 +235,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_input_slot_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_input_slot_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_output_slot_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_output_slot_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_pipeline_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_pipeline_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.input_slot_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.input_slot_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_agent_connections"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_agent_connections()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_input_slots()</span></code></a></li>
@@ -241,11 +246,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_output_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.pipeline_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.pipeline_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.query_db"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.query_db()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.query_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.query_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.synchronize_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.synchronize_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.toggle_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.toggle_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.toggle_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.toggle_output_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_comcom()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_input_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_pipeline()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -293,7 +302,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../data_ops.html#data-ops-module">data_ops module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.PreparedData"><code class="docutils literal notranslate"><span class="pre">PreparedData</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.PreparedData"><code class="docutils literal notranslate"><span class="pre">PreparedData</span></code></a><ul>
+<li class="toctree-l5"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.PreparedData.prep"><code class="docutils literal notranslate"><span class="pre">PreparedData.prep()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.atoi"><code class="docutils literal notranslate"><span class="pre">atoi()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.natural_keys"><code class="docutils literal notranslate"><span class="pre">natural_keys()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../data_ops.html#ia.gaius.data_ops.raw_in_count"><code class="docutils literal notranslate"><span class="pre">raw_in_count()</span></code></a></li>
@@ -305,10 +317,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../utils.html">Utilities</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.GDFFormatError"><code class="docutils literal notranslate"><span class="pre">GDFFormatError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.abstract_names"><code class="docutils literal notranslate"><span class="pre">abstract_names()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.build_pipeline_layers"><code class="docutils literal notranslate"><span class="pre">build_pipeline_layers()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.create_gdf"><code class="docutils literal notranslate"><span class="pre">create_gdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.dict_to_plotly_string"><code class="docutils literal notranslate"><span class="pre">dict_to_plotly_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.find_output_slots_and_add_to_end"><code class="docutils literal notranslate"><span class="pre">find_output_slots_and_add_to_end()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.load_sequence_from_file"><code class="docutils literal notranslate"><span class="pre">load_sequence_from_file()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.log_progress"><code class="docutils literal notranslate"><span class="pre">log_progress()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.merge_gdfs"><code class="docutils literal notranslate"><span class="pre">merge_gdfs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.node_data_to_plotly_string"><code class="docutils literal notranslate"><span class="pre">node_data_to_plotly_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.plot_directed_networkx_graph"><code class="docutils literal notranslate"><span class="pre">plot_directed_networkx_graph()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.retrieve_bottom_level_records"><code class="docutils literal notranslate"><span class="pre">retrieve_bottom_level_records()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../utils.html#ia.gaius.utils.write_gdf_to_file"><code class="docutils literal notranslate"><span class="pre">write_gdf_to_file()</span></code></a></li>
 </ul>
@@ -514,7 +531,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../examples/Training%201.html#Iris-Dataset-Training">Iris Dataset Training</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../examples/UsageExamples.html#mnist-testing">MNIST Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html">PVT on 10k records of MNIST Digit Dataset</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html#Setup-Agent">Setup Agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html#Load-Data">Load Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html#Run-PVT">Run PVT</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html#Show-results">Show results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../examples/pvt_agent_manager_mnist10k.html#Teardown-agent">Teardown agent</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../cognitive_processor/Genes.html">Cognitive Processor Genes</a></li>
@@ -547,16 +571,19 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">COMCOMClient</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient"><code class="docutils literal notranslate"><span class="pre">COMCOMClient</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.__init__"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.add_function_to_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.add_function_to_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.call_agent_command"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.call_agent_command()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_agents"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_agents()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.clear_outputslot_command_queue"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.clear_outputslot_command_queue()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.comcom_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.comcom_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_output_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_to_agent"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.connect_to_agent()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.create_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.create_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.delete_function_from_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.delete_function_from_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.delete_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.delete_pipeline()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.desynchronize_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.desynchronize_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.disconnect_agent"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.disconnect_agent()</span></code></a></li>
@@ -570,6 +597,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_input_slot_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_input_slot_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_output_slot_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_output_slot_data()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_pipeline_data"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.get_pipeline_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.input_slot_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.input_slot_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_agent_connections"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_agent_connections()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_comcom()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.list_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.list_input_slots()</span></code></a></li>
@@ -580,11 +608,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_output_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.modify_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.modify_pipeline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.pipeline_to_cytoscape"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.pipeline_to_cytoscape()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.query_db"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.query_db()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.query_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.query_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.synchronize_input_slots"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.synchronize_input_slots()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.toggle_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.toggle_input_slot()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.toggle_output_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.toggle_output_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_comcom"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_comcom()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_input_slot"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_input_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_pipeline"><code class="docutils literal notranslate"><span class="pre">COMCOMClient.visualize_pipeline()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -660,6 +692,29 @@ and connecting agents to COMCOM</p>
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">comcom_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verify</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.add_function_to_comcom">
+<span class="sig-name descname"><span class="pre">add_function_to_comcom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_input_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_return_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'block'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.add_function_to_comcom" title="Link to this definition"></a></dt>
+<dd><p>_summary_</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function_name</strong> (<em>str</em>) – _description_</p></li>
+<li><p><strong>function_input_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – A key-value pair stating the expected input type of parameters</p></li>
+<li><p><strong>function_return_types</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em>) – A key-value pair stating the expected return type of variables</p></li>
+<li><p><strong>source</strong> (<em>str</em>) – Either a block of code in text format, or path to a source code file</p></li>
+<li><p><strong>source_type</strong> (<em>str</em><em>, </em><em>optional</em>) – Type of source. Either ‘file’, or ‘block’. Defaults to “block”.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>response from COMCOM</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.call_agent_command">
@@ -742,6 +797,20 @@ and connecting agents to COMCOM</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.comcom_to_cytoscape">
+<span class="sig-name descname"><span class="pre">comcom_to_cytoscape</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.comcom_to_cytoscape" title="Link to this definition"></a></dt>
+<dd><p>Get cytoscape representation of all of comcom.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cytoscape json data</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.connect">
 <span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect" title="Link to this definition"></a></dt>
 <dd><p>Establishes initial connection to COMCOM, then allows calling of other function to</p>
@@ -749,7 +818,7 @@ and connecting agents to COMCOM</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot">
-<span class="sig-name descname"><span class="pre">connect_input_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_slots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_slot_data_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect_input_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pipeline_slots</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_slot_data_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_command_queue_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_block_on_full</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_block_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_input_slot" title="Link to this definition"></a></dt>
 <dd><p>Function call which takes in data to create a new input slot in COMCOM.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -758,6 +827,9 @@ and connecting agents to COMCOM</p>
 <li><p><strong>input_type</strong> (<em>str</em>) – The type of the input_slot.</p></li>
 <li><p><strong>pipeline_slots</strong> (<em>List</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – The pipelines to be run when data is received. Defaults to [].</p></li>
 <li><p><strong>input_slot_data_mapping</strong> (<em>Dict</em><em>, </em><em>optional</em>) – Special mapping of data from one set of key:value pairs to another(useful for pipelines). Defaults to {}.</p></li>
+<li><p><strong>max_command_queue_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Max number of commands that can be in command_queue before data is dropped. Defaults to 100.</p></li>
+<li><p><strong>queue_block_on_full</strong> (<em>bool</em><em>, </em><em>optional</em>) – Bool flag controlling if input_slot should wait for free slot in queue up to <cite>queue_block_timeout</cite>. Defaults to True.</p></li>
+<li><p><strong>queue_block_timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Timeout for waiting for free slot in command_queue.. Defaults to 1.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -771,7 +843,7 @@ and connecting agents to COMCOM</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot">
-<span class="sig-name descname"><span class="pre">connect_output_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_slot_data_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">connect_output_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_slot_data_mapping</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">{}</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_command_queue_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_block_on_full</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queue_block_timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot" title="Link to this definition"></a></dt>
 <dd><p>Function call which takes in data and constructs a new output slot in COMCOM.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -779,10 +851,13 @@ and connecting agents to COMCOM</p>
 <li><p><strong>output_name</strong> (<em>str</em>) – The name that this output slot will be known by.</p></li>
 <li><p><strong>output_type</strong> (<em>str</em>) – The type of the output_slot.</p></li>
 <li><p><strong>output_slot_data_mapping</strong> (<em>Dict</em><em>, </em><em>optional</em>) – Special mapping of data from one set of key:value pairs to another(useful to get translate data from pipelines into relevant mappings). Defaults to {}.</p></li>
+<li><p><strong>max_command_queue_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Max number of commands that can be in command_queue before data is dropped. Defaults to 100.</p></li>
+<li><p><strong>queue_block_on_full</strong> (<em>bool</em><em>, </em><em>optional</em>) – Bool flag controlling if output_slot should wait for free slot in queue up to <cite>queue_block_timeout</cite>. Defaults to True.</p></li>
+<li><p><strong>queue_block_timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – Timeout for waiting for free slot in command_queue. Defaults to 1.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>response from COMCOM</p>
+<dd class="field-even"><p>_description_</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
@@ -829,6 +904,23 @@ and connecting agents to COMCOM</p>
 <li><p><strong>pipeline_connections</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em>) – Dictionary of connections between pipeline functions which maps flow of data during pipeline execution.</p></li>
 <li><p><strong>pipeline_starting_functions</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of functions that the pipeline will start with.</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>response from COMCOM</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.delete_function_from_comcom">
+<span class="sig-name descname"><span class="pre">delete_function_from_comcom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Craig'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.delete_function_from_comcom" title="Link to this definition"></a></dt>
+<dd><p>Deletes a function from COMCOM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>function_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of function to delete. Defaults to “Craig”.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>response from COMCOM</p>
@@ -946,8 +1038,17 @@ and connecting agents to COMCOM</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.get_config_as_json">
-<span class="sig-name descname"><span class="pre">get_config_as_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_config_as_json" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">get_config_as_json</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_config_as_json" title="Link to this definition"></a></dt>
+<dd><p>Gets the json configuration to reload current comcom config at a later date</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Json object with relevant information to rebuild comcom</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>json</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.get_dds_message_types">
@@ -957,7 +1058,7 @@ and connecting agents to COMCOM</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.get_debug_topic_data_single">
-<span class="sig-name descname"><span class="pre">get_debug_topic_data_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_slot_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_debug_topic_data_single" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_debug_topic_data_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">function_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_slot_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display_result</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.get_debug_topic_data_single" title="Link to this definition"></a></dt>
 <dd><p>Function call to get a singulr debug message from function, in a pipeline, that was run by the input_slot</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -965,13 +1066,14 @@ and connecting agents to COMCOM</p>
 <li><p><strong>pipeline_name</strong> (<em>str</em>) – Name of pipeline containing said function</p></li>
 <li><p><strong>function_name</strong> (<em>str</em>) – Name of function whose debug message you wish to get</p></li>
 <li><p><strong>input_slot_name</strong> (<em>str</em>) – Name of input slot which ran the pipeline</p></li>
+<li><p><strong>display_result</strong> (<em>bool</em><em>, </em><em>optional</em>) – whether to display result in a general way or just return the formatted result(if applicable). Defaults to True.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>response from COMCOM</p>
+<dd class="field-even"><p>_description_</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+<dd class="field-odd"><p>Any</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1041,6 +1143,23 @@ and connecting agents to COMCOM</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>response from COMCOM</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.input_slot_to_cytoscape">
+<span class="sig-name descname"><span class="pre">input_slot_to_cytoscape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_slot_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.input_slot_to_cytoscape" title="Link to this definition"></a></dt>
+<dd><p>Gets the cytoscape representation of the input_slot with passed name input_slot_name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_slot_name</strong> (<em>str</em>) – The name of the input_slot to get representation of.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cytoscape json data</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
@@ -1211,6 +1330,23 @@ of Agent connections, Input_Slots, Output_Slots, and Pipelines.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.pipeline_to_cytoscape">
+<span class="sig-name descname"><span class="pre">pipeline_to_cytoscape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.pipeline_to_cytoscape" title="Link to this definition"></a></dt>
+<dd><p>Gets the cytoscape representation of the pipeline with passed name pipeline_name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pipeline_name</strong> (<em>str</em>) – The name of the pipeline to get representation of.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Cytoscape json data</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.query_db">
 <span class="sig-name descname"><span class="pre">query_db</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lookup_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.query_db" title="Link to this definition"></a></dt>
 <dd><p>Function call to query COMCOM for information from its internal Database.</p>
@@ -1298,6 +1434,34 @@ Currently only a COMCOMDarkAgent can perform this action.</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Union[dict, Tuple[dict, str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.visualize_comcom">
+<span class="sig-name descname"><span class="pre">visualize_comcom</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_comcom" title="Link to this definition"></a></dt>
+<dd><p>Function to visualize all of comcom using plotly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.visualize_input_slot">
+<span class="sig-name descname"><span class="pre">visualize_input_slot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_slot_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_input_slot" title="Link to this definition"></a></dt>
+<dd><p>Function to visualize a pipeline with passed pipeline_name using plotly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input_slot_name</strong> (<em>str</em>) – The name of the input_slot to visualize.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ia.gaius.experimental.comcom_client.COMCOMClient.visualize_pipeline">
+<span class="sig-name descname"><span class="pre">visualize_pipeline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pipeline_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#ia.gaius.experimental.comcom_client.COMCOMClient.visualize_pipeline" title="Link to this definition"></a></dt>
+<dd><p>Function to visualize a pipeline with passed pipeline_name using plotly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pipeline_name</strong> (<em>str</em>) – The name of the pipeline to visualize.</p>
 </dd>
 </dl>
 </dd></dl>
