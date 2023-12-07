@@ -44,6 +44,15 @@ The most relevant functions when it comes to OutputSlots are in the table below:
 Types of OutputSlots
 ++++++++++++++++++++
 
+COMCOMRESTAPIPublisher
+----------------------
+An OutputSlot can be made with a COMCOMRESTAPIPublisherby by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+``rest_api``. The COMCOMRESTAPIPublisher will then take in the passed ``rest_urls`` and send any receieved data through those rest_urls. 
+
+.. note::
+    When creating a COMCOMRESTAPIPublisher ``verify`` may be passed to set that option for all requests. In addition,
+    if a ``request_type`` is not defined in the recieved data, then it defaults to **post**.
+
 COMCOMAgentStreamer
 -------------------
 An OutputSlot can be made with a COMCOMAgentStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
@@ -71,32 +80,11 @@ the DDS dataclasses with their supported names, and their structures.
     It is crucial that the ``output_name`` and ``output_message_type`` match to what the DDS 
     listening process is utilizing. Otherwise data reading will fail, and no data will be read.
 
-
-.. COMCOMFileHandler
-.. -----------------
-.. An OutputSlot can be made with a COMCOMFileHandler by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
-.. ``file``. This will create a "listener" which iterates through lines in a file and passes data line by line into connected pipelines.
-.. Currently COMCOMFileHandler has two different modes which is chosen based on the passed ``output_message_type``.
-
-.. +------------------------+-------------------------------------------------------------------------+
-.. | output_message_type     | Description                                                            |
-.. +========================+=========================================================================+
-.. | ``basic``              | Used when the file exists in the COMCOM filesystem, and can be read.    |
-.. +------------------------+-------------------------------------------------------------------------+
-.. | ``ftp``                | Will attempt to connect to a ftp session, and download the file         |
-.. |                        | requires ``ftp_url``, ``ftp_username``, and ``ftp_username`` be         |
-.. |                        | passed with config                                                      |
-.. +------------------------+-------------------------------------------------------------------------+
-
-.. .. note::
-..     Once a file has been fully read. The COMCOMFileHandler will stop processing and only go through the file
-..     again if the stream is explicitly reset to read from line one again.
-
 COMCOMTCPSocketStreamer
 -----------------------
 An OutputSlot can be made with a COMCOMTCPSocketStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
 ``socket``. This will create a server socket which will accept connections from other sockets, and read in null terminated data.
-Currentl COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.
+Currently COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.
 
 .. note::
     When configuring a COMCOMTCPSocketStreamer, a ``sockets`` must be defined; which contains a list of the **address** and **port**  must be passed in; 

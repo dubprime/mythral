@@ -12,3 +12,5 @@ All of the COMCOM data is in here.
    InputSlot
 
    OutputSlot
+
+   COMCOMFunctions

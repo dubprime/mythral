@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ComCom OutputSlot &mdash; IA-SDK-Python 0.4.17 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/sphinxcontrib-httpexample.css" type="text/css" />
+  <title>ComCom OutputSlot &mdash; IA-SDK-Python 0.4.19 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinxcontrib-httpexample.css" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=28ad828f"></script>
+        <script src="../_static/documentation_options.js?v=64cfa554"></script>
         <script src="../_static/doctools.js?v=888ff710"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
@@ -42,7 +44,7 @@
               <img src="../_static/ia_with_text_white.svg" class="logo" alt="Logo"/>
           </a>
               <div class="version">
-                v0.4.17
+                v0.4.19
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -118,8 +120,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.connect"><code class="docutils literal notranslate"><span class="pre">AgentClient.connect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.delete_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.delete_model()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_all_genes"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_all_genes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_cluster_info"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_cluster_info()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_cognition_data"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_cognition_data()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_ensembles_for_all_models"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_ensembles_for_all_models()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_gene"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_gene()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_hypotheses"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_hypotheses()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.get_info"><code class="docutils literal notranslate"><span class="pre">AgentClient.get_info()</span></code></a></li>
@@ -166,6 +168,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.stop_autolearning"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_autolearning()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.stop_predicting"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_predicting()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.stop_sleeping"><code class="docutils literal notranslate"><span class="pre">AgentClient.stop_sleeping()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.switch_to_clusters"><code class="docutils literal notranslate"><span class="pre">AgentClient.switch_to_clusters()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../AgentClient.html#ia.gaius.agent_client.AgentClient.update_model"><code class="docutils literal notranslate"><span class="pre">AgentClient.update_model()</span></code></a></li>
 </ul>
 </li>
@@ -372,6 +375,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../AgentManager.html#id1">AgentManager</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager"><code class="docutils literal notranslate"><span class="pre">AgentManager</span></code></a><ul>
 <li class="toctree-l5"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.__init__"><code class="docutils literal notranslate"><span class="pre">AgentManager.__init__()</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.add_genome"><code class="docutils literal notranslate"><span class="pre">AgentManager.add_genome()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.agent_context"><code class="docutils literal notranslate"><span class="pre">AgentManager.agent_context()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_agent"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_agent()</span></code></a></li>
 <li class="toctree-l5"><a class="reference internal" href="../AgentManager.html#ia.gaius.manager.AgentManager.delete_comcom"><code class="docutils literal notranslate"><span class="pre">AgentManager.delete_comcom()</span></code></a></li>
@@ -583,6 +587,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">ComCom OutputSlot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#relevant-outputslot-functions">Relevant OutputSlot Functions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#types-of-outputslots">Types of OutputSlots</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#comcomrestapipublisher">COMCOMRESTAPIPublisher</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comcomagentstreamer">COMCOMAgentStreamer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comcomddsstreamer">COMCOMDDSStreamer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#comcomtcpsocketstreamer">COMCOMTCPSocketStreamer</a></li>
@@ -677,6 +682,16 @@ with passed output_name.</p></td>
 </section>
 <section id="types-of-outputslots">
 <h2>Types of OutputSlots<a class="headerlink" href="#types-of-outputslots" title="Link to this heading"></a></h2>
+<section id="comcomrestapipublisher">
+<h3>COMCOMRESTAPIPublisher<a class="headerlink" href="#comcomrestapipublisher" title="Link to this heading"></a></h3>
+<p>An OutputSlot can be made with a COMCOMRESTAPIPublisherby by setting the <code class="docutils literal notranslate"><span class="pre">output_type</span></code> parameter in <a class="reference internal" href="COMCOMClient.html#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot" title="ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">connect_output_slot()</span></code></a> to
+<code class="docutils literal notranslate"><span class="pre">rest_api</span></code>. The COMCOMRESTAPIPublisher will then take in the passed <code class="docutils literal notranslate"><span class="pre">rest_urls</span></code> and send any receieved data through those rest_urls.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When creating a COMCOMRESTAPIPublisher <code class="docutils literal notranslate"><span class="pre">verify</span></code> may be passed to set that option for all requests. In addition,
+if a <code class="docutils literal notranslate"><span class="pre">request_type</span></code> is not defined in the recieved data, then it defaults to <strong>post</strong>.</p>
+</div>
+</section>
 <section id="comcomagentstreamer">
 <h3>COMCOMAgentStreamer<a class="headerlink" href="#comcomagentstreamer" title="Link to this heading"></a></h3>
 <p>An OutputSlot can be made with a COMCOMAgentStreamer by setting the <code class="docutils literal notranslate"><span class="pre">output_type</span></code> parameter in <a class="reference internal" href="COMCOMClient.html#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot" title="ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">connect_output_slot()</span></code></a> to
@@ -709,7 +724,7 @@ listening process is utilizing. Otherwise data reading will fail, and no data wi
 <h3>COMCOMTCPSocketStreamer<a class="headerlink" href="#comcomtcpsocketstreamer" title="Link to this heading"></a></h3>
 <p>An OutputSlot can be made with a COMCOMTCPSocketStreamer by setting the <code class="docutils literal notranslate"><span class="pre">output_type</span></code> parameter in <a class="reference internal" href="COMCOMClient.html#ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot" title="ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot"><code class="xref py py-func docutils literal notranslate"><span class="pre">connect_output_slot()</span></code></a> to
 <code class="docutils literal notranslate"><span class="pre">socket</span></code>. This will create a server socket which will accept connections from other sockets, and read in null terminated data.
-Currentl COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.</p>
+Currently COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When configuring a COMCOMTCPSocketStreamer, a <code class="docutils literal notranslate"><span class="pre">sockets</span></code> must be defined; which contains a list of the <strong>address</strong> and <strong>port</strong>  must be passed in;

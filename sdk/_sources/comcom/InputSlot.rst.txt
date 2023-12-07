@@ -4,7 +4,7 @@ ComCom InputSlot
 InputSlots; are in short, ways to stream data into ComCom. When creating an InputSlot there are required fields 
 and then there are extra fields that are needed based on the type of data stream that you wish the InputSlot to
 work with. The ComCom InputSlot is a base class which then employs a specialized listener class which runs infinitely
-in a process to continually poll for new data.
+in a process to continually poll for new data, and add that data to a queue.
 
 
 Relevant InputSlot Functions
