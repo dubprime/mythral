@@ -11,3 +11,5 @@ Examples
     Training 1
 
     pvt_agent_manager_mnist10k
+
+    sklearn_mnist
