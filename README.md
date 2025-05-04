@@ -5,8 +5,8 @@
 ## **Remembering the Past, Present, and Future**
 https://www.youtube.com/watch?v=nRGCZh5A8T4
 
-## **Open sourcing thanks to the Center for Accelerating Financial Equity:**
-https://ftcafe.org/
+## **Open sourced thanks to CAFE:**
+Learn more about the Center for Accelerating Financial Equity (CAFE) at https://ftcafe.org/
 
 
 ## **Released to the world in memory of:**
