@@ -7,14 +7,14 @@ how the Cognitive Processor predicts, what state the Processor is in, and how it
 learns new information.
 
 The current values of all genes can be found by utilzing the AgentClient 
-function :func:`get_all_genes() <ia.gaius.agent_client.AgentClient.get_all_genes>`. 
+function :func:`get_all_genes() <ia.mythral.agent_client.AgentClient.get_all_genes>`. 
 Genes can be updated using the AgentClient function 
-:func:`change_genes() <ia.gaius.agent_client.AgentClient.change_genes>`
+:func:`change_genes() <ia.mythral.agent_client.AgentClient.change_genes>`
 
 .. note:: 
     
     The default values of Genes for each Cognitive Processor is set in the 
-    Genome for the GAIuS Agent. These values can be edited by selecting the
+    Genome for the Mythral Agent. These values can be edited by selecting the
     corresponding processor in IA's Connectome Creator, or by editing the 
     Genome file manually.
 
@@ -237,8 +237,8 @@ recall_threshold
 
 The recall threshold controls the percentage of a sequence that must match in
 in order for a prediction to be created. This value is a float that ranges
-from 0.0 to 1.0. In addition to :func:`change_genes() <ia.gaius.agent_client.AgentClient.change_genes>`,
-this value can be altered using :func:`increment_recall_threshold() <ia.gaius.agent_client.AgentClient.increment_recall_threshold>`.
+from 0.0 to 1.0. In addition to :func:`change_genes() <ia.mythral.agent_client.AgentClient.change_genes>`,
+this value can be altered using :func:`increment_recall_threshold() <ia.mythral.agent_client.AgentClient.increment_recall_threshold>`.
 In general, for tighter sequence matching use a higher recall_threshold value.
 For looser sequence matching, use a lower recall_threshold (typically ~ 0.1).
 

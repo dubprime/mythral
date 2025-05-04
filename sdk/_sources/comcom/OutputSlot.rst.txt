@@ -1,7 +1,7 @@
 ComCom OutputSlot
 =================
 
-OutputSlots; are in short, ways to stream data out of a COMCOM to some other location. This can range from a GAIuS Agent to a file.
+OutputSlots; are in short, ways to stream data out of a COMCOM to some other location. This can range from a Mythral Agent to a file.
 All OutputSlots employ a queue since they can take in data from multiple pipelines. When creating an OutputSlot there are required fields 
 and then there are extra fields that are needed based on the type of destination you wish to send fully processed data to.
 The ComCom OutputSlot is a base class which then employs a specialized streamer/publisher class which runs infinitely
@@ -19,24 +19,24 @@ The most relevant functions when it comes to OutputSlots are in the table below:
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | Function Name                                                                                                              | Function Description                                                      |
 +============================================================================================================================+===========================================================================+
-| :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>`                       | Function call which takes in config data                                  |
+| :func:`connect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.connect_output_slot>`                       | Function call which takes in config data                                  |
 |                                                                                                                            | to create a new input slot in COMCOM.                                     |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`disconnect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.disconnect_output_slot>`                 | Function call which takes in an OutputSlot name                           |
+| :func:`disconnect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.disconnect_output_slot>`                 | Function call which takes in an OutputSlot name                           |
 |                                                                                                                            | and deletes it from ComCom.                                               |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`modify_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.modify_output_slot>`                         | Complex function call which can modify                                    |
+| :func:`modify_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.modify_output_slot>`                         | Complex function call which can modify                                    |
 |                                                                                                                            | the output_slot according to the modification type.                       |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`toggle_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.toggle_output_slot>`                         | Function which negates the active status of the                           |
+| :func:`toggle_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.toggle_output_slot>`                         | Function which negates the active status of the                           |
 |                                                                                                                            | output_slot with passed name.                                             |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`clear_outputslot_command_queue() <ia.gaius.experimental.comcom_client.COMCOMClient.clear_outputslot_command_queue>` | Function call that tells COMCOM to clear any queued output data           |
+| :func:`clear_outputslot_command_queue() <ia.mythral.experimental.comcom_client.COMCOMClient.clear_outputslot_command_queue>` | Function call that tells COMCOM to clear any queued output data           |
 |                                                                                                                            | pending in the output-slot.                                               |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`list_output_slots() <ia.gaius.experimental.comcom_client.COMCOMClient.list_output_slots>`                           | Function call to list all output_slots in COMCOM.                         |
+| :func:`list_output_slots() <ia.mythral.experimental.comcom_client.COMCOMClient.list_output_slots>`                           | Function call to list all output_slots in COMCOM.                         |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| :func:`get_output_slot_data() <ia.gaius.experimental.comcom_client.COMCOMClient.get_output_slot_data>`                     | Function call to get detailed information about output_slot               |
+| :func:`get_output_slot_data() <ia.mythral.experimental.comcom_client.COMCOMClient.get_output_slot_data>`                     | Function call to get detailed information about output_slot               |
 |                                                                                                                            | with passed output_name.                                                  |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
@@ -46,7 +46,7 @@ Types of OutputSlots
 
 COMCOMRESTAPIPublisher
 ----------------------
-An OutputSlot can be made with a COMCOMRESTAPIPublisherby by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+An OutputSlot can be made with a COMCOMRESTAPIPublisherby by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
 ``rest_api``. The COMCOMRESTAPIPublisher will then take in the passed ``rest_urls`` and send any receieved data through those rest_urls. 
 
 .. note::
@@ -55,7 +55,7 @@ An OutputSlot can be made with a COMCOMRESTAPIPublisherby by setting the ``outpu
 
 COMCOMAgentStreamer
 -------------------
-An OutputSlot can be made with a COMCOMAgentStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+An OutputSlot can be made with a COMCOMAgentStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
 ``agent``. The COMCOMAgentStreamer will then gather a collection of already connected agents from COMCOM, and then send data to those agents.
 To determine in what manner to send the data to agents the COMCOMAgentStreamer will read in the ``action`` field from the processed data and then perform a 
 corresponding action.
@@ -69,11 +69,11 @@ corresponding action.
 
 COMCOMDDSStreamer
 -----------------
-An OutputSlot can be made with a COMCOMDDSStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+An OutputSlot can be made with a COMCOMDDSStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
 ``stream``. This will create a DDS Writer which listens to a topic of the same name as 
 what was assigned to the OutputSlot. The config option ``output_message_type`` controls which DDS message 
 dataclass to expect. To get a list of the available DDS dataclasses that are supported in COMCOM, you can call the 
-:func:`get_dds_message_types() <ia.gaius.experimental.comcom_client.COMCOMClient.get_dds_message_types>` from COMCOMClient, which will output
+:func:`get_dds_message_types() <ia.mythral.experimental.comcom_client.COMCOMClient.get_dds_message_types>` from COMCOMClient, which will output
 the DDS dataclasses with their supported names, and their structures.
 
 .. note::
@@ -82,7 +82,7 @@ the DDS dataclasses with their supported names, and their structures.
 
 COMCOMTCPSocketStreamer
 -----------------------
-An OutputSlot can be made with a COMCOMTCPSocketStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.gaius.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
+An OutputSlot can be made with a COMCOMTCPSocketStreamer by setting the ``output_type`` parameter in :func:`connect_output_slot() <ia.mythral.experimental.comcom_client.COMCOMClient.connect_output_slot>` to 
 ``socket``. This will create a server socket which will accept connections from other sockets, and read in null terminated data.
 Currently COMCOMTCPSocketStreamer always utilizes a tcp port, which must be exposed to COMCOM when it is spawned.
 

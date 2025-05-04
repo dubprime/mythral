@@ -1,21 +1,21 @@
-ia.gaius.tests package
+ia.mythral.tests package
 ======================
 
 Submodules
 ----------
 
-ia.gaius.tests.classification module
+ia.mythral.tests.classification module
 ------------------------------------
 
-.. automodule:: ia.gaius.tests.classification
+.. automodule:: ia.mythral.tests.classification
    :members:
    :undoc-members:
    :show-inheritance:
 
-ia.gaius.tests.utility module
+ia.mythral.tests.utility module
 -----------------------------
 
-.. automodule:: ia.gaius.tests.utility
+.. automodule:: ia.mythral.tests.utility
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ ia.gaius.tests.utility module
 Module contents
 ---------------
 
-.. automodule:: ia.gaius.tests
+.. automodule:: ia.mythral.tests
    :members:
    :undoc-members:
    :show-inheritance:

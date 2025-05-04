@@ -5,10 +5,10 @@ from pathlib import Path
 
 # Terms to search and their replacements
 REPLACEMENTS = [
-    (r'GAIuS', 'Mythral'),
-    (r'gaius', 'mythral'),
-    (r'Intelligent Artifacts', 'DubPrime'),
-    (r'intelligent artifacts', 'dubprime'),
+    (r'Mythral', 'Mythral'),
+    (r'mythral', 'mythral'),
+    (r'DubPrime', 'DubPrime'),
+    (r'dubprime', 'dubprime'),
 ]
 
 # File extensions to skip (binaries, images, etc.)
@@ -70,7 +70,7 @@ def check_name(path, is_dir=False):
             break
 
 def main():
-    print("--- DRY RUN: Rebranding GAIuS → Mythral, Intelligent Artifacts → DubPrime ---\n")
+    print("--- DRY RUN: Rebranding Mythral → Mythral, DubPrime → DubPrime ---\n")
     for root, dirs, files in os.walk('.'):
         # Skip unwanted directories
         dirs[:] = [d for d in dirs if d not in SKIP_DIRS]

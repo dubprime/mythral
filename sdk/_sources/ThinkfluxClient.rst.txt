@@ -7,7 +7,7 @@ agent configuration, and debugging.
 
 Quickstart
 
-.. autoclass:: ia.gaius.thinkflux_client.TFClient
+.. autoclass:: ia.mythral.thinkflux_client.TFClient
       :members:
       :undoc-members:
       :show-inheritance:

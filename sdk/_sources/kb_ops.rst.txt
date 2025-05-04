@@ -1,7 +1,7 @@
 KB Ops
 =========
 
-.. automodule:: ia.gaius.kb_ops
+.. automodule:: ia.mythral.kb_ops
    :members:
    :undoc-members:
    :show-inheritance:

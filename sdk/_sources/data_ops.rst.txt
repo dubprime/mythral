@@ -8,7 +8,7 @@ Classes and functions to aid in random testing and training set generation
 
 Data
 ----
-.. autoclass:: ia.gaius.data_ops.Data
+.. autoclass:: ia.mythral.data_ops.Data
       :members:
       :undoc-members:
       :show-inheritance:
@@ -17,7 +17,7 @@ Data
 DataRecords
 -----------
 
-.. autoclass:: ia.gaius.data_ops.DataRecords
+.. autoclass:: ia.mythral.data_ops.DataRecords
       :members:
       :undoc-members:
       :show-inheritance:
@@ -28,7 +28,7 @@ data_ops module
 
 This module includes the classes above in addition to the following:
 
-.. automodule:: ia.gaius.data_ops
+.. automodule:: ia.mythral.data_ops
    :members:
    :undoc-members:
    :show-inheritance:

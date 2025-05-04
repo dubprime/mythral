@@ -2,7 +2,7 @@ API Reference
 =============
 
 All of the public APIs available in the IA-SDK. Of note is the Genome class and the AgentClient class, which are utilized
-frequently to interface with a GAIuS agent
+frequently to interface with a Mythral agent
 
 .. toctree::
     :caption: Contents:
@@ -18,5 +18,5 @@ frequently to interface with a GAIuS agent
     PVT
     AgentManager
     prediction_models
-    ia.gaius
+    ia.mythral
 

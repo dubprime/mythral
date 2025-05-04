@@ -16,7 +16,7 @@
     "raw_mimetype": "text/restructuredtext"
    },
    "source": [
-    " Import :class:`~ia.gaius.manager.AgentManager` from module :py:mod:`ia.gaius.manager`"
+    " Import :class:`~ia.mythral.manager.AgentManager` from module :py:mod:`ia.mythral.manager`"
    ]
   },
   {
@@ -36,8 +36,8 @@
    ],
    "source": [
     "import time\n",
-    "from ia.gaius.manager import AgentManager\n",
-    "from ia.gaius.pvt import PerformanceValidationTest"
+    "from ia.mythral.manager import AgentManager\n",
+    "from ia.mythral.pvt import PerformanceValidationTest"
    ]
   },
   {
@@ -200,7 +200,7 @@
     "raw_mimetype": "text/restructuredtext"
    },
    "source": [
-    "Train and test on `iris-flowers <https://www.kaggle.com/datasets/arshid/iris-flower-dataset>`_ dataset using the :class:`~ia.gaius.pvt.PerformanceValidationTest` class from :py:mod:`ia.gaius.pvt`. This dataset is stored locally in GDF format."
+    "Train and test on `iris-flowers <https://www.kaggle.com/datasets/arshid/iris-flower-dataset>`_ dataset using the :class:`~ia.mythral.pvt.PerformanceValidationTest` class from :py:mod:`ia.mythral.pvt`. This dataset is stored locally in GDF format."
    ]
   },
   {

@@ -7,7 +7,7 @@ agent configuration, and debugging.
 
 Quickstart
 
-.. autoclass:: ia.gaius.experimental.comcom_client.COMCOMClient
+.. autoclass:: ia.mythral.experimental.comcom_client.COMCOMClient
       :members:
       :undoc-members:
       :show-inheritance:
