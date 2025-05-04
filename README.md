@@ -5,6 +5,10 @@
 ## **Now is Now in the Metaverse:**
 https://www.youtube.com/watch?v=nRGCZh5A8T4
 
+## **Open sourcing thanks to the Center for Accelerating Financial Equity:**
+https://ftcafe.org/
+
+
 ## **Released to the world in memory of:**
 
 💐 (Garmy) Vivian Lucero - My grandma and the world's greatest teacher.
@@ -18,7 +22,7 @@ https://www.youtube.com/watch?v=nRGCZh5A8T4
 ## **Legal BS**
 
 This file is part of Mythral AI™ which is owned by DubPrime, Inc.
-Copyright (C) 2025 Vincent Lucero <vincent@dubprime.com>
+Copyright (C) 2025 Vincent Lucero <vincent@dubprime.com> https://www.linkedin.com/in/vincent-lucero/
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Affero General Public License as published by
