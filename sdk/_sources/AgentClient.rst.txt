@@ -1,13 +1,13 @@
 AgentClient
 ===========
 
-AgentClient is the main class utilized to interface with a GAIuS agent. 
+AgentClient is the main class utilized to interface with a Mythral agent. 
 It provides several helper functions and API calls to aid in data input, 
 agent configuration, and debugging.
 
 Quickstart
 
-.. autoclass:: ia.gaius.agent_client.AgentClient
+.. autoclass:: ia.mythral.agent_client.AgentClient
       :members:
       :undoc-members:
       :show-inheritance:

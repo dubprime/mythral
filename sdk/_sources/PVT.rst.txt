@@ -1,7 +1,7 @@
 Performance Validation Testing
 ==============================
 
-This class is utilized to perform thorough testing on GAIuS Agents. Performance Validation Testing (PVT) has three test types:
+This class is utilized to perform thorough testing on Mythral Agents. Performance Validation Testing (PVT) has three test types:
 
 - Classification
 - Emotive Value
@@ -13,7 +13,7 @@ This class is utilized to perform thorough testing on GAIuS Agents. Performance 
 Performance Validation Test
 ---------------------------
 
-.. autoclass:: ia.gaius.pvt.PerformanceValidationTest
+.. autoclass:: ia.mythral.pvt.PerformanceValidationTest
       :members:
       :show-inheritance:
       :special-members: __init__
@@ -21,7 +21,7 @@ Performance Validation Test
 MongoData
 ---------
 
-.. autoclass:: ia.gaius.pvt.mongo_interface.MongoData
+.. autoclass:: ia.mythral.pvt.mongo_interface.MongoData
       :members:
       :undoc-members:
       :show-inheritance:
@@ -30,7 +30,7 @@ MongoData
 MongoDataRecords
 ----------------
 
-.. autoclass:: ia.gaius.pvt.mongo_interface.MongoDataRecords
+.. autoclass:: ia.mythral.pvt.mongo_interface.MongoDataRecords
       :members:
       :undoc-members:
       :show-inheritance:
@@ -39,7 +39,7 @@ MongoDataRecords
 MongoResults
 ----------------
 
-.. autoclass:: ia.gaius.pvt.mongo_interface.MongoResults
+.. autoclass:: ia.mythral.pvt.mongo_interface.MongoResults
       :members:
       :undoc-members:
       :show-inheritance:
@@ -48,7 +48,7 @@ MongoResults
 PVT Utils
 ----------
 
-.. automodule:: ia.gaius.pvt.pvt_utils
+.. automodule:: ia.mythral.pvt.pvt_utils
       :members:
       :undoc-members:
       :show-inheritance:

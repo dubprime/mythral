@@ -15,7 +15,7 @@
    "source": [
     "Once a Genome has been uploaded or created on lab, it is possible to deploy an agent. In the sidebar, select the Genome from the Perception Manifold area. Find the Genome named 'demo-all', next select an agent size, then select 'M' for 'medium'. This will deploy an agent using the Genome topology. On the dashboard page you can see the status of your agent as it is created.\n",
     "\n",
-    "An agent is a computer in the cloud (server, virtual machine) or local machine preconfigured with the GAIuS operating system. On IA's cloud, this is done automatically through the Lab when spawning a new agent."
+    "An agent is a computer in the cloud (server, virtual machine) or local machine preconfigured with the Mythral operating system. On IA's cloud, this is done automatically through the Lab when spawning a new agent."
    ]
   },
   {
@@ -41,7 +41,7 @@
     "\n",
     "`pip3 install ia-sdk`\n",
     "\n",
-    "or, if using the Jupyter for Intelligent Artifacts container, open a terminal and update it with:\n",
+    "or, if using the Jupyter for DubPrime container, open a terminal and update it with:\n",
     "\n",
     "`pip3 install --user -U ia-sdk`\n",
     "\n",
@@ -61,7 +61,7 @@
     "domain  = 'intelligent-artifacts.com'\n",
     "secure  = True\n",
     "\n",
-    "from ia.gaius.agent_client import AgentClient\n",
+    "from ia.mythral.agent_client import AgentClient\n",
     "\n",
     "agent_info = {'api_key': api_key,\n",
     "               'name':  name,\n",
@@ -77,7 +77,7 @@
     "\n",
     "~~~\n",
     "\n",
-    "from ia.gaius.agent_client import AgentClient\n",
+    "from ia.mythral.agent_client import AgentClient\n",
     "\n",
     "agent_info = {'api_key': 'ABCD-1234',\n",
     "               'name':  '',\n",
@@ -200,9 +200,9 @@
      "text": [
       "Name: ia-sdk\r\n",
       "Version: 0.3.2\r\n",
-      "Summary: SDK for Intelligent Artifact's GAIuS agents.\r\n",
+      "Summary: SDK for Intelligent Artifact's Mythral agents.\r\n",
       "Home-page: https://intelligent-artifacts.com\r\n",
-      "Author: Intelligent Artifacts\r\n",
+      "Author: DubPrime\r\n",
       "Author-email: support@intelligent-artifacts.com\r\n",
       "License: None\r\n",
       "Location: /home/jupyter/.local/lib/python3.8/site-packages\r\n",
@@ -224,7 +224,7 @@
    "outputs": [],
    "source": [
     "# update your agent information, and then connect to it\n",
-    "from ia.gaius.agent_client import AgentClient\n",
+    "from ia.mythral.agent_client import AgentClient\n",
     "\n",
     "api_key = '<YOUR-API-KEY-HERE>'\n",
     "name    = '<YOUR-AGENT-NAME-HERE>'\n",
@@ -246,7 +246,7 @@
    "source": [
     "agent_info = {'api_key': 'ABCD-1234',\n",
     "              'name': '',\n",
-    "              'domain': 'gaius-api:80',\n",
+    "              'domain': 'mythral-api:80',\n",
     "              'secure': False}"
    ]
   },
@@ -259,7 +259,7 @@
     {
      "data": {
       "text/plain": [
-       "<.gaius-api:80| secure: False, connected: True, gaius_agent: simple,                   ingress_nodes: 0, query_nodes: 0>"
+       "<.mythral-api:80| secure: False, connected: True, mythral_agent: simple,                   ingress_nodes: 0, query_nodes: 0>"
       ]
      },
      "execution_count": 4,

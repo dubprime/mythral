@@ -15,7 +15,7 @@
     "raw_mimetype": "text/restructuredtext"
    },
    "source": [
-    " Import :class:`~ia.gaius.agent_client.AgentClient` from module :py:mod:`ia.gaius.agent_client`"
+    " Import :class:`~ia.mythral.agent_client.AgentClient` from module :py:mod:`ia.mythral.agent_client`"
    ]
   },
   {
@@ -25,7 +25,7 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "from ia.gaius.agent_client import AgentClient"
+    "from ia.mythral.agent_client import AgentClient"
    ]
   },
   {
@@ -36,7 +36,7 @@
    "outputs": [],
    "source": [
     "agent_info = {'name': '',\n",
-    "              'domain': 'gaius-api',\n",
+    "              'domain': 'mythral-api',\n",
     "              'secure': False,\n",
     "              'api_key': 'ABCD-1234'}"
    ]
@@ -143,7 +143,7 @@
    },
    "source": [
     "  \n",
-    "We can change genes using the :func:`~ia.gaius.agent_client.AgentClient.change_genes` api call \n",
+    "We can change genes using the :func:`~ia.mythral.agent_client.AgentClient.change_genes` api call \n",
     "  "
    ]
   },

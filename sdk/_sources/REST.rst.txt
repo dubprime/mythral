@@ -1,8 +1,8 @@
-GAIuS RESTful API
+Mythral RESTful API
 =================
 
-This document outlines the REST API used to interact with GAIuS Agents via
-the GAIuS API Docker container. The GAIuS API docker container then 
+This document outlines the REST API used to interact with Mythral Agents via
+the Mythral API Docker container. The Mythral API docker container then 
 interfaces with Cognitive Processors and Manipulatives via gRPC to execute 
 the specified commands. These commands correlate similarly with commands 
 in the :doc:`AgentClient <AgentClient>` class.
@@ -15,7 +15,7 @@ View Entire Routing Table:
 
 .. note:: 
 
-    The examples in this documentation assume that a GAIuS Agent is started on your local machine,
+    The examples in this documentation assume that a Mythral Agent is started on your local machine,
     using HTTP at port 8000. These examples must be updated accordingly with your usecase
 
 Four Core API Calls
@@ -181,7 +181,7 @@ Helper Functionality
 
 .. http:get:: /connect
 
-    Connect to GAIuS API and retrieve Genome of connected 
+    Connect to Mythral API and retrieve Genome of connected 
     Cognitive Processors & Manipulatives
 
     :reqheader X-API-KEY: Secret API Key
@@ -217,9 +217,9 @@ Helper Functionality
 
 .. http:get:: /(str:primitive_id)/ping
 
-    Ping Cognitive Processor or GAIuS API
+    Ping Cognitive Processor or Mythral API
 
-    :param primitive_id: Cognitive Processor Unique ID or "agent" to ping GAIuS API
+    :param primitive_id: Cognitive Processor Unique ID or "agent" to ping Mythral API
     :type primitive_id: string
     :reqheader X-API-KEY: Secret API Key
 
@@ -1134,7 +1134,7 @@ Miscellaneous Endpoints
 
         {"id":"p46b6b076c",
         "interval":0,
-        "message":{"build_date":"12-07-2022","build_number":"1002","classifier":"CVC","id":"p46b6b076c","name":"P1","time":0,"version":"GAIuS Kehl (v12)"},
+        "message":{"build_date":"12-07-2022","build_number":"1002","classifier":"CVC","id":"p46b6b076c","name":"P1","time":0,"version":"Mythral Kehl (v12)"},
         "status":"okay",
         "time_stamp":1677697491}
     

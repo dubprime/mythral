@@ -12,13 +12,13 @@ an AgentClient object when agent is spawned using manager.
 .. note::
 
     Requires access to the Docker Daemon running on the user's computer, and
-    access to Intelligent Artifact's GAIuS Docker images.
+    access to Intelligent Artifact's Mythral Docker images.
 
 **Quickstart**
 
 .. code-block:: python
 
-    from ia.gaius.manager import AgentManager
+    from ia.mythral.manager import AgentManager
 
     am = AgentManager()
     am.kill_all_agents()
@@ -27,7 +27,7 @@ an AgentClient object when agent is spawned using manager.
 
 AgentManager
 ------------
-.. autoclass:: ia.gaius.manager.AgentManager
+.. autoclass:: ia.mythral.manager.AgentManager
       :members:
       :undoc-members:
       :show-inheritance:
@@ -35,7 +35,7 @@ AgentManager
 
 AgentInfo
 ------------
-.. autoclass:: ia.gaius.manager.AgentInfo
+.. autoclass:: ia.mythral.manager.AgentInfo
       :members:
       :undoc-members:
       :show-inheritance:
@@ -43,7 +43,7 @@ AgentInfo
 
 TFInfo
 ------------
-.. autoclass:: ia.gaius.manager.TFInfo
+.. autoclass:: ia.mythral.manager.TFInfo
       :members:
       :undoc-members:
       :show-inheritance:

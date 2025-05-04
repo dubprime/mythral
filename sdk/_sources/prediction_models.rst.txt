@@ -1,7 +1,7 @@
 Prediction Models
 =================
 
-.. automodule:: ia.gaius.prediction_models
+.. automodule:: ia.mythral.prediction_models
    :members:
    :undoc-members:
    :show-inheritance:

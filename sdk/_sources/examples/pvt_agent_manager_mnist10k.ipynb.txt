@@ -38,10 +38,10 @@
    },
    "outputs": [],
    "source": [
-    "from ia.gaius.manager import AgentManager\n",
-    "from ia.gaius.pvt import PerformanceValidationTest\n",
+    "from ia.mythral.manager import AgentManager\n",
+    "from ia.mythral.pvt import PerformanceValidationTest\n",
     "import time\n",
-    "from ia.gaius.data_ops import Data\n",
+    "from ia.mythral.data_ops import Data\n",
     "import json\n",
     "from sklearn.metrics import classification_report\n",
     "import pprint"
@@ -78,7 +78,7 @@
     {
      "data": {
       "text/plain": [
-       "<ia.gaius.manager.AgentInfo at 0x7f31ce54cf70>"
+       "<ia.mythral.manager.AgentInfo at 0x7f31ce54cf70>"
       ]
      },
      "execution_count": 21,

@@ -1,4 +1,4 @@
-ia.gaius package
+ia.mythral package
 ================
 
 Subpackages
@@ -7,57 +7,57 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   ia.gaius.tests
+   ia.mythral.tests
 
 
 Submodules
 ----------
 
-.. ia.gaius.agent\_client module
+.. ia.mythral.agent\_client module
 .. -----------------------------
 
-.. .. automodule:: ia.gaius.agent_client
+.. .. automodule:: ia.mythral.agent_client
 ..    :members:
 ..    :undoc-members:
 ..    :show-inheritance:
 ..    :special-members: __init__
 
-ia.gaius.back\_testing module
+ia.mythral.back\_testing module
 -----------------------------
 
-.. automodule:: ia.gaius.back_testing
+.. automodule:: ia.mythral.back_testing
    :members:
    :undoc-members:
    :show-inheritance:
 
-ia.gaius.data\_language module
+ia.mythral.data\_language module
 ------------------------------
 
-.. automodule:: ia.gaius.data_language
+.. automodule:: ia.mythral.data_language
    :members:
    :undoc-members:
    :show-inheritance:
 
-.. ia.gaius.data\_ops module
+.. ia.mythral.data\_ops module
 .. -------------------------
 
-.. .. automodule:: ia.gaius.data_ops
+.. .. automodule:: ia.mythral.data_ops
 ..    :members:
 ..    :undoc-members:
 ..    :show-inheritance:
 
-.. ia.gaius.genome\_info module
+.. ia.mythral.genome\_info module
 .. ----------------------------
 
-.. .. automodule:: ia.gaius.genome_info
+.. .. automodule:: ia.mythral.genome_info
 ..    :members:
 ..    :undoc-members:
 ..    :show-inheritance:
 
-.. ia.gaius.prediction\_models module
+.. ia.mythral.prediction\_models module
 .. ----------------------------------
 
-.. .. automodule:: ia.gaius.prediction_models
+.. .. automodule:: ia.mythral.prediction_models
 ..    :members:
 ..    :undoc-members:
 ..    :show-inheritance:

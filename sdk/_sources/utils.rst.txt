@@ -1,7 +1,7 @@
 Utilities
 =========
 
-.. automodule:: ia.gaius.utils
+.. automodule:: ia.mythral.utils
    :members:
    :undoc-members:
    :show-inheritance:

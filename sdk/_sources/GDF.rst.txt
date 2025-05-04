@@ -1,7 +1,7 @@
-GAIuS Data Format (GDF)
+Mythral Data Format (GDF)
 =======================
 
-The data entry format for use with the GAIuS Framework is called GAIuS Data Format (GDF).
+The data entry format for use with the Mythral Framework is called Mythral Data Format (GDF).
 GDFs have several fields that correspond to different types of data:
 
 .. code-block:: python
@@ -22,7 +22,7 @@ The following section briefly explain the different fields present in a GDF
 strings
 -------
 
-The strings field is used to observe data that is already symbolic (in string format) on a GAIuS Agent.
+The strings field is used to observe data that is already symbolic (in string format) on a Mythral Agent.
 
 Example:
     .. code-block:: python
@@ -32,7 +32,7 @@ Example:
 vectors
 -------
 
-The vectors field is used to observe numeric data on a GAIuS Agent. For example, 
+The vectors field is used to observe numeric data on a Mythral Agent. For example, 
 this field may be used for flattened image data, mathmatical data, etc.
 
 Example:
@@ -45,7 +45,7 @@ Example:
 emotives
 --------
 
-The emotives field is used to provide emotional data about an observation to the GAIuS agent.
+The emotives field is used to provide emotional data about an observation to the Mythral agent.
 
 metadata
 --------
@@ -55,7 +55,7 @@ The metadata field is used to pass through additional data about an observation 
 path
 ----
 
-The path field is used internally to show the path taken by an observation as it travels through a GAIuS agent's topology
+The path field is used internally to show the path taken by an observation as it travels through a Mythral agent's topology
 
 Example Conversions
 +++++++++++++++++++

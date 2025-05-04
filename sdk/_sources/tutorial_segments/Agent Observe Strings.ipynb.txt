@@ -15,7 +15,7 @@
    "source": [
     "## Data Preparation\n",
     "\n",
-    "All data provided to a GAIuS Agent is supplied as <i>sequences of events</i>. The way a sequence is delimited depends on the problem domain\n",
+    "All data provided to a Mythral Agent is supplied as <i>sequences of events</i>. The way a sequence is delimited depends on the problem domain\n",
     "\n",
     "An <b>event</b> is a single occurrence of a process.\n",
     "\n",
@@ -88,7 +88,7 @@
    "id": "10a76a09",
    "metadata": {},
    "source": [
-    "In order to acquire and process data you need to first make an observation. When the GAIuS Agent observes data it observes each event of a sequence one-by-one where the data is processed into the <b>working memory (WM)</b>. Data processed into the WM can later be used to make predictions or be learned where it will update its <b>knowlege base (KB)</b>. Data stored in the KB will be used to pattern match and make predictions. Analogously, you can think of WM as short term memory and KB as long term memory. It is good practice to clear the WM before the Agent observes new data to ensure that the state of the Agent is as expected.\n",
+    "In order to acquire and process data you need to first make an observation. When the Mythral Agent observes data it observes each event of a sequence one-by-one where the data is processed into the <b>working memory (WM)</b>. Data processed into the WM can later be used to make predictions or be learned where it will update its <b>knowlege base (KB)</b>. Data stored in the KB will be used to pattern match and make predictions. Analogously, you can think of WM as short term memory and KB as long term memory. It is good practice to clear the WM before the Agent observes new data to ensure that the state of the Agent is as expected.\n",
     "\n",
     "Let's follow this sequence of steps to observe and process new data:\n",
     "\n",
@@ -124,10 +124,10 @@
     }
    ],
    "source": [
-    "from ia.gaius.agent_client import AgentClient\n",
+    "from ia.mythral.agent_client import AgentClient\n",
     "agent_info = {'api_key': 'ABCD-1234',\n",
     "              'name': '',\n",
-    "              'domain': 'gaius-api:80',\n",
+    "              'domain': 'mythral-api:80',\n",
     "              'secure': False}\n",
     "\n",
     "agent = AgentClient(agent_info)\n",

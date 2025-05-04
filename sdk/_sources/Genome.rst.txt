@@ -1,11 +1,11 @@
 Genome
 ======
 
-Genome is the a class that encapsulates a representation of a GAIuS agent topology.
+Genome is the a class that encapsulates a representation of a Mythral agent topology.
 This class keeps track of primitive nodes, manipulative nodes, and provides a mechanism for visualizing a topology.
-Automatically created by AgentClient when connecting to a GAIuS agent.
+Automatically created by AgentClient when connecting to a Mythral agent.
 
-.. autoclass:: ia.gaius.genome_info.Genome
+.. autoclass:: ia.mythral.genome_info.Genome
       :members:
       :undoc-members:
       :show-inheritance:

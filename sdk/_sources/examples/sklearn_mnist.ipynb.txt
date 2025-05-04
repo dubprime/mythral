@@ -4,7 +4,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# Scikit-Learn GAIuS™ Pipeline Example"
+    "# Scikit-Learn Mythral™ Pipeline Example"
    ]
   },
   {
@@ -15,8 +15,8 @@
    "source": [
     "import pprint\n",
     "\n",
-    "from ia.gaius.experimental.sklearn import GAIuSClassifier, GDFTransformer\n",
-    "from ia.gaius.manager import AgentManager\n",
+    "from ia.mythral.experimental.sklearn import MythralClassifier, GDFTransformer\n",
+    "from ia.mythral.manager import AgentManager\n",
     "\n",
     "from sklearn.datasets import fetch_openml\n",
     "from sklearn.feature_selection import VarianceThreshold\n",
@@ -99,11 +99,11 @@
    "metadata": {},
    "outputs": [],
    "source": [
-    "gaius_pipeline = Pipeline([('scaler', StandardScaler()),\n",
+    "mythral_pipeline = Pipeline([('scaler', StandardScaler()),\n",
     "                 ('variance_threshold', VarianceThreshold(0.005)),\n",
     "                 ('discretizer', KBinsDiscretizer(32, encode='ordinal')),\n",
     "                 ('gdfer', GDFTransformer(as_vector=True)),\n",
-    "                 ('cp_classifier', GAIuSClassifier(recall_threshold=0.1, max_predictions=5, near_vector_count=3, pred_as_int=False))])"
+    "                 ('cp_classifier', MythralClassifier(recall_threshold=0.1, max_predictions=5, near_vector_count=3, pred_as_int=False))])"
    ]
   },
   {
@@ -137,7 +137,7 @@
     }
    ],
    "source": [
-    "gaius_pipeline.steps[-1][-1].agent.show_status()"
+    "mythral_pipeline.steps[-1][-1].agent.show_status()"
    ]
   },
   {
@@ -192,14 +192,14 @@
        "                (&#x27;discretizer&#x27;, KBinsDiscretizer(encode=&#x27;ordinal&#x27;, n_bins=32)),\n",
        "                (&#x27;gdfer&#x27;, GDFTransformer(as_vector=True)),\n",
        "                (&#x27;cp_classifier&#x27;,\n",
-       "                 GAIuSClassifier(max_predictions=5, near_vector_count=3,\n",
+       "                 MythralClassifier(max_predictions=5, near_vector_count=3,\n",
        "                                 pred_as_int=False))])</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class=\"sk-container\" hidden><div class=\"sk-item sk-dashed-wrapped\"><div class=\"sk-label-container\"><div class=\"sk-label sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-1\" type=\"checkbox\" ><label for=\"sk-estimator-id-1\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">Pipeline</label><div class=\"sk-toggleable__content\"><pre>Pipeline(steps=[(&#x27;scaler&#x27;, StandardScaler()),\n",
        "                (&#x27;variance_threshold&#x27;, VarianceThreshold(threshold=0.005)),\n",
        "                (&#x27;discretizer&#x27;, KBinsDiscretizer(encode=&#x27;ordinal&#x27;, n_bins=32)),\n",
        "                (&#x27;gdfer&#x27;, GDFTransformer(as_vector=True)),\n",
        "                (&#x27;cp_classifier&#x27;,\n",
-       "                 GAIuSClassifier(max_predictions=5, near_vector_count=3,\n",
-       "                                 pred_as_int=False))])</pre></div></div></div><div class=\"sk-serial\"><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-2\" type=\"checkbox\" ><label for=\"sk-estimator-id-2\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">StandardScaler</label><div class=\"sk-toggleable__content\"><pre>StandardScaler()</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-3\" type=\"checkbox\" ><label for=\"sk-estimator-id-3\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">VarianceThreshold</label><div class=\"sk-toggleable__content\"><pre>VarianceThreshold(threshold=0.005)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-4\" type=\"checkbox\" ><label for=\"sk-estimator-id-4\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">KBinsDiscretizer</label><div class=\"sk-toggleable__content\"><pre>KBinsDiscretizer(encode=&#x27;ordinal&#x27;, n_bins=32)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-5\" type=\"checkbox\" ><label for=\"sk-estimator-id-5\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">GDFTransformer</label><div class=\"sk-toggleable__content\"><pre>GDFTransformer(as_vector=True)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-6\" type=\"checkbox\" ><label for=\"sk-estimator-id-6\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">GAIuSClassifier</label><div class=\"sk-toggleable__content\"><pre>GAIuSClassifier(max_predictions=5, near_vector_count=3, pred_as_int=False)</pre></div></div></div></div></div></div></div>"
+       "                 MythralClassifier(max_predictions=5, near_vector_count=3,\n",
+       "                                 pred_as_int=False))])</pre></div></div></div><div class=\"sk-serial\"><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-2\" type=\"checkbox\" ><label for=\"sk-estimator-id-2\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">StandardScaler</label><div class=\"sk-toggleable__content\"><pre>StandardScaler()</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-3\" type=\"checkbox\" ><label for=\"sk-estimator-id-3\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">VarianceThreshold</label><div class=\"sk-toggleable__content\"><pre>VarianceThreshold(threshold=0.005)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-4\" type=\"checkbox\" ><label for=\"sk-estimator-id-4\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">KBinsDiscretizer</label><div class=\"sk-toggleable__content\"><pre>KBinsDiscretizer(encode=&#x27;ordinal&#x27;, n_bins=32)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-5\" type=\"checkbox\" ><label for=\"sk-estimator-id-5\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">GDFTransformer</label><div class=\"sk-toggleable__content\"><pre>GDFTransformer(as_vector=True)</pre></div></div></div><div class=\"sk-item\"><div class=\"sk-estimator sk-toggleable\"><input class=\"sk-toggleable__control sk-hidden--visually\" id=\"sk-estimator-id-6\" type=\"checkbox\" ><label for=\"sk-estimator-id-6\" class=\"sk-toggleable__label sk-toggleable__label-arrow\">MythralClassifier</label><div class=\"sk-toggleable__content\"><pre>MythralClassifier(max_predictions=5, near_vector_count=3, pred_as_int=False)</pre></div></div></div></div></div></div></div>"
       ],
       "text/plain": [
        "Pipeline(steps=[('scaler', StandardScaler()),\n",
@@ -207,7 +207,7 @@
        "                ('discretizer', KBinsDiscretizer(encode='ordinal', n_bins=32)),\n",
        "                ('gdfer', GDFTransformer(as_vector=True)),\n",
        "                ('cp_classifier',\n",
-       "                 GAIuSClassifier(max_predictions=5, near_vector_count=3,\n",
+       "                 MythralClassifier(max_predictions=5, near_vector_count=3,\n",
        "                                 pred_as_int=False))])"
       ]
      },
@@ -217,7 +217,7 @@
     }
    ],
    "source": [
-    "gaius_pipeline.fit(X_train[:10000], y_train[:10000])"
+    "mythral_pipeline.fit(X_train[:10000], y_train[:10000])"
    ]
   },
   {
@@ -255,7 +255,7 @@
     }
    ],
    "source": [
-    "preds = gaius_pipeline.predict(X=X_test[:1000])"
+    "preds = mythral_pipeline.predict(X=X_test[:1000])"
    ]
   },
   {
@@ -338,7 +338,7 @@
     }
    ],
    "source": [
-    "gaius_pipeline.steps[-1][-1].agent.show_status()"
+    "mythral_pipeline.steps[-1][-1].agent.show_status()"
    ]
   },
   {
