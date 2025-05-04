@@ -8,6 +8,9 @@
 ## **Open sourced thanks to CAFE:**
 Learn more about the Center for Accelerating Financial Equity (CAFE) at https://ftcafe.org/
 
+“Greed can be a powerful ally” - Qui-Gon Jinn
+
+“The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid. 
 
 ## **Released to the world in memory of:**
 
