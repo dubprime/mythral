@@ -3,7 +3,7 @@
 [![The Fourth Wall](https://img.youtube.com/vi/nRGCZh5A8T4/0.jpg)](https://www.youtube.com/watch?v=nRGCZh5A8T4)
 
 ## **Remembering the Past, Present, and Future**
-https://www.youtube.com/watch?v=nRGCZh5A8T4
+[![DubPrime AI](https://img.youtube.com/vi/upVY1QioDeY/0.jpg)](https://www.youtube.com/watch?v=upVY1QioDeY)
 
 ## **Open sourced thanks to CAFE:**
 Learn more about the Center for Accelerating Financial Equity (CAFE) at https://ftcafe.org/
@@ -36,3 +36,5 @@ GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+https://www.linkedin.com/posts/vincent-lucero_github-dubprimemythral-mythral-from-original-activity-7324903865089171456-2YZo?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAT4nS4BCc0uvhjl5cK8VfFtWKFPuI0Z3w0 
