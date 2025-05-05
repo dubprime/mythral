@@ -12,6 +12,8 @@ Learn more about the Center for Accelerating Financial Equity (CAFE) at https://
 
 “The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid. 
 
+But I learned a better approach from Lee and Garmy: https://classicreload.com/win3x-money-town.html
+
 ## **Released to the world in memory of:**
 
 💐 (Garmy) Vivian Lucero - My grandma and the world's greatest teacher.
