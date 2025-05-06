@@ -1,4 +1,4 @@
-# **Mythral AI™ by DubPrime | Power To The Players v2**
+# **Mythral AI™ by DubPrime | Power To The Players v3**
 
 [![The Fourth Wall](https://img.youtube.com/vi/nRGCZh5A8T4/0.jpg)](https://www.youtube.com/watch?v=nRGCZh5A8T4)
 
@@ -20,8 +20,11 @@ But I learned a better approach from Lee and Garmy: https://classicreload.com/wi
 ## **Power To The Players: Competition Data from FOIA**
 [![Flex.game](https://github.com/user-attachments/assets/96964388-a621-489c-854f-0126fd97b2fd)](https://ia801806.us.archive.org/32/items/RetailCreditCompany/Retail%20Credit%20Company%20Part%2001%20of%2001.pdf)
 
+## **A Day May Come When Bees No Longer Exist**
+[![DubPrime Mythral AI](https://img.youtube.com/vi/lrzKT-dFUjE/0.jpg)](https://www.youtube.com/watch?v=lrzKT-dFUjE)
 
-## **Released to the world in memory of:**
+
+## **Released to the world in memory of 3 so that day never comes:**
 
 💐 (Garmy) Vivian Lucero - My grandma and the world's greatest teacher.
 
