@@ -10,12 +10,15 @@ Learn more about the Center for Accelerating Financial Equity (CAFE) at https://
 
 “Greed can be a powerful ally” - Qui-Gon Jinn
 
-“The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid. 
+“The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid 
 
 ## **The Golden Rule of Games for Good**
 [![Money Town](https://img.youtube.com/vi/HH5lU9piLYY/0.jpg)](https://www.youtube.com/watch?v=HH5lU9piLYY)
 
 But I learned a better approach from Lee and Garmy: https://classicreload.com/win3x-money-town.html
+
+## **Competition Data from FOIA**
+![image](https://github.com/user-attachments/assets/191310e9-8a3b-49c1-be32-6c36dcefe125)
 
 ## **Released to the world in memory of:**
 
@@ -24,8 +27,6 @@ But I learned a better approach from Lee and Garmy: https://classicreload.com/wi
 👾 Warren Church - My friend who passed too soon but left the world a better place with his storytelling.
 
 🧮 (Bill) William Wells - The Pied Piper of Accounting at the University of Washington.
-
-
 
 ## **Legal BS**
 
