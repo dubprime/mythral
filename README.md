@@ -17,11 +17,9 @@ Learn more about the Center for Accelerating Financial Equity (CAFE) at https://
 
 But I learned a better approach from Lee and Garmy: https://classicreload.com/win3x-money-town.html
 
-## **Power To The Players**
-![https://flex.game/](https://github.com/user-attachments/assets/96964388-a621-489c-854f-0126fd97b2fd)
+## **Power To The Players: Competition Data from FOIA**
+[![Flex.game](https://github.com/user-attachments/assets/96964388-a621-489c-854f-0126fd97b2fd)](https://ia801806.us.archive.org/32/items/RetailCreditCompany/Retail%20Credit%20Company%20Part%2001%20of%2001.pdf)
 
-## **Competition Data from FOIA**
-![https://ia801806.us.archive.org/32/items/RetailCreditCompany/Retail%20Credit%20Company%20Part%2001%20of%2001.pdf](https://github.com/user-attachments/assets/191310e9-8a3b-49c1-be32-6c36dcefe125)
 
 ## **Released to the world in memory of:**
 
