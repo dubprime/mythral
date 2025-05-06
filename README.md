@@ -12,13 +12,16 @@ Learn more about the Center for Accelerating Financial Equity (CAFE) at https://
 
 “The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid 
 
-## **The Golden Rule of Games for Good**
+## **The Golden Rule of Garmy is Games for Good**
 [![Money Town](https://img.youtube.com/vi/HH5lU9piLYY/0.jpg)](https://www.youtube.com/watch?v=HH5lU9piLYY)
 
 But I learned a better approach from Lee and Garmy: https://classicreload.com/win3x-money-town.html
 
+## **Power To The Players**
+![https://flex.game/](https://github.com/user-attachments/assets/96964388-a621-489c-854f-0126fd97b2fd)
+
 ## **Competition Data from FOIA**
-![image](https://github.com/user-attachments/assets/191310e9-8a3b-49c1-be32-6c36dcefe125)
+![https://ia801806.us.archive.org/32/items/RetailCreditCompany/Retail%20Credit%20Company%20Part%2001%20of%2001.pdf](https://github.com/user-attachments/assets/191310e9-8a3b-49c1-be32-6c36dcefe125)
 
 ## **Released to the world in memory of:**
 
