@@ -1,4 +1,4 @@
-# **Mythral AI™ by DubPrime | Power To The Players**
+# **Mythral AI™ by DubPrime | Power To The Players v2**
 
 [![The Fourth Wall](https://img.youtube.com/vi/nRGCZh5A8T4/0.jpg)](https://www.youtube.com/watch?v=nRGCZh5A8T4)
 
