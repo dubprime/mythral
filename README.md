@@ -10,7 +10,7 @@ Learn more about the Center for Accelerating Financial Equity (CAFE) at https://
 
 “Greed can be a powerful ally” - Qui-Gon Jinn
 
-“The biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid 
+“Mom, you said the biggest problem in this universe is that no one helps each other.” -Darth Vader as a kid 
 
 ## **The Golden Rule of Garmy is Games for Good**
 [![Money Town](https://img.youtube.com/vi/HH5lU9piLYY/0.jpg)](https://www.youtube.com/watch?v=HH5lU9piLYY)
