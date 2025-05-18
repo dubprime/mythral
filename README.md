@@ -1,5 +1,8 @@
 # **Mythral AI™ by DubPrime | Power To The Players v3**
 
+Special thanks to Jason Smith for taking me on as his Padawan and organizing the real repo README at:
+https://deepwiki.com/dubprime/mythral
+
 [![The Fourth Wall](https://img.youtube.com/vi/nRGCZh5A8T4/0.jpg)](https://www.youtube.com/watch?v=nRGCZh5A8T4)
 
 ## **Remembering the Past, Present, and Future**
