@@ -35,7 +35,7 @@ But I learned a better approach from Lee and Garmy: https://classicreload.com/wi
 
 🧮 (Bill) William Wells - The Pied Piper of Accounting at the University of Washington.
 
-## **Legal BS**
+## **Legal**
 
 This file is part of Mythral AI™ which is owned by DubPrime, Inc.
 Copyright (C) 2025 Vincent Lucero <vincent@dubprime.com> https://www.linkedin.com/in/vincent-lucero/
