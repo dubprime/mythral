@@ -1,4 +1,7 @@
-# **Mythral AI™ by DubPrime | Power To The Players v3**
+# **Mythral Neurosymbolic AI™ | Power To The Players**
+
+What is Neuro Symbolic AI?
+https://www.youtube.com/watch?v=upVY1QioDeY 
 
 Special thanks to Jason Smith for taking me on as his Padawan and organizing the real repo README at:
 https://deepwiki.com/dubprime/mythral
